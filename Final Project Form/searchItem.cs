@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Final_Project_Form
 {
-    public partial class Inventory : Form
+    public partial class searchItem : Form
     {
-        public Inventory()
+        public searchItem()
         {
             InitializeComponent();
         }

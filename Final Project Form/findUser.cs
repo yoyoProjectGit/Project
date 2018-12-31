@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace Final_Project_Form
 {
-    public partial class Search_by_Person : Form
+    public partial class findUser : Form
     {
-        public Search_by_Person()
+        public findUser()
         {
             InitializeComponent();
+        }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

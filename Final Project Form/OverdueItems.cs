@@ -16,5 +16,10 @@ namespace Final_Project_Form
         {
             InitializeComponent();
         }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

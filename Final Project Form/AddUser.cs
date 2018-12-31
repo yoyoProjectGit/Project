@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace Final_Project_Form
 {
-    public partial class UserForm : Form
+    public partial class AddUser : Form
     {
-        public UserForm()
+        public AddUser()
         {
             InitializeComponent();
+        }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

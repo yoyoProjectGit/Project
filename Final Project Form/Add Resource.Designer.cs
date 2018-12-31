@@ -221,6 +221,7 @@
             this.txtBack.TabIndex = 18;
             this.txtBack.Text = "Back";
             this.txtBack.UseVisualStyleBackColor = true;
+            this.txtBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
             // Add_Resource
             // 
@@ -246,7 +247,9 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "Add_Resource";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Add Resource";
             this.ResumeLayout(false);
             this.PerformLayout();

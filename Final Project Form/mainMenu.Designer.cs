@@ -32,10 +32,11 @@
             this.btnSearchPerson = new System.Windows.Forms.Button();
             this.btnViewInventory = new System.Windows.Forms.Button();
             this.btnSearchItem = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
+            this.btnAddResource = new System.Windows.Forms.Button();
+            this.btnOverdueItems = new System.Windows.Forms.Button();
             this.btnEmails = new System.Windows.Forms.Button();
             this.btnItemsOnLoan = new System.Windows.Forms.Button();
+            this.btnLogOut = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnAddUser
@@ -46,6 +47,7 @@
             this.btnAddUser.TabIndex = 0;
             this.btnAddUser.Text = "Add User";
             this.btnAddUser.UseVisualStyleBackColor = true;
+            this.btnAddUser.Click += new System.EventHandler(this.btnAddUser_Click);
             // 
             // btnSearchPerson
             // 
@@ -55,6 +57,7 @@
             this.btnSearchPerson.TabIndex = 1;
             this.btnSearchPerson.Text = "Search by Person";
             this.btnSearchPerson.UseVisualStyleBackColor = true;
+            this.btnSearchPerson.Click += new System.EventHandler(this.btnSearchPerson_Click);
             // 
             // btnViewInventory
             // 
@@ -64,6 +67,7 @@
             this.btnViewInventory.TabIndex = 2;
             this.btnViewInventory.Text = "View Inventory";
             this.btnViewInventory.UseVisualStyleBackColor = true;
+            this.btnViewInventory.Click += new System.EventHandler(this.btnViewInventory_Click);
             // 
             // btnSearchItem
             // 
@@ -73,24 +77,27 @@
             this.btnSearchItem.TabIndex = 3;
             this.btnSearchItem.Text = "Search For Item";
             this.btnSearchItem.UseVisualStyleBackColor = true;
+            this.btnSearchItem.Click += new System.EventHandler(this.btnSearchItem_Click);
             // 
-            // button5
+            // btnAddResource
             // 
-            this.button5.Location = new System.Drawing.Point(85, 291);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(86, 53);
-            this.button5.TabIndex = 4;
-            this.button5.Text = "Add New Resource";
-            this.button5.UseVisualStyleBackColor = true;
+            this.btnAddResource.Location = new System.Drawing.Point(85, 291);
+            this.btnAddResource.Name = "btnAddResource";
+            this.btnAddResource.Size = new System.Drawing.Size(86, 53);
+            this.btnAddResource.TabIndex = 4;
+            this.btnAddResource.Text = "Add New Resource";
+            this.btnAddResource.UseVisualStyleBackColor = true;
+            this.btnAddResource.Click += new System.EventHandler(this.btnAddResource_Click);
             // 
-            // button6
+            // btnOverdueItems
             // 
-            this.button6.Location = new System.Drawing.Point(448, 55);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(86, 53);
-            this.button6.TabIndex = 5;
-            this.button6.Text = "View Overdue Items";
-            this.button6.UseVisualStyleBackColor = true;
+            this.btnOverdueItems.Location = new System.Drawing.Point(448, 55);
+            this.btnOverdueItems.Name = "btnOverdueItems";
+            this.btnOverdueItems.Size = new System.Drawing.Size(86, 53);
+            this.btnOverdueItems.TabIndex = 5;
+            this.btnOverdueItems.Text = "View Overdue Items";
+            this.btnOverdueItems.UseVisualStyleBackColor = true;
+            this.btnOverdueItems.Click += new System.EventHandler(this.btnOverdueItems_Click);
             // 
             // btnEmails
             // 
@@ -100,6 +107,7 @@
             this.btnEmails.TabIndex = 6;
             this.btnEmails.Text = "Email Handler";
             this.btnEmails.UseVisualStyleBackColor = true;
+            this.btnEmails.Click += new System.EventHandler(this.btnEmails_Click);
             // 
             // btnItemsOnLoan
             // 
@@ -109,21 +117,35 @@
             this.btnItemsOnLoan.TabIndex = 7;
             this.btnItemsOnLoan.Text = "View Items On Loan";
             this.btnItemsOnLoan.UseVisualStyleBackColor = true;
+            this.btnItemsOnLoan.Click += new System.EventHandler(this.btnItemsOnLoan_Click);
+            // 
+            // btnLogOut
+            // 
+            this.btnLogOut.Location = new System.Drawing.Point(740, 580);
+            this.btnLogOut.Name = "btnLogOut";
+            this.btnLogOut.Size = new System.Drawing.Size(159, 54);
+            this.btnLogOut.TabIndex = 8;
+            this.btnLogOut.Text = "Log Out";
+            this.btnLogOut.UseVisualStyleBackColor = true;
+            this.btnLogOut.Click += new System.EventHandler(this.btnLogOut_Click);
             // 
             // mainMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1012, 717);
+            this.Controls.Add(this.btnLogOut);
             this.Controls.Add(this.btnItemsOnLoan);
             this.Controls.Add(this.btnEmails);
-            this.Controls.Add(this.button6);
-            this.Controls.Add(this.button5);
+            this.Controls.Add(this.btnOverdueItems);
+            this.Controls.Add(this.btnAddResource);
             this.Controls.Add(this.btnSearchItem);
             this.Controls.Add(this.btnViewInventory);
             this.Controls.Add(this.btnSearchPerson);
             this.Controls.Add(this.btnAddUser);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "mainMenu";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Menu";
             this.ResumeLayout(false);
 
@@ -135,9 +157,10 @@
         private System.Windows.Forms.Button btnSearchPerson;
         private System.Windows.Forms.Button btnViewInventory;
         private System.Windows.Forms.Button btnSearchItem;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button btnAddResource;
+        private System.Windows.Forms.Button btnOverdueItems;
         private System.Windows.Forms.Button btnEmails;
         private System.Windows.Forms.Button btnItemsOnLoan;
+        private System.Windows.Forms.Button btnLogOut;
     }
 }

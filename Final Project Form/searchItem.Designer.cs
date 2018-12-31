@@ -1,6 +1,6 @@
 ﻿namespace Final_Project_Form
 {
-    partial class Inventory
+    partial class searchItem
     {
         /// <summary>
         /// Required designer variable.
@@ -33,23 +33,23 @@
             // 
             // btnBack
             // 
-            this.btnBack.Location = new System.Drawing.Point(595, 367);
+            this.btnBack.Location = new System.Drawing.Point(615, 356);
             this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(69, 25);
+            this.btnBack.Size = new System.Drawing.Size(75, 23);
             this.btnBack.TabIndex = 0;
             this.btnBack.Text = "Back";
             this.btnBack.UseVisualStyleBackColor = true;
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
-            // Inventory
+            // searchItem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.btnBack);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Name = "Inventory";
-            this.Text = "Inventory";
+            this.Name = "searchItem";
+            this.Text = "searchItem";
             this.ResumeLayout(false);
 
         }

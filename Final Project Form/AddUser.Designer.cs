@@ -1,6 +1,6 @@
 ﻿namespace Final_Project_Form
 {
-    partial class UserForm
+    partial class AddUser
     {
         /// <summary>
         /// Required designer variable.
@@ -42,7 +42,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.txtFinishDate = new System.Windows.Forms.TextBox();
             this.btnAddUser = new System.Windows.Forms.Button();
-            this.btnGoBack = new System.Windows.Forms.Button();
+            this.btnBack = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblAddUser
@@ -172,21 +172,22 @@
             this.btnAddUser.Text = "Add User";
             this.btnAddUser.UseVisualStyleBackColor = true;
             // 
-            // btnGoBack
+            // btnBack
             // 
-            this.btnGoBack.Location = new System.Drawing.Point(591, 375);
-            this.btnGoBack.Name = "btnGoBack";
-            this.btnGoBack.Size = new System.Drawing.Size(90, 36);
-            this.btnGoBack.TabIndex = 14;
-            this.btnGoBack.Text = "Go Back";
-            this.btnGoBack.UseVisualStyleBackColor = true;
+            this.btnBack.Location = new System.Drawing.Point(591, 375);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(90, 36);
+            this.btnBack.TabIndex = 14;
+            this.btnBack.Text = "Back";
+            this.btnBack.UseVisualStyleBackColor = true;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
-            // UserForm
+            // AddUser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.btnGoBack);
+            this.Controls.Add(this.btnBack);
             this.Controls.Add(this.btnAddUser);
             this.Controls.Add(this.txtFinishDate);
             this.Controls.Add(this.label6);
@@ -201,8 +202,9 @@
             this.Controls.Add(this.txtFirstName);
             this.Controls.Add(this.txtShuId);
             this.Controls.Add(this.lblAddUser);
-            this.Name = "UserForm";
-            this.Text = "UserForm";
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Name = "AddUser";
+            this.Text = "AddUser";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -224,6 +226,6 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txtFinishDate;
         private System.Windows.Forms.Button btnAddUser;
-        private System.Windows.Forms.Button btnGoBack;
+        private System.Windows.Forms.Button btnBack;
     }
 }

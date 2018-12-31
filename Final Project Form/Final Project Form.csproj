@@ -52,11 +52,24 @@
     <Compile Include="Add Resource.Designer.cs">
       <DependentUpon>Add Resource.cs</DependentUpon>
     </Compile>
+    <Compile Include="AutoClosingMessageBox.cs" />
+    <Compile Include="EmailHandler.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EmailHandler.Designer.cs">
+      <DependentUpon>EmailHandler.cs</DependentUpon>
+    </Compile>
     <Compile Include="Inventory.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Inventory.Designer.cs">
       <DependentUpon>Inventory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ItemsOnLoan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ItemsOnLoan.Designer.cs">
+      <DependentUpon>ItemsOnLoan.cs</DependentUpon>
     </Compile>
     <Compile Include="loginForm.cs">
       <SubType>Form</SubType>
@@ -69,6 +82,9 @@
     </Compile>
     <Compile Include="mainMenu.Designer.cs">
       <DependentUpon>mainMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OptionsDialog.cs">
+      <SubType>Form</SubType>
     </Compile>
     <Compile Include="OverdueItems.cs">
       <SubType>Form</SubType>
@@ -84,20 +100,38 @@
     <Compile Include="findUser.Designer.cs">
       <DependentUpon>findUser.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserForm.cs">
+    <Compile Include="AddUser.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UserForm.Designer.cs">
-      <DependentUpon>UserForm.cs</DependentUpon>
+    <Compile Include="AddUser.Designer.cs">
+      <DependentUpon>AddUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="searchItem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="searchItem.Designer.cs">
+      <DependentUpon>searchItem.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Add Resource.resx">
       <DependentUpon>Add Resource.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EmailHandler.resx">
+      <DependentUpon>EmailHandler.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Inventory.resx">
+      <DependentUpon>Inventory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ItemsOnLoan.resx">
+      <DependentUpon>ItemsOnLoan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="loginForm.resx">
       <DependentUpon>loginForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="mainMenu.resx">
       <DependentUpon>mainMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OverdueItems.resx">
+      <DependentUpon>OverdueItems.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -111,8 +145,11 @@
     <EmbeddedResource Include="findUser.resx">
       <DependentUpon>findUser.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserForm.resx">
-      <DependentUpon>UserForm.cs</DependentUpon>
+    <EmbeddedResource Include="AddUser.resx">
+      <DependentUpon>AddUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="searchItem.resx">
+      <DependentUpon>searchItem.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
