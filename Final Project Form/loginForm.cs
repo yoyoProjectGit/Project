@@ -1,13 +1,14 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
 namespace Final_Project_Form
 {
     public partial class loginForm : Form
@@ -19,21 +20,34 @@ namespace Final_Project_Form
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
+            try
+            {
+            string connectionString = "Data Source=DESKTOP-BV5T9NA;Initial Catalog=ProjectDB;Integrated Security=True";
+            SqlConnection connection = new SqlConnection(connectionString);
+            connection.Open();
             AutoClosingMessageBox.Show("Attempting To Log In", "Logging In", 1000);
-            String username = txtUser.Text;
-            String password = txtPass.Text;
-            if (username.Equals("") && password.Equals(""))
+            SqlCommand command = new SqlCommand("select username,password from userLogins where username=@username and password=@password", connection);
+            command.Parameters.AddWithValue("@username", txtUser.Text);
+            command.Parameters.AddWithValue("@password", txtPass.Text);
+            SqlDataAdapter adapter = new SqlDataAdapter(command);
+            DataTable table = new DataTable();
+            adapter.Fill(table);
+            if (table.Rows.Count > 0)
             {
                 AutoClosingMessageBox.Show("Login Successful", "Logging In", 1000);
-               // System.Threading.Thread.Sleep(1000);
                 mainMenu mainMenu = new mainMenu();
                 this.Hide();
                 mainMenu.Show();
-                
+                connection.Close();
             }
             else
             {
                 AutoClosingMessageBox.Show("Invalid Username Or Password", "Logging Failed", 1000);
+            }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
         }
 
@@ -49,5 +63,4 @@ namespace Final_Project_Form
             this.Close();
         }
     }
-   
 }

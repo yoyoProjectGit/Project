@@ -40,9 +40,9 @@
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.txtFinishDate = new System.Windows.Forms.TextBox();
             this.btnAddUser = new System.Windows.Forms.Button();
             this.btnBack = new System.Windows.Forms.Button();
+            this.finishDatePicker = new System.Windows.Forms.DateTimePicker();
             this.SuspendLayout();
             // 
             // lblAddUser
@@ -155,14 +155,6 @@
             this.label6.TabIndex = 11;
             this.label6.Text = "Finish Date";
             // 
-            // txtFinishDate
-            // 
-            this.txtFinishDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtFinishDate.Location = new System.Drawing.Point(172, 341);
-            this.txtFinishDate.Name = "txtFinishDate";
-            this.txtFinishDate.Size = new System.Drawing.Size(217, 31);
-            this.txtFinishDate.TabIndex = 12;
-            // 
             // btnAddUser
             // 
             this.btnAddUser.Location = new System.Drawing.Point(520, 69);
@@ -171,6 +163,7 @@
             this.btnAddUser.TabIndex = 13;
             this.btnAddUser.Text = "Add User";
             this.btnAddUser.UseVisualStyleBackColor = true;
+            this.btnAddUser.Click += new System.EventHandler(this.btnAddUser_Click);
             // 
             // btnBack
             // 
@@ -182,14 +175,21 @@
             this.btnBack.UseVisualStyleBackColor = true;
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
+            // finishDatePicker
+            // 
+            this.finishDatePicker.Location = new System.Drawing.Point(172, 349);
+            this.finishDatePicker.Name = "finishDatePicker";
+            this.finishDatePicker.Size = new System.Drawing.Size(217, 20);
+            this.finishDatePicker.TabIndex = 15;
+            // 
             // AddUser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.finishDatePicker);
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.btnAddUser);
-            this.Controls.Add(this.txtFinishDate);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.txtEmail);
@@ -224,8 +224,8 @@
         private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox txtFinishDate;
         private System.Windows.Forms.Button btnAddUser;
         private System.Windows.Forms.Button btnBack;
+        private System.Windows.Forms.DateTimePicker finishDatePicker;
     }
 }

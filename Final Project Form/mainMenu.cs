@@ -19,12 +19,17 @@ namespace Final_Project_Form
 
         private void btnLogOut_Click(object sender, EventArgs e)
         {
-           
             loginForm loginForm = new loginForm();
             AutoClosingMessageBox.Show("Attempting To Log Out", "Logging Out", 1000);
             this.Close();
-            AutoClosingMessageBox.Show("Successfully Logged Out", "Logging Out", 1000);
             loginForm.Show();
+            for (int i = Application.OpenForms.Count - 1; i >= 0; i--)
+            {
+                if (Application.OpenForms[i].Name != "loginForm")
+                    Application.OpenForms[i].Close();
+            }
+            AutoClosingMessageBox.Show("Successfully Logged Out", "Logging Out", 1000);
+            
         }
 
         private void btnAddUser_Click(object sender, EventArgs e)
