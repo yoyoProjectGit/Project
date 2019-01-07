@@ -15,14 +15,8 @@ namespace Final_Project_Form
         public AddUser()
         {
             InitializeComponent();
-            SetMyCustomFormat();
         }
-        public void SetMyCustomFormat()
-        {
-            // Set the Format type and the CustomFormat string.
-            finishDatePicker.Format = DateTimePickerFormat.Custom;
-            finishDatePicker.CustomFormat = "MM/yyyy";
-        }
+
 
         private void btnBack_Click(object sender, EventArgs e)
         {

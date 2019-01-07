@@ -9,14 +9,14 @@ namespace Final_Project_Form
 {
     public class AutoClosingMessageBox
     {
-        System.Threading.Timer _timeoutTimer;
-        string _caption;
+        System.Threading.Timer autoCloseTimer;
+        string message;
         AutoClosingMessageBox(string text, string caption, int timeout)
         {
-            _caption = caption;
-            _timeoutTimer = new System.Threading.Timer(OnTimerElapsed,
+            message = caption;
+            autoCloseTimer = new System.Threading.Timer(OnTimerElapsed,
                 null, timeout, System.Threading.Timeout.Infinite);
-            using (_timeoutTimer)
+            using (autoCloseTimer)
                 MessageBox.Show(text, caption);
         }
         public static void Show(string text, string caption, int timeout)
@@ -25,10 +25,10 @@ namespace Final_Project_Form
         }
         void OnTimerElapsed(object state)
         {
-            IntPtr mbWnd = FindWindow("#32770", _caption); 
+            IntPtr mbWnd = FindWindow("#32770", message); 
             if (mbWnd != IntPtr.Zero)
                 SendMessage(mbWnd, WM_CLOSE, IntPtr.Zero, IntPtr.Zero);
-            _timeoutTimer.Dispose();
+            autoCloseTimer.Dispose();
         }
         const int WM_CLOSE = 0x0010;
         [System.Runtime.InteropServices.DllImport("user32.dll", SetLastError = true)]

@@ -69,7 +69,7 @@
       <DependentUpon>Add Resource.cs</DependentUpon>
     </Compile>
     <Compile Include="AutoClosingMessageBox.cs" />
-    <Compile Include="ConnectionClass.cs" />
+    <Compile Include="currentStudent.cs" />
     <Compile Include="EmailHandler.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -129,6 +129,12 @@
     <Compile Include="searchItem.Designer.cs">
       <DependentUpon>searchItem.cs</DependentUpon>
     </Compile>
+    <Compile Include="viewStudentInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="viewStudentInfo.Designer.cs">
+      <DependentUpon>viewStudentInfo.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Add Resource.resx">
       <DependentUpon>Add Resource.cs</DependentUpon>
     </EmbeddedResource>
@@ -167,6 +173,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="searchItem.resx">
       <DependentUpon>searchItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="viewStudentInfo.resx">
+      <DependentUpon>viewStudentInfo.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

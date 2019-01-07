@@ -62,5 +62,10 @@ namespace Final_Project_Form
             Application.Exit();
             this.Close();
         }
+
+        private void loginForm_Load(object sender, EventArgs e)
+        {
+            this.AcceptButton = btnLogin;
+        }
     }
 }

@@ -32,12 +32,13 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.txtShuId = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtSurname = new System.Windows.Forms.TextBox();
             this.btnSearchShu = new System.Windows.Forms.Button();
             this.btnSearchSurname = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.studentGridView = new System.Windows.Forms.DataGridView();
             this.btnBack = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.btnRefresh = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.studentGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -78,13 +79,13 @@
             this.txtShuId.Size = new System.Drawing.Size(217, 31);
             this.txtShuId.TabIndex = 3;
             // 
-            // textBox1
+            // txtSurname
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(203, 159);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(217, 31);
-            this.textBox1.TabIndex = 4;
+            this.txtSurname.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSurname.Location = new System.Drawing.Point(203, 159);
+            this.txtSurname.Name = "txtSurname";
+            this.txtSurname.Size = new System.Drawing.Size(217, 31);
+            this.txtSurname.TabIndex = 4;
             // 
             // btnSearchShu
             // 
@@ -95,6 +96,7 @@
             this.btnSearchShu.TabIndex = 5;
             this.btnSearchShu.Text = "Search";
             this.btnSearchShu.UseVisualStyleBackColor = true;
+            this.btnSearchShu.Click += new System.EventHandler(this.btnSearchShu_Click);
             // 
             // btnSearchSurname
             // 
@@ -105,18 +107,21 @@
             this.btnSearchSurname.TabIndex = 6;
             this.btnSearchSurname.Text = "Search";
             this.btnSearchSurname.UseVisualStyleBackColor = true;
+            this.btnSearchSurname.Click += new System.EventHandler(this.btnSearchSurname_Click);
             // 
-            // dataGridView1
+            // studentGridView
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(111, 222);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(532, 180);
-            this.dataGridView1.TabIndex = 7;
+            this.studentGridView.AllowUserToAddRows = false;
+            this.studentGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.studentGridView.Location = new System.Drawing.Point(44, 222);
+            this.studentGridView.Name = "studentGridView";
+            this.studentGridView.Size = new System.Drawing.Size(822, 308);
+            this.studentGridView.TabIndex = 7;
+            this.studentGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.studentGridView_CellContentClick);
             // 
             // btnBack
             // 
-            this.btnBack.Location = new System.Drawing.Point(635, 422);
+            this.btnBack.Location = new System.Drawing.Point(760, 552);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(115, 38);
             this.btnBack.TabIndex = 8;
@@ -124,16 +129,27 @@
             this.btnBack.UseVisualStyleBackColor = true;
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
+            // btnRefresh
+            // 
+            this.btnRefresh.Location = new System.Drawing.Point(734, 98);
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.Size = new System.Drawing.Size(103, 92);
+            this.btnRefresh.TabIndex = 9;
+            this.btnRefresh.Text = "Refresh";
+            this.btnRefresh.UseVisualStyleBackColor = true;
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
+            // 
             // findUser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 486);
+            this.ClientSize = new System.Drawing.Size(904, 633);
+            this.Controls.Add(this.btnRefresh);
             this.Controls.Add(this.btnBack);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.studentGridView);
             this.Controls.Add(this.btnSearchSurname);
             this.Controls.Add(this.btnSearchShu);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtSurname);
             this.Controls.Add(this.txtShuId);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -142,7 +158,8 @@
             this.Name = "findUser";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Find User";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Load += new System.EventHandler(this.findUser_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.studentGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -154,10 +171,11 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtShuId;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtSurname;
         private System.Windows.Forms.Button btnSearchShu;
         private System.Windows.Forms.Button btnSearchSurname;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView studentGridView;
         private System.Windows.Forms.Button btnBack;
+        private System.Windows.Forms.Button btnRefresh;
     }
 }
