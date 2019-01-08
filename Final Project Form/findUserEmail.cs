@@ -10,10 +10,11 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 namespace Final_Project_Form
 {
-    public partial class findUser : Form 
+    public partial class findUserEmail : Form
     {
+        string email;
         DataTable dt = new DataTable("Students");
-        public findUser()
+        public findUserEmail()
         {
             InitializeComponent();
         }
@@ -30,7 +31,7 @@ namespace Final_Project_Form
             studentGridView.DataSource = dv.ToTable();
         }
 
-        private void findUser_Load(object sender, EventArgs e)
+        private void findUserEmail_Load(object sender, EventArgs e)
         {
             try
             {
@@ -42,8 +43,8 @@ namespace Final_Project_Form
                 adapter.Fill(dt);
                 studentGridView.DataSource = dt;
                 DataGridViewButtonColumn button = new DataGridViewButtonColumn();
-                button.HeaderText = "View Info";
-                button.Text = "View";
+                button.HeaderText = "Get Email";
+                button.Text = "Get Email";
                 button.UseColumnTextForButtonValue = true;
                 studentGridView.Columns.Add(button);
                 connection.Close();
@@ -56,7 +57,6 @@ namespace Final_Project_Form
 
         private void btnSearchSurname_Click(object sender, EventArgs e)
         {
-            
             DataView dv = dt.DefaultView;
             dv.RowFilter = string.Format("surname LIKE '%" + txtSurname.Text + "%'");
             studentGridView.DataSource = dv.ToTable();
@@ -68,36 +68,12 @@ namespace Final_Project_Form
             {
                 DataGridViewRow row = this.studentGridView.Rows[e.RowIndex];
                 var student = new currentStudent();
-                student.ShuId = row.Cells["ShuId"].Value.ToString();
-                student.FirstName = row.Cells["FirstName"].Value.ToString();
-                student.Surname = row.Cells["Surname"].Value.ToString();
-                student.CourseDept = row.Cells["CourseDept"].Value.ToString();
                 student.EmailAddress = row.Cells["EmailAddress"].Value.ToString();
-                student.DateCreated = row.Cells["DateAdded"].Value.ToString();
-                student.FinishDate = row.Cells["FinishDate"].Value.ToString();
-                viewStudentInfo viewInfo = new viewStudentInfo(student.ShuId, student.FirstName, student.Surname,
-                    student.CourseDept, student.EmailAddress, student.DateCreated, student.FinishDate);
-                viewInfo.Show();
+                EmailHandler grabEmail = new EmailHandler();
+                email = student.EmailAddress;
+                grabEmail.getEmail(email);
             }
         }
 
-        private void btnRefresh_Click(object sender, EventArgs e)
-        {
-            dt.Rows.Clear();
-            studentGridView.Refresh();
-            string connectionString = "Data Source=DESKTOP-BV5T9NA;Initial Catalog=ProjectDB;Integrated Security=True";
-            SqlConnection connection = new SqlConnection(connectionString);
-            connection.Open();
-            SqlCommand command = new SqlCommand("SELECT * FROM students", connection);
-            SqlDataAdapter adapter = new SqlDataAdapter(command);
-            adapter.Fill(dt);
-            studentGridView.DataSource = dt;
-            //DataGridViewButtonColumn button = new DataGridViewButtonColumn();
-            //button.HeaderText = "View Info";
-            //button.Text = "View";
-            //button.UseColumnTextForButtonValue = true;
-            //studentGridView.Columns.Add(button);
-            connection.Close();
-        }
     }
 }

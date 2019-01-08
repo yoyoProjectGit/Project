@@ -14,6 +14,7 @@ namespace Final_Project_Form
         private string coursedept;
         private string emailAddress;
         private string finishDate;
+        private string dateCreated;
 
         public string ShuId
         {
@@ -45,6 +46,10 @@ namespace Final_Project_Form
             get { return finishDate; }
             set { finishDate = value; }
         }
-
+        public string DateCreated
+        {
+            get { return dateCreated; }
+            set { dateCreated = value; }
+        }
     }
 }

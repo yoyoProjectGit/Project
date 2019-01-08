@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,8 +14,9 @@ namespace Final_Project_Form
 {
     public partial class viewStudentInfo : Form
     {
-        string shuId,firstname, surName, courseDept, emailAddress, finishDate, prevName;
-        public viewStudentInfo(string id, string name, string surname, string coursedept, string email, string finishdate)
+        string shuId,firstname, surName, courseDept, emailAddress,finishDate, prevName;
+        TextInfo textInfo = new CultureInfo("en-US", false).TextInfo;
+        public viewStudentInfo(string id, string name, string surname, string coursedept, string email, string datecreated, string finishdate)
         {
             InitializeComponent();
             txtShuId.Text = id;
@@ -28,6 +30,7 @@ namespace Final_Project_Form
             courseDept = coursedept;
             txtEmail.Text = email;
             emailAddress = email;
+            txtDateAdded.Text = datecreated;
             finishDatePicker.Value = Convert.ToDateTime(finishdate);
             finishDate = finishdate;
         }
@@ -64,11 +67,11 @@ namespace Final_Project_Form
                     string updateUser = "UPDATE students SET ShuId=@ShuId, FirstName=@FirstName " +
                         ", Surname=@Surname, CourseDept=@CourseDept, EmailAddress=@EmailAddress, FinishDate=@FinishDate WHERE ShuId=@ShuId";
                     SqlCommand command = new SqlCommand(updateUser, connection);
-                    command.Parameters.AddWithValue("@ShuId", txtShuId.Text);
-                    command.Parameters.AddWithValue("@FirstName", txtFirstName.Text);
-                    command.Parameters.AddWithValue("@Surname", txtSurname.Text);
-                    command.Parameters.AddWithValue("@CourseDept", txtCourseDept.Text);
-                    command.Parameters.AddWithValue("@EmailAddress", txtEmail.Text);
+                    command.Parameters.AddWithValue("@ShuId", textInfo.ToTitleCase(txtShuId.Text));
+                    command.Parameters.AddWithValue("@FirstName", textInfo.ToTitleCase(txtFirstName.Text));
+                    command.Parameters.AddWithValue("@Surname", textInfo.ToTitleCase(txtSurname.Text));
+                    command.Parameters.AddWithValue("@CourseDept", textInfo.ToTitleCase(txtCourseDept.Text));
+                    command.Parameters.AddWithValue("@EmailAddress", textInfo.ToTitleCase(txtEmail.Text));
                     command.Parameters.AddWithValue("@FinishDate", finishDatePicker.Value);
                     command.ExecuteNonQuery();
                     MessageBox.Show("The student account of " + prevName + " " + txtSurname.Text + " has been successfully updated.");

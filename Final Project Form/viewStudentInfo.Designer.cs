@@ -30,10 +30,6 @@
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.label1 = new System.Windows.Forms.Label();
-            this.btnEdit = new System.Windows.Forms.Button();
-            this.btnUpdate = new System.Windows.Forms.Button();
             this.finishDatePicker = new System.Windows.Forms.DateTimePicker();
             this.btnBack = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
@@ -47,6 +43,12 @@
             this.txtSurname = new System.Windows.Forms.TextBox();
             this.txtFirstName = new System.Windows.Forms.TextBox();
             this.txtShuId = new System.Windows.Forms.TextBox();
+            this.btnUpdate = new System.Windows.Forms.Button();
+            this.btnEdit = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.label8 = new System.Windows.Forms.Label();
+            this.txtDateAdded = new System.Windows.Forms.TextBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.SuspendLayout();
@@ -64,6 +66,8 @@
             // tabPage1
             // 
             this.tabPage1.BackColor = System.Drawing.Color.Transparent;
+            this.tabPage1.Controls.Add(this.txtDateAdded);
+            this.tabPage1.Controls.Add(this.label8);
             this.tabPage1.Controls.Add(this.finishDatePicker);
             this.tabPage1.Controls.Add(this.btnBack);
             this.tabPage1.Controls.Add(this.label6);
@@ -88,51 +92,9 @@
             this.tabPage1.Text = "View Details";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // tabPage2
-            // 
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(793, 424);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "View Loans";
-            this.tabPage2.UseVisualStyleBackColor = true;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(8, 13);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(205, 37);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Personal Info";
-            // 
-            // btnEdit
-            // 
-            this.btnEdit.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEdit.Location = new System.Drawing.Point(489, 27);
-            this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(91, 33);
-            this.btnEdit.TabIndex = 1;
-            this.btnEdit.Text = "Edit";
-            this.btnEdit.UseVisualStyleBackColor = true;
-            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
-            // 
-            // btnUpdate
-            // 
-            this.btnUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUpdate.Location = new System.Drawing.Point(646, 27);
-            this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(91, 33);
-            this.btnUpdate.TabIndex = 2;
-            this.btnUpdate.Text = "Update";
-            this.btnUpdate.UseVisualStyleBackColor = true;
-            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
-            // 
             // finishDatePicker
             // 
-            this.finishDatePicker.Location = new System.Drawing.Point(188, 351);
+            this.finishDatePicker.Location = new System.Drawing.Point(188, 387);
             this.finishDatePicker.Name = "finishDatePicker";
             this.finishDatePicker.Size = new System.Drawing.Size(217, 20);
             this.finishDatePicker.TabIndex = 29;
@@ -151,7 +113,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(48, 347);
+            this.label6.Location = new System.Drawing.Point(48, 383);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(104, 24);
             this.label6.TabIndex = 26;
@@ -252,6 +214,67 @@
             this.txtShuId.Size = new System.Drawing.Size(292, 31);
             this.txtShuId.TabIndex = 16;
             // 
+            // btnUpdate
+            // 
+            this.btnUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUpdate.Location = new System.Drawing.Point(646, 27);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(91, 33);
+            this.btnUpdate.TabIndex = 2;
+            this.btnUpdate.Text = "Update";
+            this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
+            // 
+            // btnEdit
+            // 
+            this.btnEdit.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEdit.Location = new System.Drawing.Point(489, 27);
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Size = new System.Drawing.Size(91, 33);
+            this.btnEdit.TabIndex = 1;
+            this.btnEdit.Text = "Edit";
+            this.btnEdit.UseVisualStyleBackColor = true;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(8, 13);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(205, 37);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Personal Info";
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(793, 424);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "View Loans";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(48, 345);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(107, 24);
+            this.label8.TabIndex = 30;
+            this.label8.Text = "Date added";
+            // 
+            // txtDateAdded
+            // 
+            this.txtDateAdded.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDateAdded.Location = new System.Drawing.Point(186, 345);
+            this.txtDateAdded.Name = "txtDateAdded";
+            this.txtDateAdded.ReadOnly = true;
+            this.txtDateAdded.Size = new System.Drawing.Size(292, 31);
+            this.txtDateAdded.TabIndex = 31;
+            // 
             // viewStudentInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -288,5 +311,7 @@
         private System.Windows.Forms.TextBox txtSurname;
         private System.Windows.Forms.TextBox txtFirstName;
         private System.Windows.Forms.TextBox txtShuId;
+        private System.Windows.Forms.TextBox txtDateAdded;
+        private System.Windows.Forms.Label label8;
     }
 }

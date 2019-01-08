@@ -113,9 +113,9 @@
             // 
             this.studentGridView.AllowUserToAddRows = false;
             this.studentGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.studentGridView.Location = new System.Drawing.Point(44, 222);
+            this.studentGridView.Location = new System.Drawing.Point(31, 222);
             this.studentGridView.Name = "studentGridView";
-            this.studentGridView.Size = new System.Drawing.Size(822, 308);
+            this.studentGridView.Size = new System.Drawing.Size(844, 308);
             this.studentGridView.TabIndex = 7;
             this.studentGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.studentGridView_CellContentClick);
             // 
@@ -143,7 +143,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(904, 633);
+            this.ClientSize = new System.Drawing.Size(923, 633);
             this.Controls.Add(this.btnRefresh);
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.studentGridView);
