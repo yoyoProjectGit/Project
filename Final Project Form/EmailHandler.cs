@@ -13,10 +13,9 @@ using System.Net;
 
 namespace Final_Project_Form
 {
-
     public partial class EmailHandler : Form
     {
-        string email;
+        findUserEmail findEmail = new findUserEmail();
         public EmailHandler()
         {
             InitializeComponent();
@@ -64,22 +63,13 @@ namespace Final_Project_Form
             }
             if (isOpen == false)
             {
-                findUserEmail findEmail = new findUserEmail();
                 findEmail.Show();
             }
-        }
-        public void getEmail(String emailAddress)
-        {
-            email = emailAddress;
-            txtToWho.Text = email;
-            MessageBox.Show(email);
         }
 
         private void findEmailTest_Click(object sender, EventArgs e)
         {
-            getEmail(email);
-            txtToWho.Text = email;
-            MessageBox.Show(email);
+            this.txtToWho.Text = findEmail.ReturnEmail;
         }
     }
 }

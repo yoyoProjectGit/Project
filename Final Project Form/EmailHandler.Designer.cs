@@ -93,7 +93,7 @@
             // 
             // txtBody
             // 
-            this.txtBody.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBody.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBody.Location = new System.Drawing.Point(198, 225);
             this.txtBody.Multiline = true;
             this.txtBody.Name = "txtBody";
@@ -102,11 +102,10 @@
             // 
             // txtSubject
             // 
-            this.txtSubject.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSubject.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSubject.Location = new System.Drawing.Point(198, 131);
-            this.txtSubject.Multiline = true;
             this.txtSubject.Name = "txtSubject";
-            this.txtSubject.Size = new System.Drawing.Size(418, 36);
+            this.txtSubject.Size = new System.Drawing.Size(418, 31);
             this.txtSubject.TabIndex = 6;
             // 
             // label4
@@ -121,11 +120,10 @@
             // 
             // txtToWho
             // 
-            this.txtToWho.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtToWho.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtToWho.Location = new System.Drawing.Point(198, 78);
-            this.txtToWho.Multiline = true;
             this.txtToWho.Name = "txtToWho";
-            this.txtToWho.Size = new System.Drawing.Size(418, 32);
+            this.txtToWho.Size = new System.Drawing.Size(418, 31);
             this.txtToWho.TabIndex = 8;
             // 
             // btnFindEmail

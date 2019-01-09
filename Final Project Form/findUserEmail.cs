@@ -12,7 +12,7 @@ namespace Final_Project_Form
 {
     public partial class findUserEmail : Form
     {
-        string email;
+        public string ReturnEmail { get; set; }
         DataTable dt = new DataTable("Students");
         public findUserEmail()
         {
@@ -64,14 +64,13 @@ namespace Final_Project_Form
 
         private void studentGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.ColumnIndex == 7)
+            if (e.ColumnIndex == 7 || e.ColumnIndex == 0)
             {
                 DataGridViewRow row = this.studentGridView.Rows[e.RowIndex];
                 var student = new currentStudent();
                 student.EmailAddress = row.Cells["EmailAddress"].Value.ToString();
-                EmailHandler grabEmail = new EmailHandler();
-                email = student.EmailAddress;
-                grabEmail.getEmail(email);
+                this.ReturnEmail = student.EmailAddress;
+         //       emailReturn();
             }
         }
 

@@ -64,7 +64,7 @@ namespace Final_Project_Form
 
         private void studentGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.ColumnIndex == 7)
+            if (e.ColumnIndex == 7 || e.ColumnIndex == 0)
             {
                 DataGridViewRow row = this.studentGridView.Rows[e.RowIndex];
                 var student = new currentStudent();
@@ -78,6 +78,11 @@ namespace Final_Project_Form
                 viewStudentInfo viewInfo = new viewStudentInfo(student.ShuId, student.FirstName, student.Surname,
                     student.CourseDept, student.EmailAddress, student.DateCreated, student.FinishDate);
                 viewInfo.Show();
+            }
+            else
+            {
+                int columnIndex = e.ColumnIndex;
+                MessageBox.Show("You have clicked column index " + columnIndex);
             }
         }
 
