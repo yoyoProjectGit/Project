@@ -48,16 +48,16 @@ namespace Final_Project_Form
             {
                 case 1:
                     MessageBox.Show("You have not filled in an important field!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    break;
+                    return;
                 case 2:
                     MessageBox.Show("Please select your department!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    break;
+                    return;       
                 case 3:
                     MessageBox.Show("A max loan period is required (amount of days)", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    break;
+                    return;
                 case 4:
                     MessageBox.Show("A quantity is required (Integer)", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    break;
+                    return;
                 default:
                     break;
             }
@@ -65,6 +65,7 @@ namespace Final_Project_Form
            try
            {
                DateTime dateTime = DateTime.Now;
+               
                TextInfo textInfo = new CultureInfo("en-US", false).TextInfo;
                string connectionString = "Data Source=DESKTOP-BV5T9NA;Initial Catalog=ProjectDB;Integrated Security=True";
                SqlConnection connection = new SqlConnection(connectionString);
@@ -84,7 +85,7 @@ namespace Final_Project_Form
                 addCommand.Parameters.AddWithValue("@SerialNumber", textInfo.ToTitleCase(txtSerialNo.Text));
                 addCommand.Parameters.AddWithValue("@Department", textInfo.ToTitleCase(departmentsList.SelectedItem.ToString()));
                 addCommand.Parameters.AddWithValue("@Notes", textInfo.ToTitleCase(txtNotes.Text));
-                addCommand.Parameters.AddWithValue("@DateAdded", dateTime);
+                addCommand.Parameters.AddWithValue("@DateAdded", dateTime.ToString("yyyy-MM-dd H:mm:ss"));
                 addCommand.ExecuteNonQuery();
                    AutoClosingMessageBox.Show("The item: " + txtResourceName.Text + " Quantity: " + txtQuantity.Text + " Max Loan Period: " + txtLoanPeriod.Text 
                        + " Serial No: " + txtSerialNo.Text +" has been successfully added to the inventory", "Add Resource ", 10000);

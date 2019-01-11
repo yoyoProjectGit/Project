@@ -91,25 +91,25 @@ namespace Final_Project_Form
 
         }
 
-        private void btnSearchItem_Click(object sender, EventArgs e)
-        {
-            bool isOpen = false;
-            foreach (Form f in Application.OpenForms)
-            {
-                if (f.Text == "searchItem")
-                {
-                    isOpen = true;
-                    f.BringToFront();
-                    break;
-                }
-            }
-            if (isOpen == false)
-            {
-                searchItem searchItem = new searchItem();
-                searchItem.Show();
-            }
+        //private void btnSearchItem_Click(object sender, EventArgs e)
+        //{
+        //    bool isOpen = false;
+        //    foreach (Form f in Application.OpenForms)
+        //    {
+        //        if (f.Text == "viewItem")
+        //        {
+        //            isOpen = true;
+        //            f.BringToFront();
+        //            break;
+        //        }
+        //    }
+        //    if (isOpen == false)
+        //    {
+        //        viewItem viewItem = new viewItem();
+        //        viewItem.Show();
+        //    }
 
-        }
+        //}
 
         private void btnAddResource_Click(object sender, EventArgs e)
         {

@@ -31,7 +31,6 @@
             this.btnAddUser = new System.Windows.Forms.Button();
             this.btnSearchPerson = new System.Windows.Forms.Button();
             this.btnViewInventory = new System.Windows.Forms.Button();
-            this.btnSearchItem = new System.Windows.Forms.Button();
             this.btnAddResource = new System.Windows.Forms.Button();
             this.btnOverdueItems = new System.Windows.Forms.Button();
             this.btnEmails = new System.Windows.Forms.Button();
@@ -68,16 +67,6 @@
             this.btnViewInventory.Text = "View Inventory";
             this.btnViewInventory.UseVisualStyleBackColor = true;
             this.btnViewInventory.Click += new System.EventHandler(this.btnViewInventory_Click);
-            // 
-            // btnSearchItem
-            // 
-            this.btnSearchItem.Location = new System.Drawing.Point(85, 232);
-            this.btnSearchItem.Name = "btnSearchItem";
-            this.btnSearchItem.Size = new System.Drawing.Size(86, 53);
-            this.btnSearchItem.TabIndex = 3;
-            this.btnSearchItem.Text = "Search For Item";
-            this.btnSearchItem.UseVisualStyleBackColor = true;
-            this.btnSearchItem.Click += new System.EventHandler(this.btnSearchItem_Click);
             // 
             // btnAddResource
             // 
@@ -139,7 +128,6 @@
             this.Controls.Add(this.btnEmails);
             this.Controls.Add(this.btnOverdueItems);
             this.Controls.Add(this.btnAddResource);
-            this.Controls.Add(this.btnSearchItem);
             this.Controls.Add(this.btnViewInventory);
             this.Controls.Add(this.btnSearchPerson);
             this.Controls.Add(this.btnAddUser);
@@ -156,7 +144,6 @@
         private System.Windows.Forms.Button btnAddUser;
         private System.Windows.Forms.Button btnSearchPerson;
         private System.Windows.Forms.Button btnViewInventory;
-        private System.Windows.Forms.Button btnSearchItem;
         private System.Windows.Forms.Button btnAddResource;
         private System.Windows.Forms.Button btnOverdueItems;
         private System.Windows.Forms.Button btnEmails;

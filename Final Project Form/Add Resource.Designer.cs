@@ -160,6 +160,7 @@
             this.txtNotes.Location = new System.Drawing.Point(193, 240);
             this.txtNotes.Multiline = true;
             this.txtNotes.Name = "txtNotes";
+            this.txtNotes.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.txtNotes.Size = new System.Drawing.Size(217, 114);
             this.txtNotes.TabIndex = 16;
             // 

@@ -72,6 +72,7 @@
     </Compile>
     <Compile Include="AutoClosingMessageBox.cs" />
     <Compile Include="ConnectionClass.cs" />
+    <Compile Include="currentItem.cs" />
     <Compile Include="currentStudent.cs" />
     <Compile Include="EmailHandler.cs">
       <SubType>Form</SubType>
@@ -132,11 +133,11 @@
     <Compile Include="AddUser.Designer.cs">
       <DependentUpon>AddUser.cs</DependentUpon>
     </Compile>
-    <Compile Include="searchItem.cs">
+    <Compile Include="viewItem.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="searchItem.Designer.cs">
-      <DependentUpon>searchItem.cs</DependentUpon>
+    <Compile Include="viewItem.Designer.cs">
+      <DependentUpon>viewItem.cs</DependentUpon>
     </Compile>
     <Compile Include="viewStudentInfo.cs">
       <SubType>Form</SubType>
@@ -183,8 +184,8 @@
     <EmbeddedResource Include="AddUser.resx">
       <DependentUpon>AddUser.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="searchItem.resx">
-      <DependentUpon>searchItem.cs</DependentUpon>
+    <EmbeddedResource Include="viewItem.resx">
+      <DependentUpon>viewItem.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="viewStudentInfo.resx">
       <DependentUpon>viewStudentInfo.cs</DependentUpon>

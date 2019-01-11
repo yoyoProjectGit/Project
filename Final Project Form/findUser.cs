@@ -56,7 +56,6 @@ namespace Final_Project_Form
 
         private void btnSearchSurname_Click(object sender, EventArgs e)
         {
-            
             DataView dv = dt.DefaultView;
             dv.RowFilter = string.Format("surname LIKE '%" + txtSurname.Text + "%'");
             studentGridView.DataSource = dv.ToTable();
