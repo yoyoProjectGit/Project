@@ -39,7 +39,8 @@ namespace Final_Project_Form
                 SqlConnection connection = new SqlConnection(connectionString);
                 connection.Open();
                 SqlCommand command = new SqlCommand("SELECT ResourceID,ResourceType,ResourceName,MaxLoanPeriod,Department," +
-                    "SerialNumber,DateAdded,OrderNumber,PurchasePrice,Notes FROM resourcesTable", connection);
+                    "SerialNumber,DateAdded,OrderNumber,PurchasePrice,Notes FROM resourcesTable WHERE Department=@Department", connection);
+                command.Parameters.AddWithValue("@Department", CurrentUser.Department);
                 SqlDataAdapter adapter = new SqlDataAdapter(command);
                 adapter.Fill(dt);
                 inventoryGridView.DataSource = dt;
@@ -93,13 +94,14 @@ namespace Final_Project_Form
 
         private void btnRefresh_Click(object sender, EventArgs e)
         {
-            dt.Rows.Clear();
-            inventoryGridView.Refresh();
+            dt.Clear();
+            dt.DefaultView.RowFilter = string.Empty;
             string connectionString = "Data Source=DESKTOP-BV5T9NA;Initial Catalog=ProjectDB;Integrated Security=True";
             SqlConnection connection = new SqlConnection(connectionString);
             connection.Open();
             SqlCommand command = new SqlCommand("SELECT ResourceID,ResourceType,ResourceName,MaxLoanPeriod,Department," +
-                    "SerialNumber,DateAdded,OrderNumber,PurchasePrice,Notes FROM resourcesTable", connection);
+                "SerialNumber,DateAdded,OrderNumber,PurchasePrice,Notes FROM resourcesTable WHERE Department=@Department", connection);
+            command.Parameters.AddWithValue("@Department", CurrentUser.Department);
             SqlDataAdapter adapter = new SqlDataAdapter(command);
             adapter.Fill(dt);
             inventoryGridView.DataSource = dt;

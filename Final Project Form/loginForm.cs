@@ -22,6 +22,7 @@ namespace Final_Project_Form
         {
             try
             {
+
             string connectionString = "Data Source=DESKTOP-BV5T9NA;Initial Catalog=ProjectDB;Integrated Security=True";
             SqlConnection connection = new SqlConnection(connectionString);
             connection.Open();
@@ -34,11 +35,22 @@ namespace Final_Project_Form
             adapter.Fill(table);
             if (table.Rows.Count > 0)
             {
-                AutoClosingMessageBox.Show("Login Successful", "Logging In", 1000);
-                mainMenu mainMenu = new mainMenu();
-                this.Hide();
-                mainMenu.Show();
-                connection.Close();
+                    AutoClosingMessageBox.Show("Login Successful", "Logging In", 1000);
+                    SqlCommand getUser = new SqlCommand("select name, department,uid from userLogins where username=@username", connection);
+                    getUser.Parameters.AddWithValue("@username", txtUser.Text);
+                    using (var reader = getUser.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            CurrentUser.UserName = reader[0].ToString();
+                            CurrentUser.Department = reader[1].ToString();
+                            CurrentUser.UserID = reader[2].ToString();
+                        }
+                    }
+                    mainMenu mainMenu = new mainMenu();
+                    this.Hide();
+                    mainMenu.Show();
+                    connection.Close();
             }
             else
             {

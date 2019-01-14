@@ -190,5 +190,30 @@ namespace Final_Project_Form
             }
 
         }
+
+        private void btnLoanItem_Click(object sender, EventArgs e)
+        {
+            bool isOpen = false;
+            foreach (Form f in Application.OpenForms)
+            {
+                if (f.Text == "LoanUserItem")
+                {
+                    isOpen = true;
+                    f.BringToFront();
+                    break;
+                }
+            }
+            if (isOpen == false)
+            {
+                FindUserForLoan findUser = new FindUserForLoan();
+                findUser.Show();
+            }
+        }
+
+        private void mainMenu_Load(object sender, EventArgs e)
+        {
+            lblName.Text = ("Welcome " +CurrentUser.UserName);
+            lblDepartment.Text = ("Department: " + CurrentUser.Department);
+        }
     }
 }

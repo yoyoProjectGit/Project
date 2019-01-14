@@ -20,10 +20,6 @@ namespace Final_Project_Form
         TextInfo textInfo = new CultureInfo("en-US", false).TextInfo;
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(resourceType + resourceName + Notes + orderNumber + serialNumber + maxLoanPeriod + purchasePrice + "\n"
-               + txtResourceType.Text + txtResourceName.Text + txtNotes.Text + txtOrderNum.Text + txtSerialNo.Text
-               + txtMaxLoanPeriod.Text + txtPurchasePrice.Text);
-            // (departmentsList.SelectedIndex = departmentsList.FindString(department)) && txtOrderNum.Text.Equals(orderNumber)
             if ((txtResourceName.Text.Equals(resourceName) && txtResourceType.Text.Equals(resourceType) && txtNotes.Text.Equals(Notes) && 
                 (departmentsList.SelectedIndex == departmentsList.FindString(department)) && txtMaxLoanPeriod.Text.Equals(maxLoanPeriod.ToString()) 
                 && txtPurchasePrice.Text.Equals(purchasePrice.ToString()) && txtSerialNo.Text.Equals(serialNumber.ToString())))

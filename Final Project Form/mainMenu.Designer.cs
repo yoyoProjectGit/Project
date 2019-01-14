@@ -36,6 +36,9 @@
             this.btnEmails = new System.Windows.Forms.Button();
             this.btnItemsOnLoan = new System.Windows.Forms.Button();
             this.btnLogOut = new System.Windows.Forms.Button();
+            this.btnLoanItem = new System.Windows.Forms.Button();
+            this.lblName = new System.Windows.Forms.Label();
+            this.lblDepartment = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btnAddUser
@@ -118,11 +121,43 @@
             this.btnLogOut.UseVisualStyleBackColor = true;
             this.btnLogOut.Click += new System.EventHandler(this.btnLogOut_Click);
             // 
+            // btnLoanItem
+            // 
+            this.btnLoanItem.Location = new System.Drawing.Point(487, 384);
+            this.btnLoanItem.Name = "btnLoanItem";
+            this.btnLoanItem.Size = new System.Drawing.Size(102, 66);
+            this.btnLoanItem.TabIndex = 9;
+            this.btnLoanItem.Text = "Loan Item";
+            this.btnLoanItem.UseVisualStyleBackColor = true;
+            this.btnLoanItem.Click += new System.EventHandler(this.btnLoanItem_Click);
+            // 
+            // lblName
+            // 
+            this.lblName.AutoSize = true;
+            this.lblName.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblName.Location = new System.Drawing.Point(645, 43);
+            this.lblName.Name = "lblName";
+            this.lblName.Size = new System.Drawing.Size(0, 25);
+            this.lblName.TabIndex = 10;
+            this.lblName.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // lblDepartment
+            // 
+            this.lblDepartment.AutoSize = true;
+            this.lblDepartment.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDepartment.Location = new System.Drawing.Point(645, 83);
+            this.lblDepartment.Name = "lblDepartment";
+            this.lblDepartment.Size = new System.Drawing.Size(0, 25);
+            this.lblDepartment.TabIndex = 11;
+            // 
             // mainMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1012, 717);
+            this.Controls.Add(this.lblDepartment);
+            this.Controls.Add(this.lblName);
+            this.Controls.Add(this.btnLoanItem);
             this.Controls.Add(this.btnLogOut);
             this.Controls.Add(this.btnItemsOnLoan);
             this.Controls.Add(this.btnEmails);
@@ -133,9 +168,10 @@
             this.Controls.Add(this.btnAddUser);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "mainMenu";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Menu";
+            this.Load += new System.EventHandler(this.mainMenu_Load);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -149,5 +185,8 @@
         private System.Windows.Forms.Button btnEmails;
         private System.Windows.Forms.Button btnItemsOnLoan;
         private System.Windows.Forms.Button btnLogOut;
+        private System.Windows.Forms.Button btnLoanItem;
+        private System.Windows.Forms.Label lblName;
+        private System.Windows.Forms.Label lblDepartment;
     }
 }

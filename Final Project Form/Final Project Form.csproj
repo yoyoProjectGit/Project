@@ -74,6 +74,7 @@
     <Compile Include="ConnectionClass.cs" />
     <Compile Include="currentItem.cs" />
     <Compile Include="currentStudent.cs" />
+    <Compile Include="CurrentUser.cs" />
     <Compile Include="EmailHandler.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -86,6 +87,12 @@
     <Compile Include="findUserEmail.Designer.cs">
       <DependentUpon>findUserEmail.cs</DependentUpon>
     </Compile>
+    <Compile Include="FindUserForLoan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FindUserForLoan.Designer.cs">
+      <DependentUpon>FindUserForLoan.cs</DependentUpon>
+    </Compile>
     <Compile Include="Inventory.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -97,6 +104,12 @@
     </Compile>
     <Compile Include="ItemsOnLoan.Designer.cs">
       <DependentUpon>ItemsOnLoan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LoanUserItem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoanUserItem.Designer.cs">
+      <DependentUpon>LoanUserItem.cs</DependentUpon>
     </Compile>
     <Compile Include="loginForm.cs">
       <SubType>Form</SubType>
@@ -154,11 +167,17 @@
     <EmbeddedResource Include="findUserEmail.resx">
       <DependentUpon>findUserEmail.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FindUserForLoan.resx">
+      <DependentUpon>FindUserForLoan.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Inventory.resx">
       <DependentUpon>Inventory.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ItemsOnLoan.resx">
       <DependentUpon>ItemsOnLoan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoanUserItem.resx">
+      <DependentUpon>LoanUserItem.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="loginForm.resx">
       <DependentUpon>loginForm.cs</DependentUpon>
