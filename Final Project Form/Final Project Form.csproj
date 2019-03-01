@@ -105,6 +105,12 @@
     <Compile Include="ItemsOnLoan.Designer.cs">
       <DependentUpon>ItemsOnLoan.cs</DependentUpon>
     </Compile>
+    <Compile Include="LoanDurations.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoanDurations.Designer.cs">
+      <DependentUpon>LoanDurations.cs</DependentUpon>
+    </Compile>
     <Compile Include="LoanUserItem.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -175,6 +181,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ItemsOnLoan.resx">
       <DependentUpon>ItemsOnLoan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoanDurations.resx">
+      <DependentUpon>LoanDurations.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LoanUserItem.resx">
       <DependentUpon>LoanUserItem.cs</DependentUpon>

@@ -28,8 +28,6 @@ namespace Final_Project_Form
             }
             else
             {
-               
-
                 try
                 {
                     string connectionString = "Data Source=DESKTOP-BV5T9NA;Initial Catalog=ProjectDB;Integrated Security=True";
@@ -37,13 +35,15 @@ namespace Final_Project_Form
                     SqlConnection connection = new SqlConnection(connectionString);
                     connection.Open();
                     string updateItem = "UPDATE resourcesTable SET ResourceType=@ResourceType, ResourceName=@ResourceName " +
-                        ", Notes=@Notes, SerialNumber=@SerialNumber, OrderNumber=@OrderNumber,Department=@Department ,PurchasePrice=@PurchasePrice " +
+                        ", Notes=@Notes, SerialNumber=@SerialNumber, OrderNumber=@OrderNumber,Department=@Department ," +
+                        "PurchasePrice=@PurchasePrice, MaxLoanPeriod=@MaxLoanPeriod " +
                         " WHERE ResourceID=@ResourceID";
                     SqlCommand command = new SqlCommand(updateItem, connection);
                     command.Parameters.AddWithValue("@ResourceID", id);
                     command.Parameters.AddWithValue("@ResourceType", textInfo.ToTitleCase(txtResourceType.Text));
                     command.Parameters.AddWithValue("@ResourceName", textInfo.ToTitleCase(txtResourceName.Text));
                     command.Parameters.AddWithValue("@Notes", textInfo.ToTitleCase(txtNotes.Text));
+                    command.Parameters.AddWithValue("@MaxLoanPeriod", textInfo.ToTitleCase(txtMaxLoanPeriod.Text));
                     command.Parameters.AddWithValue("@SerialNumber", textInfo.ToTitleCase(txtSerialNo.Text));
                     command.Parameters.AddWithValue("@OrderNumber", textInfo.ToTitleCase(txtOrderNum.Text));
                     command.Parameters.AddWithValue("@PurchasePrice", textInfo.ToTitleCase(txtPurchasePrice.Text));
@@ -51,6 +51,7 @@ namespace Final_Project_Form
                     
                     command.ExecuteNonQuery();
                     MessageBox.Show("The item ID: " + id +  " has been successfully updated.");
+                    this.Close();
                     connection.Close();
                 }
                 catch (Exception ex)

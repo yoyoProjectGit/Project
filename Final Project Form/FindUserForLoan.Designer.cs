@@ -48,6 +48,7 @@
             this.studentGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.studentGridView.Location = new System.Drawing.Point(31, 222);
             this.studentGridView.Name = "studentGridView";
+            this.studentGridView.ReadOnly = true;
             this.studentGridView.Size = new System.Drawing.Size(844, 308);
             this.studentGridView.TabIndex = 20;
             this.studentGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.studentGridView_CellContentClick);
@@ -136,9 +137,9 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(37, 34);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(160, 24);
+            this.label1.Size = new System.Drawing.Size(173, 24);
             this.label1.TabIndex = 21;
-            this.label1.Text = "Search by Person";
+            this.label1.Text = "Find User For Loan";
             // 
             // FindUserForLoan
             // 

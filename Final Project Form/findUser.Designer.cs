@@ -115,6 +115,7 @@
             this.studentGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.studentGridView.Location = new System.Drawing.Point(31, 222);
             this.studentGridView.Name = "studentGridView";
+            this.studentGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.studentGridView.Size = new System.Drawing.Size(844, 308);
             this.studentGridView.TabIndex = 7;
             this.studentGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.studentGridView_CellContentClick);

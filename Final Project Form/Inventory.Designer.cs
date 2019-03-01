@@ -135,6 +135,8 @@
             this.inventoryGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.inventoryGridView.Location = new System.Drawing.Point(31, 222);
             this.inventoryGridView.Name = "inventoryGridView";
+            this.inventoryGridView.ReadOnly = true;
+            this.inventoryGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.inventoryGridView.Size = new System.Drawing.Size(1043, 308);
             this.inventoryGridView.TabIndex = 20;
             this.inventoryGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.inventoryGridView_CellContentClick);
