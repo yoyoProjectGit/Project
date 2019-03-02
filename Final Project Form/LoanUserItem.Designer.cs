@@ -51,8 +51,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.inventoryGridView = new System.Windows.Forms.DataGridView();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.pickedItemsGridView = new System.Windows.Forms.DataGridView();
-            this.label8 = new System.Windows.Forms.Label();
+            this.btnGoBack = new System.Windows.Forms.Button();
+            this.btnConfirmItems = new System.Windows.Forms.Button();
             this.txtShuId2 = new System.Windows.Forms.TextBox();
             this.txtCurrentEmail2 = new System.Windows.Forms.TextBox();
             this.txtCurrentSurname2 = new System.Windows.Forms.TextBox();
@@ -62,7 +62,8 @@
             this.label12 = new System.Windows.Forms.Label();
             this.txtCurrentName2 = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
-            this.btnConfirmItems = new System.Windows.Forms.Button();
+            this.label8 = new System.Windows.Forms.Label();
+            this.pickedItemsGridView = new System.Windows.Forms.DataGridView();
             this.ResourceID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ResourceType = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ResourceName = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -320,6 +321,7 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.btnGoBack);
             this.tabPage2.Controls.Add(this.btnConfirmItems);
             this.tabPage2.Controls.Add(this.txtShuId2);
             this.tabPage2.Controls.Add(this.txtCurrentEmail2);
@@ -340,38 +342,25 @@
             this.tabPage2.Text = "Chosen Items";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // pickedItemsGridView
+            // btnGoBack
             // 
-            this.pickedItemsGridView.AllowUserToAddRows = false;
-            this.pickedItemsGridView.AllowUserToDeleteRows = false;
-            this.pickedItemsGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.pickedItemsGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ResourceID,
-            this.ResourceType,
-            this.ResourceName,
-            this.MaxLoanPeriod,
-            this.Department,
-            this.SerialNumber,
-            this.DateAdded,
-            this.OrderNumber,
-            this.PurchasePrice,
-            this.Notes});
-            this.pickedItemsGridView.Location = new System.Drawing.Point(110, 326);
-            this.pickedItemsGridView.Name = "pickedItemsGridView";
-            this.pickedItemsGridView.ReadOnly = true;
-            this.pickedItemsGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.pickedItemsGridView.Size = new System.Drawing.Size(1043, 300);
-            this.pickedItemsGridView.TabIndex = 0;
+            this.btnGoBack.Location = new System.Drawing.Point(725, 617);
+            this.btnGoBack.Name = "btnGoBack";
+            this.btnGoBack.Size = new System.Drawing.Size(103, 59);
+            this.btnGoBack.TabIndex = 69;
+            this.btnGoBack.Text = "Back";
+            this.btnGoBack.UseVisualStyleBackColor = true;
+            this.btnGoBack.Click += new System.EventHandler(this.btnGoBack_Click);
             // 
-            // label8
+            // btnConfirmItems
             // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(105, 32);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(368, 25);
-            this.label8.TabIndex = 1;
-            this.label8.Text = "These are your chosen items for loan";
+            this.btnConfirmItems.Location = new System.Drawing.Point(1330, 542);
+            this.btnConfirmItems.Name = "btnConfirmItems";
+            this.btnConfirmItems.Size = new System.Drawing.Size(121, 73);
+            this.btnConfirmItems.TabIndex = 68;
+            this.btnConfirmItems.Text = "Confirm Items";
+            this.btnConfirmItems.UseVisualStyleBackColor = true;
+            this.btnConfirmItems.Click += new System.EventHandler(this.btnConfirmItems_Click);
             // 
             // txtShuId2
             // 
@@ -453,21 +442,44 @@
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(1406, 32);
+            this.label13.Location = new System.Drawing.Point(1165, 22);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(141, 24);
             this.label13.TabIndex = 59;
             this.label13.Text = "Current Student";
             // 
-            // btnConfirmItems
+            // label8
             // 
-            this.btnConfirmItems.Location = new System.Drawing.Point(1330, 542);
-            this.btnConfirmItems.Name = "btnConfirmItems";
-            this.btnConfirmItems.Size = new System.Drawing.Size(121, 73);
-            this.btnConfirmItems.TabIndex = 68;
-            this.btnConfirmItems.Text = "Confirm Items";
-            this.btnConfirmItems.UseVisualStyleBackColor = true;
-            this.btnConfirmItems.Click += new System.EventHandler(this.btnConfirmItems_Click);
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(105, 32);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(368, 25);
+            this.label8.TabIndex = 1;
+            this.label8.Text = "These are your chosen items for loan";
+            // 
+            // pickedItemsGridView
+            // 
+            this.pickedItemsGridView.AllowUserToAddRows = false;
+            this.pickedItemsGridView.AllowUserToDeleteRows = false;
+            this.pickedItemsGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.pickedItemsGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ResourceID,
+            this.ResourceType,
+            this.ResourceName,
+            this.MaxLoanPeriod,
+            this.Department,
+            this.SerialNumber,
+            this.DateAdded,
+            this.OrderNumber,
+            this.PurchasePrice,
+            this.Notes});
+            this.pickedItemsGridView.Location = new System.Drawing.Point(38, 279);
+            this.pickedItemsGridView.Name = "pickedItemsGridView";
+            this.pickedItemsGridView.ReadOnly = true;
+            this.pickedItemsGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.pickedItemsGridView.Size = new System.Drawing.Size(1043, 300);
+            this.pickedItemsGridView.TabIndex = 0;
             // 
             // ResourceID
             // 
@@ -596,5 +608,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn OrderNumber;
         private System.Windows.Forms.DataGridViewTextBoxColumn PurchasePrice;
         private System.Windows.Forms.DataGridViewTextBoxColumn Notes;
+        private System.Windows.Forms.Button btnGoBack;
     }
 }

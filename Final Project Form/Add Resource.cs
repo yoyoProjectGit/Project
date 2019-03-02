@@ -72,9 +72,9 @@ namespace Final_Project_Form
                connection.Open();
 
                 string addUserCommand = "insert into resourcesTable(ResourceType,ResourceName,Quantity,MaxLoanPeriod,OrderNumber," +
-                "PurchasePrice,SerialNumber,Department,Notes,DateAdded) " +
+                "PurchasePrice,SerialNumber,Department,Notes,DateAdded,isOnLoan,AddedBy) " +
                             "values(@ResourceType,@ResourceName,@Quantity,@MaxLoanPeriod,@OrderNumber,@PurchasePrice,@SerialNumber," +
-                            "@Department,@Notes,@DateAdded)";
+                            "@Department,@Notes,@DateAdded,@isOnLoan,@AddedBy)";
                 SqlCommand addCommand = new SqlCommand(addUserCommand, connection);
                 addCommand.Parameters.AddWithValue("@ResourceType", textInfo.ToTitleCase(txtResourceType.Text));
                 addCommand.Parameters.AddWithValue("@ResourceName", textInfo.ToTitleCase(txtResourceName.Text));
@@ -86,6 +86,8 @@ namespace Final_Project_Form
                 addCommand.Parameters.AddWithValue("@Department", textInfo.ToTitleCase(departmentsList.SelectedItem.ToString()));
                 addCommand.Parameters.AddWithValue("@Notes", textInfo.ToTitleCase(txtNotes.Text));
                 addCommand.Parameters.AddWithValue("@DateAdded", dateTime.ToString("yyyy-MM-dd H:mm:ss"));
+                addCommand.Parameters.AddWithValue("@isOnLoan", false);
+                addCommand.Parameters.AddWithValue("@AddedBy", CurrentUser.UserName);
                 addCommand.ExecuteNonQuery();
                    AutoClosingMessageBox.Show("The item: " + txtResourceName.Text + " Quantity: " + txtQuantity.Text + " Max Loan Period: " + txtLoanPeriod.Text 
                        + " Serial No: " + txtSerialNo.Text +" has been successfully added to the inventory", "Add Resource ", 10000);

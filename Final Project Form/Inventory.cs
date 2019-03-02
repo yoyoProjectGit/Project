@@ -39,8 +39,9 @@ namespace Final_Project_Form
                 SqlConnection connection = new SqlConnection(connectionString);
                 connection.Open();
                 SqlCommand command = new SqlCommand("SELECT ResourceID,ResourceType,ResourceName,MaxLoanPeriod,Department," +
-                    "SerialNumber,DateAdded,OrderNumber,PurchasePrice,Notes FROM resourcesTable WHERE Department=@Department", connection);
+                    "SerialNumber,DateAdded,OrderNumber,PurchasePrice,Notes FROM resourcesTable WHERE Department=@Department AND isOnLoan=@isOnLoan", connection);
                 command.Parameters.AddWithValue("@Department", CurrentUser.Department);
+                command.Parameters.AddWithValue("@isOnLoan", false);
                 SqlDataAdapter adapter = new SqlDataAdapter(command);
                 adapter.Fill(dt);
                 inventoryGridView.DataSource = dt;
@@ -100,8 +101,9 @@ namespace Final_Project_Form
             SqlConnection connection = new SqlConnection(connectionString);
             connection.Open();
             SqlCommand command = new SqlCommand("SELECT ResourceID,ResourceType,ResourceName,MaxLoanPeriod,Department," +
-                "SerialNumber,DateAdded,OrderNumber,PurchasePrice,Notes FROM resourcesTable WHERE Department=@Department", connection);
+                "SerialNumber,DateAdded,OrderNumber,PurchasePrice,Notes FROM resourcesTable WHERE Department=@Department AND isOnLoan=@isOnLoan", connection);
             command.Parameters.AddWithValue("@Department", CurrentUser.Department);
+            command.Parameters.AddWithValue("@isOnLoan", false);
             SqlDataAdapter adapter = new SqlDataAdapter(command);
             adapter.Fill(dt);
             inventoryGridView.DataSource = dt;

@@ -31,7 +31,7 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.departmentsList = new System.Windows.Forms.ComboBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtAddedBy = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.txtPurchasePrice = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
@@ -73,7 +73,7 @@
             // 
             this.tabPage1.BackColor = System.Drawing.Color.Transparent;
             this.tabPage1.Controls.Add(this.departmentsList);
-            this.tabPage1.Controls.Add(this.textBox1);
+            this.tabPage1.Controls.Add(this.txtAddedBy);
             this.tabPage1.Controls.Add(this.label6);
             this.tabPage1.Controls.Add(this.txtPurchasePrice);
             this.tabPage1.Controls.Add(this.label11);
@@ -113,14 +113,14 @@
             this.departmentsList.Size = new System.Drawing.Size(217, 21);
             this.departmentsList.TabIndex = 27;
             // 
-            // textBox1
+            // txtAddedBy
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(557, 176);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(217, 31);
-            this.textBox1.TabIndex = 39;
+            this.txtAddedBy.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtAddedBy.Location = new System.Drawing.Point(557, 176);
+            this.txtAddedBy.Name = "txtAddedBy";
+            this.txtAddedBy.ReadOnly = true;
+            this.txtAddedBy.Size = new System.Drawing.Size(217, 31);
+            this.txtAddedBy.TabIndex = 39;
             // 
             // label6
             // 
@@ -390,7 +390,7 @@
         private System.Windows.Forms.TextBox txtOrderNum;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtAddedBy;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.ComboBox departmentsList;
     }

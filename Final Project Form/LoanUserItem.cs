@@ -106,8 +106,10 @@ namespace Final_Project_Form
                 SqlConnection connection = new SqlConnection(connectionString);
                 connection.Open();
                 SqlCommand command = new SqlCommand("SELECT ResourceID,ResourceType,ResourceName,MaxLoanPeriod,Department," +
-                                    "SerialNumber,DateAdded,OrderNumber,PurchasePrice,Notes FROM resourcesTable WHERE Department=@Department", connection);
+                                    "SerialNumber,DateAdded,OrderNumber,PurchasePrice,Notes FROM resourcesTable WHERE Department=@Department " +
+                                    "AND isOnLoan=@isOnLoan", connection);
                 command.Parameters.AddWithValue("@Department", CurrentUser.Department);
+                command.Parameters.AddWithValue("@isOnLoan", false);
                 SqlDataAdapter adapter = new SqlDataAdapter(command);
                 adapter.Fill(dt);
 
@@ -127,14 +129,15 @@ namespace Final_Project_Form
                 DataGridViewCheckBoxColumn dgvCmb = new DataGridViewCheckBoxColumn();
                 dgvCmb.ValueType = typeof(bool);
                 dgvCmb.Name = "Chk";
-                dgvCmb.HeaderText = "Tick";
+                dgvCmb.HeaderText = "Choose";
                 inventoryGridView.Columns.Add(dgvCmb);
                 string connectionString = "Data Source=DESKTOP-BV5T9NA;Initial Catalog=ProjectDB;Integrated Security=True";
                 SqlConnection connection = new SqlConnection(connectionString);
                 connection.Open();
                 SqlCommand command = new SqlCommand("SELECT ResourceID,ResourceType,ResourceName,MaxLoanPeriod,Department," +
-                    "SerialNumber,DateAdded,OrderNumber,PurchasePrice,Notes FROM resourcesTable WHERE Department=@Department", connection);
+                    "SerialNumber,DateAdded,OrderNumber,PurchasePrice,Notes FROM resourcesTable WHERE Department=@Department AND isOnLoan=@isOnLoan", connection);
                 command.Parameters.AddWithValue("@Department", CurrentUser.Department);
+                command.Parameters.AddWithValue("@isOnLoan", false);
                 SqlDataAdapter adapter = new SqlDataAdapter(command);
                 adapter.Fill(dt);
                 inventoryGridView.DataSource = dt;
@@ -191,28 +194,45 @@ namespace Final_Project_Form
                     pickedItemsGridView.Rows[n].Cells[9].Value = item.Cells[10].Value.ToString();
                 }
             }
+            tabControl1.SelectedTab = tabPage2;
         }
 
         private void btnConfirmItems_Click(object sender, EventArgs e)
         {
             foreach(DataGridViewRow row in pickedItemsGridView.Rows)
-            {    
+            {   //string maxprd = row.Cells["MaxLoanPeriod"].Value.ToString();
+                int maxprd = 0;
+                int resourceid = 0;
+                Int32.TryParse(row.Cells["MaxLoanPeriod"].Value.ToString(), out maxprd);
+                Int32.TryParse(row.Cells["ResourceID"].Value.ToString(), out resourceid);
+                //MessageBox.Show(maxprd);
+                var borrower = new currentStudent();
+                borrower.FirstName = txtCurrentName.Text;
+                borrower.Surname = txtCurrentSurname.Text;
+                borrower.ShuId = txtCurrentId.Text;
+                borrower.EmailAddress = txtCurrentEmail.Text;
                 var item = new currentItem();
                 item.ResourceType = row.Cells["ResourceType"].Value.ToString();
                 item.ResourceName = row.Cells["ResourceName"].Value.ToString();
-                item.MaxLoanPeriod = (int)row.Cells["MaxLoanPeriod"].Value;
+                item.MaxLoanPeriod = maxprd;
                 item.Department = row.Cells["Department"].Value.ToString();
-                item.SerialNumber = (long)row.Cells["SerialNumber"].Value;
-                item.DateAdded = row.Cells["DateAdded"].Value.ToString();
-                item.OrderNumber = row.Cells["OrderNumber"].Value.ToString();
-                item.PurchasePrice = (decimal)row.Cells["PurchasePrice"].Value;
-                item.Notes = row.Cells["Notes"].Value.ToString();
-                item.ItemID = (int)row.Cells["ResourceID"].Value;
-                LoanDurations viewInfo = new LoanDurations(item.ResourceType, item.ResourceName, item.MaxLoanPeriod,
-                    item.Department, item.SerialNumber, item.DateAdded, item.OrderNumber,
-                    item.PurchasePrice, item.Notes, item.ItemID);
-                viewInfo.Show();
+                //item.SerialNumber = (long)row.Cells["SerialNumber"].Value;
+                //item.DateAdded = row.Cells["DateAdded"].Value.ToString();
+                //item.OrderNumber = row.Cells["OrderNumber"].Value.ToString();
+                //item.PurchasePrice = (decimal)row.Cells["PurchasePrice"].Value;
+                //item.Notes = row.Cells["Notes"].Value.ToString();
+                item.ItemID = resourceid;
+                LoanDurations loanInfo = new LoanDurations(item.ResourceType, item.ResourceName, item.MaxLoanPeriod,
+                    item.Department,item.ItemID, borrower.FirstName, borrower.Surname, borrower.ShuId, borrower.EmailAddress);
+                loanInfo.Show();
+                
             }
+            this.Close();
+        }
+
+        private void btnGoBack_Click(object sender, EventArgs e)
+        {
+            tabControl1.SelectedTab = tabPage1;
         }
     }
 }

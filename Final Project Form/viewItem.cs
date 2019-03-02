@@ -94,6 +94,7 @@ namespace Final_Project_Form
             resourceType = type;
             txtResourceName.Text = name;
             resourceName = name;
+            txtAddedBy.Text = CurrentUser.UserName;
             departmentsList.SelectedIndex = departmentsList.FindString(dept);
             department = dept;
             txtNotes.Text = notes;
