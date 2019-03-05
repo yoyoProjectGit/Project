@@ -49,6 +49,8 @@
             this.txtFirstName = new System.Windows.Forms.TextBox();
             this.txtShuId = new System.Windows.Forms.TextBox();
             this.txtDepartment = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.txtLoanID = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // txtNotes
@@ -255,11 +257,31 @@
             this.txtDepartment.Size = new System.Drawing.Size(217, 31);
             this.txtDepartment.TabIndex = 68;
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(493, 397);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(79, 24);
+            this.label6.TabIndex = 69;
+            this.label6.Text = "Loan ID:";
+            // 
+            // txtLoanID
+            // 
+            this.txtLoanID.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtLoanID.Location = new System.Drawing.Point(655, 394);
+            this.txtLoanID.Name = "txtLoanID";
+            this.txtLoanID.Size = new System.Drawing.Size(217, 31);
+            this.txtLoanID.TabIndex = 70;
+            // 
             // LoanDurations
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(993, 640);
+            this.Controls.Add(this.txtLoanID);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.txtDepartment);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.txtEmail);
@@ -310,5 +332,7 @@
         private System.Windows.Forms.TextBox txtFirstName;
         private System.Windows.Forms.TextBox txtShuId;
         private System.Windows.Forms.TextBox txtDepartment;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox txtLoanID;
     }
 }

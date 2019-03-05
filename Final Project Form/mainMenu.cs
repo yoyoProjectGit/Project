@@ -215,5 +215,24 @@ namespace Final_Project_Form
             lblName.Text = ("Welcome " +CurrentUser.UserName);
             lblDepartment.Text = ("Department: " + CurrentUser.Department);
         }
+
+        private void btnReturnItem_Click(object sender, EventArgs e)
+        {
+            bool isOpen = false;
+            foreach (Form f in Application.OpenForms)
+            {
+                if (f.Text == "ItemReturns")
+                {
+                    isOpen = true;
+                    f.BringToFront();
+                    break;
+                }
+            }
+            if (isOpen == false)
+            {
+                ItemReturns returnItem = new ItemReturns();
+                returnItem.Show();
+            }
+        }
     }
 }

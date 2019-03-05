@@ -99,6 +99,12 @@
     <Compile Include="Inventory.Designer.cs">
       <DependentUpon>Inventory.cs</DependentUpon>
     </Compile>
+    <Compile Include="ItemReturns.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ItemReturns.Designer.cs">
+      <DependentUpon>ItemReturns.cs</DependentUpon>
+    </Compile>
     <Compile Include="ItemsOnLoan.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -178,6 +184,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Inventory.resx">
       <DependentUpon>Inventory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ItemReturns.resx">
+      <DependentUpon>ItemReturns.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ItemsOnLoan.resx">
       <DependentUpon>ItemsOnLoan.cs</DependentUpon>

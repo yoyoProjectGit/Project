@@ -39,6 +39,8 @@
             this.btnLoanItem = new System.Windows.Forms.Button();
             this.lblName = new System.Windows.Forms.Label();
             this.lblDepartment = new System.Windows.Forms.Label();
+            this.btnReturnItem = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnAddUser
@@ -123,7 +125,7 @@
             // 
             // btnLoanItem
             // 
-            this.btnLoanItem.Location = new System.Drawing.Point(487, 384);
+            this.btnLoanItem.Location = new System.Drawing.Point(432, 317);
             this.btnLoanItem.Name = "btnLoanItem";
             this.btnLoanItem.Size = new System.Drawing.Size(102, 66);
             this.btnLoanItem.TabIndex = 9;
@@ -150,11 +152,32 @@
             this.lblDepartment.Size = new System.Drawing.Size(0, 25);
             this.lblDepartment.TabIndex = 11;
             // 
+            // btnReturnItem
+            // 
+            this.btnReturnItem.Location = new System.Drawing.Point(432, 405);
+            this.btnReturnItem.Name = "btnReturnItem";
+            this.btnReturnItem.Size = new System.Drawing.Size(102, 66);
+            this.btnReturnItem.TabIndex = 12;
+            this.btnReturnItem.Text = "Item Returns";
+            this.btnReturnItem.UseVisualStyleBackColor = true;
+            this.btnReturnItem.Click += new System.EventHandler(this.btnReturnItem_Click);
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(448, 554);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(86, 53);
+            this.button2.TabIndex = 13;
+            this.button2.Text = "Add New Resource";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
             // mainMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1012, 717);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.btnReturnItem);
             this.Controls.Add(this.lblDepartment);
             this.Controls.Add(this.lblName);
             this.Controls.Add(this.btnLoanItem);
@@ -188,5 +211,7 @@
         private System.Windows.Forms.Button btnLoanItem;
         private System.Windows.Forms.Label lblName;
         private System.Windows.Forms.Label lblDepartment;
+        private System.Windows.Forms.Button btnReturnItem;
+        private System.Windows.Forms.Button button2;
     }
 }
