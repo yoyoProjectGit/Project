@@ -35,6 +35,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtStudentID = new System.Windows.Forms.TextBox();
             this.btnBack = new System.Windows.Forms.Button();
+            this.btncheckSHUid = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -57,7 +58,7 @@
             // 
             // btnReturnItem
             // 
-            this.btnReturnItem.Location = new System.Drawing.Point(346, 184);
+            this.btnReturnItem.Location = new System.Drawing.Point(374, 184);
             this.btnReturnItem.Name = "btnReturnItem";
             this.btnReturnItem.Size = new System.Drawing.Size(75, 60);
             this.btnReturnItem.TabIndex = 3;
@@ -103,11 +104,22 @@
             this.btnBack.UseVisualStyleBackColor = true;
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
+            // btncheckSHUid
+            // 
+            this.btncheckSHUid.Location = new System.Drawing.Point(207, 184);
+            this.btncheckSHUid.Name = "btncheckSHUid";
+            this.btncheckSHUid.Size = new System.Drawing.Size(75, 60);
+            this.btncheckSHUid.TabIndex = 11;
+            this.btncheckSHUid.Text = "Check StudentID";
+            this.btncheckSHUid.UseVisualStyleBackColor = true;
+            this.btncheckSHUid.Click += new System.EventHandler(this.btncheckSHUid_Click);
+            // 
             // ItemReturns
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(482, 290);
+            this.Controls.Add(this.btncheckSHUid);
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.txtStudentID);
             this.Controls.Add(this.label2);
@@ -131,5 +143,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtStudentID;
         private System.Windows.Forms.Button btnBack;
+        private System.Windows.Forms.Button btncheckSHUid;
     }
 }

@@ -1,6 +1,6 @@
 ﻿namespace Final_Project_Form
 {
-    partial class viewItem
+    partial class viewLoanedItem
     {
         /// <summary>
         /// Required designer variable.
@@ -28,9 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.departmentsList = new System.Windows.Forms.ComboBox();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.btnGoBack = new System.Windows.Forms.Button();
+            this.label12 = new System.Windows.Forms.Label();
+            this.itemHistoryGridView = new System.Windows.Forms.DataGridView();
             this.txtAddedBy = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.txtPurchasePrice = new System.Windows.Forms.TextBox();
@@ -51,65 +52,59 @@
             this.txtMaxLoanPeriod = new System.Windows.Forms.TextBox();
             this.txtResourceName = new System.Windows.Forms.TextBox();
             this.txtResourceType = new System.Windows.Forms.TextBox();
-            this.btnUpdate = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.tabControl1.SuspendLayout();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.txtDepartment = new System.Windows.Forms.TextBox();
+            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.itemHistoryGridView)).BeginInit();
             this.tabPage1.SuspendLayout();
+            this.tabControl1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // tabControl1
+            // tabPage2
             // 
-            this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Location = new System.Drawing.Point(0, 0);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(801, 450);
-            this.tabControl1.TabIndex = 1;
+            this.tabPage2.Controls.Add(this.btnGoBack);
+            this.tabPage2.Controls.Add(this.label12);
+            this.tabPage2.Controls.Add(this.itemHistoryGridView);
+            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(793, 424);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "View Item History";
+            this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // tabPage1
+            // btnGoBack
             // 
-            this.tabPage1.BackColor = System.Drawing.Color.Transparent;
-            this.tabPage1.Controls.Add(this.departmentsList);
-            this.tabPage1.Controls.Add(this.txtAddedBy);
-            this.tabPage1.Controls.Add(this.label6);
-            this.tabPage1.Controls.Add(this.txtPurchasePrice);
-            this.tabPage1.Controls.Add(this.label11);
-            this.tabPage1.Controls.Add(this.txtOrderNum);
-            this.tabPage1.Controls.Add(this.label10);
-            this.tabPage1.Controls.Add(this.label9);
-            this.tabPage1.Controls.Add(this.txtDateAdded);
-            this.tabPage1.Controls.Add(this.txtNotes);
-            this.tabPage1.Controls.Add(this.label8);
-            this.tabPage1.Controls.Add(this.btnBack);
-            this.tabPage1.Controls.Add(this.label5);
-            this.tabPage1.Controls.Add(this.txtSerialNo);
-            this.tabPage1.Controls.Add(this.label4);
-            this.tabPage1.Controls.Add(this.label3);
-            this.tabPage1.Controls.Add(this.label2);
-            this.tabPage1.Controls.Add(this.label7);
-            this.tabPage1.Controls.Add(this.txtMaxLoanPeriod);
-            this.tabPage1.Controls.Add(this.txtResourceName);
-            this.tabPage1.Controls.Add(this.txtResourceType);
-            this.tabPage1.Controls.Add(this.btnUpdate);
-            this.tabPage1.Controls.Add(this.label1);
-            this.tabPage1.Location = new System.Drawing.Point(4, 22);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(793, 424);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "View Details";
-            this.tabPage1.UseVisualStyleBackColor = true;
+            this.btnGoBack.Location = new System.Drawing.Point(639, 24);
+            this.btnGoBack.Name = "btnGoBack";
+            this.btnGoBack.Size = new System.Drawing.Size(90, 36);
+            this.btnGoBack.TabIndex = 29;
+            this.btnGoBack.Text = "Back";
+            this.btnGoBack.UseVisualStyleBackColor = true;
+            this.btnGoBack.Click += new System.EventHandler(this.btnGoBack_Click);
             // 
-            // departmentsList
+            // label12
             // 
-            this.departmentsList.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.departmentsList.FormattingEnabled = true;
-            this.departmentsList.Location = new System.Drawing.Point(188, 245);
-            this.departmentsList.Name = "departmentsList";
-            this.departmentsList.Size = new System.Drawing.Size(217, 21);
-            this.departmentsList.TabIndex = 27;
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(19, 24);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(119, 25);
+            this.label12.TabIndex = 1;
+            this.label12.Text = "Item Hisory";
+            // 
+            // itemHistoryGridView
+            // 
+            this.itemHistoryGridView.AllowUserToAddRows = false;
+            this.itemHistoryGridView.AllowUserToDeleteRows = false;
+            this.itemHistoryGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.itemHistoryGridView.Location = new System.Drawing.Point(8, 97);
+            this.itemHistoryGridView.Name = "itemHistoryGridView";
+            this.itemHistoryGridView.ReadOnly = true;
+            this.itemHistoryGridView.Size = new System.Drawing.Size(779, 321);
+            this.itemHistoryGridView.TabIndex = 0;
             // 
             // txtAddedBy
             // 
@@ -304,17 +299,6 @@
             this.txtResourceType.Size = new System.Drawing.Size(217, 31);
             this.txtResourceType.TabIndex = 16;
             // 
-            // btnUpdate
-            // 
-            this.btnUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUpdate.Location = new System.Drawing.Point(646, 27);
-            this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(91, 33);
-            this.btnUpdate.TabIndex = 2;
-            this.btnUpdate.Text = "Update";
-            this.btnUpdate.UseVisualStyleBackColor = true;
-            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -325,36 +309,88 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Item Details";
             // 
-            // tabPage2
+            // tabPage1
             // 
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(793, 424);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "View Item History";
-            this.tabPage2.UseVisualStyleBackColor = true;
+            this.tabPage1.BackColor = System.Drawing.Color.Transparent;
+            this.tabPage1.Controls.Add(this.txtDepartment);
+            this.tabPage1.Controls.Add(this.txtAddedBy);
+            this.tabPage1.Controls.Add(this.label6);
+            this.tabPage1.Controls.Add(this.txtPurchasePrice);
+            this.tabPage1.Controls.Add(this.label11);
+            this.tabPage1.Controls.Add(this.txtOrderNum);
+            this.tabPage1.Controls.Add(this.label10);
+            this.tabPage1.Controls.Add(this.label9);
+            this.tabPage1.Controls.Add(this.txtDateAdded);
+            this.tabPage1.Controls.Add(this.txtNotes);
+            this.tabPage1.Controls.Add(this.label8);
+            this.tabPage1.Controls.Add(this.btnBack);
+            this.tabPage1.Controls.Add(this.label5);
+            this.tabPage1.Controls.Add(this.txtSerialNo);
+            this.tabPage1.Controls.Add(this.label4);
+            this.tabPage1.Controls.Add(this.label3);
+            this.tabPage1.Controls.Add(this.label2);
+            this.tabPage1.Controls.Add(this.label7);
+            this.tabPage1.Controls.Add(this.txtMaxLoanPeriod);
+            this.tabPage1.Controls.Add(this.txtResourceName);
+            this.tabPage1.Controls.Add(this.txtResourceType);
+            this.tabPage1.Controls.Add(this.label1);
+            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(793, 424);
+            this.tabPage1.TabIndex = 0;
+            this.tabPage1.Text = "View Details";
+            this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // viewItem
+            // txtDepartment
+            // 
+            this.txtDepartment.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDepartment.Location = new System.Drawing.Point(188, 238);
+            this.txtDepartment.Name = "txtDepartment";
+            this.txtDepartment.ReadOnly = true;
+            this.txtDepartment.Size = new System.Drawing.Size(217, 31);
+            this.txtDepartment.TabIndex = 40;
+            // 
+            // tabControl1
+            // 
+            this.tabControl1.Controls.Add(this.tabPage1);
+            this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Location = new System.Drawing.Point(0, 0);
+            this.tabControl1.Name = "tabControl1";
+            this.tabControl1.SelectedIndex = 0;
+            this.tabControl1.Size = new System.Drawing.Size(801, 450);
+            this.tabControl1.TabIndex = 2;
+            // 
+            // viewLoanedItem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.tabControl1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Name = "viewItem";
-            this.Text = "viewItem";
-            this.tabControl1.ResumeLayout(false);
+            this.Name = "viewLoanedItem";
+            this.Text = "viewLoanedItem";
+            this.Load += new System.EventHandler(this.viewLoanedItem_Load);
+            this.tabPage2.ResumeLayout(false);
+            this.tabPage2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.itemHistoryGridView)).EndInit();
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
+            this.tabControl1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.TabControl tabControl1;
-        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.TextBox txtAddedBy;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox txtPurchasePrice;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.TextBox txtOrderNum;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.TextBox txtDateAdded;
         private System.Windows.Forms.TextBox txtNotes;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button btnBack;
@@ -367,17 +403,12 @@
         private System.Windows.Forms.TextBox txtMaxLoanPeriod;
         private System.Windows.Forms.TextBox txtResourceName;
         private System.Windows.Forms.TextBox txtResourceType;
-        private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.TextBox txtDateAdded;
-        private System.Windows.Forms.TextBox txtPurchasePrice;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox txtOrderNum;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox txtAddedBy;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.ComboBox departmentsList;
+        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.TextBox txtDepartment;
+        private System.Windows.Forms.DataGridView itemHistoryGridView;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Button btnGoBack;
     }
 }

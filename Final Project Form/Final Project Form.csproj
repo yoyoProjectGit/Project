@@ -158,11 +158,23 @@
     <Compile Include="AddUser.Designer.cs">
       <DependentUpon>AddUser.cs</DependentUpon>
     </Compile>
+    <Compile Include="ReturnUserItem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReturnUserItem.Designer.cs">
+      <DependentUpon>ReturnUserItem.cs</DependentUpon>
+    </Compile>
     <Compile Include="viewItem.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="viewItem.Designer.cs">
       <DependentUpon>viewItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="viewLoanedItem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="viewLoanedItem.Designer.cs">
+      <DependentUpon>viewLoanedItem.cs</DependentUpon>
     </Compile>
     <Compile Include="viewStudentInfo.cs">
       <SubType>Form</SubType>
@@ -172,18 +184,23 @@
     </Compile>
     <EmbeddedResource Include="Add Resource.resx">
       <DependentUpon>Add Resource.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="EmailHandler.resx">
       <DependentUpon>EmailHandler.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="findUserEmail.resx">
       <DependentUpon>findUserEmail.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="FindUserForLoan.resx">
       <DependentUpon>FindUserForLoan.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Inventory.resx">
       <DependentUpon>Inventory.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="ItemReturns.resx">
       <DependentUpon>ItemReturns.cs</DependentUpon>
@@ -217,12 +234,20 @@
     </Compile>
     <EmbeddedResource Include="findUser.resx">
       <DependentUpon>findUser.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="AddUser.resx">
       <DependentUpon>AddUser.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReturnUserItem.resx">
+      <DependentUpon>ReturnUserItem.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="viewItem.resx">
       <DependentUpon>viewItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="viewLoanedItem.resx">
+      <DependentUpon>viewLoanedItem.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="viewStudentInfo.resx">
       <DependentUpon>viewStudentInfo.cs</DependentUpon>

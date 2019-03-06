@@ -133,11 +133,12 @@ namespace Final_Project_Form
                         {
                             resourceID  = getLoanInfo["ResourceID"].ToString();
                             LoanID = getLoanInfo["LoanID"].ToString();
-                            resourceName = getLoanInfo["resourceName"].ToString();
                             resourceType = getLoanInfo["resourceType"].ToString();
+                            resourceName = getLoanInfo["resourceName"].ToString();
                             LoanedBy = getLoanInfo["LoanedBy"].ToString();
                             LoanerID = getLoanInfo["LoanerID"].ToString();
                             BorrowerID = getLoanInfo["BorrowerID"].ToString();
+                            BorrowerName = getLoanInfo["BorrowerName"].ToString();
                             BorrowerSurname = getLoanInfo["BorrowerSurname"].ToString();
                             BorrowerEmail = getLoanInfo["BorrowerEmail"].ToString();
                             Notes = getLoanInfo["Notes"].ToString();
@@ -145,7 +146,6 @@ namespace Final_Project_Form
                             LoanNumber = getLoanInfo["LoanNumber"].ToString();
                             LoanDuration = getLoanInfo["LoanDuration"].ToString();
                             Department = getLoanInfo["Department"].ToString();
-                            BorrowerName = getLoanInfo["BorrowerName"].ToString();
                         }
                         connection.Close();
                     }
@@ -176,6 +176,59 @@ namespace Final_Project_Form
                 this.Close();
             }
             catch(Exception ex)
+            {
+                MessageBox.Show("ERROR: " + ex.Message);
+            }
+        }
+
+        private void btncheckSHUid_Click(object sender, EventArgs e)
+        {
+            if(txtStudentID.Text == "")
+            {
+                MessageBox.Show("Please Enter A Valid Student ID");
+            }
+            else
+            {
+                checkIfBNoExists();
+            }
+
+        }
+        private void checkIfBNoExists()
+        {
+            try
+            {
+                string connectionString = "Data Source=DESKTOP-BV5T9NA;Initial Catalog=ProjectDB;Integrated Security=True";
+                SqlConnection connection = new SqlConnection(connectionString);
+                connection.Open();
+                SqlCommand checkId = new SqlCommand("SELECT COUNT(*) FROM students WHERE ShuId like @ShuId", connection);
+                checkId.Parameters.AddWithValue("@ShuId", txtStudentID.Text);
+                int checker = (int)checkId.ExecuteScalar();
+                if (checker > 0)
+                {
+                    SqlCommand command = new SqlCommand("SELECT * FROM Loans WHERE BorrowerID like @ShuId", connection);
+                    command.Parameters.AddWithValue("@ShuId", txtStudentID.Text);
+                    using (SqlDataReader getLoanInfo = command.ExecuteReader())
+                    {
+                        while (getLoanInfo.Read())
+                        {
+                            BorrowerID = getLoanInfo["BorrowerID"].ToString();
+                            BorrowerSurname = getLoanInfo["BorrowerSurname"].ToString();
+                            BorrowerEmail = getLoanInfo["BorrowerEmail"].ToString();
+                            BorrowerName = getLoanInfo["BorrowerName"].ToString();
+                        }
+                        connection.Close();
+                    }
+                    command.Parameters.AddWithValue("@ShuId", txtStudentID.Text);
+                    ReturnUserItem returnItem = new ReturnUserItem(BorrowerID,BorrowerName,BorrowerSurname,BorrowerEmail);
+                    returnItem.Show();
+                }
+                else
+                {
+                    MessageBox.Show("This student ID does not exist");
+                    connection.Close();
+                }
+            }
+            catch (Exception ex)
             {
                 MessageBox.Show("ERROR: " + ex.Message);
             }

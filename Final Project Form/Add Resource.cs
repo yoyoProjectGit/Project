@@ -85,7 +85,7 @@ namespace Final_Project_Form
                 addCommand.Parameters.AddWithValue("@SerialNumber", textInfo.ToTitleCase(txtSerialNo.Text));
                 addCommand.Parameters.AddWithValue("@Department", textInfo.ToTitleCase(departmentsList.SelectedItem.ToString()));
                 addCommand.Parameters.AddWithValue("@Notes", textInfo.ToTitleCase(txtNotes.Text));
-                addCommand.Parameters.AddWithValue("@DateAdded", dateTime.ToString("yyyy-MM-dd H:mm:ss"));
+                addCommand.Parameters.AddWithValue("@DateAdded", dateTime.ToString("yyyy-dd-MM H:mm:ss"));
                 addCommand.Parameters.AddWithValue("@isOnLoan", false);
                 addCommand.Parameters.AddWithValue("@AddedBy", CurrentUser.UserName);
                 addCommand.ExecuteNonQuery();

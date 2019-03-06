@@ -51,11 +51,6 @@ namespace Final_Project_Form
                     student.EmailAddress);
                 loanItem.Show();
             }
-            else
-            {
-                int columnIndex = e.ColumnIndex;
-                MessageBox.Show("You have clicked column index " + columnIndex);
-            }
         }
 
         private void btnRefresh_Click(object sender, EventArgs e)

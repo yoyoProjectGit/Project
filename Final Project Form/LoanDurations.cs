@@ -31,8 +31,6 @@ namespace Final_Project_Form
             txtEmail.Text = email;
             maxLoanPeriod = loanprd;
             ResourceID = ID;
-
-
         }
 
         private void btnBack_Click(object sender, EventArgs e)
@@ -91,7 +89,6 @@ namespace Final_Project_Form
             } 
             else
             {
-
                 connection.Close();
                 try
                 {
@@ -107,7 +104,7 @@ namespace Final_Project_Form
                     addCommand.Parameters.AddWithValue("@ResourceID", ResourceID);
                     addCommand.Parameters.AddWithValue("@ResourceType", textInfo.ToTitleCase(txtResourceType.Text));
                     addCommand.Parameters.AddWithValue("@ResourceName", textInfo.ToTitleCase(txtResourceName.Text));
-                    addCommand.Parameters.AddWithValue("@DateLoaned", todaysDate.ToString("yyyy-MM-dd H:mm:ss"));
+                    addCommand.Parameters.AddWithValue("@DateLoaned", todaysDate.ToString("yyyy-dd-MM H:mm:ss"));
                     addCommand.Parameters.AddWithValue("@LoanDuration", loanPeriod);
                     addCommand.Parameters.AddWithValue("@Department", textInfo.ToTitleCase(txtDepartment.Text));
                     addCommand.Parameters.AddWithValue("@BorrowerName", textInfo.ToTitleCase(txtFirstName.Text));
@@ -117,7 +114,7 @@ namespace Final_Project_Form
                     addCommand.Parameters.AddWithValue("@Notes", txtNotes.Text);
                     addCommand.Parameters.AddWithValue("@LoanedBy", CurrentUser.UserName);
                     addCommand.Parameters.AddWithValue("@LoanNumber", txtLoanID.Text);
-                    addCommand.Parameters.AddWithValue("@LoanerID", txtShuId.Text);
+                    addCommand.Parameters.AddWithValue("@LoanerID", CurrentUser.UserID);
                     addCommand.ExecuteNonQuery();
                     AutoClosingMessageBox.Show("The item: " + txtResourceName.Text + " Has been successfully loaned to: " + txtFirstName.Text +
                         " For a total of: " + loanPeriod + " Days", "Loan Item ", 5000);
