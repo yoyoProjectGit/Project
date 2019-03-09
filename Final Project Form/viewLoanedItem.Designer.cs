@@ -77,7 +77,7 @@
             // 
             // btnGoBack
             // 
-            this.btnGoBack.Location = new System.Drawing.Point(639, 24);
+            this.btnGoBack.Location = new System.Drawing.Point(652, 39);
             this.btnGoBack.Name = "btnGoBack";
             this.btnGoBack.Size = new System.Drawing.Size(90, 36);
             this.btnGoBack.TabIndex = 29;

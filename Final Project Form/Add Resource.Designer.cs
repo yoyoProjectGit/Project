@@ -128,7 +128,7 @@
             this.txtResourceName.Location = new System.Drawing.Point(193, 121);
             this.txtResourceName.Name = "txtResourceName";
             this.txtResourceName.Size = new System.Drawing.Size(217, 31);
-            this.txtResourceName.TabIndex = 11;
+            this.txtResourceName.TabIndex = 1;
             // 
             // txtQuantity
             // 
@@ -136,7 +136,7 @@
             this.txtQuantity.Location = new System.Drawing.Point(193, 158);
             this.txtQuantity.Name = "txtQuantity";
             this.txtQuantity.Size = new System.Drawing.Size(58, 31);
-            this.txtQuantity.TabIndex = 12;
+            this.txtQuantity.TabIndex = 2;
             // 
             // txtLoanPeriod
             // 
@@ -144,7 +144,7 @@
             this.txtLoanPeriod.Location = new System.Drawing.Point(193, 196);
             this.txtLoanPeriod.Name = "txtLoanPeriod";
             this.txtLoanPeriod.Size = new System.Drawing.Size(217, 31);
-            this.txtLoanPeriod.TabIndex = 13;
+            this.txtLoanPeriod.TabIndex = 3;
             // 
             // txtSerialNo
             // 
@@ -152,7 +152,7 @@
             this.txtSerialNo.Location = new System.Drawing.Point(616, 161);
             this.txtSerialNo.Name = "txtSerialNo";
             this.txtSerialNo.Size = new System.Drawing.Size(217, 31);
-            this.txtSerialNo.TabIndex = 14;
+            this.txtSerialNo.TabIndex = 7;
             // 
             // txtNotes
             // 
@@ -162,7 +162,7 @@
             this.txtNotes.Name = "txtNotes";
             this.txtNotes.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.txtNotes.Size = new System.Drawing.Size(217, 114);
-            this.txtNotes.TabIndex = 16;
+            this.txtNotes.TabIndex = 4;
             // 
             // btnAddResource
             // 
@@ -220,7 +220,7 @@
             this.txtOrderNo.Location = new System.Drawing.Point(616, 76);
             this.txtOrderNo.Name = "txtOrderNo";
             this.txtOrderNo.Size = new System.Drawing.Size(217, 31);
-            this.txtOrderNo.TabIndex = 23;
+            this.txtOrderNo.TabIndex = 5;
             // 
             // txtPurchasePrice
             // 
@@ -228,7 +228,7 @@
             this.txtPurchasePrice.Location = new System.Drawing.Point(616, 119);
             this.txtPurchasePrice.Name = "txtPurchasePrice";
             this.txtPurchasePrice.Size = new System.Drawing.Size(217, 31);
-            this.txtPurchasePrice.TabIndex = 24;
+            this.txtPurchasePrice.TabIndex = 6;
             // 
             // departmentsList
             // 
@@ -237,7 +237,7 @@
             this.departmentsList.Location = new System.Drawing.Point(616, 205);
             this.departmentsList.Name = "departmentsList";
             this.departmentsList.Size = new System.Drawing.Size(217, 21);
-            this.departmentsList.TabIndex = 25;
+            this.departmentsList.TabIndex = 8;
             // 
             // label8
             // 
@@ -255,7 +255,7 @@
             this.txtResourceType.Location = new System.Drawing.Point(193, 76);
             this.txtResourceType.Name = "txtResourceType";
             this.txtResourceType.Size = new System.Drawing.Size(217, 31);
-            this.txtResourceType.TabIndex = 10;
+            this.txtResourceType.TabIndex = 0;
             // 
             // Add_Resource
             // 

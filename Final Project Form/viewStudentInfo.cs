@@ -15,6 +15,21 @@ namespace Final_Project_Form
     public partial class viewStudentInfo : Form
     {
         string shuId,firstname, surName, courseDept, emailAddress,finishDate, prevName;
+        DataTable dt = new DataTable("User Loans");
+        private void viewStudentInfo_Load(object sender, EventArgs e)
+        {
+            string connectionString = "Data Source=DESKTOP-BV5T9NA;Initial Catalog=ProjectDB;Integrated Security=True";
+            SqlConnection connection = new SqlConnection(connectionString);
+            connection.Open();
+            SqlCommand command = new SqlCommand("SELECT ResourceType, ResourceName, LoanNumber, DateLoaned, DueDate, BorrowerName, LoanedBy" +
+                " FROM Loans WHERE BorrowerID=@ShuId", connection);
+            command.Parameters.AddWithValue("@ShuId", txtShuId.Text);
+            SqlDataAdapter adapter = new SqlDataAdapter(command);
+            adapter.Fill(dt);
+            LoanedItemsGridView.DataSource = dt;
+            connection.Close();
+        }
+
         TextInfo textInfo = new CultureInfo("en-US", false).TextInfo;
         public viewStudentInfo(string id, string name, string surname, string coursedept, string email, string datecreated, string finishdate)
         {

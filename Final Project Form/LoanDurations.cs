@@ -17,7 +17,6 @@ namespace Final_Project_Form
     {
         int maxLoanPeriod = 0;
         int ResourceID;
-        DateTime todaysDate = DateTime.Now;
         public LoanDurations(string type, string name, int loanprd, string dept, int ID, string firstname, 
             string surname, string shuid, string email)
         {
@@ -92,14 +91,15 @@ namespace Final_Project_Form
                 connection.Close();
                 try
                 {
+                    DateTime todaysDate = DateTime.Now;
                     int loanPeriod = Convert.ToInt32(this.txtLoanPeriod.Text);
                     DateTime returnDate = todaysDate.AddDays(loanPeriod);
                     TextInfo textInfo = new CultureInfo("en-US", false).TextInfo;
                     connection.Open();
                     string addUserCommand = "insert into Loans(ResourceID,ResourceType,ResourceName,DateLoaned," +
-                    "LoanDuration,Department,BorrowerName,BorrowerID,BorrowerSurname,BorrowerEmail,Notes,LoanedBy,LoanNumber,LoanerID) " +
+                    "LoanDuration,Department,BorrowerName,BorrowerID,BorrowerSurname,BorrowerEmail,Notes,LoanedBy,LoanNumber,LoanerID, DueDate) " +
                                 "values(@ResourceID,@ResourceType,@ResourceName,@DateLoaned,@LoanDuration,@Department,@BorrowerName," +
-                                "@BorrowerID,@BorrowerSurname,@BorrowerEmail,@Notes,@LoanedBy,@LoanNumber,@LoanerID)";
+                                "@BorrowerID,@BorrowerSurname,@BorrowerEmail,@Notes,@LoanedBy,@LoanNumber,@LoanerID,@DueDate)";
                     SqlCommand addCommand = new SqlCommand(addUserCommand, connection);
                     addCommand.Parameters.AddWithValue("@ResourceID", ResourceID);
                     addCommand.Parameters.AddWithValue("@ResourceType", textInfo.ToTitleCase(txtResourceType.Text));
@@ -115,6 +115,7 @@ namespace Final_Project_Form
                     addCommand.Parameters.AddWithValue("@LoanedBy", CurrentUser.UserName);
                     addCommand.Parameters.AddWithValue("@LoanNumber", txtLoanID.Text);
                     addCommand.Parameters.AddWithValue("@LoanerID", CurrentUser.UserID);
+                    addCommand.Parameters.AddWithValue("@DueDate", returnDate.ToString("yyyy-dd-MM H:mm:ss"));
                     addCommand.ExecuteNonQuery();
                     AutoClosingMessageBox.Show("The item: " + txtResourceName.Text + " Has been successfully loaned to: " + txtFirstName.Text +
                         " For a total of: " + loanPeriod + " Days", "Loan Item ", 5000);

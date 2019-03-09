@@ -58,9 +58,11 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.inventoryGridView = new System.Windows.Forms.DataGridView();
-            this.pickedItemsGridView = new System.Windows.Forms.DataGridView();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.label14 = new System.Windows.Forms.Label();
+            this.txtExtend = new System.Windows.Forms.TextBox();
             this.btnExtendLoan = new System.Windows.Forms.Button();
+            this.pickedItemsGridView = new System.Windows.Forms.DataGridView();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.LoanID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ResourceID = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -70,6 +72,7 @@
             this.LoanerID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DateLoaned = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.LoanDuration = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DueDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.LoanNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Department = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.BorrowerName = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -79,8 +82,8 @@
             this.Notes = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.inventoryGridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pickedItemsGridView)).BeginInit();
             this.tabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pickedItemsGridView)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -395,36 +398,10 @@
             this.inventoryGridView.TabIndex = 39;
             this.inventoryGridView.MouseClick += new System.Windows.Forms.MouseEventHandler(this.inventoryGridView_MouseClick);
             // 
-            // pickedItemsGridView
-            // 
-            this.pickedItemsGridView.AllowUserToAddRows = false;
-            this.pickedItemsGridView.AllowUserToDeleteRows = false;
-            this.pickedItemsGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.pickedItemsGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.LoanID,
-            this.ResourceID,
-            this.ResourceType,
-            this.ResourceName,
-            this.LoanedBy,
-            this.LoanerID,
-            this.DateLoaned,
-            this.LoanDuration,
-            this.LoanNumber,
-            this.Department,
-            this.BorrowerName,
-            this.BorrowerID,
-            this.BorrowerSurname,
-            this.BorrowerEmail,
-            this.Notes});
-            this.pickedItemsGridView.Location = new System.Drawing.Point(38, 279);
-            this.pickedItemsGridView.Name = "pickedItemsGridView";
-            this.pickedItemsGridView.ReadOnly = true;
-            this.pickedItemsGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.pickedItemsGridView.Size = new System.Drawing.Size(1043, 300);
-            this.pickedItemsGridView.TabIndex = 0;
-            // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.label14);
+            this.tabPage2.Controls.Add(this.txtExtend);
             this.tabPage2.Controls.Add(this.btnExtendLoan);
             this.tabPage2.Controls.Add(this.btnGoBack);
             this.tabPage2.Controls.Add(this.btnReturnItems);
@@ -447,6 +424,26 @@
             this.tabPage2.Text = "Chosen Items";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(1201, 413);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(61, 25);
+            this.label14.TabIndex = 72;
+            this.label14.Text = "Days";
+            // 
+            // txtExtend
+            // 
+            this.txtExtend.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtExtend.Location = new System.Drawing.Point(1206, 451);
+            this.txtExtend.Name = "txtExtend";
+            this.txtExtend.Size = new System.Drawing.Size(100, 31);
+            this.txtExtend.TabIndex = 71;
+            this.txtExtend.TextChanged += new System.EventHandler(this.txtExtend_TextChanged);
+            this.txtExtend.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtExtend_KeyPress);
+            // 
             // btnExtendLoan
             // 
             this.btnExtendLoan.Location = new System.Drawing.Point(1330, 433);
@@ -455,6 +452,36 @@
             this.btnExtendLoan.TabIndex = 70;
             this.btnExtendLoan.Text = "Extend Loan";
             this.btnExtendLoan.UseVisualStyleBackColor = true;
+            this.btnExtendLoan.Click += new System.EventHandler(this.btnExtendLoan_Click);
+            // 
+            // pickedItemsGridView
+            // 
+            this.pickedItemsGridView.AllowUserToAddRows = false;
+            this.pickedItemsGridView.AllowUserToDeleteRows = false;
+            this.pickedItemsGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.pickedItemsGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.LoanID,
+            this.ResourceID,
+            this.ResourceType,
+            this.ResourceName,
+            this.LoanedBy,
+            this.LoanerID,
+            this.DateLoaned,
+            this.LoanDuration,
+            this.DueDate,
+            this.LoanNumber,
+            this.Department,
+            this.BorrowerName,
+            this.BorrowerID,
+            this.BorrowerSurname,
+            this.BorrowerEmail,
+            this.Notes});
+            this.pickedItemsGridView.Location = new System.Drawing.Point(38, 279);
+            this.pickedItemsGridView.Name = "pickedItemsGridView";
+            this.pickedItemsGridView.ReadOnly = true;
+            this.pickedItemsGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.pickedItemsGridView.Size = new System.Drawing.Size(1043, 300);
+            this.pickedItemsGridView.TabIndex = 0;
             // 
             // tabControl1
             // 
@@ -514,6 +541,12 @@
             this.LoanDuration.Name = "LoanDuration";
             this.LoanDuration.ReadOnly = true;
             // 
+            // DueDate
+            // 
+            this.DueDate.HeaderText = "DueDate";
+            this.DueDate.Name = "DueDate";
+            this.DueDate.ReadOnly = true;
+            // 
             // LoanNumber
             // 
             this.LoanNumber.HeaderText = "LoanNumber";
@@ -568,9 +601,9 @@
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.inventoryGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pickedItemsGridView)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pickedItemsGridView)).EndInit();
             this.tabControl1.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -608,10 +641,12 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView inventoryGridView;
-        private System.Windows.Forms.DataGridView pickedItemsGridView;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.Button btnExtendLoan;
+        private System.Windows.Forms.TextBox txtExtend;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.DataGridView pickedItemsGridView;
         private System.Windows.Forms.DataGridViewTextBoxColumn LoanID;
         private System.Windows.Forms.DataGridViewTextBoxColumn ResourceID;
         private System.Windows.Forms.DataGridViewTextBoxColumn ResourceType;
@@ -620,6 +655,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn LoanerID;
         private System.Windows.Forms.DataGridViewTextBoxColumn DateLoaned;
         private System.Windows.Forms.DataGridViewTextBoxColumn LoanDuration;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DueDate;
         private System.Windows.Forms.DataGridViewTextBoxColumn LoanNumber;
         private System.Windows.Forms.DataGridViewTextBoxColumn Department;
         private System.Windows.Forms.DataGridViewTextBoxColumn BorrowerName;

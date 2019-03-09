@@ -30,6 +30,7 @@
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.btnEdit = new System.Windows.Forms.Button();
             this.departmentsList = new System.Windows.Forms.ComboBox();
             this.txtAddedBy = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -54,14 +55,26 @@
             this.btnUpdate = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.btnGoBack = new System.Windows.Forms.Button();
+            this.label12 = new System.Windows.Forms.Label();
+            this.itemHistoryGridView = new System.Windows.Forms.DataGridView();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.btnBack2 = new System.Windows.Forms.Button();
+            this.label13 = new System.Windows.Forms.Label();
+            this.LoanedItemsGridView = new System.Windows.Forms.DataGridView();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            this.tabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.itemHistoryGridView)).BeginInit();
+            this.tabPage3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.LoanedItemsGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
@@ -71,6 +84,7 @@
             // tabPage1
             // 
             this.tabPage1.BackColor = System.Drawing.Color.Transparent;
+            this.tabPage1.Controls.Add(this.btnEdit);
             this.tabPage1.Controls.Add(this.departmentsList);
             this.tabPage1.Controls.Add(this.txtAddedBy);
             this.tabPage1.Controls.Add(this.label6);
@@ -101,6 +115,17 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "View Details";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // btnEdit
+            // 
+            this.btnEdit.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEdit.Location = new System.Drawing.Point(549, 27);
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Size = new System.Drawing.Size(91, 33);
+            this.btnEdit.TabIndex = 40;
+            this.btnEdit.Text = "Edit";
+            this.btnEdit.UseVisualStyleBackColor = true;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // departmentsList
             // 
@@ -327,6 +352,9 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.btnGoBack);
+            this.tabPage2.Controls.Add(this.label12);
+            this.tabPage2.Controls.Add(this.itemHistoryGridView);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
@@ -334,6 +362,81 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "View Item History";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // btnGoBack
+            // 
+            this.btnGoBack.Location = new System.Drawing.Point(651, 30);
+            this.btnGoBack.Name = "btnGoBack";
+            this.btnGoBack.Size = new System.Drawing.Size(90, 36);
+            this.btnGoBack.TabIndex = 32;
+            this.btnGoBack.Text = "Back";
+            this.btnGoBack.UseVisualStyleBackColor = true;
+            this.btnGoBack.Click += new System.EventHandler(this.btnGoBack_Click);
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(18, 15);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(119, 25);
+            this.label12.TabIndex = 31;
+            this.label12.Text = "Item Hisory";
+            // 
+            // itemHistoryGridView
+            // 
+            this.itemHistoryGridView.AllowUserToAddRows = false;
+            this.itemHistoryGridView.AllowUserToDeleteRows = false;
+            this.itemHistoryGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.itemHistoryGridView.Location = new System.Drawing.Point(7, 88);
+            this.itemHistoryGridView.Name = "itemHistoryGridView";
+            this.itemHistoryGridView.ReadOnly = true;
+            this.itemHistoryGridView.Size = new System.Drawing.Size(779, 321);
+            this.itemHistoryGridView.TabIndex = 30;
+            // 
+            // tabPage3
+            // 
+            this.tabPage3.Controls.Add(this.btnBack2);
+            this.tabPage3.Controls.Add(this.label13);
+            this.tabPage3.Controls.Add(this.LoanedItemsGridView);
+            this.tabPage3.Location = new System.Drawing.Point(4, 22);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage3.Size = new System.Drawing.Size(793, 424);
+            this.tabPage3.TabIndex = 2;
+            this.tabPage3.Text = "View Current Loaner";
+            this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // btnBack2
+            // 
+            this.btnBack2.Location = new System.Drawing.Point(652, 8);
+            this.btnBack2.Name = "btnBack2";
+            this.btnBack2.Size = new System.Drawing.Size(90, 36);
+            this.btnBack2.TabIndex = 33;
+            this.btnBack2.Text = "Back";
+            this.btnBack2.UseVisualStyleBackColor = true;
+            this.btnBack2.Click += new System.EventHandler(this.btnBack2_Click);
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(19, 19);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(162, 25);
+            this.label13.TabIndex = 2;
+            this.label13.Text = "Current Loaner:";
+            // 
+            // LoanedItemsGridView
+            // 
+            this.LoanedItemsGridView.AllowUserToAddRows = false;
+            this.LoanedItemsGridView.AllowUserToDeleteRows = false;
+            this.LoanedItemsGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.LoanedItemsGridView.Location = new System.Drawing.Point(22, 54);
+            this.LoanedItemsGridView.Name = "LoanedItemsGridView";
+            this.LoanedItemsGridView.ReadOnly = true;
+            this.LoanedItemsGridView.Size = new System.Drawing.Size(749, 336);
+            this.LoanedItemsGridView.TabIndex = 1;
             // 
             // viewItem
             // 
@@ -344,9 +447,16 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "viewItem";
             this.Text = "viewItem";
+            this.Load += new System.EventHandler(this.viewItem_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
+            this.tabPage2.ResumeLayout(false);
+            this.tabPage2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.itemHistoryGridView)).EndInit();
+            this.tabPage3.ResumeLayout(false);
+            this.tabPage3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.LoanedItemsGridView)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -379,5 +489,13 @@
         private System.Windows.Forms.TextBox txtAddedBy;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.ComboBox departmentsList;
+        private System.Windows.Forms.Button btnGoBack;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.DataGridView itemHistoryGridView;
+        private System.Windows.Forms.TabPage tabPage3;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.DataGridView LoanedItemsGridView;
+        private System.Windows.Forms.Button btnBack2;
+        private System.Windows.Forms.Button btnEdit;
     }
 }

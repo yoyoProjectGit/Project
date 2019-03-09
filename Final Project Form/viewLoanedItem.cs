@@ -13,7 +13,7 @@ namespace Final_Project_Form
 {
     public partial class viewLoanedItem : Form
     {
-        DataTable dt = new DataTable("Inventory");
+        DataTable dt = new DataTable("Loaned Items History");
         string loanNumber;
         int resourceID;
         string resourceType;

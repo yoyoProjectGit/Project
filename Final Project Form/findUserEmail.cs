@@ -66,10 +66,14 @@ namespace Final_Project_Form
         {
             if (e.ColumnIndex == 7 || e.ColumnIndex == 0)
             {
+                EmailHandler emailhandler = new EmailHandler();
                 DataGridViewRow row = this.studentGridView.Rows[e.RowIndex];
                 var student = new currentStudent();
                 student.EmailAddress = row.Cells["EmailAddress"].Value.ToString();
-                this.ReturnEmail = student.EmailAddress;
+                //this.ReturnEmail = student.EmailAddress;
+                emailhandler.TextBoxValue = student.EmailAddress;
+                emailhandler.Show();
+                this.Close();
          //       emailReturn();
             }
         }

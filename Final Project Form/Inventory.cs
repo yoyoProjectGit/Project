@@ -39,7 +39,7 @@ namespace Final_Project_Form
                 SqlConnection connection = new SqlConnection(connectionString);
                 connection.Open();
                 SqlCommand command = new SqlCommand("SELECT ResourceID,ResourceType,ResourceName,MaxLoanPeriod,Department," +
-                    "SerialNumber,DateAdded,OrderNumber,PurchasePrice,Notes FROM resourcesTable WHERE Department=@Department AND isOnLoan=@isOnLoan", connection);
+                    "SerialNumber,DateAdded,OrderNumber,PurchasePrice,Notes,isOnLoan FROM resourcesTable WHERE Department=@Department", connection);
                 command.Parameters.AddWithValue("@Department", CurrentUser.Department);
                 command.Parameters.AddWithValue("@isOnLoan", false);
                 SqlDataAdapter adapter = new SqlDataAdapter(command);
@@ -50,6 +50,11 @@ namespace Final_Project_Form
                 button.Text = "View";
                 button.UseColumnTextForButtonValue = true;
                 inventoryGridView.Columns.Add(button);
+                inventoryGridView.Columns[0].Visible = false;
+                inventoryGridView.Columns[3].Visible = false;
+                inventoryGridView.Columns[4].Visible = false;
+                inventoryGridView.Columns[7].Visible = false;
+                inventoryGridView.Columns[8].Visible = false;
                 connection.Close();
             }
             catch (Exception ex)
@@ -67,7 +72,7 @@ namespace Final_Project_Form
 
         private void inventoryGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.ColumnIndex == 10 || e.ColumnIndex == 0)
+            if (e.ColumnIndex == 11 || e.ColumnIndex == 0)
             {
                 DataGridViewRow row = this.inventoryGridView.Rows[e.RowIndex];
                 var item = new currentItem();

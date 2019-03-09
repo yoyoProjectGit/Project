@@ -14,9 +14,9 @@ namespace Final_Project_Form
 {
     public partial class ReturnUserItem : Form
     {
-        string loanNumber;
-        string resourceName;
-        string resourceID;
+        string loanNo;
+        string resName;
+        string id;
         int resInt;
         DataTable dt = new DataTable("Inventory");
         public ReturnUserItem(string id, string firstname, string surname, string emailaddress)
@@ -191,6 +191,7 @@ namespace Final_Project_Form
                     pickedItemsGridView.Rows[n].Cells[12].Value = item.Cells[13].Value.ToString();
                     pickedItemsGridView.Rows[n].Cells[13].Value = item.Cells[14].Value.ToString();
                     pickedItemsGridView.Rows[n].Cells[14].Value = item.Cells[15].Value.ToString();
+                    pickedItemsGridView.Rows[n].Cells[15].Value = item.Cells[16].Value.ToString();
                 }
             }
             tabControl1.SelectedTab = tabPage2;
@@ -203,7 +204,7 @@ namespace Final_Project_Form
             addToLoanHistory(row);
             removeFromCurrentLoans(row);
             addToResources(row);
-                AutoClosingMessageBox.Show("The item: " + resourceName +
+                AutoClosingMessageBox.Show("The item: " + resName +
                 " Has been successfully returned", "Loan Item ", 5000);
             }
 
@@ -213,11 +214,10 @@ namespace Final_Project_Form
         { 
             try
             {
-                string DateLoaned = row.Cells["ResourceType"].Value.ToString();
-                loanNumber = row.Cells["LoanNumber"].Value.ToString();
-                resourceName = row.Cells["ResourceName"].Value.ToString();
-                resourceID = row.Cells["ResourceID"].Value.ToString();
-                resInt = Convert.ToInt32(resourceID);
+                loanNo = row.Cells["LoanNumber"].Value.ToString();
+                resName = row.Cells["ResourceName"].Value.ToString();
+                id = row.Cells["ResourceID"].Value.ToString();
+                resInt = Convert.ToInt32(id);
                 string connectionString = "Data Source=DESKTOP-BV5T9NA;Initial Catalog=ProjectDB;Integrated Security=True";
                 SqlConnection connection = new SqlConnection(connectionString);
                 DateTime returnDate = DateTime.Now;
@@ -260,7 +260,7 @@ namespace Final_Project_Form
                 connection.Open();
                 string removeResourceCommand = "DELETE FROM Loans WHERE LoanNumber=@LoanNumber";
                 SqlCommand addCommand = new SqlCommand(removeResourceCommand, connection);
-                addCommand.Parameters.AddWithValue("@LoanNumber", loanNumber);
+                addCommand.Parameters.AddWithValue("@LoanNumber", loanNo);
                 addCommand.ExecuteNonQuery();
                 connection.Close();
             }
@@ -292,6 +292,139 @@ namespace Final_Project_Form
         private void btnGoBack_Click(object sender, EventArgs e)
         {
             tabControl1.SelectedTab = tabPage1;
+        }
+
+        private void btnExtendLoan_Click(object sender, EventArgs e)
+        {
+            int maxLoanPeriod = 0;
+            if (txtExtend.Text == "")
+            {
+                MessageBox.Show("Please enter how many days you want to extend this item by.");
+            }
+            else
+            {
+                int loanPeriod = Convert.ToInt32(this.txtExtend.Text);
+                foreach (DataGridViewRow row in pickedItemsGridView.Rows)
+                {
+                    try
+                    {
+                        string connectionString = "Data Source=DESKTOP-BV5T9NA;Initial Catalog=ProjectDB;Integrated Security=True";
+                        SqlConnection connection = new SqlConnection(connectionString);
+                        connection.Open();
+                        string checkmaxperiod = "SELECT MaxLoanPeriod, ResourceName FROM resourcesTable WHERE ResourceID=@ResourceID";
+                        SqlCommand checkCommand = new SqlCommand(checkmaxperiod, connection);
+                        checkCommand.Parameters.AddWithValue("@ResourceID", row.Cells["ResourceID"].Value.ToString());
+                        using (SqlDataReader getData = checkCommand.ExecuteReader())
+                        {
+                            while (getData.Read())
+                            {
+                                maxLoanPeriod = Convert.ToInt32(getData["MaxLoanPeriod"].ToString());
+                                resName = getData["ResourceName"].ToString();
+                            }
+                            connection.Close();
+                        }
+                        if (loanPeriod > maxLoanPeriod)
+                        {
+                            MessageBox.Show("The maximum loan period for " + resName + " is: " + maxLoanPeriod + " days");
+                        }
+                        else
+                        {
+                            extendLoan(row);
+                            addExtendToHistory(row);
+                            AutoClosingMessageBox.Show("The item: " + resName +
+                            " Has been successfully Extended", "Loan Item ", 5000);
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                    }
+                }
+                this.Close();
+            }
+        }
+        private void extendLoan(DataGridViewRow row)
+        {
+            try
+            {
+                MessageBox.Show(row.Cells["LoanNumber"].Value.ToString());
+                string connectionString = "Data Source=DESKTOP-BV5T9NA;Initial Catalog=ProjectDB;Integrated Security=True";
+                SqlConnection connection = new SqlConnection(connectionString);
+                DateTime todaysDate = DateTime.Now;
+                DateTime dueDate = todaysDate.AddDays(Convert.ToInt32(txtExtend.Text));
+                TextInfo textInfo = new CultureInfo("en-US", false).TextInfo;
+                connection.Open();
+                string updateCommand = "UPDATE Loans SET DueDate=@DueDate, LoanDuration=@LoanDuration,DateLoaned=@todaysDate WHERE LoanNumber=@LoanNumber";
+                SqlCommand extendCommand = new SqlCommand(updateCommand, connection);
+                extendCommand.Parameters.AddWithValue("@LoanNumber", row.Cells["LoanNumber"].Value.ToString());
+                extendCommand.Parameters.AddWithValue("@DueDate", dueDate.ToString("yyyy-MM-dd H:mm:ss"));
+                extendCommand.Parameters.AddWithValue("@LoanDuration", Convert.ToInt32(txtExtend.Text));
+                extendCommand.Parameters.AddWithValue("@todaysDate", todaysDate.ToString("yyyy-MM-dd H:mm:ss"));
+                extendCommand.ExecuteNonQuery();
+                connection.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+        private void addExtendToHistory(DataGridViewRow row)
+        {
+            try
+            {
+                loanNo = row.Cells["LoanNumber"].Value.ToString();
+                resName = row.Cells["ResourceName"].Value.ToString();
+                id = row.Cells["ResourceID"].Value.ToString();
+                resInt = Convert.ToInt32(id);
+                string connectionString = "Data Source=DESKTOP-BV5T9NA;Initial Catalog=ProjectDB;Integrated Security=True";
+                SqlConnection connection = new SqlConnection(connectionString);
+                DateTime returnDate = DateTime.Now;
+                TextInfo textInfo = new CultureInfo("en-US", false).TextInfo;
+                connection.Open();
+                string addUserCommand = "insert into LoanHistory(ResourceID,ResourceType,ResourceName,DateLoaned," +
+                "LoanDuration,Department,BorrowerName,BorrowerID,BorrowerSurname,BorrowerEmail,Notes,LoanedBy,LoanNumber,LoanerID,ReturnDate) " +
+                            "values(@ResourceID,@ResourceType,@ResourceName,@DateLoaned,@LoanDuration,@Department,@BorrowerName," +
+                            "@BorrowerID,@BorrowerSurname,@BorrowerEmail,@Notes,@LoanedBy,@LoanNumber,@LoanerID,@ReturnDate)";
+                SqlCommand addCommand = new SqlCommand(addUserCommand, connection);
+                addCommand.Parameters.AddWithValue("@ResourceID", row.Cells["ResourceID"].Value.ToString());
+                addCommand.Parameters.AddWithValue("@ResourceType", row.Cells["ResourceType"].Value.ToString());
+                addCommand.Parameters.AddWithValue("@ResourceName", row.Cells["ResourceName"].Value.ToString());
+                addCommand.Parameters.AddWithValue("@DateLoaned", row.Cells["DateLoaned"].Value.ToString());
+                addCommand.Parameters.AddWithValue("@LoanDuration", Convert.ToInt32(txtExtend.Text));
+                addCommand.Parameters.AddWithValue("@Department", row.Cells["Department"].Value.ToString());
+                addCommand.Parameters.AddWithValue("@BorrowerName", row.Cells["BorrowerName"].Value.ToString());
+                addCommand.Parameters.AddWithValue("@BorrowerID", row.Cells["BorrowerID"].Value.ToString());
+                addCommand.Parameters.AddWithValue("@BorrowerSurname", row.Cells["BorrowerSurname"].Value.ToString());
+                addCommand.Parameters.AddWithValue("@BorrowerEmail", row.Cells["BorrowerEmail"].Value.ToString());
+                addCommand.Parameters.AddWithValue("@Notes", "Extended by: " + row.Cells["LoanedBy"].Value.ToString() + " For a total of: " + txtExtend.Text + " Days.");
+                addCommand.Parameters.AddWithValue("@LoanedBy", row.Cells["LoanedBy"].Value.ToString());
+                addCommand.Parameters.AddWithValue("@LoanNumber", row.Cells["LoanNumber"].Value.ToString());
+                addCommand.Parameters.AddWithValue("@LoanerID", row.Cells["LoanerID"].Value.ToString());
+                addCommand.Parameters.AddWithValue("@ReturnDate", returnDate.ToString("yyyy-MM-dd H:mm:ss"));
+                addCommand.ExecuteNonQuery();
+                connection.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void txtExtend_TextChanged(object sender, EventArgs e)
+        {
+            if (System.Text.RegularExpressions.Regex.IsMatch(txtExtend.Text, "  ^ [0-9]"))
+            {
+                txtExtend.Text = "";
+            }
+        }
+
+        private void txtExtend_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char ch = e.KeyChar;
+            if (!Char.IsDigit(ch) && ch != 8)
+            {
+                e.Handled = true;
+            }
         }
     }
 }

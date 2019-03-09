@@ -49,7 +49,7 @@
             this.btnAddUser.Name = "btnAddUser";
             this.btnAddUser.Size = new System.Drawing.Size(86, 53);
             this.btnAddUser.TabIndex = 0;
-            this.btnAddUser.Text = "Add User";
+            this.btnAddUser.Text = "Add Student";
             this.btnAddUser.UseVisualStyleBackColor = true;
             this.btnAddUser.Click += new System.EventHandler(this.btnAddUser_Click);
             // 
@@ -59,7 +59,7 @@
             this.btnSearchPerson.Name = "btnSearchPerson";
             this.btnSearchPerson.Size = new System.Drawing.Size(86, 53);
             this.btnSearchPerson.TabIndex = 1;
-            this.btnSearchPerson.Text = "Search by Person";
+            this.btnSearchPerson.Text = "Find Student";
             this.btnSearchPerson.UseVisualStyleBackColor = true;
             this.btnSearchPerson.Click += new System.EventHandler(this.btnSearchPerson_Click);
             // 
@@ -158,7 +158,7 @@
             this.btnReturnItem.Name = "btnReturnItem";
             this.btnReturnItem.Size = new System.Drawing.Size(102, 66);
             this.btnReturnItem.TabIndex = 12;
-            this.btnReturnItem.Text = "Item Returns";
+            this.btnReturnItem.Text = "Return Item";
             this.btnReturnItem.UseVisualStyleBackColor = true;
             this.btnReturnItem.Click += new System.EventHandler(this.btnReturnItem_Click);
             // 

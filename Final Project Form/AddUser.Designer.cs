@@ -61,7 +61,7 @@
             this.txtShuId.Location = new System.Drawing.Point(172, 87);
             this.txtShuId.Name = "txtShuId";
             this.txtShuId.Size = new System.Drawing.Size(217, 31);
-            this.txtShuId.TabIndex = 1;
+            this.txtShuId.TabIndex = 0;
             // 
             // txtFirstName
             // 
@@ -69,7 +69,7 @@
             this.txtFirstName.Location = new System.Drawing.Point(172, 136);
             this.txtFirstName.Name = "txtFirstName";
             this.txtFirstName.Size = new System.Drawing.Size(217, 31);
-            this.txtFirstName.TabIndex = 2;
+            this.txtFirstName.TabIndex = 1;
             // 
             // txtSurname
             // 
@@ -77,7 +77,7 @@
             this.txtSurname.Location = new System.Drawing.Point(172, 189);
             this.txtSurname.Name = "txtSurname";
             this.txtSurname.Size = new System.Drawing.Size(217, 31);
-            this.txtSurname.TabIndex = 3;
+            this.txtSurname.TabIndex = 2;
             // 
             // label1
             // 
@@ -115,7 +115,7 @@
             this.txtCourseDept.Location = new System.Drawing.Point(172, 239);
             this.txtCourseDept.Name = "txtCourseDept";
             this.txtCourseDept.Size = new System.Drawing.Size(217, 31);
-            this.txtCourseDept.TabIndex = 4;
+            this.txtCourseDept.TabIndex = 3;
             // 
             // label4
             // 
@@ -133,7 +133,7 @@
             this.txtEmail.Location = new System.Drawing.Point(172, 294);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(217, 31);
-            this.txtEmail.TabIndex = 9;
+            this.txtEmail.TabIndex = 4;
             // 
             // label5
             // 
@@ -180,7 +180,7 @@
             this.finishDatePicker.Location = new System.Drawing.Point(172, 349);
             this.finishDatePicker.Name = "finishDatePicker";
             this.finishDatePicker.Size = new System.Drawing.Size(217, 20);
-            this.finishDatePicker.TabIndex = 15;
+            this.finishDatePicker.TabIndex = 5;
             // 
             // AddUser
             // 

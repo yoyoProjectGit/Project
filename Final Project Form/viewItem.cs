@@ -16,6 +16,38 @@ namespace Final_Project_Form
         string resourceType, resourceName, department, Notes, dateAdded, orderNumber;
         int maxLoanPeriod, id;
         long serialNumber;
+        DataTable dt = new DataTable("Item History");
+        DataTable dt2 = new DataTable("Item Loaner");
+        private void viewItem_Load(object sender, EventArgs e)
+        {
+            string connectionString = "Data Source=DESKTOP-BV5T9NA;Initial Catalog=ProjectDB;Integrated Security=True";
+            SqlConnection connection = new SqlConnection(connectionString);
+            connection.Open();
+            SqlCommand loadHistory = new SqlCommand("SELECT LoanNumber,LoanerID,LoanedBy,DateLoaned,ReturnDate,LoanDuration,BorrowerName," +
+                "BorrowerID,BorrowerEmail FROM LoanHistory WHERE ResourceID=@resourceID", connection);
+            loadHistory.Parameters.AddWithValue("@resourceID", id);
+            SqlDataAdapter adapter = new SqlDataAdapter(loadHistory);
+            adapter.Fill(dt);
+            itemHistoryGridView.DataSource = dt;
+            SqlCommand loadCurrentLoaner = new SqlCommand("SELECT LoanNumber,BorrowerName,BorrowerID,DateLoaned,DueDate,LoanedBy" +
+                " FROM Loans WHERE ResourceID=@resourceID", connection);
+            loadCurrentLoaner.Parameters.AddWithValue("@resourceID", id);
+            SqlDataAdapter adapter2 = new SqlDataAdapter(loadCurrentLoaner);
+            adapter2.Fill(dt2);
+            LoanedItemsGridView.DataSource = dt2;
+            connection.Close();
+        }
+
+        private void btnBack2_Click(object sender, EventArgs e)
+        {
+            tabControl1.SelectedTab = tabPage2;
+        }
+
+        private void btnGoBack_Click(object sender, EventArgs e)
+        {
+            tabControl1.SelectedTab = tabPage1;
+        }
+
         decimal purchasePrice;
         TextInfo textInfo = new CultureInfo("en-US", false).TextInfo;
         private void btnUpdate_Click(object sender, EventArgs e)

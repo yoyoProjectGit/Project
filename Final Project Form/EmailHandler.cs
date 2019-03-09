@@ -15,6 +15,7 @@ namespace Final_Project_Form
 {
     public partial class EmailHandler : Form
     {
+
         findUserEmail findEmail = new findUserEmail();
         public EmailHandler()
         {
@@ -64,12 +65,13 @@ namespace Final_Project_Form
             if (isOpen == false)
             {
                 findEmail.Show();
+                this.Close();
             }
         }
-
-        private void findEmailTest_Click(object sender, EventArgs e)
+        public string TextBoxValue
         {
-            this.txtToWho.Text = findEmail.ReturnEmail;
+            get { return txtToWho.Text; }
+            set { txtToWho.Text = value; }
         }
     }
 }

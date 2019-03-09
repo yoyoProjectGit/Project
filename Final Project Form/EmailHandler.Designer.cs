@@ -38,7 +38,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.txtToWho = new System.Windows.Forms.TextBox();
             this.btnFindEmail = new System.Windows.Forms.Button();
-            this.findEmailTest = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnBack
@@ -46,7 +45,7 @@
             this.btnBack.Location = new System.Drawing.Point(754, 425);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(96, 58);
-            this.btnBack.TabIndex = 0;
+            this.btnBack.TabIndex = 5;
             this.btnBack.Text = "Back";
             this.btnBack.UseVisualStyleBackColor = true;
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
@@ -56,7 +55,7 @@
             this.btnSend.Location = new System.Drawing.Point(695, 210);
             this.btnSend.Name = "btnSend";
             this.btnSend.Size = new System.Drawing.Size(126, 64);
-            this.btnSend.TabIndex = 1;
+            this.btnSend.TabIndex = 3;
             this.btnSend.Text = "Send Email";
             this.btnSend.UseVisualStyleBackColor = true;
             this.btnSend.Click += new System.EventHandler(this.btnSend_Click);
@@ -98,7 +97,7 @@
             this.txtBody.Multiline = true;
             this.txtBody.Name = "txtBody";
             this.txtBody.Size = new System.Drawing.Size(418, 202);
-            this.txtBody.TabIndex = 5;
+            this.txtBody.TabIndex = 2;
             // 
             // txtSubject
             // 
@@ -106,7 +105,7 @@
             this.txtSubject.Location = new System.Drawing.Point(198, 131);
             this.txtSubject.Name = "txtSubject";
             this.txtSubject.Size = new System.Drawing.Size(418, 31);
-            this.txtSubject.TabIndex = 6;
+            this.txtSubject.TabIndex = 1;
             // 
             // label4
             // 
@@ -124,34 +123,23 @@
             this.txtToWho.Location = new System.Drawing.Point(198, 78);
             this.txtToWho.Name = "txtToWho";
             this.txtToWho.Size = new System.Drawing.Size(418, 31);
-            this.txtToWho.TabIndex = 8;
+            this.txtToWho.TabIndex = 0;
             // 
             // btnFindEmail
             // 
             this.btnFindEmail.Location = new System.Drawing.Point(633, 78);
             this.btnFindEmail.Name = "btnFindEmail";
             this.btnFindEmail.Size = new System.Drawing.Size(80, 32);
-            this.btnFindEmail.TabIndex = 9;
+            this.btnFindEmail.TabIndex = 4;
             this.btnFindEmail.Text = "Find Email";
             this.btnFindEmail.UseVisualStyleBackColor = true;
             this.btnFindEmail.Click += new System.EventHandler(this.btnFindEmail_Click);
-            // 
-            // findEmailTest
-            // 
-            this.findEmailTest.Location = new System.Drawing.Point(754, 79);
-            this.findEmailTest.Name = "findEmailTest";
-            this.findEmailTest.Size = new System.Drawing.Size(80, 32);
-            this.findEmailTest.TabIndex = 10;
-            this.findEmailTest.Text = "Find Email";
-            this.findEmailTest.UseVisualStyleBackColor = true;
-            this.findEmailTest.Click += new System.EventHandler(this.findEmailTest_Click);
             // 
             // EmailHandler
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(862, 495);
-            this.Controls.Add(this.findEmailTest);
             this.Controls.Add(this.btnFindEmail);
             this.Controls.Add(this.txtToWho);
             this.Controls.Add(this.label4);
@@ -182,6 +170,5 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtToWho;
         private System.Windows.Forms.Button btnFindEmail;
-        private System.Windows.Forms.Button findEmailTest;
     }
 }
