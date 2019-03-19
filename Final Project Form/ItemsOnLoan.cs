@@ -28,11 +28,10 @@ namespace Final_Project_Form
         {
             try
             {
-                string connectionString = "Data Source=DESKTOP-BV5T9NA;Initial Catalog=ProjectDB;Integrated Security=True";
+                string connectionString = myGlobals.connString;
                 SqlConnection connection = new SqlConnection(connectionString);
                 connection.Open();
                 SqlCommand command = new SqlCommand("SELECT * FROM Loans", connection);
-                command.Parameters.AddWithValue("@isOnLoan", true);
                 SqlDataAdapter adapter = new SqlDataAdapter(command);
                 adapter.Fill(dt);
                 loanedItemsGridView.DataSource = dt;
@@ -51,7 +50,7 @@ namespace Final_Project_Form
 
         private void loanedItemsGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.ColumnIndex == 15 || e.ColumnIndex == 0)
+            if (e.ColumnIndex == 16 || e.ColumnIndex == 0)
             {
                 DataGridViewRow row = this.loanedItemsGridView.Rows[e.RowIndex];
                 string loanNumber = row.Cells["LoanNumber"].Value.ToString();

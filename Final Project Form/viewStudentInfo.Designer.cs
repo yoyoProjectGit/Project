@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             System.Windows.Forms.Label label9;
+            System.Windows.Forms.Label label10;
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.txtDateAdded = new System.Windows.Forms.TextBox();
@@ -51,17 +52,35 @@
             this.label1 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.LoanedItemsGridView = new System.Windows.Forms.DataGridView();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.loanHistory = new System.Windows.Forms.DataGridView();
+            this.btnClose = new System.Windows.Forms.Button();
+            this.btnClose2 = new System.Windows.Forms.Button();
             label9 = new System.Windows.Forms.Label();
+            label10 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.LoanedItemsGridView)).BeginInit();
+            this.tabPage3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.loanHistory)).BeginInit();
             this.SuspendLayout();
+            // 
+            // label9
+            // 
+            label9.AutoSize = true;
+            label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            label9.Location = new System.Drawing.Point(22, 20);
+            label9.Name = "label9";
+            label9.Size = new System.Drawing.Size(218, 25);
+            label9.TabIndex = 1;
+            label9.Text = "Current Loaned Items";
             // 
             // tabControl1
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
@@ -92,7 +111,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(744, 424);
+            this.tabPage1.Size = new System.Drawing.Size(764, 424);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "View Details";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -129,7 +148,7 @@
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(90, 36);
             this.btnBack.TabIndex = 28;
-            this.btnBack.Text = "Back";
+            this.btnBack.Text = "Close";
             this.btnBack.UseVisualStyleBackColor = true;
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
@@ -272,6 +291,7 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.btnClose);
             this.tabPage2.Controls.Add(label9);
             this.tabPage2.Controls.Add(this.LoanedItemsGridView);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
@@ -293,15 +313,59 @@
             this.LoanedItemsGridView.Size = new System.Drawing.Size(749, 355);
             this.LoanedItemsGridView.TabIndex = 0;
             // 
-            // label9
+            // tabPage3
             // 
-            label9.AutoSize = true;
-            label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            label9.Location = new System.Drawing.Point(22, 20);
-            label9.Name = "label9";
-            label9.Size = new System.Drawing.Size(218, 25);
-            label9.TabIndex = 1;
-            label9.Text = "Current Loaned Items";
+            this.tabPage3.Controls.Add(this.btnClose2);
+            this.tabPage3.Controls.Add(label10);
+            this.tabPage3.Controls.Add(this.loanHistory);
+            this.tabPage3.Location = new System.Drawing.Point(4, 22);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage3.Size = new System.Drawing.Size(764, 424);
+            this.tabPage3.TabIndex = 2;
+            this.tabPage3.Text = "View Loan History";
+            this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // loanHistory
+            // 
+            this.loanHistory.AllowUserToAddRows = false;
+            this.loanHistory.AllowUserToDeleteRows = false;
+            this.loanHistory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.loanHistory.Location = new System.Drawing.Point(8, 61);
+            this.loanHistory.Name = "loanHistory";
+            this.loanHistory.ReadOnly = true;
+            this.loanHistory.Size = new System.Drawing.Size(749, 355);
+            this.loanHistory.TabIndex = 0;
+            // 
+            // label10
+            // 
+            label10.AutoSize = true;
+            label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            label10.Location = new System.Drawing.Point(17, 22);
+            label10.Name = "label10";
+            label10.Size = new System.Drawing.Size(213, 25);
+            label10.TabIndex = 2;
+            label10.Text = "Student Loan History";
+            // 
+            // btnClose
+            // 
+            this.btnClose.Location = new System.Drawing.Point(658, 16);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(87, 39);
+            this.btnClose.TabIndex = 2;
+            this.btnClose.Text = "Close";
+            this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            // 
+            // btnClose2
+            // 
+            this.btnClose2.Location = new System.Drawing.Point(658, 16);
+            this.btnClose2.Name = "btnClose2";
+            this.btnClose2.Size = new System.Drawing.Size(87, 39);
+            this.btnClose2.TabIndex = 3;
+            this.btnClose2.Text = "Close";
+            this.btnClose2.UseVisualStyleBackColor = true;
+            this.btnClose2.Click += new System.EventHandler(this.btnClose2_Click);
             // 
             // viewStudentInfo
             // 
@@ -318,6 +382,9 @@
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.LoanedItemsGridView)).EndInit();
+            this.tabPage3.ResumeLayout(false);
+            this.tabPage3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.loanHistory)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -346,5 +413,9 @@
         private System.Windows.Forms.TextBox txtDateAdded;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.DataGridView LoanedItemsGridView;
+        private System.Windows.Forms.TabPage tabPage3;
+        private System.Windows.Forms.DataGridView loanHistory;
+        private System.Windows.Forms.Button btnClose;
+        private System.Windows.Forms.Button btnClose2;
     }
 }

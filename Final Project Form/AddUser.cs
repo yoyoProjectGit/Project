@@ -46,7 +46,7 @@ namespace Final_Project_Form
             {
                 DateTime dateTime = DateTime.Now;
                 TextInfo textInfo = new CultureInfo("en-US", false).TextInfo;
-                string connectionString = "Data Source=DESKTOP-BV5T9NA;Initial Catalog=ProjectDB;Integrated Security=True";
+                string connectionString = myGlobals.connString;
                 SqlConnection connection = new SqlConnection(connectionString);
                 connection.Open();
                 string checkUserCommand = "SELECT COUNT(*) FROM students WHERE ShuId=@ShuId";

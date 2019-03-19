@@ -48,7 +48,7 @@ namespace Final_Project_Form
         {
             try
             {
-                string connectionString = "Data Source=DESKTOP-BV5T9NA;Initial Catalog=ProjectDB;Integrated Security=True";
+                string connectionString = myGlobals.connString;
                 SqlConnection connection = new SqlConnection(connectionString);
                 connection.Open();
                 SqlCommand checkId = new SqlCommand("SELECT * FROM resourcesTable WHERE ResourceID=@resourceID", connection);
@@ -91,7 +91,7 @@ namespace Final_Project_Form
         }
         private void loadItemHistory()
         {
-            string connectionString = "Data Source=DESKTOP-BV5T9NA;Initial Catalog=ProjectDB;Integrated Security=True";
+            string connectionString = myGlobals.connString;
             SqlConnection connection = new SqlConnection(connectionString);
             connection.Open();
             SqlCommand loadHistory = new SqlCommand("SELECT LoanNumber,LoanerID,LoanedBy,DateLoaned,ReturnDate,LoanDuration,BorrowerName," +

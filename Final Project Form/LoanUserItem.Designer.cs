@@ -69,10 +69,7 @@
             this.ResourceName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MaxLoanPeriod = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Department = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SerialNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DateAdded = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.OrderNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PurchasePrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Notes = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -281,9 +278,9 @@
             this.txtResourceBarcode.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtResourceBarcode.Location = new System.Drawing.Point(12, 150);
             this.txtResourceBarcode.Name = "txtResourceBarcode";
-            this.txtResourceBarcode.Size = new System.Drawing.Size(173, 24);
+            this.txtResourceBarcode.Size = new System.Drawing.Size(174, 24);
             this.txtResourceBarcode.TabIndex = 42;
-            this.txtResourceBarcode.Text = "Resource Barcode:";
+            this.txtResourceBarcode.Text = "Resource SerialNo:";
             // 
             // label2
             // 
@@ -309,6 +306,7 @@
             // 
             this.inventoryGridView.AllowUserToAddRows = false;
             this.inventoryGridView.AllowUserToDeleteRows = false;
+            this.inventoryGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.inventoryGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.inventoryGridView.Location = new System.Drawing.Point(16, 273);
             this.inventoryGridView.Name = "inventoryGridView";
@@ -462,6 +460,7 @@
             // 
             this.pickedItemsGridView.AllowUserToAddRows = false;
             this.pickedItemsGridView.AllowUserToDeleteRows = false;
+            this.pickedItemsGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.pickedItemsGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.pickedItemsGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ResourceID,
@@ -469,10 +468,7 @@
             this.ResourceName,
             this.MaxLoanPeriod,
             this.Department,
-            this.SerialNumber,
-            this.DateAdded,
-            this.OrderNumber,
-            this.PurchasePrice,
+            this.Quantity,
             this.Notes});
             this.pickedItemsGridView.Location = new System.Drawing.Point(38, 279);
             this.pickedItemsGridView.Name = "pickedItemsGridView";
@@ -511,29 +507,11 @@
             this.Department.Name = "Department";
             this.Department.ReadOnly = true;
             // 
-            // SerialNumber
+            // Quantity
             // 
-            this.SerialNumber.HeaderText = "SerialNumber";
-            this.SerialNumber.Name = "SerialNumber";
-            this.SerialNumber.ReadOnly = true;
-            // 
-            // DateAdded
-            // 
-            this.DateAdded.HeaderText = "DateAdded";
-            this.DateAdded.Name = "DateAdded";
-            this.DateAdded.ReadOnly = true;
-            // 
-            // OrderNumber
-            // 
-            this.OrderNumber.HeaderText = "OrderNumber";
-            this.OrderNumber.Name = "OrderNumber";
-            this.OrderNumber.ReadOnly = true;
-            // 
-            // PurchasePrice
-            // 
-            this.PurchasePrice.HeaderText = "PurchasePrice";
-            this.PurchasePrice.Name = "PurchasePrice";
-            this.PurchasePrice.ReadOnly = true;
+            this.Quantity.HeaderText = "Quantity";
+            this.Quantity.Name = "Quantity";
+            this.Quantity.ReadOnly = true;
             // 
             // Notes
             // 
@@ -598,16 +576,13 @@
         private System.Windows.Forms.TextBox txtCurrentName2;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Button btnConfirmItems;
+        private System.Windows.Forms.Button btnGoBack;
         private System.Windows.Forms.DataGridViewTextBoxColumn ResourceID;
         private System.Windows.Forms.DataGridViewTextBoxColumn ResourceType;
         private System.Windows.Forms.DataGridViewTextBoxColumn ResourceName;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaxLoanPeriod;
         private System.Windows.Forms.DataGridViewTextBoxColumn Department;
-        private System.Windows.Forms.DataGridViewTextBoxColumn SerialNumber;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DateAdded;
-        private System.Windows.Forms.DataGridViewTextBoxColumn OrderNumber;
-        private System.Windows.Forms.DataGridViewTextBoxColumn PurchasePrice;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Quantity;
         private System.Windows.Forms.DataGridViewTextBoxColumn Notes;
-        private System.Windows.Forms.Button btnGoBack;
     }
 }

@@ -431,6 +431,7 @@
             // 
             this.LoanedItemsGridView.AllowUserToAddRows = false;
             this.LoanedItemsGridView.AllowUserToDeleteRows = false;
+            this.LoanedItemsGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.LoanedItemsGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.LoanedItemsGridView.Location = new System.Drawing.Point(22, 54);
             this.LoanedItemsGridView.Name = "LoanedItemsGridView";

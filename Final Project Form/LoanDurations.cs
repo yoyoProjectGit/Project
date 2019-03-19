@@ -17,7 +17,8 @@ namespace Final_Project_Form
     {
         int maxLoanPeriod = 0;
         int ResourceID;
-        public LoanDurations(string type, string name, int loanprd, string dept, int ID, string firstname, 
+        int amountinstock;
+        public LoanDurations(string type, string name, int loanprd, int quantity,string dept, int ID, string firstname, 
             string surname, string shuid, string email)
         {
             InitializeComponent();
@@ -30,6 +31,7 @@ namespace Final_Project_Form
             txtEmail.Text = email;
             maxLoanPeriod = loanprd;
             ResourceID = ID;
+            amountinstock = quantity;
         }
 
         private void btnBack_Click(object sender, EventArgs e)
@@ -39,9 +41,10 @@ namespace Final_Project_Form
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
+            
             if (txtLoanPeriod.Text == "" || txtLoanID.Text == "")
             {
-                MessageBox.Show("Loan Duration and Loan ID are required!");
+                MessageBox.Show("Loan Duration, Loan ID and Quantity are required!");
             }
             else
             {
@@ -49,6 +52,14 @@ namespace Final_Project_Form
                 if (loanPeriod > maxLoanPeriod)
                 {
                     MessageBox.Show("The maximum loan period for this item is: " + maxLoanPeriod + " days");
+                }
+                else if (loanPeriod == 0 )
+                {
+                    MessageBox.Show("You cannot loan an item for 0 days!");
+                }
+                else if (amountinstock < Convert.ToInt32(txtQuantity.Text))
+                {
+                    MessageBox.Show("There is only " + amountinstock + " " + txtResourceName.Text + " in stock.");
                 }
                 else
                 {
@@ -75,7 +86,7 @@ namespace Final_Project_Form
         }
         private void LoanUserItem()
         {
-            string connectionString = "Data Source=DESKTOP-BV5T9NA;Initial Catalog=ProjectDB;Integrated Security=True";
+            string connectionString = myGlobals.connString;
             SqlConnection connection = new SqlConnection(connectionString);
             connection.Open();
             SqlCommand checkLoan = new SqlCommand("SELECT COUNT(*) FROM Loans WHERE LoanNumber like @LoanNumber", connection);
@@ -97,14 +108,14 @@ namespace Final_Project_Form
                     TextInfo textInfo = new CultureInfo("en-US", false).TextInfo;
                     connection.Open();
                     string addUserCommand = "insert into Loans(ResourceID,ResourceType,ResourceName,DateLoaned," +
-                    "LoanDuration,Department,BorrowerName,BorrowerID,BorrowerSurname,BorrowerEmail,Notes,LoanedBy,LoanNumber,LoanerID, DueDate) " +
+                    "LoanDuration,Department,BorrowerName,BorrowerID,BorrowerSurname,BorrowerEmail,Notes,LoanedBy,LoanNumber,LoanerID,DueDate,Quantity) " +
                                 "values(@ResourceID,@ResourceType,@ResourceName,@DateLoaned,@LoanDuration,@Department,@BorrowerName," +
-                                "@BorrowerID,@BorrowerSurname,@BorrowerEmail,@Notes,@LoanedBy,@LoanNumber,@LoanerID,@DueDate)";
+                                "@BorrowerID,@BorrowerSurname,@BorrowerEmail,@Notes,@LoanedBy,@LoanNumber,@LoanerID,@DueDate,@Quantity)";
                     SqlCommand addCommand = new SqlCommand(addUserCommand, connection);
                     addCommand.Parameters.AddWithValue("@ResourceID", ResourceID);
                     addCommand.Parameters.AddWithValue("@ResourceType", textInfo.ToTitleCase(txtResourceType.Text));
                     addCommand.Parameters.AddWithValue("@ResourceName", textInfo.ToTitleCase(txtResourceName.Text));
-                    addCommand.Parameters.AddWithValue("@DateLoaned", todaysDate.ToString("yyyy-dd-MM H:mm:ss"));
+                    addCommand.Parameters.AddWithValue("@DateLoaned", todaysDate);
                     addCommand.Parameters.AddWithValue("@LoanDuration", loanPeriod);
                     addCommand.Parameters.AddWithValue("@Department", textInfo.ToTitleCase(txtDepartment.Text));
                     addCommand.Parameters.AddWithValue("@BorrowerName", textInfo.ToTitleCase(txtFirstName.Text));
@@ -115,12 +126,12 @@ namespace Final_Project_Form
                     addCommand.Parameters.AddWithValue("@LoanedBy", CurrentUser.UserName);
                     addCommand.Parameters.AddWithValue("@LoanNumber", txtLoanID.Text);
                     addCommand.Parameters.AddWithValue("@LoanerID", CurrentUser.UserID);
-                    addCommand.Parameters.AddWithValue("@DueDate", returnDate.ToString("yyyy-dd-MM H:mm:ss"));
+                    addCommand.Parameters.AddWithValue("@DueDate", returnDate);
+                    addCommand.Parameters.AddWithValue("@Quantity", Convert.ToInt32(txtQuantity.Text));
                     addCommand.ExecuteNonQuery();
-                    AutoClosingMessageBox.Show("The item: " + txtResourceName.Text + " Has been successfully loaned to: " + txtFirstName.Text +
+                    AutoClosingMessageBox.Show("The item: " + txtResourceName.Text + " x" + txtQuantity.Text+" Has been successfully loaned to: " + txtFirstName.Text +
                         " For a total of: " + loanPeriod + " Days", "Loan Item ", 5000);
                     connection.Close();
-                    this.Close();
                     removeItemFromResources();
                 }
                 catch (Exception ex)
@@ -134,15 +145,16 @@ namespace Final_Project_Form
         {
             try
             {
-                string connectionString = "Data Source=DESKTOP-BV5T9NA;Initial Catalog=ProjectDB;Integrated Security=True";
+                string connectionString = myGlobals.connString;
                 SqlConnection connection = new SqlConnection(connectionString);
                 connection.Open();
-                string removeResourceCommand = "UPDATE resourcesTable SET isOnLoan=@isOnLoan WHERE ResourceID=@ResourceID";
+                string removeResourceCommand = "UPDATE resourcesTable SET Quantity=@Quantity WHERE ResourceID=@ResourceID";
                 SqlCommand addCommand = new SqlCommand(removeResourceCommand, connection);
                 addCommand.Parameters.AddWithValue("@ResourceID", ResourceID);
-                addCommand.Parameters.AddWithValue("@isOnLoan", true);
+                addCommand.Parameters.AddWithValue("@Quantity", amountinstock - Convert.ToInt32(txtQuantity.Text));
                 addCommand.ExecuteNonQuery();
                 connection.Close();
+                emailUserNotify();
                 this.Close();
             }
             catch (Exception ex)
@@ -150,5 +162,33 @@ namespace Final_Project_Form
                 MessageBox.Show(ex.Message);
             }
         }
+        private void emailUserNotify()
+        {
+            try
+            {
+            string connectionString = myGlobals.connString;
+            string procName = "EmailUser";
+                using (var conn = new SqlConnection(connectionString))
+                using (var email = new SqlCommand(procName, conn)
+                {
+                    CommandType = CommandType.StoredProcedure
+            })
+            {
+                conn.Open();
+                email.Parameters.AddWithValue("@email", txtEmail.Text);
+                email.Parameters.AddWithValue("@profilename", "SHUEmail");
+                email.Parameters.AddWithValue("@thesubject", "Loan Notifier");
+                email.Parameters.AddWithValue("@thebody", "You have been Loaned the item: " + txtResourceName.Text + " x" + txtQuantity.Text 
+                    +" For a total of " + txtLoanPeriod.Text + " Days");
+                email.ExecuteNonQuery();
+                conn.Close();
+            }
+          
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+    }
     }
 }

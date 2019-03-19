@@ -101,7 +101,7 @@ namespace Final_Project_Form
             inventoryGridView.Refresh();
             try
             {
-                string connectionString = "Data Source=DESKTOP-BV5T9NA;Initial Catalog=ProjectDB;Integrated Security=True";
+                string connectionString = myGlobals.connString;
                 SqlConnection connection = new SqlConnection(connectionString);
                 connection.Open();
                 SqlCommand command = new SqlCommand("SELECT * FROM Loans WHERE BorrowerID=@ShuId", connection);
@@ -127,7 +127,7 @@ namespace Final_Project_Form
                 dgvCmb.Name = "Chk";
                 dgvCmb.HeaderText = "Choose";
                 inventoryGridView.Columns.Add(dgvCmb);
-                string connectionString = "Data Source=DESKTOP-BV5T9NA;Initial Catalog=ProjectDB;Integrated Security=True";
+                string connectionString = myGlobals.connString;
                 SqlConnection connection = new SqlConnection(connectionString);
                 connection.Open();
                 SqlCommand command = new SqlCommand("SELECT * FROM Loans WHERE BorrowerID=@ShuId", connection);
@@ -192,6 +192,7 @@ namespace Final_Project_Form
                     pickedItemsGridView.Rows[n].Cells[13].Value = item.Cells[14].Value.ToString();
                     pickedItemsGridView.Rows[n].Cells[14].Value = item.Cells[15].Value.ToString();
                     pickedItemsGridView.Rows[n].Cells[15].Value = item.Cells[16].Value.ToString();
+                    pickedItemsGridView.Rows[n].Cells[16].Value = item.Cells[17].Value.ToString();
                 }
             }
             tabControl1.SelectedTab = tabPage2;
@@ -214,35 +215,39 @@ namespace Final_Project_Form
         { 
             try
             {
+
                 loanNo = row.Cells["LoanNumber"].Value.ToString();
                 resName = row.Cells["ResourceName"].Value.ToString();
                 id = row.Cells["ResourceID"].Value.ToString();
+                int quantity = 0;
+                Int32.TryParse(row.Cells["Quantity"].Value.ToString(), out quantity);
                 resInt = Convert.ToInt32(id);
-                string connectionString = "Data Source=DESKTOP-BV5T9NA;Initial Catalog=ProjectDB;Integrated Security=True";
+                string connectionString = myGlobals.connString;
                 SqlConnection connection = new SqlConnection(connectionString);
                 DateTime returnDate = DateTime.Now;
                 TextInfo textInfo = new CultureInfo("en-US", false).TextInfo;
                 connection.Open();
-                string addUserCommand = "insert into LoanHistory(ResourceID,ResourceType,ResourceName,DateLoaned," +
-                "LoanDuration,Department,BorrowerName,BorrowerID,BorrowerSurname,BorrowerEmail,Notes,LoanedBy,LoanNumber,LoanerID,ReturnDate) " +
+                string addToHistoryCommand = "insert into LoanHistory(ResourceID,ResourceType,ResourceName,DateLoaned," +
+                "LoanDuration,Department,BorrowerName,BorrowerID,BorrowerSurname,BorrowerEmail,LoanedBy,LoanNumber,LoanerID,ReturnDate,Quantity,Notes) " +
                             "values(@ResourceID,@ResourceType,@ResourceName,@DateLoaned,@LoanDuration,@Department,@BorrowerName," +
-                            "@BorrowerID,@BorrowerSurname,@BorrowerEmail,@Notes,@LoanedBy,@LoanNumber,@LoanerID,@ReturnDate)";
-                SqlCommand addCommand = new SqlCommand(addUserCommand, connection);
+                            "@BorrowerID,@BorrowerSurname,@BorrowerEmail,@LoanedBy,@LoanNumber,@LoanerID,@ReturnDate,@Quantity,@Notes)";
+                SqlCommand addCommand = new SqlCommand(addToHistoryCommand, connection);
                 addCommand.Parameters.AddWithValue("@ResourceID", row.Cells["ResourceID"].Value.ToString());
                 addCommand.Parameters.AddWithValue("@ResourceType", row.Cells["ResourceType"].Value.ToString());
                 addCommand.Parameters.AddWithValue("@ResourceName", row.Cells["ResourceName"].Value.ToString());
-                addCommand.Parameters.AddWithValue("@DateLoaned", row.Cells["DateLoaned"].Value.ToString());
+                addCommand.Parameters.AddWithValue("@DateLoaned", Convert.ToDateTime(row.Cells["DateLoaned"].Value.ToString()));
                 addCommand.Parameters.AddWithValue("@LoanDuration", row.Cells["LoanDuration"].Value.ToString());
                 addCommand.Parameters.AddWithValue("@Department", row.Cells["Department"].Value.ToString());
                 addCommand.Parameters.AddWithValue("@BorrowerName", row.Cells["BorrowerName"].Value.ToString());
                 addCommand.Parameters.AddWithValue("@BorrowerID", row.Cells["BorrowerID"].Value.ToString());
                 addCommand.Parameters.AddWithValue("@BorrowerSurname", row.Cells["BorrowerSurname"].Value.ToString());
                 addCommand.Parameters.AddWithValue("@BorrowerEmail", row.Cells["BorrowerEmail"].Value.ToString());
-                addCommand.Parameters.AddWithValue("@Notes", row.Cells["Notes"].Value.ToString());
                 addCommand.Parameters.AddWithValue("@LoanedBy", row.Cells["LoanedBy"].Value.ToString());
                 addCommand.Parameters.AddWithValue("@LoanNumber", row.Cells["LoanNumber"].Value.ToString());
                 addCommand.Parameters.AddWithValue("@LoanerID", row.Cells["LoanerID"].Value.ToString());
-                addCommand.Parameters.AddWithValue("@ReturnDate", returnDate.ToString("yyyy-MM-dd H:mm:ss"));
+                addCommand.Parameters.AddWithValue("@ReturnDate", returnDate);
+                addCommand.Parameters.AddWithValue("@Quantity", quantity);
+                addCommand.Parameters.AddWithValue("@Notes", row.Cells["Notes"].Value.ToString());
                 addCommand.ExecuteNonQuery();
                 connection.Close();
             }
@@ -255,7 +260,7 @@ namespace Final_Project_Form
         {
             try
             {
-                string connectionString = "Data Source=DESKTOP-BV5T9NA;Initial Catalog=ProjectDB;Integrated Security=True";
+                string connectionString = myGlobals.connString;
                 SqlConnection connection = new SqlConnection(connectionString);
                 connection.Open();
                 string removeResourceCommand = "DELETE FROM Loans WHERE LoanNumber=@LoanNumber";
@@ -271,15 +276,17 @@ namespace Final_Project_Form
         }
         private void addToResources(DataGridViewRow row)
         {
+            int quantity = 0;
+            Int32.TryParse(row.Cells["Quantity"].Value.ToString(), out quantity);
             try
             {
-                string connectionString = "Data Source=DESKTOP-BV5T9NA;Initial Catalog=ProjectDB;Integrated Security=True";
+                string connectionString = myGlobals.connString;
                 SqlConnection connection = new SqlConnection(connectionString);
                 connection.Open();
-                string removeResourceCommand = "UPDATE resourcesTable SET isOnLoan=@isOnLoan WHERE ResourceID=@ResourceID";
+                string removeResourceCommand = "UPDATE resourcesTable SET Quantity=Quantity+@Quantity WHERE ResourceID=@ResourceID";
                 SqlCommand addCommand = new SqlCommand(removeResourceCommand, connection);
                 addCommand.Parameters.AddWithValue("@ResourceID", resInt);
-                addCommand.Parameters.AddWithValue("@isOnLoan", false);
+                addCommand.Parameters.AddWithValue("@Quantity", quantity);
                 addCommand.ExecuteNonQuery();
                 connection.Close();
             }
@@ -308,7 +315,7 @@ namespace Final_Project_Form
                 {
                     try
                     {
-                        string connectionString = "Data Source=DESKTOP-BV5T9NA;Initial Catalog=ProjectDB;Integrated Security=True";
+                        string connectionString = myGlobals.connString;
                         SqlConnection connection = new SqlConnection(connectionString);
                         connection.Open();
                         string checkmaxperiod = "SELECT MaxLoanPeriod, ResourceName FROM resourcesTable WHERE ResourceID=@ResourceID";
@@ -348,7 +355,7 @@ namespace Final_Project_Form
             try
             {
                 MessageBox.Show(row.Cells["LoanNumber"].Value.ToString());
-                string connectionString = "Data Source=DESKTOP-BV5T9NA;Initial Catalog=ProjectDB;Integrated Security=True";
+                string connectionString = myGlobals.connString;
                 SqlConnection connection = new SqlConnection(connectionString);
                 DateTime todaysDate = DateTime.Now;
                 DateTime dueDate = todaysDate.AddDays(Convert.ToInt32(txtExtend.Text));
@@ -357,9 +364,9 @@ namespace Final_Project_Form
                 string updateCommand = "UPDATE Loans SET DueDate=@DueDate, LoanDuration=@LoanDuration,DateLoaned=@todaysDate WHERE LoanNumber=@LoanNumber";
                 SqlCommand extendCommand = new SqlCommand(updateCommand, connection);
                 extendCommand.Parameters.AddWithValue("@LoanNumber", row.Cells["LoanNumber"].Value.ToString());
-                extendCommand.Parameters.AddWithValue("@DueDate", dueDate.ToString("yyyy-MM-dd H:mm:ss"));
+                extendCommand.Parameters.AddWithValue("@DueDate", dueDate);
                 extendCommand.Parameters.AddWithValue("@LoanDuration", Convert.ToInt32(txtExtend.Text));
-                extendCommand.Parameters.AddWithValue("@todaysDate", todaysDate.ToString("yyyy-MM-dd H:mm:ss"));
+                extendCommand.Parameters.AddWithValue("@todaysDate", todaysDate);
                 extendCommand.ExecuteNonQuery();
                 connection.Close();
             }
@@ -376,7 +383,7 @@ namespace Final_Project_Form
                 resName = row.Cells["ResourceName"].Value.ToString();
                 id = row.Cells["ResourceID"].Value.ToString();
                 resInt = Convert.ToInt32(id);
-                string connectionString = "Data Source=DESKTOP-BV5T9NA;Initial Catalog=ProjectDB;Integrated Security=True";
+                string connectionString = myGlobals.connString;
                 SqlConnection connection = new SqlConnection(connectionString);
                 DateTime returnDate = DateTime.Now;
                 TextInfo textInfo = new CultureInfo("en-US", false).TextInfo;
@@ -389,7 +396,7 @@ namespace Final_Project_Form
                 addCommand.Parameters.AddWithValue("@ResourceID", row.Cells["ResourceID"].Value.ToString());
                 addCommand.Parameters.AddWithValue("@ResourceType", row.Cells["ResourceType"].Value.ToString());
                 addCommand.Parameters.AddWithValue("@ResourceName", row.Cells["ResourceName"].Value.ToString());
-                addCommand.Parameters.AddWithValue("@DateLoaned", row.Cells["DateLoaned"].Value.ToString());
+                addCommand.Parameters.AddWithValue("@DateLoaned", Convert.ToDateTime(row.Cells["DateLoaned"].Value.ToString()));
                 addCommand.Parameters.AddWithValue("@LoanDuration", Convert.ToInt32(txtExtend.Text));
                 addCommand.Parameters.AddWithValue("@Department", row.Cells["Department"].Value.ToString());
                 addCommand.Parameters.AddWithValue("@BorrowerName", row.Cells["BorrowerName"].Value.ToString());
@@ -400,7 +407,7 @@ namespace Final_Project_Form
                 addCommand.Parameters.AddWithValue("@LoanedBy", row.Cells["LoanedBy"].Value.ToString());
                 addCommand.Parameters.AddWithValue("@LoanNumber", row.Cells["LoanNumber"].Value.ToString());
                 addCommand.Parameters.AddWithValue("@LoanerID", row.Cells["LoanerID"].Value.ToString());
-                addCommand.Parameters.AddWithValue("@ReturnDate", returnDate.ToString("yyyy-MM-dd H:mm:ss"));
+                addCommand.Parameters.AddWithValue("@ReturnDate", returnDate);
                 addCommand.ExecuteNonQuery();
                 connection.Close();
             }

@@ -67,14 +67,14 @@ namespace Final_Project_Form
                DateTime dateTime = DateTime.Now;
                
                TextInfo textInfo = new CultureInfo("en-US", false).TextInfo;
-               string connectionString = "Data Source=DESKTOP-BV5T9NA;Initial Catalog=ProjectDB;Integrated Security=True";
+               string connectionString = myGlobals.connString;
                SqlConnection connection = new SqlConnection(connectionString);
                connection.Open();
 
                 string addUserCommand = "insert into resourcesTable(ResourceType,ResourceName,Quantity,MaxLoanPeriod,OrderNumber," +
-                "PurchasePrice,SerialNumber,Department,Notes,DateAdded,isOnLoan,AddedBy) " +
+                "PurchasePrice,SerialNumber,Department,Notes,DateAdded,AddedBy) " +
                             "values(@ResourceType,@ResourceName,@Quantity,@MaxLoanPeriod,@OrderNumber,@PurchasePrice,@SerialNumber," +
-                            "@Department,@Notes,@DateAdded,@isOnLoan,@AddedBy)";
+                            "@Department,@Notes,@DateAdded,@AddedBy)";
                 SqlCommand addCommand = new SqlCommand(addUserCommand, connection);
                 addCommand.Parameters.AddWithValue("@ResourceType", textInfo.ToTitleCase(txtResourceType.Text));
                 addCommand.Parameters.AddWithValue("@ResourceName", textInfo.ToTitleCase(txtResourceName.Text));
@@ -85,8 +85,7 @@ namespace Final_Project_Form
                 addCommand.Parameters.AddWithValue("@SerialNumber", textInfo.ToTitleCase(txtSerialNo.Text));
                 addCommand.Parameters.AddWithValue("@Department", textInfo.ToTitleCase(departmentsList.SelectedItem.ToString()));
                 addCommand.Parameters.AddWithValue("@Notes", textInfo.ToTitleCase(txtNotes.Text));
-                addCommand.Parameters.AddWithValue("@DateAdded", dateTime.ToString("yyyy-dd-MM H:mm:ss"));
-                addCommand.Parameters.AddWithValue("@isOnLoan", false);
+                addCommand.Parameters.AddWithValue("@DateAdded", dateTime);
                 addCommand.Parameters.AddWithValue("@AddedBy", CurrentUser.UserName);
                 addCommand.ExecuteNonQuery();
                    AutoClosingMessageBox.Show("The item: " + txtResourceName.Text + " Quantity: " + txtQuantity.Text + " Max Loan Period: " + txtLoanPeriod.Text 
@@ -102,7 +101,7 @@ namespace Final_Project_Form
 
         private void Add_Resource_Load(object sender, EventArgs e)
         {
-            string connectionString = "Data Source=DESKTOP-BV5T9NA;Initial Catalog=ProjectDB;Integrated Security=True";
+            string connectionString = myGlobals.connString;
             SqlConnection connection = new SqlConnection(connectionString);
             connection.Open();
             string departmentCmd = "select * FROM departments";

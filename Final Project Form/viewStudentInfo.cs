@@ -16,9 +16,21 @@ namespace Final_Project_Form
     {
         string shuId,firstname, surName, courseDept, emailAddress,finishDate, prevName;
         DataTable dt = new DataTable("User Loans");
+        DataTable dt2 = new DataTable("User History");
+
+        private void btnClose2_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
         private void viewStudentInfo_Load(object sender, EventArgs e)
         {
-            string connectionString = "Data Source=DESKTOP-BV5T9NA;Initial Catalog=ProjectDB;Integrated Security=True";
+            string connectionString = myGlobals.connString;
             SqlConnection connection = new SqlConnection(connectionString);
             connection.Open();
             SqlCommand command = new SqlCommand("SELECT ResourceType, ResourceName, LoanNumber, DateLoaned, DueDate, BorrowerName, LoanedBy" +
@@ -27,6 +39,12 @@ namespace Final_Project_Form
             SqlDataAdapter adapter = new SqlDataAdapter(command);
             adapter.Fill(dt);
             LoanedItemsGridView.DataSource = dt;
+            SqlCommand command2 = new SqlCommand("SELECT ResourceType, ResourceName, LoanNumber, DateLoaned, ReturnDate, BorrowerName, LoanedBy" +
+                " FROM LoanHistory WHERE BorrowerID=@ShuId", connection);
+            command2.Parameters.AddWithValue("@ShuId", txtShuId.Text);
+            SqlDataAdapter adapter2 = new SqlDataAdapter(command2);
+            adapter2.Fill(dt2);
+            loanHistory.DataSource = dt2;
             connection.Close();
         }
 
@@ -76,7 +94,7 @@ namespace Final_Project_Form
             {
                 try
                 {
-                    string connectionString = "Data Source=DESKTOP-BV5T9NA;Initial Catalog=ProjectDB;Integrated Security=True";
+                    string connectionString = myGlobals.connString;
                     SqlConnection connection = new SqlConnection(connectionString);
                     connection.Open();
                     string updateUser = "UPDATE students SET ShuId=@ShuId, FirstName=@FirstName " +

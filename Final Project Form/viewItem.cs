@@ -20,7 +20,7 @@ namespace Final_Project_Form
         DataTable dt2 = new DataTable("Item Loaner");
         private void viewItem_Load(object sender, EventArgs e)
         {
-            string connectionString = "Data Source=DESKTOP-BV5T9NA;Initial Catalog=ProjectDB;Integrated Security=True";
+            string connectionString = myGlobals.connString;
             SqlConnection connection = new SqlConnection(connectionString);
             connection.Open();
             SqlCommand loadHistory = new SqlCommand("SELECT LoanNumber,LoanerID,LoanedBy,DateLoaned,ReturnDate,LoanDuration,BorrowerName," +
@@ -29,7 +29,7 @@ namespace Final_Project_Form
             SqlDataAdapter adapter = new SqlDataAdapter(loadHistory);
             adapter.Fill(dt);
             itemHistoryGridView.DataSource = dt;
-            SqlCommand loadCurrentLoaner = new SqlCommand("SELECT LoanNumber,BorrowerName,BorrowerID,DateLoaned,DueDate,LoanedBy" +
+            SqlCommand loadCurrentLoaner = new SqlCommand("SELECT LoanNumber,BorrowerName,BorrowerID,DateLoaned,DueDate,LoanedBy,Quantity" +
                 " FROM Loans WHERE ResourceID=@resourceID", connection);
             loadCurrentLoaner.Parameters.AddWithValue("@resourceID", id);
             SqlDataAdapter adapter2 = new SqlDataAdapter(loadCurrentLoaner);
@@ -62,7 +62,7 @@ namespace Final_Project_Form
             {
                 try
                 {
-                    string connectionString = "Data Source=DESKTOP-BV5T9NA;Initial Catalog=ProjectDB;Integrated Security=True";
+                    string connectionString = myGlobals.connString;
                     string selectedDept = this.departmentsList.GetItemText(this.departmentsList.SelectedItem);
                     SqlConnection connection = new SqlConnection(connectionString);
                     connection.Open();
@@ -109,7 +109,7 @@ namespace Final_Project_Form
             long serialNo, string dateAdd, string orderNo, decimal price, string notes, int ID)
         {
             InitializeComponent();
-            string connectionString = "Data Source=DESKTOP-BV5T9NA;Initial Catalog=ProjectDB;Integrated Security=True";
+            string connectionString = myGlobals.connString;
             SqlConnection connection = new SqlConnection(connectionString);
             connection.Open();
             string departmentCmd = "select * FROM departments";

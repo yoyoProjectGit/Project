@@ -73,6 +73,7 @@
             this.DateLoaned = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.LoanDuration = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DueDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.LoanNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Department = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.BorrowerName = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -469,6 +470,7 @@
             this.DateLoaned,
             this.LoanDuration,
             this.DueDate,
+            this.Quantity,
             this.LoanNumber,
             this.Department,
             this.BorrowerName,
@@ -546,6 +548,12 @@
             this.DueDate.HeaderText = "DueDate";
             this.DueDate.Name = "DueDate";
             this.DueDate.ReadOnly = true;
+            // 
+            // Quantity
+            // 
+            this.Quantity.HeaderText = "Quantity";
+            this.Quantity.Name = "Quantity";
+            this.Quantity.ReadOnly = true;
             // 
             // LoanNumber
             // 
@@ -656,6 +664,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn DateLoaned;
         private System.Windows.Forms.DataGridViewTextBoxColumn LoanDuration;
         private System.Windows.Forms.DataGridViewTextBoxColumn DueDate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Quantity;
         private System.Windows.Forms.DataGridViewTextBoxColumn LoanNumber;
         private System.Windows.Forms.DataGridViewTextBoxColumn Department;
         private System.Windows.Forms.DataGridViewTextBoxColumn BorrowerName;

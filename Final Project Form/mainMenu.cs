@@ -196,7 +196,7 @@ namespace Final_Project_Form
             bool isOpen = false;
             foreach (Form f in Application.OpenForms)
             {
-                if (f.Text == "LoanUserItem")
+                if (f.Text == "FindUserForLoan")
                 {
                     isOpen = true;
                     f.BringToFront();

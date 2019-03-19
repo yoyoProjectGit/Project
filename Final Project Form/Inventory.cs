@@ -27,7 +27,7 @@ namespace Final_Project_Form
         private void btnSearchName_Click(object sender, EventArgs e)
         {
             DataView dv = dt.DefaultView;
-            dv.RowFilter = string.Format("CONVERT([ResourceID], System.String) LIKE '%" + txtResourceName.Text + "%'");
+            dv.RowFilter = string.Format("CONVERT([ResourceName], System.String) LIKE '%" + txtResourceName.Text + "%'");
             inventoryGridView.DataSource = dv.ToTable();
         }
 
@@ -35,13 +35,12 @@ namespace Final_Project_Form
         {
             try
             {
-                string connectionString = "Data Source=DESKTOP-BV5T9NA;Initial Catalog=ProjectDB;Integrated Security=True";
+                string connectionString = myGlobals.connString;
                 SqlConnection connection = new SqlConnection(connectionString);
                 connection.Open();
                 SqlCommand command = new SqlCommand("SELECT ResourceID,ResourceType,ResourceName,MaxLoanPeriod,Department," +
-                    "SerialNumber,DateAdded,OrderNumber,PurchasePrice,Notes,isOnLoan FROM resourcesTable WHERE Department=@Department", connection);
+                    "SerialNumber,DateAdded,OrderNumber,PurchasePrice,Notes,Quantity FROM resourcesTable WHERE Department=@Department", connection);
                 command.Parameters.AddWithValue("@Department", CurrentUser.Department);
-                command.Parameters.AddWithValue("@isOnLoan", false);
                 SqlDataAdapter adapter = new SqlDataAdapter(command);
                 adapter.Fill(dt);
                 inventoryGridView.DataSource = dt;
@@ -97,13 +96,12 @@ namespace Final_Project_Form
         {
             dt.Clear();
             dt.DefaultView.RowFilter = string.Empty;
-            string connectionString = "Data Source=DESKTOP-BV5T9NA;Initial Catalog=ProjectDB;Integrated Security=True";
+            string connectionString = myGlobals.connString;
             SqlConnection connection = new SqlConnection(connectionString);
             connection.Open();
             SqlCommand command = new SqlCommand("SELECT ResourceID,ResourceType,ResourceName,MaxLoanPeriod,Department," +
-                "SerialNumber,DateAdded,OrderNumber,PurchasePrice,Notes FROM resourcesTable WHERE Department=@Department AND isOnLoan=@isOnLoan", connection);
+                   "SerialNumber,DateAdded,OrderNumber,PurchasePrice,Notes,Quantity FROM resourcesTable WHERE Department=@Department", connection);
             command.Parameters.AddWithValue("@Department", CurrentUser.Department);
-            command.Parameters.AddWithValue("@isOnLoan", false);
             SqlDataAdapter adapter = new SqlDataAdapter(command);
             adapter.Fill(dt);
             inventoryGridView.DataSource = dt;

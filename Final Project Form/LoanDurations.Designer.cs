@@ -51,6 +51,8 @@
             this.txtDepartment = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.txtLoanID = new System.Windows.Forms.TextBox();
+            this.txtQuantity = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // txtNotes
@@ -275,11 +277,31 @@
             this.txtLoanID.Size = new System.Drawing.Size(217, 31);
             this.txtLoanID.TabIndex = 70;
             // 
+            // txtQuantity
+            // 
+            this.txtQuantity.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtQuantity.Location = new System.Drawing.Point(197, 453);
+            this.txtQuantity.Name = "txtQuantity";
+            this.txtQuantity.Size = new System.Drawing.Size(217, 31);
+            this.txtQuantity.TabIndex = 71;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(30, 453);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(83, 24);
+            this.label12.TabIndex = 72;
+            this.label12.Text = "Quantity:";
+            // 
             // LoanDurations
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(993, 640);
+            this.Controls.Add(this.label12);
+            this.Controls.Add(this.txtQuantity);
             this.Controls.Add(this.txtLoanID);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.txtDepartment);
@@ -334,5 +356,7 @@
         private System.Windows.Forms.TextBox txtDepartment;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txtLoanID;
+        private System.Windows.Forms.TextBox txtQuantity;
+        private System.Windows.Forms.Label label12;
     }
 }

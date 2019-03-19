@@ -23,7 +23,7 @@ namespace Final_Project_Form
             try
             {
 
-            string connectionString = "Data Source=DESKTOP-BV5T9NA;Initial Catalog=ProjectDB;Integrated Security=True";
+            string connectionString = myGlobals.connString;
             SqlConnection connection = new SqlConnection(connectionString);
             connection.Open();
             AutoClosingMessageBox.Show("Attempting To Log In", "Logging In", 1000);

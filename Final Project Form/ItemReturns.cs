@@ -51,7 +51,7 @@ namespace Final_Project_Form
         {
             try
             {
-                string connectionString = "Data Source=DESKTOP-BV5T9NA;Initial Catalog=ProjectDB;Integrated Security=True";
+                string connectionString = myGlobals.connString;
                 SqlConnection connection = new SqlConnection(connectionString);
                 connection.Open();
                 string addUserCommand = "insert into LoanHistory(ResourceID,ResourceType,ResourceName,DateLoaned," +
@@ -73,7 +73,7 @@ namespace Final_Project_Form
                 addCommand.Parameters.AddWithValue("@LoanedBy", LoanedBy);
                 addCommand.Parameters.AddWithValue("@LoanNumber", LoanNumber);
                 addCommand.Parameters.AddWithValue("@LoanerID", LoanerID);
-                addCommand.Parameters.AddWithValue("@ReturnDate", returnDate.ToString("yyyy-MM-dd H:mm:ss"));
+                addCommand.Parameters.AddWithValue("@ReturnDate", returnDate);
                 addCommand.ExecuteNonQuery();
                 AutoClosingMessageBox.Show("The item: " + resourceName + " Has been successfully returned", "Return Item ", 5000);
                 connection.Close(); 
@@ -89,7 +89,7 @@ namespace Final_Project_Form
             int id = Convert.ToInt32(resourceID);
             try
           {
-            string connectionString = "Data Source=DESKTOP-BV5T9NA;Initial Catalog=ProjectDB;Integrated Security=True";
+            string connectionString = myGlobals.connString;
             SqlConnection connection = new SqlConnection(connectionString);
             connection.Open();
             string setResourceNotLoaned = "UPDATE resourcesTable SET isOnLoan=@isOnLoan WHERE ResourceID=@ResourceID";
@@ -114,7 +114,7 @@ namespace Final_Project_Form
         {
             try
             {
-                string connectionString = "Data Source=DESKTOP-BV5T9NA;Initial Catalog=ProjectDB;Integrated Security=True";
+                string connectionString = myGlobals.connString;
                 SqlConnection connection = new SqlConnection(connectionString);
                 connection.Open();
                 SqlCommand checkLoan = new SqlCommand("SELECT COUNT(*) FROM Loans WHERE LoanNumber like @LoanNumber", connection);
@@ -166,7 +166,7 @@ namespace Final_Project_Form
         {
             try
             {
-                string connectionString = "Data Source=DESKTOP-BV5T9NA;Initial Catalog=ProjectDB;Integrated Security=True";
+                string connectionString = myGlobals.connString;
                 SqlConnection connection = new SqlConnection(connectionString);
                 connection.Open();
                 SqlCommand remove = new SqlCommand("DELETE FROM Loans WHERE LoanNumber=@LoanNumber", connection);
@@ -197,7 +197,7 @@ namespace Final_Project_Form
         {
             try
             {
-                string connectionString = "Data Source=DESKTOP-BV5T9NA;Initial Catalog=ProjectDB;Integrated Security=True";
+                string connectionString = myGlobals.connString;
                 SqlConnection connection = new SqlConnection(connectionString);
                 connection.Open();
                 SqlCommand checkId = new SqlCommand("SELECT COUNT(*) FROM students WHERE ShuId like @ShuId", connection);

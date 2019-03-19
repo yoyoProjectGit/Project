@@ -10,12 +10,12 @@ namespace Final_Project_Form
     public class ConnectionClass
     {
 
-        string ConnectionString = "Data Source=DESKTOP-BV5T9NA;Initial Catalog=ProjectDB;Integrated Security=True";
+        string connectionString = myGlobals.connString;
         SqlConnection connection;
 
         public void OpenConection()
         {
-            connection = new SqlConnection(ConnectionString);
+            connection = new SqlConnection(connectionString);
             connection.Open();
         }
 
@@ -43,7 +43,7 @@ namespace Final_Project_Form
 
         public object ShowDataInGridView(string Query_)
         {
-            SqlDataAdapter dr = new SqlDataAdapter(Query_, ConnectionString);
+            SqlDataAdapter dr = new SqlDataAdapter(Query_, connectionString);
             DataSet ds = new DataSet();
             dr.Fill(ds);
             object dataum = ds.Tables[0];
