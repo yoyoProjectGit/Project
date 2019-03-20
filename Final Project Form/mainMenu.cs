@@ -12,6 +12,7 @@ namespace Final_Project_Form
 {
     public partial class mainMenu : Form
     {
+        DataTable dt = new DataTable("Inventory");
         public mainMenu()
         {
             InitializeComponent();
@@ -232,6 +233,25 @@ namespace Final_Project_Form
             {
                 ItemReturns returnItem = new ItemReturns();
                 returnItem.Show();
+            }
+        }
+
+        private void btnDisposeItem_Click(object sender, EventArgs e)
+        {
+            bool isOpen = false;
+            foreach (Form f in Application.OpenForms)
+            {
+                if (f.Text == "DisposeItem")
+                {
+                    isOpen = true;
+                    f.BringToFront();
+                    break;
+                }
+            }
+            if (isOpen == false)
+            {
+                DisposeItem disposeItem = new DisposeItem();
+                disposeItem.Show();
             }
         }
     }

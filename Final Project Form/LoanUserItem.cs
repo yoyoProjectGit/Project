@@ -138,10 +138,6 @@ namespace Final_Project_Form
                 SqlDataAdapter adapter = new SqlDataAdapter(command);
                 adapter.Fill(dt);
                 inventoryGridView.DataSource = dt;
-                inventoryGridView.Columns[6].Visible = false;
-                inventoryGridView.Columns[7].Visible = false;
-                inventoryGridView.Columns[8].Visible = false;
-                inventoryGridView.Columns[9].Visible = false;
                 connection.Close();
             }
             catch (Exception ex)

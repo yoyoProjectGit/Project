@@ -22,15 +22,27 @@ namespace Final_Project_Form
         private string notes;
         private string dateAdded;
         private int itemID;
+        private int total;
+        private string addedBy;
         public int ItemID
         {
             get { return itemID; }
             set { itemID = value; }
         }
+        public int Total
+        {
+            get { return total; }
+            set { total = value; }
+        }
         public string ResourceType
         {
             get { return resourceType; }
             set { resourceType = value; }
+        }
+        public string AddedBy
+        {
+            get { return addedBy; }
+            set { addedBy = value; }
         }
         public string ResourceName
         {

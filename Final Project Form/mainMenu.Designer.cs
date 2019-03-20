@@ -40,7 +40,8 @@
             this.lblName = new System.Windows.Forms.Label();
             this.lblDepartment = new System.Windows.Forms.Label();
             this.btnReturnItem = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnDisposeItem = new System.Windows.Forms.Button();
+            this.btnViewDisposedItems = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnAddUser
@@ -162,21 +163,32 @@
             this.btnReturnItem.UseVisualStyleBackColor = true;
             this.btnReturnItem.Click += new System.EventHandler(this.btnReturnItem_Click);
             // 
-            // button2
+            // btnDisposeItem
             // 
-            this.button2.Location = new System.Drawing.Point(448, 554);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(86, 53);
-            this.button2.TabIndex = 13;
-            this.button2.Text = "Add New Resource";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnDisposeItem.Location = new System.Drawing.Point(85, 381);
+            this.btnDisposeItem.Name = "btnDisposeItem";
+            this.btnDisposeItem.Size = new System.Drawing.Size(86, 53);
+            this.btnDisposeItem.TabIndex = 13;
+            this.btnDisposeItem.Text = "Dispose Of Item";
+            this.btnDisposeItem.UseVisualStyleBackColor = true;
+            this.btnDisposeItem.Click += new System.EventHandler(this.btnDisposeItem_Click);
+            // 
+            // btnViewDisposedItems
+            // 
+            this.btnViewDisposedItems.Location = new System.Drawing.Point(85, 451);
+            this.btnViewDisposedItems.Name = "btnViewDisposedItems";
+            this.btnViewDisposedItems.Size = new System.Drawing.Size(86, 53);
+            this.btnViewDisposedItems.TabIndex = 14;
+            this.btnViewDisposedItems.Text = "View Disposed Items";
+            this.btnViewDisposedItems.UseVisualStyleBackColor = true;
             // 
             // mainMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1012, 717);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.btnViewDisposedItems);
+            this.Controls.Add(this.btnDisposeItem);
             this.Controls.Add(this.btnReturnItem);
             this.Controls.Add(this.lblDepartment);
             this.Controls.Add(this.lblName);
@@ -212,6 +224,7 @@
         private System.Windows.Forms.Label lblName;
         private System.Windows.Forms.Label lblDepartment;
         private System.Windows.Forms.Button btnReturnItem;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnDisposeItem;
+        private System.Windows.Forms.Button btnViewDisposedItems;
     }
 }
