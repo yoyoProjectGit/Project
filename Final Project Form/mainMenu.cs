@@ -254,5 +254,24 @@ namespace Final_Project_Form
                 disposeItem.Show();
             }
         }
+
+        private void btnViewDisposedItems_Click(object sender, EventArgs e)
+        {
+            bool isOpen = false;
+            foreach (Form f in Application.OpenForms)
+            {
+                if (f.Text == "ViewDisposedItems")
+                {
+                    isOpen = true;
+                    f.BringToFront();
+                    break;
+                }
+            }
+            if (isOpen == false)
+            {
+                ViewDisposedItems viewDisposedItems = new ViewDisposedItems();
+                viewDisposedItems.Show();
+            }
+        }
     }
 }

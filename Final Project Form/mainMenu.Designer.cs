@@ -181,6 +181,7 @@
             this.btnViewDisposedItems.TabIndex = 14;
             this.btnViewDisposedItems.Text = "View Disposed Items";
             this.btnViewDisposedItems.UseVisualStyleBackColor = true;
+            this.btnViewDisposedItems.Click += new System.EventHandler(this.btnViewDisposedItems_Click);
             // 
             // mainMenu
             // 

@@ -177,6 +177,12 @@
     <Compile Include="ReturnUserItem.Designer.cs">
       <DependentUpon>ReturnUserItem.cs</DependentUpon>
     </Compile>
+    <Compile Include="ViewDisposedItems.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViewDisposedItems.Designer.cs">
+      <DependentUpon>ViewDisposedItems.cs</DependentUpon>
+    </Compile>
     <Compile Include="viewItem.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -261,6 +267,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ReturnUserItem.resx">
       <DependentUpon>ReturnUserItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewDisposedItems.resx">
+      <DependentUpon>ViewDisposedItems.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="viewItem.resx">
       <DependentUpon>viewItem.cs</DependentUpon>
