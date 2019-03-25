@@ -62,7 +62,7 @@ namespace Final_Project_Form
                         maxLoanPeriod = Convert.ToInt32(getData["MaxLoanPeriod"].ToString());
                         orderNumber = getData["OrderNumber"].ToString();
                         purchasePrice = Convert.ToInt32(getData["purchasePrice"].ToString());
-                        serialNumber = Convert.ToInt32(getData["serialNumber"].ToString());
+                        serialNumber = long.Parse(getData["serialNumber"].ToString());
                         department = getData["Department"].ToString();
                         notes = getData["Notes"].ToString();
                         dateAdded = getData["DateAdded"].ToString();

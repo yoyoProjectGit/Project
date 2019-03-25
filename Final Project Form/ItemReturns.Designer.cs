@@ -54,14 +54,14 @@
             this.txtLoanID.Location = new System.Drawing.Point(175, 78);
             this.txtLoanID.Name = "txtLoanID";
             this.txtLoanID.Size = new System.Drawing.Size(169, 31);
-            this.txtLoanID.TabIndex = 1;
+            this.txtLoanID.TabIndex = 0;
             // 
             // btnReturnItem
             // 
             this.btnReturnItem.Location = new System.Drawing.Point(374, 184);
             this.btnReturnItem.Name = "btnReturnItem";
             this.btnReturnItem.Size = new System.Drawing.Size(75, 60);
-            this.btnReturnItem.TabIndex = 3;
+            this.btnReturnItem.TabIndex = 4;
             this.btnReturnItem.Text = "Return Item";
             this.btnReturnItem.UseVisualStyleBackColor = true;
             this.btnReturnItem.Click += new System.EventHandler(this.btnReturnItem_Click);
@@ -92,14 +92,14 @@
             this.txtStudentID.Location = new System.Drawing.Point(175, 125);
             this.txtStudentID.Name = "txtStudentID";
             this.txtStudentID.Size = new System.Drawing.Size(169, 31);
-            this.txtStudentID.TabIndex = 8;
+            this.txtStudentID.TabIndex = 1;
             // 
             // btnBack
             // 
             this.btnBack.Location = new System.Drawing.Point(39, 184);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(75, 60);
-            this.btnBack.TabIndex = 9;
+            this.btnBack.TabIndex = 2;
             this.btnBack.Text = "Back";
             this.btnBack.UseVisualStyleBackColor = true;
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
@@ -109,7 +109,7 @@
             this.btncheckSHUid.Location = new System.Drawing.Point(207, 184);
             this.btncheckSHUid.Name = "btncheckSHUid";
             this.btncheckSHUid.Size = new System.Drawing.Size(75, 60);
-            this.btncheckSHUid.TabIndex = 11;
+            this.btncheckSHUid.TabIndex = 3;
             this.btncheckSHUid.Text = "Check StudentID";
             this.btncheckSHUid.UseVisualStyleBackColor = true;
             this.btncheckSHUid.Click += new System.EventHandler(this.btncheckSHUid_Click);

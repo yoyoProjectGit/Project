@@ -50,7 +50,7 @@ namespace Final_Project_Form
 
         private void loanedItemsGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.ColumnIndex == 16 || e.ColumnIndex == 0)
+            if (e.ColumnIndex == 17 || e.ColumnIndex == 0)
             {
                 DataGridViewRow row = this.loanedItemsGridView.Rows[e.RowIndex];
                 string loanNumber = row.Cells["LoanNumber"].Value.ToString();

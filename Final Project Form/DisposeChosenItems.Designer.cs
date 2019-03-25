@@ -51,7 +51,7 @@
             this.btnBack.Location = new System.Drawing.Point(283, 510);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(103, 59);
-            this.btnBack.TabIndex = 70;
+            this.btnBack.TabIndex = 4;
             this.btnBack.Text = "Cancel";
             this.btnBack.UseVisualStyleBackColor = true;
             // 
@@ -70,7 +70,7 @@
             this.txtQuantity.Location = new System.Drawing.Point(186, 437);
             this.txtQuantity.Name = "txtQuantity";
             this.txtQuantity.Size = new System.Drawing.Size(217, 31);
-            this.txtQuantity.TabIndex = 72;
+            this.txtQuantity.TabIndex = 2;
             // 
             // txtItemID
             // 
@@ -154,7 +154,7 @@
             this.btnDispose.Location = new System.Drawing.Point(21, 510);
             this.btnDispose.Name = "btnDispose";
             this.btnDispose.Size = new System.Drawing.Size(103, 59);
-            this.btnDispose.TabIndex = 82;
+            this.btnDispose.TabIndex = 3;
             this.btnDispose.Text = "Dispose Items";
             this.btnDispose.UseVisualStyleBackColor = true;
             this.btnDispose.Click += new System.EventHandler(this.btnDispose_Click);
@@ -176,7 +176,7 @@
             this.txtReason.Multiline = true;
             this.txtReason.Name = "txtReason";
             this.txtReason.Size = new System.Drawing.Size(217, 98);
-            this.txtReason.TabIndex = 84;
+            this.txtReason.TabIndex = 0;
             // 
             // label6
             // 
@@ -195,7 +195,7 @@
             this.txtMethodOfDisposal.Multiline = true;
             this.txtMethodOfDisposal.Name = "txtMethodOfDisposal";
             this.txtMethodOfDisposal.Size = new System.Drawing.Size(217, 98);
-            this.txtMethodOfDisposal.TabIndex = 86;
+            this.txtMethodOfDisposal.TabIndex = 1;
             // 
             // DisposeChosenItems
             // 

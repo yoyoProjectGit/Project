@@ -63,7 +63,7 @@
             this.txtNotes.Name = "txtNotes";
             this.txtNotes.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.txtNotes.Size = new System.Drawing.Size(217, 108);
-            this.txtNotes.TabIndex = 55;
+            this.txtNotes.TabIndex = 0;
             // 
             // label8
             // 
@@ -80,7 +80,7 @@
             this.btnBack.Location = new System.Drawing.Point(51, 524);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(111, 61);
-            this.btnBack.TabIndex = 53;
+            this.btnBack.TabIndex = 5;
             this.btnBack.Text = "Close";
             this.btnBack.UseVisualStyleBackColor = true;
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
@@ -121,7 +121,7 @@
             this.txtLoanPeriod.Location = new System.Drawing.Point(197, 397);
             this.txtLoanPeriod.Name = "txtLoanPeriod";
             this.txtLoanPeriod.Size = new System.Drawing.Size(217, 31);
-            this.txtLoanPeriod.TabIndex = 45;
+            this.txtLoanPeriod.TabIndex = 1;
             this.txtLoanPeriod.TextChanged += new System.EventHandler(this.txtLoanPeriod_TextChanged);
             this.txtLoanPeriod.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtLoanPeriod_KeyPress);
             // 
@@ -140,7 +140,7 @@
             this.btnUpdate.Location = new System.Drawing.Point(809, 523);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(111, 61);
-            this.btnUpdate.TabIndex = 42;
+            this.btnUpdate.TabIndex = 4;
             this.btnUpdate.Text = "Loan";
             this.btnUpdate.UseVisualStyleBackColor = true;
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
@@ -275,7 +275,7 @@
             this.txtLoanID.Location = new System.Drawing.Point(655, 394);
             this.txtLoanID.Name = "txtLoanID";
             this.txtLoanID.Size = new System.Drawing.Size(217, 31);
-            this.txtLoanID.TabIndex = 70;
+            this.txtLoanID.TabIndex = 3;
             // 
             // txtQuantity
             // 
@@ -283,7 +283,7 @@
             this.txtQuantity.Location = new System.Drawing.Point(197, 453);
             this.txtQuantity.Name = "txtQuantity";
             this.txtQuantity.Size = new System.Drawing.Size(217, 31);
-            this.txtQuantity.TabIndex = 71;
+            this.txtQuantity.TabIndex = 2;
             // 
             // label12
             // 

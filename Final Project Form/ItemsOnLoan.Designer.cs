@@ -48,7 +48,7 @@
             this.btnBack.Location = new System.Drawing.Point(1151, 656);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(91, 89);
-            this.btnBack.TabIndex = 0;
+            this.btnBack.TabIndex = 6;
             this.btnBack.Text = "Back";
             this.btnBack.UseVisualStyleBackColor = true;
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
@@ -58,7 +58,7 @@
             this.btnRefresh.Location = new System.Drawing.Point(725, 101);
             this.btnRefresh.Name = "btnRefresh";
             this.btnRefresh.Size = new System.Drawing.Size(103, 92);
-            this.btnRefresh.TabIndex = 68;
+            this.btnRefresh.TabIndex = 5;
             this.btnRefresh.Text = "Refresh";
             this.btnRefresh.UseVisualStyleBackColor = true;
             // 
@@ -68,7 +68,7 @@
             this.btnSearchBarcode.Location = new System.Drawing.Point(512, 169);
             this.btnSearchBarcode.Name = "btnSearchBarcode";
             this.btnSearchBarcode.Size = new System.Drawing.Size(106, 31);
-            this.btnSearchBarcode.TabIndex = 66;
+            this.btnSearchBarcode.TabIndex = 4;
             this.btnSearchBarcode.Text = "Search";
             this.btnSearchBarcode.UseVisualStyleBackColor = true;
             // 
@@ -78,7 +78,7 @@
             this.btnSearchName.Location = new System.Drawing.Point(512, 108);
             this.btnSearchName.Name = "btnSearchName";
             this.btnSearchName.Size = new System.Drawing.Size(106, 31);
-            this.btnSearchName.TabIndex = 65;
+            this.btnSearchName.TabIndex = 3;
             this.btnSearchName.Text = "Search";
             this.btnSearchName.UseVisualStyleBackColor = true;
             // 
@@ -88,7 +88,7 @@
             this.txtBarcode.Location = new System.Drawing.Point(198, 169);
             this.txtBarcode.Name = "txtBarcode";
             this.txtBarcode.Size = new System.Drawing.Size(217, 31);
-            this.txtBarcode.TabIndex = 64;
+            this.txtBarcode.TabIndex = 1;
             // 
             // txtResourceName
             // 
@@ -96,7 +96,7 @@
             this.txtResourceName.Location = new System.Drawing.Point(198, 108);
             this.txtResourceName.Name = "txtResourceName";
             this.txtResourceName.Size = new System.Drawing.Size(217, 31);
-            this.txtResourceName.TabIndex = 63;
+            this.txtResourceName.TabIndex = 0;
             // 
             // txtResourceBarcode
             // 
@@ -157,7 +157,7 @@
             this.textBox1.Location = new System.Drawing.Point(198, 225);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(217, 31);
-            this.textBox1.TabIndex = 70;
+            this.textBox1.TabIndex = 2;
             // 
             // ItemsOnLoan
             // 

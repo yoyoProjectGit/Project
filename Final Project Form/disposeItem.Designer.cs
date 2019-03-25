@@ -30,6 +30,9 @@
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.btnOrderNo = new System.Windows.Forms.Button();
+            this.txtOrderNumber = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.btnDispose = new System.Windows.Forms.Button();
             this.btnBack = new System.Windows.Forms.Button();
             this.btnRefresh = new System.Windows.Forms.Button();
@@ -59,9 +62,6 @@
             this.Notes = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Total = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.AddedBy = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.label3 = new System.Windows.Forms.Label();
-            this.txtOrderNumber = new System.Windows.Forms.TextBox();
-            this.btnOrderNo = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.inventoryGridView)).BeginInit();
@@ -103,12 +103,41 @@
             this.tabPage1.Text = "Choose Item To Dispose";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
+            // btnOrderNo
+            // 
+            this.btnOrderNo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnOrderNo.Location = new System.Drawing.Point(515, 204);
+            this.btnOrderNo.Name = "btnOrderNo";
+            this.btnOrderNo.Size = new System.Drawing.Size(106, 31);
+            this.btnOrderNo.TabIndex = 5;
+            this.btnOrderNo.Text = "Search";
+            this.btnOrderNo.UseVisualStyleBackColor = true;
+            this.btnOrderNo.Click += new System.EventHandler(this.btnOrderNo_Click);
+            // 
+            // txtOrderNumber
+            // 
+            this.txtOrderNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtOrderNumber.Location = new System.Drawing.Point(201, 204);
+            this.txtOrderNumber.Name = "txtOrderNumber";
+            this.txtOrderNumber.Size = new System.Drawing.Size(217, 31);
+            this.txtOrderNumber.TabIndex = 2;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(22, 208);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(133, 24);
+            this.label3.TabIndex = 33;
+            this.label3.Text = "Order Number";
+            // 
             // btnDispose
             // 
             this.btnDispose.Location = new System.Drawing.Point(850, 24);
             this.btnDispose.Name = "btnDispose";
             this.btnDispose.Size = new System.Drawing.Size(103, 92);
-            this.btnDispose.TabIndex = 32;
+            this.btnDispose.TabIndex = 6;
             this.btnDispose.Text = "Dispose Items";
             this.btnDispose.UseVisualStyleBackColor = true;
             this.btnDispose.Click += new System.EventHandler(this.btnDispose_Click);
@@ -118,7 +147,7 @@
             this.btnBack.Location = new System.Drawing.Point(959, 581);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(103, 38);
-            this.btnBack.TabIndex = 31;
+            this.btnBack.TabIndex = 8;
             this.btnBack.Text = "Back";
             this.btnBack.UseVisualStyleBackColor = true;
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
@@ -128,7 +157,7 @@
             this.btnRefresh.Location = new System.Drawing.Point(959, 24);
             this.btnRefresh.Name = "btnRefresh";
             this.btnRefresh.Size = new System.Drawing.Size(103, 92);
-            this.btnRefresh.TabIndex = 30;
+            this.btnRefresh.TabIndex = 7;
             this.btnRefresh.Text = "Refresh";
             this.btnRefresh.UseVisualStyleBackColor = true;
             this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
@@ -139,7 +168,7 @@
             this.btnSearchBarcode.Location = new System.Drawing.Point(515, 146);
             this.btnSearchBarcode.Name = "btnSearchBarcode";
             this.btnSearchBarcode.Size = new System.Drawing.Size(106, 31);
-            this.btnSearchBarcode.TabIndex = 29;
+            this.btnSearchBarcode.TabIndex = 4;
             this.btnSearchBarcode.Text = "Search";
             this.btnSearchBarcode.UseVisualStyleBackColor = true;
             this.btnSearchBarcode.Click += new System.EventHandler(this.btnSearchBarcode_Click);
@@ -150,7 +179,7 @@
             this.btnSearchName.Location = new System.Drawing.Point(515, 85);
             this.btnSearchName.Name = "btnSearchName";
             this.btnSearchName.Size = new System.Drawing.Size(106, 31);
-            this.btnSearchName.TabIndex = 28;
+            this.btnSearchName.TabIndex = 3;
             this.btnSearchName.Text = "Search";
             this.btnSearchName.UseVisualStyleBackColor = true;
             this.btnSearchName.Click += new System.EventHandler(this.btnSearchName_Click);
@@ -181,7 +210,7 @@
             this.txtSerialNumber.Location = new System.Drawing.Point(201, 146);
             this.txtSerialNumber.Name = "txtSerialNumber";
             this.txtSerialNumber.Size = new System.Drawing.Size(217, 31);
-            this.txtSerialNumber.TabIndex = 25;
+            this.txtSerialNumber.TabIndex = 1;
             // 
             // txtResourceName
             // 
@@ -189,7 +218,7 @@
             this.txtResourceName.Location = new System.Drawing.Point(201, 85);
             this.txtResourceName.Name = "txtResourceName";
             this.txtResourceName.Size = new System.Drawing.Size(217, 31);
-            this.txtResourceName.TabIndex = 24;
+            this.txtResourceName.TabIndex = 0;
             // 
             // label1
             // 
@@ -362,35 +391,6 @@
             this.AddedBy.HeaderText = "AddedBy";
             this.AddedBy.Name = "AddedBy";
             this.AddedBy.ReadOnly = true;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(22, 208);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(133, 24);
-            this.label3.TabIndex = 33;
-            this.label3.Text = "Order Number";
-            // 
-            // txtOrderNumber
-            // 
-            this.txtOrderNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtOrderNumber.Location = new System.Drawing.Point(201, 204);
-            this.txtOrderNumber.Name = "txtOrderNumber";
-            this.txtOrderNumber.Size = new System.Drawing.Size(217, 31);
-            this.txtOrderNumber.TabIndex = 34;
-            // 
-            // btnOrderNo
-            // 
-            this.btnOrderNo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnOrderNo.Location = new System.Drawing.Point(515, 204);
-            this.btnOrderNo.Name = "btnOrderNo";
-            this.btnOrderNo.Size = new System.Drawing.Size(106, 31);
-            this.btnOrderNo.TabIndex = 35;
-            this.btnOrderNo.Text = "Search";
-            this.btnOrderNo.UseVisualStyleBackColor = true;
-            this.btnOrderNo.Click += new System.EventHandler(this.btnOrderNo_Click);
             // 
             // DisposeItem
             // 
