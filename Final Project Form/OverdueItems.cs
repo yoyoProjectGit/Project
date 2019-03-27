@@ -36,7 +36,24 @@ namespace Final_Project_Form
             SqlDataAdapter adapter = new SqlDataAdapter(command);
             adapter.Fill(dt);
             overdueItemsGridView.DataSource = dt;
-            //this.overdueItemsGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
-        }
-    }
+			DataGridViewButtonColumn button = new DataGridViewButtonColumn();
+			button.HeaderText = "Send Email";
+			button.Text = "Email";
+			button.UseColumnTextForButtonValue = true;
+			overdueItemsGridView.Columns.Add(button);
+			connection.Close();
+		}
+
+		private void overdueItemsGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+		{
+			if (e.ColumnIndex == 9 || e.ColumnIndex == 0)
+			{
+				DataGridViewRow row = this.overdueItemsGridView.Rows[e.RowIndex];
+				var borrower = new currentBorrower();
+				borrower.EmailAddress = row.Cells["BorrowerEmail"].Value.ToString();
+				EmailHandler emailBorrower = new EmailHandler(borrower.EmailAddress);
+				emailBorrower.Show();
+			}
+		}
+	}
 }

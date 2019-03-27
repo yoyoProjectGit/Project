@@ -36,7 +36,7 @@
 			this.label6 = new System.Windows.Forms.Label();
 			this.txtPurchasePrice = new System.Windows.Forms.TextBox();
 			this.label11 = new System.Windows.Forms.Label();
-			this.txtOrderNum = new System.Windows.Forms.TextBox();
+			this.txtSupplierSource = new System.Windows.Forms.TextBox();
 			this.label10 = new System.Windows.Forms.Label();
 			this.label9 = new System.Windows.Forms.Label();
 			this.txtDateAdded = new System.Windows.Forms.TextBox();
@@ -144,14 +144,14 @@
 			this.label11.TabIndex = 36;
 			this.label11.Text = "Purchase Price:";
 			// 
-			// txtOrderNum
+			// txtSupplierSource
 			// 
-			this.txtOrderNum.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.txtOrderNum.Location = new System.Drawing.Point(557, 89);
-			this.txtOrderNum.Name = "txtOrderNum";
-			this.txtOrderNum.ReadOnly = true;
-			this.txtOrderNum.Size = new System.Drawing.Size(217, 31);
-			this.txtOrderNum.TabIndex = 35;
+			this.txtSupplierSource.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.txtSupplierSource.Location = new System.Drawing.Point(557, 89);
+			this.txtSupplierSource.Name = "txtSupplierSource";
+			this.txtSupplierSource.ReadOnly = true;
+			this.txtSupplierSource.Size = new System.Drawing.Size(217, 31);
+			this.txtSupplierSource.TabIndex = 35;
 			// 
 			// label10
 			// 
@@ -159,9 +159,9 @@
 			this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.label10.Location = new System.Drawing.Point(411, 93);
 			this.label10.Name = "label10";
-			this.label10.Size = new System.Drawing.Size(138, 24);
+			this.label10.Size = new System.Drawing.Size(151, 24);
 			this.label10.TabIndex = 34;
-			this.label10.Text = "Order Number:";
+			this.label10.Text = "Supplier/Source:";
 			// 
 			// label9
 			// 
@@ -317,7 +317,7 @@
 			this.tabPage1.Controls.Add(this.label6);
 			this.tabPage1.Controls.Add(this.txtPurchasePrice);
 			this.tabPage1.Controls.Add(this.label11);
-			this.tabPage1.Controls.Add(this.txtOrderNum);
+			this.tabPage1.Controls.Add(this.txtSupplierSource);
 			this.tabPage1.Controls.Add(this.label10);
 			this.tabPage1.Controls.Add(this.label9);
 			this.tabPage1.Controls.Add(this.txtDateAdded);
@@ -387,7 +387,7 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txtPurchasePrice;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox txtOrderNum;
+        private System.Windows.Forms.TextBox txtSupplierSource;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox txtDateAdded;

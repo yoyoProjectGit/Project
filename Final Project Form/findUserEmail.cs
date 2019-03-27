@@ -64,17 +64,14 @@ namespace Final_Project_Form
 
         private void studentGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.ColumnIndex == 7 || e.ColumnIndex == 0)
+            if (e.ColumnIndex == 9 || e.ColumnIndex == 0)
             {
-                EmailHandler emailhandler = new EmailHandler();
-                DataGridViewRow row = this.studentGridView.Rows[e.RowIndex];
-                var student = new currentStudent();
-                student.EmailAddress = row.Cells["EmailAddress"].Value.ToString();
-                //this.ReturnEmail = student.EmailAddress;
-                emailhandler.TextBoxValue = student.EmailAddress;
+				DataGridViewRow row = this.studentGridView.Rows[e.RowIndex];
+				var student = new currentBorrower();
+				student.EmailAddress = row.Cells["EmailAddress"].Value.ToString();
+				EmailHandler emailhandler = new EmailHandler(student.EmailAddress);
                 emailhandler.Show();
                 this.Close();
-         //       emailReturn();
             }
         }
 

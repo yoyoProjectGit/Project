@@ -34,7 +34,7 @@ namespace Final_Project_Form
         private void btnOrderNo_Click(object sender, EventArgs e)
         {
             DataView dv = dt.DefaultView;
-            dv.RowFilter = string.Format("CONVERT([OrderNumber], System.String) LIKE '%" + txtOrderNumber.Text + "%'");
+            dv.RowFilter = string.Format("CONVERT([SupplierSource], System.String) LIKE '%" + txtSupplierSource.Text + "%'");
             inventoryGridView.DataSource = dv.ToTable();
         }
         private void btnRefresh_Click(object sender, EventArgs e)
@@ -45,9 +45,9 @@ namespace Final_Project_Form
             SqlConnection connection = new SqlConnection(connectionString);
             connection.Open();
             SqlCommand command = new SqlCommand("SELECT ResourceID,ResourceType,ResourceName,MaxLoanPeriod,Department," +
-                    "SerialNumber,DateAdded,OrderNumber,PurchasePrice,Quantity,Notes,Total,addedBy " +
+                    "SerialNumber,DateAdded,SupplierSource,PurchasePrice,Quantity,Notes,Total,addedBy " +
                     "FROM resourcesTable WHERE Department=@Department AND Quantity>0", connection);
-            command.Parameters.AddWithValue("@Department", CurrentUser.Department);
+            command.Parameters.AddWithValue("@Department", currentUser.Department);
             SqlDataAdapter adapter = new SqlDataAdapter(command);
             adapter.Fill(dt);
             inventoryGridView.DataSource = dt;
@@ -72,9 +72,9 @@ namespace Final_Project_Form
                 SqlConnection connection = new SqlConnection(connectionString);
                 connection.Open();
                 SqlCommand command = new SqlCommand("SELECT ResourceID,ResourceType,ResourceName,MaxLoanPeriod,Department," +
-                    "SerialNumber,DateAdded,OrderNumber,PurchasePrice,Quantity,Notes,Total,addedBy " +
+                    "SerialNumber,DateAdded,SupplierSource,PurchasePrice,Quantity,Notes,Total,addedBy " +
                     "FROM resourcesTable WHERE Department=@Department AND Quantity>0", connection);
-                command.Parameters.AddWithValue("@Department", CurrentUser.Department);
+                command.Parameters.AddWithValue("@Department", currentUser.Department);
                 SqlDataAdapter adapter = new SqlDataAdapter(command);
                 adapter.Fill(dt);
                 inventoryGridView.DataSource = dt;
@@ -162,14 +162,14 @@ namespace Final_Project_Form
                 item.Quantity = quantity;
                 item.SerialNumber = SerialNo;
                 item.DateAdded = row.Cells["DateAdded"].Value.ToString();
-                item.OrderNumber = row.Cells["OrderNumber"].Value.ToString();
+                item.SupplierSource = row.Cells["SupplierSource"].Value.ToString();
                 item.PurchasePrice = decPurchasePrice;
                 item.Notes = row.Cells["Notes"].Value.ToString();
                 item.ItemID = resourceid;
                 item.Total = total;
                 item.AddedBy = row.Cells["AddedBy"].Value.ToString();
                 DisposeChosenItems chosenItems = new DisposeChosenItems(item.ResourceType, item.ResourceName, item.MaxLoanPeriod,
-                    item.Quantity, item.Department, item.ItemID, item.Total, item.AddedBy, item.SerialNumber, item.DateAdded, item.OrderNumber,item.PurchasePrice,
+                    item.Quantity, item.Department, item.ItemID, item.Total, item.AddedBy, item.SerialNumber, item.DateAdded, item.SupplierSource,item.PurchasePrice,
                     item.Notes);
                 chosenItems.Show();
 

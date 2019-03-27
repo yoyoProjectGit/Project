@@ -25,7 +25,7 @@ namespace Final_Project_Form
             SqlConnection connection = new SqlConnection(connectionString);
             connection.Open();
             SqlCommand command = new SqlCommand("SELECT * FROM disposedItems", connection);
-            command.Parameters.AddWithValue("@Department", CurrentUser.Department);
+            command.Parameters.AddWithValue("@Department", currentUser.Department);
             SqlDataAdapter adapter = new SqlDataAdapter(command);
             adapter.Fill(dt);
             disposedItemsGridView.DataSource = dt;

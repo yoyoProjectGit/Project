@@ -71,23 +71,23 @@ namespace Final_Project_Form
                SqlConnection connection = new SqlConnection(connectionString);
                connection.Open();
 
-                string addItemCommand = "insert into resourcesTable(ResourceType,ResourceName,Quantity,MaxLoanPeriod,OrderNumber," +
+                string addItemCommand = "insert into resourcesTable(ResourceType,ResourceName,Quantity,MaxLoanPeriod,SupplierSource," +
                 "PurchasePrice,SerialNumber,Department,Notes,DateAdded,AddedBy,Total) " +
-                            "values(@ResourceType,@ResourceName,@Quantity,@MaxLoanPeriod,@OrderNumber,@PurchasePrice,@SerialNumber," +
+                            "values(@ResourceType,@ResourceName,@Quantity,@MaxLoanPeriod,@SupplierSource,@PurchasePrice,@SerialNumber," +
                             "@Department,@Notes,@DateAdded,@AddedBy,@Total)";
                 SqlCommand addCommand = new SqlCommand(addItemCommand, connection);
                 addCommand.Parameters.AddWithValue("@ResourceType", textInfo.ToTitleCase(txtResourceType.Text));
-                addCommand.Parameters.AddWithValue("@ResourceName", textInfo.ToTitleCase(txtResourceName.Text));
-                addCommand.Parameters.AddWithValue("@Quantity", textInfo.ToTitleCase(txtQuantity.Text));
+                addCommand.Parameters.AddWithValue("@ResourceName", txtResourceName.Text);
+                addCommand.Parameters.AddWithValue("@Quantity", txtQuantity.Text);
                 addCommand.Parameters.AddWithValue("@MaxLoanPeriod", textInfo.ToTitleCase(txtLoanPeriod.Text));
-                addCommand.Parameters.AddWithValue("@OrderNumber", textInfo.ToTitleCase(txtOrderNo.Text));
-                addCommand.Parameters.AddWithValue("@PurchasePrice", textInfo.ToTitleCase(txtPurchasePrice.Text));
-                addCommand.Parameters.AddWithValue("@SerialNumber", textInfo.ToTitleCase(txtSerialNo.Text));
+                addCommand.Parameters.AddWithValue("@SupplierSource", txtSupplierSource.Text);
+                addCommand.Parameters.AddWithValue("@PurchasePrice", txtPurchasePrice.Text);
+                addCommand.Parameters.AddWithValue("@SerialNumber",txtSerialNo.Text);
                 addCommand.Parameters.AddWithValue("@Department", textInfo.ToTitleCase(departmentsList.SelectedItem.ToString()));
-                addCommand.Parameters.AddWithValue("@Notes", textInfo.ToTitleCase(txtNotes.Text));
+                addCommand.Parameters.AddWithValue("@Notes", txtNotes.Text);
                 addCommand.Parameters.AddWithValue("@DateAdded", dateTime);
-                addCommand.Parameters.AddWithValue("@AddedBy", CurrentUser.UserName);
-                addCommand.Parameters.AddWithValue("@Total", textInfo.ToTitleCase(txtQuantity.Text));
+                addCommand.Parameters.AddWithValue("@AddedBy", currentUser.UserName);
+                addCommand.Parameters.AddWithValue("@Total", txtQuantity.Text);
                 addCommand.ExecuteNonQuery();
                    AutoClosingMessageBox.Show("The item: " + txtResourceName.Text + " Quantity: " + txtQuantity.Text + " Max Loan Period: " + txtLoanPeriod.Text 
                        + " Serial No: " + txtSerialNo.Text +" has been successfully added to the inventory", "Add Resource ", 10000);

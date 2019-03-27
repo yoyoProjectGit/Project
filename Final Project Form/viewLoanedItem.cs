@@ -19,7 +19,7 @@ namespace Final_Project_Form
         string resourceType;
         string resourceName;
         int maxLoanPeriod;
-        string orderNumber;
+        string SupplierSource;
         decimal purchasePrice;
         long serialNumber;
         string department;
@@ -60,7 +60,7 @@ namespace Final_Project_Form
                         resourceType = getData["ResourceType"].ToString();
                         resourceName = getData["ResourceName"].ToString();
                         maxLoanPeriod = Convert.ToInt32(getData["MaxLoanPeriod"].ToString());
-                        orderNumber = getData["OrderNumber"].ToString();
+                        SupplierSource = getData["SupplierSource"].ToString();
                         purchasePrice = Convert.ToInt32(getData["purchasePrice"].ToString());
                         serialNumber = long.Parse(getData["serialNumber"].ToString());
                         department = getData["Department"].ToString();
@@ -85,7 +85,7 @@ namespace Final_Project_Form
             txtNotes.Text = notes;
             txtDateAdded.Text = dateAdded;
             txtSerialNo.Text = serialNumber.ToString();
-            txtOrderNum.Text = orderNumber;
+            txtSupplierSource.Text = SupplierSource;
             txtMaxLoanPeriod.Text = maxLoanPeriod.ToString();
             txtPurchasePrice.Text = purchasePrice.ToString();
         }

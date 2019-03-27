@@ -39,10 +39,10 @@ namespace Final_Project_Form
 
         private void studentGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.ColumnIndex == 7 || e.ColumnIndex == 0)
+            if (e.ColumnIndex == 9 || e.ColumnIndex == 0)
             {
                 DataGridViewRow row = this.studentGridView.Rows[e.RowIndex];
-                var student = new currentStudent();
+                var student = new currentBorrower();
                 student.ShuId = row.Cells["ShuId"].Value.ToString();
                 student.FirstName = row.Cells["FirstName"].Value.ToString();
                 student.Surname = row.Cells["Surname"].Value.ToString();

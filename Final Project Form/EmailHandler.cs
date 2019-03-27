@@ -15,11 +15,12 @@ namespace Final_Project_Form
 {
     public partial class EmailHandler : Form
     {
-
+		string emailAddress = "";
         findUserEmail findEmail = new findUserEmail();
-        public EmailHandler()
+        public EmailHandler(string email)
         {
             InitializeComponent();
+			emailAddress = email;
         }
 
         private void emailHandler()
@@ -73,5 +74,10 @@ namespace Final_Project_Form
             get { return txtToWho.Text; }
             set { txtToWho.Text = value; }
         }
-    }
+
+		private void EmailHandler_Load(object sender, EventArgs e)
+		{
+			txtToWho.Text = emailAddress;
+		}
+	}
 }

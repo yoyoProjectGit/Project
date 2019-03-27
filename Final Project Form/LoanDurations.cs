@@ -123,9 +123,9 @@ namespace Final_Project_Form
                     addCommand.Parameters.AddWithValue("@BorrowerSurname", textInfo.ToTitleCase(txtSurname.Text));
                     addCommand.Parameters.AddWithValue("@BorrowerEmail", txtEmail.Text);
                     addCommand.Parameters.AddWithValue("@Notes", txtNotes.Text);
-                    addCommand.Parameters.AddWithValue("@LoanedBy", CurrentUser.UserName);
+                    addCommand.Parameters.AddWithValue("@LoanedBy", currentUser.UserName);
                     addCommand.Parameters.AddWithValue("@LoanNumber", txtLoanID.Text);
-                    addCommand.Parameters.AddWithValue("@LoanerID", CurrentUser.UserID);
+                    addCommand.Parameters.AddWithValue("@LoanerID", currentUser.UserID);
                     addCommand.Parameters.AddWithValue("@DueDate", returnDate);
                     addCommand.Parameters.AddWithValue("@Quantity", Convert.ToInt32(txtQuantity.Text));
                     addCommand.ExecuteNonQuery();

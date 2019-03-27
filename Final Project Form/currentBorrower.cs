@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Final_Project_Form
 {
-    public class currentStudent
+    public class currentBorrower
     {
         private string shuId;
         private string firstname;

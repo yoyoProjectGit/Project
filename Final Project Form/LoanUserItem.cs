@@ -106,9 +106,9 @@ namespace Final_Project_Form
                 SqlConnection connection = new SqlConnection(connectionString);
                 connection.Open();
                 SqlCommand command = new SqlCommand("SELECT ResourceID,ResourceType,ResourceName,MaxLoanPeriod,Department," +
-                                    "SerialNumber,DateAdded,OrderNumber,PurchasePrice,Quantity,Notes FROM resourcesTable WHERE Department=@Department " +
+                                    "SerialNumber,DateAdded,SupplierSource,PurchasePrice,Quantity,Notes FROM resourcesTable WHERE Department=@Department " +
                                     "AND Quantity>0", connection);
-                command.Parameters.AddWithValue("@Department", CurrentUser.Department);
+                command.Parameters.AddWithValue("@Department", currentUser.Department);
                 SqlDataAdapter adapter = new SqlDataAdapter(command);
                 adapter.Fill(dt);
                 inventoryGridView.DataSource = dt;
@@ -133,8 +133,8 @@ namespace Final_Project_Form
                 SqlConnection connection = new SqlConnection(connectionString);
                 connection.Open();
                 SqlCommand command = new SqlCommand("SELECT ResourceID,ResourceType,ResourceName,MaxLoanPeriod,Department," +
-                    "SerialNumber,DateAdded,OrderNumber,PurchasePrice,Quantity,Notes FROM resourcesTable WHERE Department=@Department AND Quantity>0", connection);
-                command.Parameters.AddWithValue("@Department", CurrentUser.Department);
+                    "SerialNumber,DateAdded,SupplierSource,PurchasePrice,Quantity,Notes FROM resourcesTable WHERE Department=@Department AND Quantity>0", connection);
+                command.Parameters.AddWithValue("@Department", currentUser.Department);
                 SqlDataAdapter adapter = new SqlDataAdapter(command);
                 adapter.Fill(dt);
                 inventoryGridView.DataSource = dt;
@@ -193,6 +193,7 @@ namespace Final_Project_Form
 
         private void btnConfirmItems_Click(object sender, EventArgs e)
         {
+			checkIfUserHasLoan();
             foreach(DataGridViewRow row in pickedItemsGridView.Rows)
             {   //string maxprd = row.Cells["MaxLoanPeriod"].Value.ToString();
                 int maxprd = 0;
@@ -202,7 +203,7 @@ namespace Final_Project_Form
                 Int32.TryParse(row.Cells["ResourceID"].Value.ToString(), out resourceid);
                 Int32.TryParse(row.Cells["Quantity"].Value.ToString(), out quantity);
                 //MessageBox.Show(maxprd);
-                var borrower = new currentStudent();
+                var borrower = new currentBorrower();
                 borrower.FirstName = txtCurrentName.Text;
                 borrower.Surname = txtCurrentSurname.Text;
                 borrower.ShuId = txtCurrentId.Text;
@@ -215,7 +216,7 @@ namespace Final_Project_Form
                 item.Quantity = quantity;
                 //item.SerialNumber = (long)row.Cells["SerialNumber"].Value;
                 //item.DateAdded = row.Cells["DateAdded"].Value.ToString();
-                //item.OrderNumber = row.Cells["OrderNumber"].Value.ToString();
+                //item.SupplierSource = row.Cells["SupplierSource"].Value.ToString();
                 //item.PurchasePrice = (decimal)row.Cells["PurchasePrice"].Value;
                 //item.Notes = row.Cells["Notes"].Value.ToString();
                 item.ItemID = resourceid;
@@ -231,5 +232,33 @@ namespace Final_Project_Form
         {
             tabControl1.SelectedTab = tabPage1;
         }
+		private void checkIfUserHasLoan()
+		{
+			try
+			{
+				string connectionString = myGlobals.connString;
+				SqlConnection connection = new SqlConnection(connectionString);
+				connection.Open();
+				SqlCommand command = new SqlCommand("SELECT * FROM Loans WHERE BorrowerID=@BorrowerID", connection);
+				command.Parameters.AddWithValue("@BorrowerID", txtCurrentId.Text);
+				SqlDataReader reader = command.ExecuteReader();
+				while (reader.Read())
+				{
+					if (reader.HasRows)
+					{
+						MessageBox.Show("Reminder: This user currently has another item on loan.");
+					}
+					else
+					{
+						return;
+					}
+				}
+				connection.Close();
+			}
+			catch (Exception ex)
+			{
+				MessageBox.Show(ex.Message);
+			}
+		}
     }
 }

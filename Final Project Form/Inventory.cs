@@ -39,8 +39,8 @@ namespace Final_Project_Form
                 SqlConnection connection = new SqlConnection(connectionString);
                 connection.Open();
                 SqlCommand command = new SqlCommand("SELECT ResourceID,ResourceType,ResourceName,MaxLoanPeriod,Department," +
-                    "SerialNumber,DateAdded,OrderNumber,PurchasePrice,Notes,Quantity FROM resourcesTable WHERE Department=@Department", connection);
-                command.Parameters.AddWithValue("@Department", CurrentUser.Department);
+                    "SerialNumber,DateAdded,SupplierSource,PurchasePrice,Notes,Quantity FROM resourcesTable WHERE Department=@Department", connection);
+                command.Parameters.AddWithValue("@Department", currentUser.Department);
                 SqlDataAdapter adapter = new SqlDataAdapter(command);
                 adapter.Fill(dt);
                 inventoryGridView.DataSource = dt;
@@ -81,12 +81,12 @@ namespace Final_Project_Form
                 item.Department = row.Cells["Department"].Value.ToString();
                 item.SerialNumber = (long)row.Cells["SerialNumber"].Value;
                 item.DateAdded = row.Cells["DateAdded"].Value.ToString();
-                item.OrderNumber = row.Cells["OrderNumber"].Value.ToString();
+                item.SupplierSource = row.Cells["SupplierSource"].Value.ToString();
                 item.PurchasePrice = (decimal)row.Cells["PurchasePrice"].Value;
                 item.Notes = row.Cells["Notes"].Value.ToString();
                 item.ItemID = (int)row.Cells["ResourceID"].Value;
                 viewItem viewInfo = new viewItem(item.ResourceType, item.ResourceName, item.MaxLoanPeriod,
-                    item.Department, item.SerialNumber, item.DateAdded, item.OrderNumber,
+                    item.Department, item.SerialNumber, item.DateAdded, item.SupplierSource,
                     item.PurchasePrice, item.Notes, item.ItemID);
                 viewInfo.Show();
             }
@@ -100,8 +100,8 @@ namespace Final_Project_Form
             SqlConnection connection = new SqlConnection(connectionString);
             connection.Open();
             SqlCommand command = new SqlCommand("SELECT ResourceID,ResourceType,ResourceName,MaxLoanPeriod,Department," +
-                   "SerialNumber,DateAdded,OrderNumber,PurchasePrice,Notes,Quantity FROM resourcesTable WHERE Department=@Department", connection);
-            command.Parameters.AddWithValue("@Department", CurrentUser.Department);
+                   "SerialNumber,DateAdded,SupplierSource,PurchasePrice,Notes,Quantity FROM resourcesTable WHERE Department=@Department", connection);
+            command.Parameters.AddWithValue("@Department", currentUser.Department);
             SqlDataAdapter adapter = new SqlDataAdapter(command);
             adapter.Fill(dt);
             inventoryGridView.DataSource = dt;

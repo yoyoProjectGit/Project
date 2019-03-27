@@ -12,7 +12,7 @@ namespace Final_Project_Form
         private string resourceName;
         private int quantity;
         private int maxLoanPeriod;
-        private string orderNumber;
+        private string supplierSource;
         private decimal purchasePrice;
         private long serialNumber;
         private string department;
@@ -59,10 +59,10 @@ namespace Final_Project_Form
             get { return maxLoanPeriod; }
             set { maxLoanPeriod = value; }
         }
-        public string OrderNumber
+        public string SupplierSource
         {
-            get { return orderNumber; }
-            set { orderNumber = value; }
+            get { return supplierSource; }
+            set { supplierSource = value; }
         }
         public decimal PurchasePrice
         {

@@ -78,8 +78,8 @@
     <Compile Include="AutoClosingMessageBox.cs" />
     <Compile Include="ConnectionClass.cs" />
     <Compile Include="currentItem.cs" />
-    <Compile Include="currentStudent.cs" />
-    <Compile Include="CurrentUser.cs" />
+    <Compile Include="currentBorrower.cs" />
+    <Compile Include="currentUser.cs" />
     <Compile Include="DisposeChosenItems.cs">
       <SubType>Form</SubType>
     </Compile>

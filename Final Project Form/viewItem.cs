@@ -13,7 +13,7 @@ namespace Final_Project_Form
 {
     public partial class viewItem : Form
     {
-        string resourceType, resourceName, department, Notes, dateAdded, orderNumber;
+        string resourceType, resourceName, department, Notes, dateAdded, SupplierSource;
         int maxLoanPeriod, id;
         long serialNumber;
         DataTable dt = new DataTable("Item History");
@@ -54,7 +54,7 @@ namespace Final_Project_Form
         {
             if ((txtResourceName.Text.Equals(resourceName) && txtResourceType.Text.Equals(resourceType) && txtNotes.Text.Equals(Notes) && 
                 (departmentsList.SelectedIndex == departmentsList.FindString(department)) && txtMaxLoanPeriod.Text.Equals(maxLoanPeriod.ToString()) 
-                && txtPurchasePrice.Text.Equals(purchasePrice.ToString()) && txtSerialNo.Text.Equals(serialNumber.ToString())))
+                && txtPurchasePrice.Text.Equals(purchasePrice.ToString()) && txtSerialNo.Text.Equals(serialNumber.ToString()) && txtSupplierSource.Text.Equals(SupplierSource)))
             {
                 MessageBox.Show("You have not changed any values!");
             }
@@ -67,7 +67,7 @@ namespace Final_Project_Form
                     SqlConnection connection = new SqlConnection(connectionString);
                     connection.Open();
                     string updateItem = "UPDATE resourcesTable SET ResourceType=@ResourceType, ResourceName=@ResourceName " +
-                        ", Notes=@Notes, SerialNumber=@SerialNumber, OrderNumber=@OrderNumber,Department=@Department ," +
+                        ", Notes=@Notes, SerialNumber=@SerialNumber, SupplierSource=@SupplierSource,Department=@Department ," +
                         "PurchasePrice=@PurchasePrice, MaxLoanPeriod=@MaxLoanPeriod " +
                         " WHERE ResourceID=@ResourceID";
                     SqlCommand command = new SqlCommand(updateItem, connection);
@@ -77,7 +77,7 @@ namespace Final_Project_Form
                     command.Parameters.AddWithValue("@Notes", textInfo.ToTitleCase(txtNotes.Text));
                     command.Parameters.AddWithValue("@MaxLoanPeriod", textInfo.ToTitleCase(txtMaxLoanPeriod.Text));
                     command.Parameters.AddWithValue("@SerialNumber", textInfo.ToTitleCase(txtSerialNo.Text));
-                    command.Parameters.AddWithValue("@OrderNumber", textInfo.ToTitleCase(txtOrderNum.Text));
+                    command.Parameters.AddWithValue("@SupplierSource", textInfo.ToTitleCase(txtSupplierSource.Text));
                     command.Parameters.AddWithValue("@PurchasePrice", textInfo.ToTitleCase(txtPurchasePrice.Text));
                     command.Parameters.AddWithValue("@Department", selectedDept);
                     
@@ -100,7 +100,7 @@ namespace Final_Project_Form
             txtResourceName.ReadOnly = false;
             txtMaxLoanPeriod.ReadOnly = false;
             txtSerialNo.ReadOnly = false;
-            txtOrderNum.ReadOnly = false;
+            txtSupplierSource.ReadOnly = false;
             txtPurchasePrice.ReadOnly = false;
             txtNotes.ReadOnly = false;
 
@@ -126,7 +126,7 @@ namespace Final_Project_Form
             resourceType = type;
             txtResourceName.Text = name;
             resourceName = name;
-            txtAddedBy.Text = CurrentUser.UserName;
+            txtAddedBy.Text = currentUser.UserName;
             departmentsList.SelectedIndex = departmentsList.FindString(dept);
             department = dept;
             txtNotes.Text = notes;
@@ -135,8 +135,8 @@ namespace Final_Project_Form
             dateAdded = dateAdd;
             txtSerialNo.Text = serialNo.ToString();
             serialNumber = serialNo;
-            txtOrderNum.Text = orderNo.ToString();
-            orderNumber = orderNo;
+            txtSupplierSource.Text = orderNo.ToString();
+            SupplierSource = orderNo;
             txtMaxLoanPeriod.Text = loanprd.ToString();
             maxLoanPeriod = loanprd;
             txtPurchasePrice.Text = price.ToString();

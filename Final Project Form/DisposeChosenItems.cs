@@ -115,20 +115,20 @@ namespace Final_Project_Form
                     string connectionString = myGlobals.connString;
                     SqlConnection connection = new SqlConnection(connectionString);
                     connection.Open();
-                    string addtoDisposedCommand = "insert into disposedItems(ResourceType,ResourceName,MaxLoanPeriod,OrderNumber," +
+                    string addtoDisposedCommand = "insert into disposedItems(ResourceType,ResourceName,MaxLoanPeriod,SupplierSource," +
                      "PurchasePrice,SerialNumber,Department,DisposalDate,MethodOfDisposal,DisposedBy,DisposalInfo,Notes,DateAdded,AddedBy) " +
-                                 "values(@ResourceType,@ResourceName,@MaxLoanPeriod,@OrderNumber,@PurchasePrice,@SerialNumber," +
+                                 "values(@ResourceType,@ResourceName,@MaxLoanPeriod,@SupplierSource,@PurchasePrice,@SerialNumber," +
                                  "@Department,@DisposalDate,@MethodOfDisposal,@DisposedBy,@DisposalInfo,@Notes,@DateAdded,@AddedBy)";
                     SqlCommand command = new SqlCommand(addtoDisposedCommand, connection);
                     command.Parameters.AddWithValue("@ResourceType", txtResourceType.Text);
                     command.Parameters.AddWithValue("@ResourceName", txtResourceName.Text);
                     command.Parameters.AddWithValue("@MaxLoanPeriod", loanPrd);
-                    command.Parameters.AddWithValue("@OrderNumber", orderNo);
+                    command.Parameters.AddWithValue("@SupplierSource", orderNo);
                     command.Parameters.AddWithValue("@PurchasePrice", purchasePrice);
                     command.Parameters.AddWithValue("@SerialNumber", serialNo);
                     command.Parameters.AddWithValue("@DisposalDate", todaysDate);
                     command.Parameters.AddWithValue("@MethodOfDisposal", txtMethodOfDisposal.Text);
-                    command.Parameters.AddWithValue("@DisposedBy", CurrentUser.UserName);
+                    command.Parameters.AddWithValue("@DisposedBy", currentUser.UserName);
                     command.Parameters.AddWithValue("@DisposalInfo", txtReason.Text);
                     command.Parameters.AddWithValue("@Notes", Notes);
                     command.Parameters.AddWithValue("@Department", txtDepartment.Text);

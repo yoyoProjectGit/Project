@@ -31,7 +31,7 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.btnOrderNo = new System.Windows.Forms.Button();
-            this.txtOrderNumber = new System.Windows.Forms.TextBox();
+            this.txtSupplierSource = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.btnDispose = new System.Windows.Forms.Button();
             this.btnBack = new System.Windows.Forms.Button();
@@ -56,7 +56,7 @@
             this.Department = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SerialNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DateAdded = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.OrderNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SupplierSource = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PurchasePrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Notes = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -82,7 +82,7 @@
             // tabPage1
             // 
             this.tabPage1.Controls.Add(this.btnOrderNo);
-            this.tabPage1.Controls.Add(this.txtOrderNumber);
+            this.tabPage1.Controls.Add(this.txtSupplierSource);
             this.tabPage1.Controls.Add(this.label3);
             this.tabPage1.Controls.Add(this.btnDispose);
             this.tabPage1.Controls.Add(this.btnBack);
@@ -114,13 +114,13 @@
             this.btnOrderNo.UseVisualStyleBackColor = true;
             this.btnOrderNo.Click += new System.EventHandler(this.btnOrderNo_Click);
             // 
-            // txtOrderNumber
+            // txtSupplierSource
             // 
-            this.txtOrderNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtOrderNumber.Location = new System.Drawing.Point(201, 204);
-            this.txtOrderNumber.Name = "txtOrderNumber";
-            this.txtOrderNumber.Size = new System.Drawing.Size(217, 31);
-            this.txtOrderNumber.TabIndex = 2;
+            this.txtSupplierSource.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSupplierSource.Location = new System.Drawing.Point(201, 204);
+            this.txtSupplierSource.Name = "txtSupplierSource";
+            this.txtSupplierSource.Size = new System.Drawing.Size(217, 31);
+            this.txtSupplierSource.TabIndex = 2;
             // 
             // label3
             // 
@@ -301,7 +301,7 @@
             this.Department,
             this.SerialNumber,
             this.DateAdded,
-            this.OrderNumber,
+            this.SupplierSource,
             this.PurchasePrice,
             this.Quantity,
             this.Notes,
@@ -356,11 +356,11 @@
             this.DateAdded.Name = "DateAdded";
             this.DateAdded.ReadOnly = true;
             // 
-            // OrderNumber
+            // SupplierSource
             // 
-            this.OrderNumber.HeaderText = "OrderNumber";
-            this.OrderNumber.Name = "OrderNumber";
-            this.OrderNumber.ReadOnly = true;
+            this.SupplierSource.HeaderText = "SupplierSource";
+            this.SupplierSource.Name = "SupplierSource";
+            this.SupplierSource.ReadOnly = true;
             // 
             // PurchasePrice
             // 
@@ -438,13 +438,13 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Department;
         private System.Windows.Forms.DataGridViewTextBoxColumn SerialNumber;
         private System.Windows.Forms.DataGridViewTextBoxColumn DateAdded;
-        private System.Windows.Forms.DataGridViewTextBoxColumn OrderNumber;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SupplierSource;
         private System.Windows.Forms.DataGridViewTextBoxColumn PurchasePrice;
         private System.Windows.Forms.DataGridViewTextBoxColumn Quantity;
         private System.Windows.Forms.DataGridViewTextBoxColumn Notes;
         private System.Windows.Forms.DataGridViewTextBoxColumn Total;
         private System.Windows.Forms.DataGridViewTextBoxColumn AddedBy;
-        private System.Windows.Forms.TextBox txtOrderNumber;
+        private System.Windows.Forms.TextBox txtSupplierSource;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnOrderNo;
         private System.Windows.Forms.TextBox txtSerialNumber;

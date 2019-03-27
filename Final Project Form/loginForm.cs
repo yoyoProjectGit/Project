@@ -42,9 +42,9 @@ namespace Final_Project_Form
                     {
                         while (reader.Read())
                         {
-                            CurrentUser.UserName = reader[0].ToString();
-                            CurrentUser.Department = reader[1].ToString();
-                            CurrentUser.UserID = reader[2].ToString();
+                            currentUser.UserName = reader[0].ToString();
+                            currentUser.Department = reader[1].ToString();
+                            currentUser.UserID = reader[2].ToString();
                         }
                     }
                     mainMenu mainMenu = new mainMenu();

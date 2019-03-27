@@ -166,7 +166,7 @@ namespace Final_Project_Form
             }
             if (isOpen == false)
             {
-                EmailHandler emailhandler = new EmailHandler();
+                EmailHandler emailhandler = new EmailHandler("");
                 emailhandler.Show();
             }
 
@@ -213,8 +213,8 @@ namespace Final_Project_Form
 
         private void mainMenu_Load(object sender, EventArgs e)
         {
-            lblName.Text = ("Welcome " +CurrentUser.UserName);
-            lblDepartment.Text = ("Department: " + CurrentUser.Department);
+            lblName.Text = ("Welcome " +currentUser.UserName);
+            lblDepartment.Text = ("Department: " + currentUser.Department);
         }
 
         private void btnReturnItem_Click(object sender, EventArgs e)

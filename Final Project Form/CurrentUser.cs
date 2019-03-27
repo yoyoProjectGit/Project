@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Final_Project_Form
 {
-    public class CurrentUser
+    public class currentUser
     {
         private static string userName = "";
         private static string department = "";
