@@ -63,19 +63,21 @@ namespace Final_Project_Form
 
         private void studentGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.ColumnIndex == 7 || e.ColumnIndex == 0)
+            if (e.ColumnIndex == 9 || e.ColumnIndex == 0)
             {
                 DataGridViewRow row = this.studentGridView.Rows[e.RowIndex];
-                var student = new currentBorrower();
-                student.ShuId = row.Cells["ShuId"].Value.ToString();
-                student.FirstName = row.Cells["FirstName"].Value.ToString();
-                student.Surname = row.Cells["Surname"].Value.ToString();
-                student.CourseDept = row.Cells["CourseDept"].Value.ToString();
-                student.EmailAddress = row.Cells["EmailAddress"].Value.ToString();
-                student.DateCreated = row.Cells["DateAdded"].Value.ToString();
-                student.FinishDate = row.Cells["FinishDate"].Value.ToString();
-                viewStudentInfo viewInfo = new viewStudentInfo(student.ShuId, student.FirstName, student.Surname,
-                    student.CourseDept, student.EmailAddress, student.DateCreated, student.FinishDate);
+                var borrower = new currentBorrower();
+				borrower.ShuId = row.Cells["ShuId"].Value.ToString();
+				borrower.FirstName = row.Cells["FirstName"].Value.ToString();
+				borrower.Surname = row.Cells["Surname"].Value.ToString();
+				borrower.CourseDept = row.Cells["CourseDept"].Value.ToString();
+				borrower.EmailAddress = row.Cells["EmailAddress"].Value.ToString();
+				borrower.DateCreated = row.Cells["DateAdded"].Value.ToString();
+				borrower.StartDate = row.Cells["StartDate"].Value.ToString();
+				borrower.UserType = row.Cells["UserType"].Value.ToString();
+				borrower.ScannableNum = row.Cells["ScannableNum"].Value.ToString();
+				viewStudentInfo viewInfo = new viewStudentInfo(borrower.ShuId, borrower.FirstName, borrower.Surname,
+					borrower.CourseDept, borrower.EmailAddress, borrower.DateCreated, borrower.StartDate,borrower.UserType,borrower.ScannableNum);
                 viewInfo.Show();
             }
         }

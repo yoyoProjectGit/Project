@@ -92,10 +92,10 @@ namespace Final_Project_Form
                 string connectionString = myGlobals.connString;
                 SqlConnection connection = new SqlConnection(connectionString);
                 connection.Open();
-                string removeQuantityCommand = "UPDATE resourcesTable SET Quantity=@Quantity, Total=@Total WHERE ResourceID=@ResourceID";
+                string removeQuantityCommand = "UPDATE resourcesTable SET InStock=@InStock, Total=@Total WHERE ResourceID=@ResourceID";
                 SqlCommand remCommand = new SqlCommand(removeQuantityCommand, connection);
                 remCommand.Parameters.AddWithValue("@ResourceID", resourceID);
-                remCommand.Parameters.AddWithValue("@Quantity", instock - quantity);
+                remCommand.Parameters.AddWithValue("@InStock", instock - quantity);
                 remCommand.Parameters.AddWithValue("@Total", Total - quantity);
                 remCommand.ExecuteNonQuery();
                 connection.Close();

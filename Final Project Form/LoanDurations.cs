@@ -18,8 +18,11 @@ namespace Final_Project_Form
         int maxLoanPeriod = 0;
         int ResourceID;
         int amountinstock;
+		string scannableNum;
+		string userType;
+		long serialNumber;
         public LoanDurations(string type, string name, int loanprd, int quantity,string dept, int ID, string firstname, 
-            string surname, string shuid, string email)
+            string surname, string shuid, string email, string scannablenum, string usertype, long serialnumber)
         {
             InitializeComponent();
             txtResourceType.Text = type;
@@ -30,8 +33,12 @@ namespace Final_Project_Form
             txtSurname.Text = surname;
             txtEmail.Text = email;
             maxLoanPeriod = loanprd;
+			txtLoanPeriod.Text = "" + loanprd;
             ResourceID = ID;
             amountinstock = quantity;
+			scannableNum = scannablenum;
+			userType = usertype;
+			serialNumber = serialnumber;
         }
 
         private void btnBack_Click(object sender, EventArgs e)
@@ -42,9 +49,9 @@ namespace Final_Project_Form
         private void btnUpdate_Click(object sender, EventArgs e)
         {
             
-            if (txtLoanPeriod.Text == "" || txtLoanID.Text == "")
+            if (txtLoanPeriod.Text == "" || txtLoanedBy.Text == "")
             {
-                MessageBox.Show("Loan Duration, Loan ID and Quantity are required!");
+                MessageBox.Show("Loan Duration, Loaned By and Quantity are required!");
             }
             else
             {
@@ -86,61 +93,49 @@ namespace Final_Project_Form
         }
         private void LoanUserItem()
         {
-            string connectionString = myGlobals.connString;
-            SqlConnection connection = new SqlConnection(connectionString);
-            connection.Open();
-            SqlCommand checkLoan = new SqlCommand("SELECT COUNT(*) FROM Loans WHERE LoanNumber like @LoanNumber", connection);
-            checkLoan.Parameters.AddWithValue("@LoanNumber", txtLoanID.Text);
-            int loanExists = (int)checkLoan.ExecuteScalar();
-            if (loanExists > 0)
-            {
-                MessageBox.Show("This Loan ID has already been used, Please use a different Loan ID");
-                connection.Close();
-            } 
-            else
-            {
-                connection.Close();
-                try
-                {
-                    DateTime todaysDate = DateTime.Now;
-                    int loanPeriod = Convert.ToInt32(this.txtLoanPeriod.Text);
-                    DateTime returnDate = todaysDate.AddDays(loanPeriod);
-                    TextInfo textInfo = new CultureInfo("en-US", false).TextInfo;
-                    connection.Open();
-                    string addUserCommand = "insert into Loans(ResourceID,ResourceType,ResourceName,DateLoaned," +
-                    "LoanDuration,Department,BorrowerName,BorrowerID,BorrowerSurname,BorrowerEmail,Notes,LoanedBy,LoanNumber,LoanerID,DueDate,Quantity) " +
-                                "values(@ResourceID,@ResourceType,@ResourceName,@DateLoaned,@LoanDuration,@Department,@BorrowerName," +
-                                "@BorrowerID,@BorrowerSurname,@BorrowerEmail,@Notes,@LoanedBy,@LoanNumber,@LoanerID,@DueDate,@Quantity)";
-                    SqlCommand addCommand = new SqlCommand(addUserCommand, connection);
-                    addCommand.Parameters.AddWithValue("@ResourceID", ResourceID);
-                    addCommand.Parameters.AddWithValue("@ResourceType", textInfo.ToTitleCase(txtResourceType.Text));
-                    addCommand.Parameters.AddWithValue("@ResourceName", textInfo.ToTitleCase(txtResourceName.Text));
-                    addCommand.Parameters.AddWithValue("@DateLoaned", todaysDate);
-                    addCommand.Parameters.AddWithValue("@LoanDuration", loanPeriod);
-                    addCommand.Parameters.AddWithValue("@Department", textInfo.ToTitleCase(txtDepartment.Text));
-                    addCommand.Parameters.AddWithValue("@BorrowerName", textInfo.ToTitleCase(txtFirstName.Text));
-                    addCommand.Parameters.AddWithValue("@BorrowerID", textInfo.ToTitleCase(txtShuId.Text));
-                    addCommand.Parameters.AddWithValue("@BorrowerSurname", textInfo.ToTitleCase(txtSurname.Text));
-                    addCommand.Parameters.AddWithValue("@BorrowerEmail", txtEmail.Text);
-                    addCommand.Parameters.AddWithValue("@Notes", txtNotes.Text);
-                    addCommand.Parameters.AddWithValue("@LoanedBy", currentUser.UserName);
-                    addCommand.Parameters.AddWithValue("@LoanNumber", txtLoanID.Text);
-                    addCommand.Parameters.AddWithValue("@LoanerID", currentUser.UserID);
-                    addCommand.Parameters.AddWithValue("@DueDate", returnDate);
-                    addCommand.Parameters.AddWithValue("@Quantity", Convert.ToInt32(txtQuantity.Text));
-                    addCommand.ExecuteNonQuery();
-                    AutoClosingMessageBox.Show("The item: " + txtResourceName.Text + " x" + txtQuantity.Text+" Has been successfully loaned to: " + txtFirstName.Text +
-                        " For a total of: " + loanPeriod + " Days", "Loan Item ", 5000);
-                    connection.Close();
-                    removeItemFromResources();
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
-                }
-            }
-               
-        }
+			try
+			{
+				string connectionString = myGlobals.connString;
+				SqlConnection connection = new SqlConnection(connectionString);
+				DateTime todaysDate = DateTime.Now;
+				int loanPeriod = Convert.ToInt32(this.txtLoanPeriod.Text);
+				DateTime returnDate = todaysDate.AddDays(loanPeriod);
+				TextInfo textInfo = new CultureInfo("en-US", false).TextInfo;
+				connection.Open();
+				string addUserCommand = "insert into Loans(ResourceID,ResourceType,ResourceName,DateLoaned," +
+				"LoanDuration,Department,BorrowerName,BorrowerID,BorrowerSurname,BorrowerEmail,Notes," +
+				"LoanedBy,DueDate,Quantity,ScannableNum,UserType,SerialNumber) " +
+				"values(@ResourceID,@ResourceType,@ResourceName,@DateLoaned,@LoanDuration,@Department,@BorrowerName," +
+				"@BorrowerID,@BorrowerSurname,@BorrowerEmail,@Notes,@LoanedBy,@DueDate,@Quantity,@ScannableNum,@UserType,@SerialNumber)";
+				SqlCommand addCommand = new SqlCommand(addUserCommand, connection);
+				addCommand.Parameters.AddWithValue("@ResourceID", ResourceID);
+				addCommand.Parameters.AddWithValue("@ResourceType", textInfo.ToTitleCase(txtResourceType.Text));
+				addCommand.Parameters.AddWithValue("@ResourceName", textInfo.ToTitleCase(txtResourceName.Text));
+				addCommand.Parameters.AddWithValue("@DateLoaned", todaysDate);
+				addCommand.Parameters.AddWithValue("@LoanDuration", loanPeriod);
+				addCommand.Parameters.AddWithValue("@Department", textInfo.ToTitleCase(txtDepartment.Text));
+				addCommand.Parameters.AddWithValue("@BorrowerName", textInfo.ToTitleCase(txtFirstName.Text));
+				addCommand.Parameters.AddWithValue("@BorrowerID", textInfo.ToTitleCase(txtShuId.Text));
+				addCommand.Parameters.AddWithValue("@BorrowerSurname", textInfo.ToTitleCase(txtSurname.Text));
+				addCommand.Parameters.AddWithValue("@BorrowerEmail", txtEmail.Text);
+				addCommand.Parameters.AddWithValue("@Notes", txtNotes.Text);
+				addCommand.Parameters.AddWithValue("@LoanedBy", txtLoanedBy.Text);
+				addCommand.Parameters.AddWithValue("@DueDate", returnDate);
+				addCommand.Parameters.AddWithValue("@Quantity", Convert.ToInt32(txtQuantity.Text));
+				addCommand.Parameters.AddWithValue("@ScannableNum", scannableNum);
+				addCommand.Parameters.AddWithValue("@UserType", userType);
+				addCommand.Parameters.AddWithValue("@SerialNumber", serialNumber);
+				addCommand.ExecuteNonQuery();
+				AutoClosingMessageBox.Show("The item: " + txtResourceName.Text + " x" + txtQuantity.Text + " Has been successfully loaned to: " + txtFirstName.Text +
+					" For a total of: " + loanPeriod + " Days", "Loan Item ", 5000);
+				connection.Close();
+				removeItemFromResources();
+			}
+			catch (Exception ex)
+			{
+				MessageBox.Show(ex.Message);
+			}
+		}
         private void removeItemFromResources()
         {
             try
@@ -148,10 +143,10 @@ namespace Final_Project_Form
                 string connectionString = myGlobals.connString;
                 SqlConnection connection = new SqlConnection(connectionString);
                 connection.Open();
-                string removeResourceCommand = "UPDATE resourcesTable SET Quantity=@Quantity WHERE ResourceID=@ResourceID";
+                string removeResourceCommand = "UPDATE resourcesTable SET InStock=@InStock WHERE ResourceID=@ResourceID";
                 SqlCommand addCommand = new SqlCommand(removeResourceCommand, connection);
                 addCommand.Parameters.AddWithValue("@ResourceID", ResourceID);
-                addCommand.Parameters.AddWithValue("@Quantity", amountinstock - Convert.ToInt32(txtQuantity.Text));
+                addCommand.Parameters.AddWithValue("@InStock", amountinstock - Convert.ToInt32(txtQuantity.Text));
                 addCommand.ExecuteNonQuery();
                 connection.Close();
                 emailUserNotify();
@@ -189,6 +184,6 @@ namespace Final_Project_Form
             {
                 MessageBox.Show(ex.Message);
             }
-    }
-    }
+		}
+	}
 }

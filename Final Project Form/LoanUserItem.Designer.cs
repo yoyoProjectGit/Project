@@ -64,6 +64,14 @@
 			this.label13 = new System.Windows.Forms.Label();
 			this.label8 = new System.Windows.Forms.Label();
 			this.pickedItemsGridView = new System.Windows.Forms.DataGridView();
+			this.txtScanID = new System.Windows.Forms.TextBox();
+			this.txtUserType = new System.Windows.Forms.TextBox();
+			this.label14 = new System.Windows.Forms.Label();
+			this.label15 = new System.Windows.Forms.Label();
+			this.txtScanID2 = new System.Windows.Forms.TextBox();
+			this.txtUserType2 = new System.Windows.Forms.TextBox();
+			this.label16 = new System.Windows.Forms.Label();
+			this.label17 = new System.Windows.Forms.Label();
 			this.ResourceID = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.ResourceType = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.ResourceName = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -71,6 +79,7 @@
 			this.Department = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.Quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.Notes = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.SerialNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.tabControl1.SuspendLayout();
 			this.tabPage1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.inventoryGridView)).BeginInit();
@@ -90,6 +99,10 @@
 			// 
 			// tabPage1
 			// 
+			this.tabPage1.Controls.Add(this.txtScanID);
+			this.tabPage1.Controls.Add(this.txtUserType);
+			this.tabPage1.Controls.Add(this.label14);
+			this.tabPage1.Controls.Add(this.label15);
 			this.tabPage1.Controls.Add(this.btnLoanItems);
 			this.tabPage1.Controls.Add(this.txtCurrentId);
 			this.tabPage1.Controls.Add(this.txtCurrentEmail);
@@ -131,7 +144,7 @@
 			// txtCurrentId
 			// 
 			this.txtCurrentId.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.txtCurrentId.Location = new System.Drawing.Point(1146, 216);
+			this.txtCurrentId.Location = new System.Drawing.Point(1100, 153);
 			this.txtCurrentId.Name = "txtCurrentId";
 			this.txtCurrentId.ReadOnly = true;
 			this.txtCurrentId.Size = new System.Drawing.Size(312, 31);
@@ -140,7 +153,7 @@
 			// txtCurrentEmail
 			// 
 			this.txtCurrentEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.txtCurrentEmail.Location = new System.Drawing.Point(1146, 173);
+			this.txtCurrentEmail.Location = new System.Drawing.Point(1100, 110);
 			this.txtCurrentEmail.Name = "txtCurrentEmail";
 			this.txtCurrentEmail.ReadOnly = true;
 			this.txtCurrentEmail.Size = new System.Drawing.Size(312, 31);
@@ -149,7 +162,7 @@
 			// txtCurrentSurname
 			// 
 			this.txtCurrentSurname.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.txtCurrentSurname.Location = new System.Drawing.Point(1146, 130);
+			this.txtCurrentSurname.Location = new System.Drawing.Point(1100, 67);
 			this.txtCurrentSurname.Name = "txtCurrentSurname";
 			this.txtCurrentSurname.ReadOnly = true;
 			this.txtCurrentSurname.Size = new System.Drawing.Size(312, 31);
@@ -159,46 +172,46 @@
 			// 
 			this.label7.AutoSize = true;
 			this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label7.Location = new System.Drawing.Point(1014, 216);
+			this.label7.Location = new System.Drawing.Point(964, 157);
 			this.label7.Name = "label7";
-			this.label7.Size = new System.Drawing.Size(66, 24);
+			this.label7.Size = new System.Drawing.Size(71, 24);
 			this.label7.TabIndex = 54;
-			this.label7.Text = "Shu ID";
+			this.label7.Text = "Shu ID:";
 			// 
 			// label6
 			// 
 			this.label6.AutoSize = true;
 			this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label6.Location = new System.Drawing.Point(1014, 177);
+			this.label6.Location = new System.Drawing.Point(964, 114);
 			this.label6.Name = "label6";
-			this.label6.Size = new System.Drawing.Size(57, 24);
+			this.label6.Size = new System.Drawing.Size(62, 24);
 			this.label6.TabIndex = 53;
-			this.label6.Text = "Email";
+			this.label6.Text = "Email:";
 			// 
 			// label5
 			// 
 			this.label5.AutoSize = true;
 			this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label5.Location = new System.Drawing.Point(1014, 134);
+			this.label5.Location = new System.Drawing.Point(964, 71);
 			this.label5.Name = "label5";
-			this.label5.Size = new System.Drawing.Size(87, 24);
+			this.label5.Size = new System.Drawing.Size(92, 24);
 			this.label5.TabIndex = 52;
-			this.label5.Text = "Surname";
+			this.label5.Text = "Surname:";
 			// 
 			// label4
 			// 
 			this.label4.AutoSize = true;
 			this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label4.Location = new System.Drawing.Point(1014, 86);
+			this.label4.Location = new System.Drawing.Point(964, 27);
 			this.label4.Name = "label4";
-			this.label4.Size = new System.Drawing.Size(101, 24);
+			this.label4.Size = new System.Drawing.Size(106, 24);
 			this.label4.TabIndex = 51;
-			this.label4.Text = "First Name";
+			this.label4.Text = "First Name:";
 			// 
 			// txtCurrentName
 			// 
 			this.txtCurrentName.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.txtCurrentName.Location = new System.Drawing.Point(1146, 86);
+			this.txtCurrentName.Location = new System.Drawing.Point(1100, 23);
 			this.txtCurrentName.Name = "txtCurrentName";
 			this.txtCurrentName.ReadOnly = true;
 			this.txtCurrentName.Size = new System.Drawing.Size(312, 31);
@@ -208,7 +221,7 @@
 			// 
 			this.label3.AutoSize = true;
 			this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label3.Location = new System.Drawing.Point(1426, 32);
+			this.label3.Location = new System.Drawing.Point(1432, 16);
 			this.label3.Name = "label3";
 			this.label3.Size = new System.Drawing.Size(141, 24);
 			this.label3.TabIndex = 49;
@@ -319,6 +332,10 @@
 			// 
 			// tabPage2
 			// 
+			this.tabPage2.Controls.Add(this.txtScanID2);
+			this.tabPage2.Controls.Add(this.txtUserType2);
+			this.tabPage2.Controls.Add(this.label16);
+			this.tabPage2.Controls.Add(this.label17);
 			this.tabPage2.Controls.Add(this.btnGoBack);
 			this.tabPage2.Controls.Add(this.btnConfirmItems);
 			this.tabPage2.Controls.Add(this.txtShuId2);
@@ -363,7 +380,7 @@
 			// txtShuId2
 			// 
 			this.txtShuId2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.txtShuId2.Location = new System.Drawing.Point(1126, 216);
+			this.txtShuId2.Location = new System.Drawing.Point(1099, 146);
 			this.txtShuId2.Name = "txtShuId2";
 			this.txtShuId2.ReadOnly = true;
 			this.txtShuId2.Size = new System.Drawing.Size(312, 31);
@@ -372,7 +389,7 @@
 			// txtCurrentEmail2
 			// 
 			this.txtCurrentEmail2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.txtCurrentEmail2.Location = new System.Drawing.Point(1126, 173);
+			this.txtCurrentEmail2.Location = new System.Drawing.Point(1099, 103);
 			this.txtCurrentEmail2.Name = "txtCurrentEmail2";
 			this.txtCurrentEmail2.ReadOnly = true;
 			this.txtCurrentEmail2.Size = new System.Drawing.Size(312, 31);
@@ -381,7 +398,7 @@
 			// txtCurrentSurname2
 			// 
 			this.txtCurrentSurname2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.txtCurrentSurname2.Location = new System.Drawing.Point(1126, 130);
+			this.txtCurrentSurname2.Location = new System.Drawing.Point(1099, 60);
 			this.txtCurrentSurname2.Name = "txtCurrentSurname2";
 			this.txtCurrentSurname2.ReadOnly = true;
 			this.txtCurrentSurname2.Size = new System.Drawing.Size(312, 31);
@@ -391,46 +408,46 @@
 			// 
 			this.label9.AutoSize = true;
 			this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label9.Location = new System.Drawing.Point(994, 216);
+			this.label9.Location = new System.Drawing.Point(963, 150);
 			this.label9.Name = "label9";
-			this.label9.Size = new System.Drawing.Size(66, 24);
+			this.label9.Size = new System.Drawing.Size(71, 24);
 			this.label9.TabIndex = 64;
-			this.label9.Text = "Shu ID";
+			this.label9.Text = "Shu ID:";
 			// 
 			// label10
 			// 
 			this.label10.AutoSize = true;
 			this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label10.Location = new System.Drawing.Point(994, 177);
+			this.label10.Location = new System.Drawing.Point(963, 107);
 			this.label10.Name = "label10";
-			this.label10.Size = new System.Drawing.Size(57, 24);
+			this.label10.Size = new System.Drawing.Size(62, 24);
 			this.label10.TabIndex = 63;
-			this.label10.Text = "Email";
+			this.label10.Text = "Email:";
 			// 
 			// label11
 			// 
 			this.label11.AutoSize = true;
 			this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label11.Location = new System.Drawing.Point(994, 130);
+			this.label11.Location = new System.Drawing.Point(963, 64);
 			this.label11.Name = "label11";
-			this.label11.Size = new System.Drawing.Size(87, 24);
+			this.label11.Size = new System.Drawing.Size(92, 24);
 			this.label11.TabIndex = 62;
-			this.label11.Text = "Surname";
+			this.label11.Text = "Surname:";
 			// 
 			// label12
 			// 
 			this.label12.AutoSize = true;
 			this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label12.Location = new System.Drawing.Point(994, 86);
+			this.label12.Location = new System.Drawing.Point(963, 20);
 			this.label12.Name = "label12";
-			this.label12.Size = new System.Drawing.Size(101, 24);
+			this.label12.Size = new System.Drawing.Size(106, 24);
 			this.label12.TabIndex = 61;
-			this.label12.Text = "First Name";
+			this.label12.Text = "First Name:";
 			// 
 			// txtCurrentName2
 			// 
 			this.txtCurrentName2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.txtCurrentName2.Location = new System.Drawing.Point(1126, 86);
+			this.txtCurrentName2.Location = new System.Drawing.Point(1099, 16);
 			this.txtCurrentName2.Name = "txtCurrentName2";
 			this.txtCurrentName2.ReadOnly = true;
 			this.txtCurrentName2.Size = new System.Drawing.Size(312, 31);
@@ -440,7 +457,7 @@
 			// 
 			this.label13.AutoSize = true;
 			this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label13.Location = new System.Drawing.Point(1165, 22);
+			this.label13.Location = new System.Drawing.Point(1432, 15);
 			this.label13.Name = "label13";
 			this.label13.Size = new System.Drawing.Size(141, 24);
 			this.label13.TabIndex = 59;
@@ -469,13 +486,90 @@
             this.MaxLoanPeriod,
             this.Department,
             this.Quantity,
-            this.Notes});
+            this.Notes,
+            this.SerialNumber});
 			this.pickedItemsGridView.Location = new System.Drawing.Point(38, 279);
 			this.pickedItemsGridView.Name = "pickedItemsGridView";
 			this.pickedItemsGridView.ReadOnly = true;
 			this.pickedItemsGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
 			this.pickedItemsGridView.Size = new System.Drawing.Size(1043, 300);
 			this.pickedItemsGridView.TabIndex = 0;
+			// 
+			// txtScanID
+			// 
+			this.txtScanID.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.txtScanID.Location = new System.Drawing.Point(1100, 236);
+			this.txtScanID.Name = "txtScanID";
+			this.txtScanID.ReadOnly = true;
+			this.txtScanID.Size = new System.Drawing.Size(312, 31);
+			this.txtScanID.TabIndex = 62;
+			// 
+			// txtUserType
+			// 
+			this.txtUserType.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.txtUserType.Location = new System.Drawing.Point(1100, 193);
+			this.txtUserType.Name = "txtUserType";
+			this.txtUserType.ReadOnly = true;
+			this.txtUserType.Size = new System.Drawing.Size(312, 31);
+			this.txtUserType.TabIndex = 61;
+			// 
+			// label14
+			// 
+			this.label14.AutoSize = true;
+			this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label14.Location = new System.Drawing.Point(964, 240);
+			this.label14.Name = "label14";
+			this.label14.Size = new System.Drawing.Size(80, 24);
+			this.label14.TabIndex = 60;
+			this.label14.Text = "Scan ID:";
+			// 
+			// label15
+			// 
+			this.label15.AutoSize = true;
+			this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label15.Location = new System.Drawing.Point(964, 197);
+			this.label15.Name = "label15";
+			this.label15.Size = new System.Drawing.Size(102, 24);
+			this.label15.TabIndex = 59;
+			this.label15.Text = "User Type:";
+			// 
+			// txtScanID2
+			// 
+			this.txtScanID2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.txtScanID2.Location = new System.Drawing.Point(1099, 235);
+			this.txtScanID2.Name = "txtScanID2";
+			this.txtScanID2.ReadOnly = true;
+			this.txtScanID2.Size = new System.Drawing.Size(312, 31);
+			this.txtScanID2.TabIndex = 73;
+			// 
+			// txtUserType2
+			// 
+			this.txtUserType2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.txtUserType2.Location = new System.Drawing.Point(1099, 192);
+			this.txtUserType2.Name = "txtUserType2";
+			this.txtUserType2.ReadOnly = true;
+			this.txtUserType2.Size = new System.Drawing.Size(312, 31);
+			this.txtUserType2.TabIndex = 72;
+			// 
+			// label16
+			// 
+			this.label16.AutoSize = true;
+			this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label16.Location = new System.Drawing.Point(963, 239);
+			this.label16.Name = "label16";
+			this.label16.Size = new System.Drawing.Size(80, 24);
+			this.label16.TabIndex = 71;
+			this.label16.Text = "Scan ID:";
+			// 
+			// label17
+			// 
+			this.label17.AutoSize = true;
+			this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label17.Location = new System.Drawing.Point(963, 196);
+			this.label17.Name = "label17";
+			this.label17.Size = new System.Drawing.Size(102, 24);
+			this.label17.TabIndex = 70;
+			this.label17.Text = "User Type:";
 			// 
 			// ResourceID
 			// 
@@ -518,6 +612,12 @@
 			this.Notes.HeaderText = "Notes";
 			this.Notes.Name = "Notes";
 			this.Notes.ReadOnly = true;
+			// 
+			// SerialNumber
+			// 
+			this.SerialNumber.HeaderText = "SerialNumber";
+			this.SerialNumber.Name = "SerialNumber";
+			this.SerialNumber.ReadOnly = true;
 			// 
 			// LoanUserItem
 			// 
@@ -584,5 +684,14 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Department;
         private System.Windows.Forms.DataGridViewTextBoxColumn Quantity;
         private System.Windows.Forms.DataGridViewTextBoxColumn Notes;
-    }
+		private System.Windows.Forms.TextBox txtScanID;
+		private System.Windows.Forms.TextBox txtUserType;
+		private System.Windows.Forms.Label label14;
+		private System.Windows.Forms.Label label15;
+		private System.Windows.Forms.TextBox txtScanID2;
+		private System.Windows.Forms.TextBox txtUserType2;
+		private System.Windows.Forms.Label label16;
+		private System.Windows.Forms.Label label17;
+		private System.Windows.Forms.DataGridViewTextBoxColumn SerialNumber;
+	}
 }

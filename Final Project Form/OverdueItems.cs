@@ -30,7 +30,7 @@ namespace Final_Project_Form
             DateTime todaysDate = DateTime.Now;
             SqlConnection connection = new SqlConnection(connectionString);
             connection.Open();
-            SqlCommand command = new SqlCommand("SELECT ResourceType, ResourceName, DueDate, BorrowerEmail, LoanedBy, BorrowerName, LoanNumber, DateLoaned," +
+            SqlCommand command = new SqlCommand("SELECT ResourceType,ResourceName,DueDate,BorrowerEmail,LoanedBy,UserType,BorrowerName,DateLoaned," +
                 "Department FROM Loans WHERE DueDate<@TodaysDate", connection);
             command.Parameters.AddWithValue("@TodaysDate", todaysDate);
             SqlDataAdapter adapter = new SqlDataAdapter(command);

@@ -33,6 +33,10 @@ namespace Final_Project_Form
                 MessageBox.Show("You have not filled in a field!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
+			if (dropUserType.SelectedItem == null)
+			{
+				MessageBox.Show("Please select the User Type!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+			}
             if (txtEmail.Text.Length >= 0)
             {
                 if (!email.IsMatch(txtEmail.Text))
@@ -55,8 +59,8 @@ namespace Final_Project_Form
                 int count = Convert.ToInt32(command.ExecuteScalar());
                 if (count == 0 )
                 {
-                    string addUserCommand = "insert into students(ShuId,FirstName,Surname,CourseDept,EmailAddress,DateAdded,FinishDate) " +
-                               "values(@ShuId,@FirstName,@Surname,@CourseDept,@EmailAddress,@DateAdded,@FinishDate)";
+                    string addUserCommand = "insert into students(ShuId,FirstName,Surname,CourseDept,EmailAddress,DateAdded,StartDate,ScannableNum,UserType) " +
+							   "values(@ShuId,@FirstName,@Surname,@CourseDept,@EmailAddress,@DateAdded,@StartDate,@ScannableNum,@UserType)";
                     SqlCommand addCommand = new SqlCommand(addUserCommand, connection);
                     addCommand.Parameters.AddWithValue("@ShuId", textInfo.ToTitleCase(txtShuId.Text));
                     addCommand.Parameters.AddWithValue("@FirstName", textInfo.ToTitleCase(txtFirstName.Text));
@@ -64,8 +68,10 @@ namespace Final_Project_Form
                     addCommand.Parameters.AddWithValue("@CourseDept", textInfo.ToTitleCase(txtCourseDept.Text));
                     addCommand.Parameters.AddWithValue("@EmailAddress", txtEmail.Text);
                     addCommand.Parameters.AddWithValue("@DateAdded", dateTime);
-                    addCommand.Parameters.AddWithValue("@FinishDate", finishDatePicker.Value);
-                    addCommand.ExecuteNonQuery();
+                    addCommand.Parameters.AddWithValue("@StartDate", startDatePicker.Value);
+					addCommand.Parameters.AddWithValue("@ScannableNum", txtScanID.Text);
+					addCommand.Parameters.AddWithValue("@UserType", dropUserType.SelectedItem.ToString());
+					addCommand.ExecuteNonQuery();
                     AutoClosingMessageBox.Show("An account for " + txtFirstName.Text + " " + txtSurname.Text + " has been successfully created.", "Create account", 2500);
                     connection.Close();
                     this.Close();
@@ -80,6 +86,5 @@ namespace Final_Project_Form
                 MessageBox.Show(ex.Message);
             }
         }
-
     }
 }

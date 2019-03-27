@@ -14,7 +14,6 @@ namespace Final_Project_Form
     public partial class viewLoanedItem : Form
     {
         DataTable dt = new DataTable("Loaned Items History");
-        string loanNumber;
         int resourceID;
         string resourceType;
         string resourceName;
@@ -26,10 +25,9 @@ namespace Final_Project_Form
         string notes;
         string dateAdded;
         string addedBy;
-        public viewLoanedItem(string loanNum, int resourceId)
+        public viewLoanedItem( int resourceId)
         {
             InitializeComponent();
-            loanNumber = loanNum;
             resourceID = resourceId;
         }
 
@@ -94,7 +92,7 @@ namespace Final_Project_Form
             string connectionString = myGlobals.connString;
             SqlConnection connection = new SqlConnection(connectionString);
             connection.Open();
-            SqlCommand loadHistory = new SqlCommand("SELECT LoanNumber,LoanerID,LoanedBy,DateLoaned,ReturnDate,LoanDuration,BorrowerName," +
+            SqlCommand loadHistory = new SqlCommand("SELECT LoanID,LoanedBy,DateLoaned,ReturnDate,LoanDuration,BorrowerName," +
                 "BorrowerID,BorrowerEmail FROM LoanHistory WHERE ResourceID=@resourceID", connection);
             loadHistory.Parameters.AddWithValue("@resourceID", resourceID);
             SqlDataAdapter adapter = new SqlDataAdapter(loadHistory);

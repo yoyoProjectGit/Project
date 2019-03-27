@@ -50,7 +50,7 @@
 			this.btnAddUser.Name = "btnAddUser";
 			this.btnAddUser.Size = new System.Drawing.Size(118, 95);
 			this.btnAddUser.TabIndex = 0;
-			this.btnAddUser.Text = "Add Student";
+			this.btnAddUser.Text = "Add Borrower";
 			this.btnAddUser.UseVisualStyleBackColor = true;
 			this.btnAddUser.Click += new System.EventHandler(this.btnAddUser_Click);
 			// 
@@ -60,7 +60,7 @@
 			this.btnSearchPerson.Name = "btnSearchPerson";
 			this.btnSearchPerson.Size = new System.Drawing.Size(118, 95);
 			this.btnSearchPerson.TabIndex = 1;
-			this.btnSearchPerson.Text = "Find Student";
+			this.btnSearchPerson.Text = "Find Borrower";
 			this.btnSearchPerson.UseVisualStyleBackColor = true;
 			this.btnSearchPerson.Click += new System.EventHandler(this.btnSearchPerson_Click);
 			// 

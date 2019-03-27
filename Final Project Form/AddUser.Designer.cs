@@ -28,185 +28,234 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.lblAddUser = new System.Windows.Forms.Label();
-            this.txtShuId = new System.Windows.Forms.TextBox();
-            this.txtFirstName = new System.Windows.Forms.TextBox();
-            this.txtSurname = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.txtCourseDept = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.txtEmail = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.btnAddUser = new System.Windows.Forms.Button();
-            this.btnBack = new System.Windows.Forms.Button();
-            this.finishDatePicker = new System.Windows.Forms.DateTimePicker();
-            this.SuspendLayout();
-            // 
-            // lblAddUser
-            // 
-            this.lblAddUser.AutoSize = true;
-            this.lblAddUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAddUser.Location = new System.Drawing.Point(32, 20);
-            this.lblAddUser.Name = "lblAddUser";
-            this.lblAddUser.Size = new System.Drawing.Size(89, 24);
-            this.lblAddUser.TabIndex = 0;
-            this.lblAddUser.Text = "Add User";
-            // 
-            // txtShuId
-            // 
-            this.txtShuId.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtShuId.Location = new System.Drawing.Point(172, 87);
-            this.txtShuId.Name = "txtShuId";
-            this.txtShuId.Size = new System.Drawing.Size(217, 31);
-            this.txtShuId.TabIndex = 0;
-            // 
-            // txtFirstName
-            // 
-            this.txtFirstName.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtFirstName.Location = new System.Drawing.Point(172, 136);
-            this.txtFirstName.Name = "txtFirstName";
-            this.txtFirstName.Size = new System.Drawing.Size(217, 31);
-            this.txtFirstName.TabIndex = 1;
-            // 
-            // txtSurname
-            // 
-            this.txtSurname.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSurname.Location = new System.Drawing.Point(172, 189);
-            this.txtSurname.Name = "txtSurname";
-            this.txtSurname.Size = new System.Drawing.Size(217, 31);
-            this.txtSurname.TabIndex = 2;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(32, 87);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(71, 24);
-            this.label1.TabIndex = 5;
-            this.label1.Text = "SHU ID";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(32, 136);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(101, 24);
-            this.label2.TabIndex = 6;
-            this.label2.Text = "First Name";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(32, 189);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(87, 24);
-            this.label3.TabIndex = 7;
-            this.label3.Text = "Surname";
-            // 
-            // txtCourseDept
-            // 
-            this.txtCourseDept.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCourseDept.Location = new System.Drawing.Point(172, 239);
-            this.txtCourseDept.Name = "txtCourseDept";
-            this.txtCourseDept.Size = new System.Drawing.Size(217, 31);
-            this.txtCourseDept.TabIndex = 3;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(32, 239);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(115, 24);
-            this.label4.TabIndex = 8;
-            this.label4.Text = "Course/Dept";
-            // 
-            // txtEmail
-            // 
-            this.txtEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEmail.Location = new System.Drawing.Point(172, 294);
-            this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(217, 31);
-            this.txtEmail.TabIndex = 4;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(32, 294);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(132, 24);
-            this.label5.TabIndex = 10;
-            this.label5.Text = "Email Address";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(32, 345);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(104, 24);
-            this.label6.TabIndex = 11;
-            this.label6.Text = "Finish Date";
-            // 
-            // btnAddUser
-            // 
-            this.btnAddUser.Location = new System.Drawing.Point(520, 69);
-            this.btnAddUser.Name = "btnAddUser";
-            this.btnAddUser.Size = new System.Drawing.Size(116, 73);
-            this.btnAddUser.TabIndex = 13;
-            this.btnAddUser.Text = "Add User";
-            this.btnAddUser.UseVisualStyleBackColor = true;
-            this.btnAddUser.Click += new System.EventHandler(this.btnAddUser_Click);
-            // 
-            // btnBack
-            // 
-            this.btnBack.Location = new System.Drawing.Point(591, 375);
-            this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(90, 36);
-            this.btnBack.TabIndex = 14;
-            this.btnBack.Text = "Back";
-            this.btnBack.UseVisualStyleBackColor = true;
-            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
-            // 
-            // finishDatePicker
-            // 
-            this.finishDatePicker.Location = new System.Drawing.Point(172, 349);
-            this.finishDatePicker.Name = "finishDatePicker";
-            this.finishDatePicker.Size = new System.Drawing.Size(217, 20);
-            this.finishDatePicker.TabIndex = 5;
-            // 
-            // AddUser
-            // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.finishDatePicker);
-            this.Controls.Add(this.btnBack);
-            this.Controls.Add(this.btnAddUser);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.txtEmail);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.txtCourseDept);
-            this.Controls.Add(this.txtSurname);
-            this.Controls.Add(this.txtFirstName);
-            this.Controls.Add(this.txtShuId);
-            this.Controls.Add(this.lblAddUser);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Name = "AddUser";
-            this.Text = "AddUser";
-            this.ResumeLayout(false);
-            this.PerformLayout();
+			this.lblAddUser = new System.Windows.Forms.Label();
+			this.txtShuId = new System.Windows.Forms.TextBox();
+			this.txtFirstName = new System.Windows.Forms.TextBox();
+			this.txtSurname = new System.Windows.Forms.TextBox();
+			this.label1 = new System.Windows.Forms.Label();
+			this.label2 = new System.Windows.Forms.Label();
+			this.label3 = new System.Windows.Forms.Label();
+			this.txtCourseDept = new System.Windows.Forms.TextBox();
+			this.label4 = new System.Windows.Forms.Label();
+			this.txtEmail = new System.Windows.Forms.TextBox();
+			this.label5 = new System.Windows.Forms.Label();
+			this.label6 = new System.Windows.Forms.Label();
+			this.btnAddUser = new System.Windows.Forms.Button();
+			this.btnBack = new System.Windows.Forms.Button();
+			this.startDatePicker = new System.Windows.Forms.DateTimePicker();
+			this.label7 = new System.Windows.Forms.Label();
+			this.label8 = new System.Windows.Forms.Label();
+			this.txtScanID = new System.Windows.Forms.TextBox();
+			this.dropUserType = new System.Windows.Forms.ComboBox();
+			this.SuspendLayout();
+			// 
+			// lblAddUser
+			// 
+			this.lblAddUser.AutoSize = true;
+			this.lblAddUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.lblAddUser.Location = new System.Drawing.Point(32, 20);
+			this.lblAddUser.Name = "lblAddUser";
+			this.lblAddUser.Size = new System.Drawing.Size(89, 24);
+			this.lblAddUser.TabIndex = 0;
+			this.lblAddUser.Text = "Add User";
+			// 
+			// txtShuId
+			// 
+			this.txtShuId.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.txtShuId.Location = new System.Drawing.Point(173, 152);
+			this.txtShuId.Name = "txtShuId";
+			this.txtShuId.Size = new System.Drawing.Size(217, 31);
+			this.txtShuId.TabIndex = 0;
+			// 
+			// txtFirstName
+			// 
+			this.txtFirstName.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.txtFirstName.Location = new System.Drawing.Point(173, 201);
+			this.txtFirstName.Name = "txtFirstName";
+			this.txtFirstName.Size = new System.Drawing.Size(217, 31);
+			this.txtFirstName.TabIndex = 1;
+			// 
+			// txtSurname
+			// 
+			this.txtSurname.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.txtSurname.Location = new System.Drawing.Point(173, 254);
+			this.txtSurname.Name = "txtSurname";
+			this.txtSurname.Size = new System.Drawing.Size(217, 31);
+			this.txtSurname.TabIndex = 2;
+			// 
+			// label1
+			// 
+			this.label1.AutoSize = true;
+			this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label1.Location = new System.Drawing.Point(33, 152);
+			this.label1.Name = "label1";
+			this.label1.Size = new System.Drawing.Size(71, 24);
+			this.label1.TabIndex = 5;
+			this.label1.Text = "SHU ID";
+			// 
+			// label2
+			// 
+			this.label2.AutoSize = true;
+			this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label2.Location = new System.Drawing.Point(33, 201);
+			this.label2.Name = "label2";
+			this.label2.Size = new System.Drawing.Size(101, 24);
+			this.label2.TabIndex = 6;
+			this.label2.Text = "First Name";
+			// 
+			// label3
+			// 
+			this.label3.AutoSize = true;
+			this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label3.Location = new System.Drawing.Point(33, 254);
+			this.label3.Name = "label3";
+			this.label3.Size = new System.Drawing.Size(87, 24);
+			this.label3.TabIndex = 7;
+			this.label3.Text = "Surname";
+			// 
+			// txtCourseDept
+			// 
+			this.txtCourseDept.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.txtCourseDept.Location = new System.Drawing.Point(173, 304);
+			this.txtCourseDept.Name = "txtCourseDept";
+			this.txtCourseDept.Size = new System.Drawing.Size(217, 31);
+			this.txtCourseDept.TabIndex = 3;
+			// 
+			// label4
+			// 
+			this.label4.AutoSize = true;
+			this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label4.Location = new System.Drawing.Point(33, 304);
+			this.label4.Name = "label4";
+			this.label4.Size = new System.Drawing.Size(115, 24);
+			this.label4.TabIndex = 8;
+			this.label4.Text = "Course/Dept";
+			// 
+			// txtEmail
+			// 
+			this.txtEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.txtEmail.Location = new System.Drawing.Point(173, 359);
+			this.txtEmail.Name = "txtEmail";
+			this.txtEmail.Size = new System.Drawing.Size(217, 31);
+			this.txtEmail.TabIndex = 4;
+			// 
+			// label5
+			// 
+			this.label5.AutoSize = true;
+			this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label5.Location = new System.Drawing.Point(33, 359);
+			this.label5.Name = "label5";
+			this.label5.Size = new System.Drawing.Size(132, 24);
+			this.label5.TabIndex = 10;
+			this.label5.Text = "Email Address";
+			// 
+			// label6
+			// 
+			this.label6.AutoSize = true;
+			this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label6.Location = new System.Drawing.Point(33, 410);
+			this.label6.Name = "label6";
+			this.label6.Size = new System.Drawing.Size(89, 24);
+			this.label6.TabIndex = 11;
+			this.label6.Text = "Start Date";
+			// 
+			// btnAddUser
+			// 
+			this.btnAddUser.Location = new System.Drawing.Point(520, 69);
+			this.btnAddUser.Name = "btnAddUser";
+			this.btnAddUser.Size = new System.Drawing.Size(116, 73);
+			this.btnAddUser.TabIndex = 13;
+			this.btnAddUser.Text = "Add User";
+			this.btnAddUser.UseVisualStyleBackColor = true;
+			this.btnAddUser.Click += new System.EventHandler(this.btnAddUser_Click);
+			// 
+			// btnBack
+			// 
+			this.btnBack.Location = new System.Drawing.Point(591, 375);
+			this.btnBack.Name = "btnBack";
+			this.btnBack.Size = new System.Drawing.Size(90, 36);
+			this.btnBack.TabIndex = 14;
+			this.btnBack.Text = "Back";
+			this.btnBack.UseVisualStyleBackColor = true;
+			this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
+			// 
+			// startDatePicker
+			// 
+			this.startDatePicker.Location = new System.Drawing.Point(173, 414);
+			this.startDatePicker.Name = "startDatePicker";
+			this.startDatePicker.Size = new System.Drawing.Size(217, 20);
+			this.startDatePicker.TabIndex = 5;
+			// 
+			// label7
+			// 
+			this.label7.AutoSize = true;
+			this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label7.Location = new System.Drawing.Point(33, 111);
+			this.label7.Name = "label7";
+			this.label7.Size = new System.Drawing.Size(133, 24);
+			this.label7.TabIndex = 18;
+			this.label7.Text = "Scan Card No:";
+			// 
+			// label8
+			// 
+			this.label8.AutoSize = true;
+			this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label8.Location = new System.Drawing.Point(33, 62);
+			this.label8.Name = "label8";
+			this.label8.Size = new System.Drawing.Size(102, 24);
+			this.label8.TabIndex = 17;
+			this.label8.Text = "User Type:";
+			// 
+			// txtScanID
+			// 
+			this.txtScanID.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.txtScanID.Location = new System.Drawing.Point(173, 111);
+			this.txtScanID.Name = "txtScanID";
+			this.txtScanID.Size = new System.Drawing.Size(217, 31);
+			this.txtScanID.TabIndex = 16;
+			// 
+			// dropUserType
+			// 
+			this.dropUserType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+			this.dropUserType.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.dropUserType.FormattingEnabled = true;
+			this.dropUserType.Items.AddRange(new object[] {
+            "Student",
+            "Staff"});
+			this.dropUserType.Location = new System.Drawing.Point(173, 65);
+			this.dropUserType.Name = "dropUserType";
+			this.dropUserType.Size = new System.Drawing.Size(217, 33);
+			this.dropUserType.TabIndex = 19;
+			// 
+			// AddUser
+			// 
+			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+			this.ClientSize = new System.Drawing.Size(800, 450);
+			this.Controls.Add(this.dropUserType);
+			this.Controls.Add(this.label7);
+			this.Controls.Add(this.label8);
+			this.Controls.Add(this.txtScanID);
+			this.Controls.Add(this.startDatePicker);
+			this.Controls.Add(this.btnBack);
+			this.Controls.Add(this.btnAddUser);
+			this.Controls.Add(this.label6);
+			this.Controls.Add(this.label5);
+			this.Controls.Add(this.txtEmail);
+			this.Controls.Add(this.label4);
+			this.Controls.Add(this.label3);
+			this.Controls.Add(this.label2);
+			this.Controls.Add(this.label1);
+			this.Controls.Add(this.txtCourseDept);
+			this.Controls.Add(this.txtSurname);
+			this.Controls.Add(this.txtFirstName);
+			this.Controls.Add(this.txtShuId);
+			this.Controls.Add(this.lblAddUser);
+			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+			this.Name = "AddUser";
+			this.Text = "AddUser";
+			this.ResumeLayout(false);
+			this.PerformLayout();
 
         }
 
@@ -226,6 +275,10 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button btnAddUser;
         private System.Windows.Forms.Button btnBack;
-        private System.Windows.Forms.DateTimePicker finishDatePicker;
-    }
+        private System.Windows.Forms.DateTimePicker startDatePicker;
+		private System.Windows.Forms.Label label7;
+		private System.Windows.Forms.Label label8;
+		private System.Windows.Forms.TextBox txtScanID;
+		private System.Windows.Forms.ComboBox dropUserType;
+	}
 }

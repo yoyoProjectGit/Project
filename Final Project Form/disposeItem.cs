@@ -45,8 +45,8 @@ namespace Final_Project_Form
             SqlConnection connection = new SqlConnection(connectionString);
             connection.Open();
             SqlCommand command = new SqlCommand("SELECT ResourceID,ResourceType,ResourceName,MaxLoanPeriod,Department," +
-                    "SerialNumber,DateAdded,SupplierSource,PurchasePrice,Quantity,Notes,Total,addedBy " +
-                    "FROM resourcesTable WHERE Department=@Department AND Quantity>0", connection);
+					"SerialNumber,DateAdded,SupplierSource,PurchasePrice,InStock,Notes,Total,addedBy " +
+					"FROM resourcesTable WHERE Department=@Department AND InStock>0", connection);
             command.Parameters.AddWithValue("@Department", currentUser.Department);
             SqlDataAdapter adapter = new SqlDataAdapter(command);
             adapter.Fill(dt);
@@ -72,8 +72,8 @@ namespace Final_Project_Form
                 SqlConnection connection = new SqlConnection(connectionString);
                 connection.Open();
                 SqlCommand command = new SqlCommand("SELECT ResourceID,ResourceType,ResourceName,MaxLoanPeriod,Department," +
-                    "SerialNumber,DateAdded,SupplierSource,PurchasePrice,Quantity,Notes,Total,addedBy " +
-                    "FROM resourcesTable WHERE Department=@Department AND Quantity>0", connection);
+					"SerialNumber,DateAdded,SupplierSource,PurchasePrice,InStock,Notes,Total,addedBy " +
+					"FROM resourcesTable WHERE Department=@Department AND InStock>0", connection);
                 command.Parameters.AddWithValue("@Department", currentUser.Department);
                 SqlDataAdapter adapter = new SqlDataAdapter(command);
                 adapter.Fill(dt);
@@ -148,7 +148,7 @@ namespace Final_Project_Form
                 int total = 0;
                 Int32.TryParse(row.Cells["MaxLoanPeriod"].Value.ToString(), out maxprd);
                 Int32.TryParse(row.Cells["ResourceID"].Value.ToString(), out resourceid);
-                Int32.TryParse(row.Cells["Quantity"].Value.ToString(), out quantity);
+                Int32.TryParse(row.Cells["InStock"].Value.ToString(), out quantity);
                 Int32.TryParse(row.Cells["Total"].Value.ToString(), out total);
                 long SerialNo = Convert.ToInt64(row.Cells["SerialNumber"].Value.ToString());
                 long PurchasePrice = Convert.ToInt64(row.Cells["PurchasePrice"].Value.ToString());

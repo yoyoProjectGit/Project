@@ -71,19 +71,19 @@ namespace Final_Project_Form
                SqlConnection connection = new SqlConnection(connectionString);
                connection.Open();
 
-                string addItemCommand = "insert into resourcesTable(ResourceType,ResourceName,Quantity,MaxLoanPeriod,SupplierSource," +
+                string addItemCommand = "insert into resourcesTable(ResourceType,ResourceName,InStock,MaxLoanPeriod,SupplierSource," +
                 "PurchasePrice,SerialNumber,Department,Notes,DateAdded,AddedBy,Total) " +
-                            "values(@ResourceType,@ResourceName,@Quantity,@MaxLoanPeriod,@SupplierSource,@PurchasePrice,@SerialNumber," +
+							"values(@ResourceType,@ResourceName,@InStock,@MaxLoanPeriod,@SupplierSource,@PurchasePrice,@SerialNumber," +
                             "@Department,@Notes,@DateAdded,@AddedBy,@Total)";
                 SqlCommand addCommand = new SqlCommand(addItemCommand, connection);
                 addCommand.Parameters.AddWithValue("@ResourceType", textInfo.ToTitleCase(txtResourceType.Text));
                 addCommand.Parameters.AddWithValue("@ResourceName", txtResourceName.Text);
-                addCommand.Parameters.AddWithValue("@Quantity", txtQuantity.Text);
+                addCommand.Parameters.AddWithValue("@InStock", txtQuantity.Text);
                 addCommand.Parameters.AddWithValue("@MaxLoanPeriod", textInfo.ToTitleCase(txtLoanPeriod.Text));
                 addCommand.Parameters.AddWithValue("@SupplierSource", txtSupplierSource.Text);
                 addCommand.Parameters.AddWithValue("@PurchasePrice", txtPurchasePrice.Text);
                 addCommand.Parameters.AddWithValue("@SerialNumber",txtSerialNo.Text);
-                addCommand.Parameters.AddWithValue("@Department", textInfo.ToTitleCase(departmentsList.SelectedItem.ToString()));
+                addCommand.Parameters.AddWithValue("@Department", departmentsList.SelectedItem.ToString());
                 addCommand.Parameters.AddWithValue("@Notes", txtNotes.Text);
                 addCommand.Parameters.AddWithValue("@DateAdded", dateTime);
                 addCommand.Parameters.AddWithValue("@AddedBy", currentUser.UserName);

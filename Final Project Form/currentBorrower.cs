@@ -13,10 +13,22 @@ namespace Final_Project_Form
         private string surname;
         private string coursedept;
         private string emailAddress;
-        private string finishDate;
+        private string startDate;
         private string dateCreated;
+		private string scannableNum;
+		private string userType;
 
-        public string ShuId
+		public string ScannableNum
+		{
+			get { return scannableNum; }
+			set { scannableNum = value; }
+		}
+		public string UserType
+		{
+			get { return userType; }
+			set { userType = value; }
+		}
+		public string ShuId
         {
             get { return shuId; }
             set { shuId = value; }
@@ -41,10 +53,10 @@ namespace Final_Project_Form
             get { return emailAddress; }
             set { emailAddress = value; }
         }
-        public string FinishDate
+        public string StartDate
         {
-            get { return finishDate; }
-            set { finishDate = value; }
+            get { return startDate; }
+            set { startDate = value; }
         }
         public string DateCreated
         {

@@ -28,7 +28,6 @@ namespace Final_Project_Form
 		string Notes;
 		string LoanedBy;
 		string LoanNumber;
-		string LoanerID;
 		int quantity;
 		int stock;
 		public ItemReturns()
@@ -56,9 +55,9 @@ namespace Final_Project_Form
 				SqlConnection connection = new SqlConnection(connectionString);
 				connection.Open();
 				string addUserCommand = "insert into LoanHistory(ResourceID,ResourceType,ResourceName,DateLoaned," +
-				"LoanDuration,Department,BorrowerName,BorrowerID,BorrowerSurname,BorrowerEmail,Notes,LoanedBy,LoanNumber,LoanerID,ReturnDate,Quantity) " +
+				"LoanDuration,Department,BorrowerName,BorrowerID,BorrowerSurname,BorrowerEmail,Notes,LoanedBy,ReturnDate,Quantity) " +
 							"values(@ResourceID,@ResourceType,@ResourceName,@DateLoaned,@LoanDuration,@Department,@BorrowerName," +
-							"@BorrowerID,@BorrowerSurname,@BorrowerEmail,@Notes,@LoanedBy,@LoanNumber,@LoanerID,@ReturnDate,@Quantity)";
+							"@BorrowerID,@BorrowerSurname,@BorrowerEmail,@Notes,@LoanedBy,@ReturnDate,@Quantity)";
 				SqlCommand addCommand = new SqlCommand(addUserCommand, connection);
 				addCommand.Parameters.AddWithValue("@ResourceID", resourceID);
 				addCommand.Parameters.AddWithValue("@ResourceType", resourceType);
@@ -72,8 +71,6 @@ namespace Final_Project_Form
 				addCommand.Parameters.AddWithValue("@BorrowerEmail", BorrowerEmail);
 				addCommand.Parameters.AddWithValue("@Notes", Notes);
 				addCommand.Parameters.AddWithValue("@LoanedBy", LoanedBy);
-				addCommand.Parameters.AddWithValue("@LoanNumber", LoanNumber);
-				addCommand.Parameters.AddWithValue("@LoanerID", LoanerID);
 				addCommand.Parameters.AddWithValue("@Quantity", quantity);
 				addCommand.Parameters.AddWithValue("@ReturnDate", Convert.ToDateTime(returnDate));
 				addCommand.ExecuteNonQuery();
@@ -95,10 +92,10 @@ namespace Final_Project_Form
 				string connectionString = myGlobals.connString;
 				SqlConnection connection = new SqlConnection(connectionString);
 				connection.Open();
-				string setResourceNotLoaned = "UPDATE resourcesTable SET Quantity=@Quantity WHERE ResourceID=@ResourceID";
+				string setResourceNotLoaned = "UPDATE resourcesTable SET InStock=@InStock WHERE ResourceID=@ResourceID";
 				SqlCommand addCommand = new SqlCommand(setResourceNotLoaned, connection);
 				addCommand.Parameters.AddWithValue("@ResourceID", id);
-				addCommand.Parameters.AddWithValue("@Quantity", quantity + stock);
+				addCommand.Parameters.AddWithValue("@InStock", quantity + stock);
 				addCommand.ExecuteNonQuery();
 				connection.Close();
 				removeFromActiveLoans();
@@ -113,13 +110,13 @@ namespace Final_Project_Form
 			string connectionString = myGlobals.connString;
 			SqlConnection connection = new SqlConnection(connectionString);
 			connection.Open();
-			SqlCommand getLoan = new SqlCommand("SELECT Quantity FROM resourcesTable WHERE ResourceID like @ResourceID", connection);
+			SqlCommand getLoan = new SqlCommand("SELECT InStock FROM resourcesTable WHERE ResourceID like @ResourceID", connection);
 			getLoan.Parameters.AddWithValue("@ResourceID", resourceID);
 			using (SqlDataReader getInfo = getLoan.ExecuteReader())
 			{
 				while (getInfo.Read())
 				{
-					stock = Convert.ToInt32(getInfo["Quantity"].ToString());
+					stock = Convert.ToInt32(getInfo["InStock"].ToString());
 
 				}
 				connection.Close();
@@ -143,7 +140,7 @@ namespace Final_Project_Form
 				{
 					SqlCommand getLoan = new SqlCommand("SELECT ResourceID,ResourceType,ResourceName,DateLoaned," +
 					"LoanDuration,Department,BorrowerName,BorrowerID,BorrowerSurname," +
-					"BorrowerEmail,Notes,LoanedBy,LoanNumber,LoanerID,LoanNumber,LoanID,Quantity" +
+					"BorrowerEmail,Notes,LoanedBy,LoanNumber,LoanNumber,LoanID,Quantity" +
 					" FROM Loans WHERE LoanNumber like @LoanNumber", connection);
 					getLoan.Parameters.AddWithValue("@LoanNumber", txtLoanID.Text);
 					using (SqlDataReader getLoanInfo = getLoan.ExecuteReader())
@@ -155,7 +152,6 @@ namespace Final_Project_Form
 							resourceType = getLoanInfo["resourceType"].ToString();
 							resourceName = getLoanInfo["resourceName"].ToString();
 							LoanedBy = getLoanInfo["LoanedBy"].ToString();
-							LoanerID = getLoanInfo["LoanerID"].ToString();
 							BorrowerID = getLoanInfo["BorrowerID"].ToString();
 							BorrowerName = getLoanInfo["BorrowerName"].ToString();
 							BorrowerSurname = getLoanInfo["BorrowerSurname"].ToString();

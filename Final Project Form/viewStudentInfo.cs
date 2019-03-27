@@ -14,11 +14,34 @@ namespace Final_Project_Form
 {
     public partial class viewStudentInfo : Form
     {
-        string shuId,firstname, surName, courseDept, emailAddress,finishDate, prevName;
+        string shuId,firstname, surName, courseDept, emailAddress,startDate, prevName,userType,scannableNum;
         DataTable dt = new DataTable("User Loans");
         DataTable dt2 = new DataTable("User History");
 
-        private void btnClose2_Click(object sender, EventArgs e)
+		TextInfo textInfo = new CultureInfo("en-US", false).TextInfo;
+		public viewStudentInfo(string id, string name, string surname, string coursedept, string email, string datecreated, string startdate,string usertype,string scannablenum)
+		{
+			InitializeComponent();
+			txtShuId.Text = id;
+			shuId = id;
+			txtFirstName.Text = name;
+			prevName = name;
+			firstname = name;
+			txtSurname.Text = surname;
+			surName = surname;
+			txtCourseDept.Text = coursedept;
+			courseDept = coursedept;
+			txtEmail.Text = email;
+			emailAddress = email;
+			txtDateAdded.Text = datecreated;
+			startDatePicker.Value = Convert.ToDateTime(startdate);
+			startDate = startdate;
+			userType = usertype;
+			scannableNum = scannablenum;
+			txtScanID.Text = scannablenum;
+			dropUserType.SelectedIndex = dropUserType.FindString(usertype);
+		}
+		private void btnClose2_Click(object sender, EventArgs e)
         {
             this.Close();
         }
@@ -33,39 +56,19 @@ namespace Final_Project_Form
             string connectionString = myGlobals.connString;
             SqlConnection connection = new SqlConnection(connectionString);
             connection.Open();
-            SqlCommand command = new SqlCommand("SELECT ResourceType, ResourceName, LoanNumber, DateLoaned, DueDate, BorrowerName, LoanedBy" +
+            SqlCommand command = new SqlCommand("SELECT ResourceType, ResourceName, DateLoaned, DueDate, UserType, BorrowerName, LoanedBy" +
                 " FROM Loans WHERE BorrowerID=@ShuId", connection);
             command.Parameters.AddWithValue("@ShuId", txtShuId.Text);
             SqlDataAdapter adapter = new SqlDataAdapter(command);
             adapter.Fill(dt);
             LoanedItemsGridView.DataSource = dt;
-            SqlCommand command2 = new SqlCommand("SELECT ResourceType, ResourceName, LoanNumber, DateLoaned, ReturnDate, BorrowerName, LoanedBy" +
+            SqlCommand command2 = new SqlCommand("SELECT ResourceType, ResourceName, DateLoaned, ReturnDate, BorrowerName, LoanedBy" +
                 " FROM LoanHistory WHERE BorrowerID=@ShuId", connection);
             command2.Parameters.AddWithValue("@ShuId", txtShuId.Text);
             SqlDataAdapter adapter2 = new SqlDataAdapter(command2);
             adapter2.Fill(dt2);
             loanHistory.DataSource = dt2;
             connection.Close();
-        }
-
-        TextInfo textInfo = new CultureInfo("en-US", false).TextInfo;
-        public viewStudentInfo(string id, string name, string surname, string coursedept, string email, string datecreated, string finishdate)
-        {
-            InitializeComponent();
-            txtShuId.Text = id;
-            shuId = id;
-            txtFirstName.Text = name;
-            prevName = name;
-            firstname = name;
-            txtSurname.Text = surname;
-            surName = surname;
-            txtCourseDept.Text = coursedept;
-            courseDept = coursedept;
-            txtEmail.Text = email;
-            emailAddress = email;
-            txtDateAdded.Text = datecreated;
-            finishDatePicker.Value = Convert.ToDateTime(finishdate);
-            finishDate = finishdate;
         }
         private void btnEdit_Click(object sender, EventArgs e)
         {
@@ -74,6 +77,7 @@ namespace Final_Project_Form
             txtSurname.ReadOnly = false;
             txtCourseDept.ReadOnly = false;
             txtEmail.ReadOnly = false;
+			txtScanID.ReadOnly = false;
         }
 
         private void btnBack_Click(object sender, EventArgs e)
@@ -86,7 +90,7 @@ namespace Final_Project_Form
 
             if ((txtShuId.Text.Equals(shuId) && txtFirstName.Text.Equals(firstname) && txtSurname.Text.Equals(surName)
                 && txtCourseDept.Text.Equals(courseDept) && txtEmail.Text.Equals(emailAddress) 
-                && finishDatePicker.Value.ToString().Equals(finishDate)))
+                && startDatePicker.Value.ToString().Equals(startDate) && txtScanID.Text.Equals(scannableNum) && (dropUserType.SelectedIndex == dropUserType.FindString(userType))))
             {
                 MessageBox.Show("You have not changed any values!");
             }
@@ -94,21 +98,26 @@ namespace Final_Project_Form
             {
                 try
                 {
-                    string connectionString = myGlobals.connString;
+					string selectedUserType = this.dropUserType.GetItemText(this.dropUserType.SelectedItem);
+					string connectionString = myGlobals.connString;
                     SqlConnection connection = new SqlConnection(connectionString);
                     connection.Open();
                     string updateUser = "UPDATE students SET ShuId=@ShuId, FirstName=@FirstName " +
-                        ", Surname=@Surname, CourseDept=@CourseDept, EmailAddress=@EmailAddress, FinishDate=@FinishDate WHERE ShuId=@ShuId";
+						", Surname=@Surname, CourseDept=@CourseDept, EmailAddress=@EmailAddress, StartDate=@StartDate," +
+						" ScannableNum=@ScannableNum, UserType=@UserType WHERE ShuId=@ShuId";
                     SqlCommand command = new SqlCommand(updateUser, connection);
-                    command.Parameters.AddWithValue("@ShuId", textInfo.ToTitleCase(txtShuId.Text));
-                    command.Parameters.AddWithValue("@FirstName", textInfo.ToTitleCase(txtFirstName.Text));
-                    command.Parameters.AddWithValue("@Surname", textInfo.ToTitleCase(txtSurname.Text));
-                    command.Parameters.AddWithValue("@CourseDept", textInfo.ToTitleCase(txtCourseDept.Text));
-                    command.Parameters.AddWithValue("@EmailAddress", textInfo.ToTitleCase(txtEmail.Text));
-                    command.Parameters.AddWithValue("@FinishDate", finishDatePicker.Value);
-                    command.ExecuteNonQuery();
+                    command.Parameters.AddWithValue("@ShuId", txtShuId.Text);
+                    command.Parameters.AddWithValue("@FirstName", txtFirstName.Text);
+                    command.Parameters.AddWithValue("@Surname", txtSurname.Text);
+                    command.Parameters.AddWithValue("@CourseDept", txtCourseDept.Text);
+                    command.Parameters.AddWithValue("@EmailAddress", txtEmail.Text);
+                    command.Parameters.AddWithValue("@StartDate", startDatePicker.Value);
+					command.Parameters.AddWithValue("@ScannableNum", txtScanID.Text);
+					command.Parameters.AddWithValue("@UserType", selectedUserType);
+					command.ExecuteNonQuery();
                     MessageBox.Show("The student account of " + prevName + " " + txtSurname.Text + " has been successfully updated.");
                     connection.Close();
+					this.Close();
                 }
                 catch(Exception ex)
                 {

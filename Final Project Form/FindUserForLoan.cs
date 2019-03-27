@@ -42,13 +42,15 @@ namespace Final_Project_Form
             if (e.ColumnIndex == 9 || e.ColumnIndex == 0)
             {
                 DataGridViewRow row = this.studentGridView.Rows[e.RowIndex];
-                var student = new currentBorrower();
-                student.ShuId = row.Cells["ShuId"].Value.ToString();
-                student.FirstName = row.Cells["FirstName"].Value.ToString();
-                student.Surname = row.Cells["Surname"].Value.ToString();
-                student.EmailAddress = row.Cells["EmailAddress"].Value.ToString();
-                LoanUserItem loanItem = new LoanUserItem(student.ShuId, student.FirstName, student.Surname,
-                    student.EmailAddress);
+                var borrower = new currentBorrower();
+				borrower.ShuId = row.Cells["ShuId"].Value.ToString();
+				borrower.FirstName = row.Cells["FirstName"].Value.ToString();
+				borrower.Surname = row.Cells["Surname"].Value.ToString();
+				borrower.EmailAddress = row.Cells["EmailAddress"].Value.ToString();
+				borrower.ScannableNum = row.Cells["ScannableNum"].Value.ToString();
+				borrower.UserType = row.Cells["UserType"].Value.ToString();
+				LoanUserItem loanItem = new LoanUserItem(borrower.ShuId, borrower.FirstName, borrower.Surname,
+					borrower.EmailAddress, borrower.ScannableNum, borrower.UserType);
                 loanItem.Show();
             }
         }
@@ -91,5 +93,12 @@ namespace Final_Project_Form
                 MessageBox.Show(ex.Message);
             }
         }
-    }
+
+		private void btnScanID_Click(object sender, EventArgs e)
+		{
+			DataView dv = dt.DefaultView;
+			dv.RowFilter = string.Format("ScannableNum LIKE '%" + txtScanID.Text + "%'");
+			studentGridView.DataSource = dv.ToTable();
+		}
+	}
 }

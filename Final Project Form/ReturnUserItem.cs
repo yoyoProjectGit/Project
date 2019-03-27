@@ -228,9 +228,9 @@ namespace Final_Project_Form
                 TextInfo textInfo = new CultureInfo("en-US", false).TextInfo;
                 connection.Open();
                 string addToHistoryCommand = "insert into LoanHistory(ResourceID,ResourceType,ResourceName,DateLoaned," +
-                "LoanDuration,Department,BorrowerName,BorrowerID,BorrowerSurname,BorrowerEmail,LoanedBy,LoanNumber,LoanerID,ReturnDate,Quantity,Notes) " +
+                "LoanDuration,Department,BorrowerName,BorrowerID,BorrowerSurname,BorrowerEmail,LoanedBy,LoanNumber,ReturnDate,Quantity,Notes) " +
                             "values(@ResourceID,@ResourceType,@ResourceName,@DateLoaned,@LoanDuration,@Department,@BorrowerName," +
-                            "@BorrowerID,@BorrowerSurname,@BorrowerEmail,@LoanedBy,@LoanNumber,@LoanerID,@ReturnDate,@Quantity,@Notes)";
+                            "@BorrowerID,@BorrowerSurname,@BorrowerEmail,@LoanedBy,@LoanNumber,@ReturnDate,@Quantity,@Notes)";
                 SqlCommand addCommand = new SqlCommand(addToHistoryCommand, connection);
                 addCommand.Parameters.AddWithValue("@ResourceID", row.Cells["ResourceID"].Value.ToString());
                 addCommand.Parameters.AddWithValue("@ResourceType", row.Cells["ResourceType"].Value.ToString());
@@ -244,7 +244,6 @@ namespace Final_Project_Form
                 addCommand.Parameters.AddWithValue("@BorrowerEmail", row.Cells["BorrowerEmail"].Value.ToString());
                 addCommand.Parameters.AddWithValue("@LoanedBy", row.Cells["LoanedBy"].Value.ToString());
                 addCommand.Parameters.AddWithValue("@LoanNumber", row.Cells["LoanNumber"].Value.ToString());
-                addCommand.Parameters.AddWithValue("@LoanerID", row.Cells["LoanerID"].Value.ToString());
                 addCommand.Parameters.AddWithValue("@ReturnDate", returnDate);
                 addCommand.Parameters.AddWithValue("@Quantity", quantity);
                 addCommand.Parameters.AddWithValue("@Notes", row.Cells["Notes"].Value.ToString());
@@ -283,10 +282,10 @@ namespace Final_Project_Form
                 string connectionString = myGlobals.connString;
                 SqlConnection connection = new SqlConnection(connectionString);
                 connection.Open();
-                string removeResourceCommand = "UPDATE resourcesTable SET Quantity=Quantity+@Quantity WHERE ResourceID=@ResourceID";
+                string removeResourceCommand = "UPDATE resourcesTable SET InStock=Instock+@InStock WHERE ResourceID=@ResourceID";
                 SqlCommand addCommand = new SqlCommand(removeResourceCommand, connection);
                 addCommand.Parameters.AddWithValue("@ResourceID", resInt);
-                addCommand.Parameters.AddWithValue("@Quantity", quantity);
+                addCommand.Parameters.AddWithValue("@InStock", quantity);
                 addCommand.ExecuteNonQuery();
                 connection.Close();
             }
@@ -389,9 +388,9 @@ namespace Final_Project_Form
                 TextInfo textInfo = new CultureInfo("en-US", false).TextInfo;
                 connection.Open();
                 string addUserCommand = "insert into LoanHistory(ResourceID,ResourceType,ResourceName,DateLoaned," +
-                "LoanDuration,Department,BorrowerName,BorrowerID,BorrowerSurname,BorrowerEmail,Notes,LoanedBy,LoanNumber,LoanerID,ReturnDate) " +
+                "LoanDuration,Department,BorrowerName,BorrowerID,BorrowerSurname,BorrowerEmail,Notes,LoanedBy,LoanNumber,ReturnDate) " +
                             "values(@ResourceID,@ResourceType,@ResourceName,@DateLoaned,@LoanDuration,@Department,@BorrowerName," +
-                            "@BorrowerID,@BorrowerSurname,@BorrowerEmail,@Notes,@LoanedBy,@LoanNumber,@LoanerID,@ReturnDate)";
+                            "@BorrowerID,@BorrowerSurname,@BorrowerEmail,@Notes,@LoanedBy,@LoanNumber,@ReturnDate)";
                 SqlCommand addCommand = new SqlCommand(addUserCommand, connection);
                 addCommand.Parameters.AddWithValue("@ResourceID", row.Cells["ResourceID"].Value.ToString());
                 addCommand.Parameters.AddWithValue("@ResourceType", row.Cells["ResourceType"].Value.ToString());
@@ -406,7 +405,6 @@ namespace Final_Project_Form
                 addCommand.Parameters.AddWithValue("@Notes", "Extended by: " + row.Cells["LoanedBy"].Value.ToString() + " For a total of: " + txtExtend.Text + " Days.");
                 addCommand.Parameters.AddWithValue("@LoanedBy", row.Cells["LoanedBy"].Value.ToString());
                 addCommand.Parameters.AddWithValue("@LoanNumber", row.Cells["LoanNumber"].Value.ToString());
-                addCommand.Parameters.AddWithValue("@LoanerID", row.Cells["LoanerID"].Value.ToString());
                 addCommand.Parameters.AddWithValue("@ReturnDate", returnDate);
                 addCommand.ExecuteNonQuery();
                 connection.Close();

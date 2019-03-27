@@ -23,13 +23,13 @@ namespace Final_Project_Form
             string connectionString = myGlobals.connString;
             SqlConnection connection = new SqlConnection(connectionString);
             connection.Open();
-            SqlCommand loadHistory = new SqlCommand("SELECT LoanNumber,LoanerID,LoanedBy,DateLoaned,ReturnDate,LoanDuration,BorrowerName," +
+            SqlCommand loadHistory = new SqlCommand("SELECT LoanedBy,DateLoaned,ReturnDate,LoanDuration,BorrowerName," +
                 "BorrowerID,BorrowerEmail FROM LoanHistory WHERE ResourceID=@resourceID", connection);
             loadHistory.Parameters.AddWithValue("@resourceID", id);
             SqlDataAdapter adapter = new SqlDataAdapter(loadHistory);
             adapter.Fill(dt);
             itemHistoryGridView.DataSource = dt;
-            SqlCommand loadCurrentLoaner = new SqlCommand("SELECT LoanNumber,BorrowerName,BorrowerID,DateLoaned,DueDate,LoanedBy,Quantity" +
+            SqlCommand loadCurrentLoaner = new SqlCommand("SELECT BorrowerName,UserType,BorrowerID,DateLoaned,DueDate,LoanedBy,Quantity" +
                 " FROM Loans WHERE ResourceID=@resourceID", connection);
             loadCurrentLoaner.Parameters.AddWithValue("@resourceID", id);
             SqlDataAdapter adapter2 = new SqlDataAdapter(loadCurrentLoaner);
@@ -74,11 +74,11 @@ namespace Final_Project_Form
                     command.Parameters.AddWithValue("@ResourceID", id);
                     command.Parameters.AddWithValue("@ResourceType", textInfo.ToTitleCase(txtResourceType.Text));
                     command.Parameters.AddWithValue("@ResourceName", textInfo.ToTitleCase(txtResourceName.Text));
-                    command.Parameters.AddWithValue("@Notes", textInfo.ToTitleCase(txtNotes.Text));
-                    command.Parameters.AddWithValue("@MaxLoanPeriod", textInfo.ToTitleCase(txtMaxLoanPeriod.Text));
-                    command.Parameters.AddWithValue("@SerialNumber", textInfo.ToTitleCase(txtSerialNo.Text));
+                    command.Parameters.AddWithValue("@Notes", txtNotes.Text);
+                    command.Parameters.AddWithValue("@MaxLoanPeriod", txtMaxLoanPeriod.Text);
+                    command.Parameters.AddWithValue("@SerialNumber", txtSerialNo.Text);
                     command.Parameters.AddWithValue("@SupplierSource", textInfo.ToTitleCase(txtSupplierSource.Text));
-                    command.Parameters.AddWithValue("@PurchasePrice", textInfo.ToTitleCase(txtPurchasePrice.Text));
+                    command.Parameters.AddWithValue("@PurchasePrice", txtPurchasePrice.Text);
                     command.Parameters.AddWithValue("@Department", selectedDept);
                     
                     command.ExecuteNonQuery();

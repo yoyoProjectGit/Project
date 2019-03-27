@@ -14,7 +14,7 @@ namespace Final_Project_Form
     public partial class LoanUserItem : Form
     {
         DataTable dt = new DataTable("Inventory");
-        public LoanUserItem(string id, string firstname, string surname, string emailaddress)
+        public LoanUserItem(string id, string firstname, string surname, string emailaddress, string scanno, string usertype)
         {
             InitializeComponent();
             txtCurrentId.Text = id;
@@ -25,7 +25,12 @@ namespace Final_Project_Form
             txtCurrentName2.Text = firstname;
             txtCurrentSurname2.Text = surname;
             txtCurrentEmail2.Text = emailaddress;
-        }
+			txtScanID.Text = scanno;
+			txtUserType.Text = usertype;
+			txtScanID2.Text = scanno;
+			txtUserType2.Text = usertype;
+
+		}
         private void btnBack_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -106,8 +111,8 @@ namespace Final_Project_Form
                 SqlConnection connection = new SqlConnection(connectionString);
                 connection.Open();
                 SqlCommand command = new SqlCommand("SELECT ResourceID,ResourceType,ResourceName,MaxLoanPeriod,Department," +
-                                    "SerialNumber,DateAdded,SupplierSource,PurchasePrice,Quantity,Notes FROM resourcesTable WHERE Department=@Department " +
-                                    "AND Quantity>0", connection);
+                                    "SerialNumber,DateAdded,SupplierSource,PurchasePrice,InStock,Notes FROM resourcesTable WHERE Department=@Department " +
+									"AND InStock>0", connection);
                 command.Parameters.AddWithValue("@Department", currentUser.Department);
                 SqlDataAdapter adapter = new SqlDataAdapter(command);
                 adapter.Fill(dt);
@@ -133,7 +138,7 @@ namespace Final_Project_Form
                 SqlConnection connection = new SqlConnection(connectionString);
                 connection.Open();
                 SqlCommand command = new SqlCommand("SELECT ResourceID,ResourceType,ResourceName,MaxLoanPeriod,Department," +
-                    "SerialNumber,DateAdded,SupplierSource,PurchasePrice,Quantity,Notes FROM resourcesTable WHERE Department=@Department AND Quantity>0", connection);
+					"SerialNumber,DateAdded,SupplierSource,PurchasePrice,InStock,Notes FROM resourcesTable WHERE Department=@Department AND InStock>0", connection);
                 command.Parameters.AddWithValue("@Department", currentUser.Department);
                 SqlDataAdapter adapter = new SqlDataAdapter(command);
                 adapter.Fill(dt);
@@ -186,7 +191,8 @@ namespace Final_Project_Form
                     pickedItemsGridView.Rows[n].Cells[4].Value = item.Cells[5].Value.ToString();
                     pickedItemsGridView.Rows[n].Cells[5].Value = item.Cells[10].Value.ToString();
                     pickedItemsGridView.Rows[n].Cells[6].Value = item.Cells[11].Value.ToString();
-                }
+					pickedItemsGridView.Rows[n].Cells[7].Value = item.Cells[6].Value.ToString();
+				}
             }
             tabControl1.SelectedTab = tabPage2;
         }
@@ -199,29 +205,35 @@ namespace Final_Project_Form
                 int maxprd = 0;
                 int resourceid = 0;
                 int quantity = 0;
-                Int32.TryParse(row.Cells["MaxLoanPeriod"].Value.ToString(), out maxprd);
+				int serialnumber = 0;
+				Int32.TryParse(row.Cells["MaxLoanPeriod"].Value.ToString(), out maxprd);
                 Int32.TryParse(row.Cells["ResourceID"].Value.ToString(), out resourceid);
                 Int32.TryParse(row.Cells["Quantity"].Value.ToString(), out quantity);
-                //MessageBox.Show(maxprd);
-                var borrower = new currentBorrower();
+				Int32.TryParse(row.Cells["SerialNumber"].Value.ToString(), out serialnumber);
+				//MessageBox.Show(maxprd);
+				var borrower = new currentBorrower();
                 borrower.FirstName = txtCurrentName.Text;
                 borrower.Surname = txtCurrentSurname.Text;
                 borrower.ShuId = txtCurrentId.Text;
                 borrower.EmailAddress = txtCurrentEmail.Text;
+				borrower.ScannableNum = txtScanID.Text;
+				borrower.UserType = txtUserType.Text;
                 var item = new currentItem();
                 item.ResourceType = row.Cells["ResourceType"].Value.ToString();
                 item.ResourceName = row.Cells["ResourceName"].Value.ToString();
                 item.MaxLoanPeriod = maxprd;
                 item.Department = row.Cells["Department"].Value.ToString();
                 item.Quantity = quantity;
-                //item.SerialNumber = (long)row.Cells["SerialNumber"].Value;
-                //item.DateAdded = row.Cells["DateAdded"].Value.ToString();
-                //item.SupplierSource = row.Cells["SupplierSource"].Value.ToString();
-                //item.PurchasePrice = (decimal)row.Cells["PurchasePrice"].Value;
-                //item.Notes = row.Cells["Notes"].Value.ToString();
-                item.ItemID = resourceid;
+				item.SerialNumber = serialnumber;
+				//item.SerialNumber = (long)row.Cells["SerialNumber"].Value;
+				//item.DateAdded = row.Cells["DateAdded"].Value.ToString();
+				//item.SupplierSource = row.Cells["SupplierSource"].Value.ToString();
+				//item.PurchasePrice = (decimal)row.Cells["PurchasePrice"].Value;
+				//item.Notes = row.Cells["Notes"].Value.ToString();
+				item.ItemID = resourceid;
                 LoanDurations loanInfo = new LoanDurations(item.ResourceType, item.ResourceName, item.MaxLoanPeriod,
-                    item.Quantity, item.Department,item.ItemID, borrower.FirstName, borrower.Surname, borrower.ShuId, borrower.EmailAddress);
+                    item.Quantity, item.Department,item.ItemID, borrower.FirstName, borrower.Surname, 
+					borrower.ShuId, borrower.EmailAddress,borrower.ScannableNum,borrower.UserType,item.SerialNumber);
                 loanInfo.Show();
                 
             }

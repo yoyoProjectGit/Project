@@ -13,6 +13,7 @@ namespace Final_Project_Form
 {
     public partial class Inventory : Form
     {
+		int totalInStock = 0;
         DataTable dt = new DataTable("Inventory");
         public Inventory()
         {
@@ -23,23 +24,16 @@ namespace Final_Project_Form
         {
             this.Close();
         }
-
-        private void btnSearchName_Click(object sender, EventArgs e)
-        {
-            DataView dv = dt.DefaultView;
-            dv.RowFilter = string.Format("CONVERT([ResourceName], System.String) LIKE '%" + txtResourceName.Text + "%'");
-            inventoryGridView.DataSource = dv.ToTable();
-        }
-
         private void Inventory_Load(object sender, EventArgs e)
         {
             try
             {
+				totalInStock = 0;
                 string connectionString = myGlobals.connString;
                 SqlConnection connection = new SqlConnection(connectionString);
                 connection.Open();
                 SqlCommand command = new SqlCommand("SELECT ResourceID,ResourceType,ResourceName,MaxLoanPeriod,Department," +
-                    "SerialNumber,DateAdded,SupplierSource,PurchasePrice,Notes,Quantity FROM resourcesTable WHERE Department=@Department", connection);
+                    "SerialNumber,DateAdded,SupplierSource,PurchasePrice,Notes,InStock FROM resourcesTable WHERE Department=@Department", connection);
                 command.Parameters.AddWithValue("@Department", currentUser.Department);
                 SqlDataAdapter adapter = new SqlDataAdapter(command);
                 adapter.Fill(dt);
@@ -55,18 +49,18 @@ namespace Final_Project_Form
                 inventoryGridView.Columns[7].Visible = false;
                 inventoryGridView.Columns[8].Visible = false;
                 connection.Close();
+				foreach(DataGridViewRow row in inventoryGridView.Rows)
+				{
+					totalInStock +=Convert.ToInt32(row.Cells["InStock"].Value.ToString());
+				}
+				lblTotalItems.Text = "Total Individual Items In Table: " + totalInStock;
+				int count = inventoryGridView.Rows.Count;
+				lblTotalRows.Text = "Total Rows In Table: " + count;
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
-        }
-
-        private void btnSearchBarcode_Click(object sender, EventArgs e)
-        {
-            DataView dv = dt.DefaultView;
-            dv.RowFilter = string.Format("CONVERT([SerialNumber], System.String) LIKE '%" + txtBarcode.Text + "%'");
-            inventoryGridView.DataSource = dv.ToTable();
         }
 
         private void inventoryGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -94,23 +88,56 @@ namespace Final_Project_Form
 
         private void btnRefresh_Click(object sender, EventArgs e)
         {
-            dt.Clear();
+			totalInStock = 0;
+			dt.Clear();
             dt.DefaultView.RowFilter = string.Empty;
             string connectionString = myGlobals.connString;
             SqlConnection connection = new SqlConnection(connectionString);
             connection.Open();
             SqlCommand command = new SqlCommand("SELECT ResourceID,ResourceType,ResourceName,MaxLoanPeriod,Department," +
-                   "SerialNumber,DateAdded,SupplierSource,PurchasePrice,Notes,Quantity FROM resourcesTable WHERE Department=@Department", connection);
+                   "SerialNumber,DateAdded,SupplierSource,PurchasePrice,Notes,InStock FROM resourcesTable WHERE Department=@Department", connection);
             command.Parameters.AddWithValue("@Department", currentUser.Department);
             SqlDataAdapter adapter = new SqlDataAdapter(command);
             adapter.Fill(dt);
             inventoryGridView.DataSource = dt;
-            //DataGridViewButtonColumn button = new DataGridViewButtonColumn();
-            //button.HeaderText = "View Info";
-            //button.Text = "View";
-            //button.UseColumnTextForButtonValue = true;
-            //studentGridView.Columns.Add(button);
             connection.Close();
-        }
-    }
+			foreach (DataGridViewRow row in inventoryGridView.Rows)
+			{
+				totalInStock += Convert.ToInt32(row.Cells["InStock"].Value.ToString());
+			}
+			lblTotalItems.Text = "Total Individual Items In Table: " + totalInStock;
+			int count = inventoryGridView.Rows.Count;
+			lblTotalRows.Text = "Total Rows In Table: " + count;
+		}
+		private void btnSearchBarcode_Click(object sender, EventArgs e)
+		{
+			totalInStock = 0;
+			DataView dv = dt.DefaultView;
+			dv.RowFilter = string.Format("CONVERT([SerialNumber], System.String) LIKE '%" + txtBarcode.Text + "%'");
+			inventoryGridView.DataSource = dv.ToTable();
+			foreach (DataGridViewRow row in inventoryGridView.Rows)
+			{
+				totalInStock += Convert.ToInt32(row.Cells["InStock"].Value.ToString());
+			}
+			lblTotalItems.Text = "Total Individual Items In Table: " + totalInStock;
+			int count = inventoryGridView.Rows.Count;
+			lblTotalRows.Text = "Total Rows In Table: " + count;
+		}
+
+		private void btnSearchName_Click(object sender, EventArgs e)
+		{
+			totalInStock = 0;
+			DataView dv = dt.DefaultView;
+			dv.RowFilter = string.Format("CONVERT([ResourceName], System.String) LIKE '%" + txtResourceName.Text + "%'");
+			inventoryGridView.DataSource = dv.ToTable();
+			foreach (DataGridViewRow row in inventoryGridView.Rows)
+			{
+				totalInStock += Convert.ToInt32(row.Cells["InStock"].Value.ToString());
+			}
+			lblTotalItems.Text = "Total Individual Items In Table: " + totalInStock;
+			int count = inventoryGridView.Rows.Count;
+			lblTotalRows.Text = "Total Rows In Table: " + count;
+		}
+
+	}
 }
