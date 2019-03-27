@@ -82,8 +82,8 @@ namespace Final_Project_Form
                 adapter.Fill(dt);
                 studentGridView.DataSource = dt;
                 DataGridViewButtonColumn button = new DataGridViewButtonColumn();
-                button.HeaderText = "View Info";
-                button.Text = "View";
+                button.HeaderText = "Loan Item";
+                button.Text = "Loan";
                 button.UseColumnTextForButtonValue = true;
                 studentGridView.Columns.Add(button);
                 connection.Close();

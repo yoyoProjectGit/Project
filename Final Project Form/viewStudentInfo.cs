@@ -56,11 +56,11 @@ namespace Final_Project_Form
             string connectionString = myGlobals.connString;
             SqlConnection connection = new SqlConnection(connectionString);
             connection.Open();
-            SqlCommand command = new SqlCommand("SELECT ResourceType, ResourceName, DateLoaned, DueDate, UserType, BorrowerName, LoanedBy" +
+            SqlCommand command = new SqlCommand("SELECT ResourceType, ResourceName, DateLoaned, DueDate, UserType, BorrowerName,LoanedBy,Quantity" +
                 " FROM Loans WHERE BorrowerID=@ShuId", connection);
             command.Parameters.AddWithValue("@ShuId", txtShuId.Text);
             SqlDataAdapter adapter = new SqlDataAdapter(command);
-            adapter.Fill(dt);
+			adapter.Fill(dt);
             LoanedItemsGridView.DataSource = dt;
             SqlCommand command2 = new SqlCommand("SELECT ResourceType, ResourceName, DateLoaned, ReturnDate, BorrowerName, LoanedBy" +
                 " FROM LoanHistory WHERE BorrowerID=@ShuId", connection);
@@ -69,7 +69,7 @@ namespace Final_Project_Form
             adapter2.Fill(dt2);
             loanHistory.DataSource = dt2;
             connection.Close();
-        }
+		}
         private void btnEdit_Click(object sender, EventArgs e)
         {
             txtShuId.ReadOnly = false;

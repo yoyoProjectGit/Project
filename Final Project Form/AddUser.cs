@@ -86,5 +86,20 @@ namespace Final_Project_Form
                 MessageBox.Show(ex.Message);
             }
         }
-    }
+
+		private void AddUser_Load(object sender, EventArgs e)
+		{
+			txtEmail.Text = "@my.shu.ac.uk";
+		}
+
+		private void btnStudentEmail_Click(object sender, EventArgs e)
+		{
+			txtEmail.Text = "@my.shu.ac.uk";
+		}
+
+		private void btnStaffEmail_Click(object sender, EventArgs e)
+		{
+			txtEmail.Text = "@shu.ac.uk";
+		}
+	}
 }

@@ -47,6 +47,8 @@
 			this.label8 = new System.Windows.Forms.Label();
 			this.txtScanID = new System.Windows.Forms.TextBox();
 			this.dropUserType = new System.Windows.Forms.ComboBox();
+			this.btnStudentEmail = new System.Windows.Forms.Button();
+			this.btnStaffEmail = new System.Windows.Forms.Button();
 			this.SuspendLayout();
 			// 
 			// lblAddUser
@@ -65,7 +67,7 @@
 			this.txtShuId.Location = new System.Drawing.Point(173, 152);
 			this.txtShuId.Name = "txtShuId";
 			this.txtShuId.Size = new System.Drawing.Size(217, 31);
-			this.txtShuId.TabIndex = 0;
+			this.txtShuId.TabIndex = 2;
 			// 
 			// txtFirstName
 			// 
@@ -73,7 +75,7 @@
 			this.txtFirstName.Location = new System.Drawing.Point(173, 201);
 			this.txtFirstName.Name = "txtFirstName";
 			this.txtFirstName.Size = new System.Drawing.Size(217, 31);
-			this.txtFirstName.TabIndex = 1;
+			this.txtFirstName.TabIndex = 3;
 			// 
 			// txtSurname
 			// 
@@ -81,7 +83,7 @@
 			this.txtSurname.Location = new System.Drawing.Point(173, 254);
 			this.txtSurname.Name = "txtSurname";
 			this.txtSurname.Size = new System.Drawing.Size(217, 31);
-			this.txtSurname.TabIndex = 2;
+			this.txtSurname.TabIndex = 4;
 			// 
 			// label1
 			// 
@@ -119,7 +121,7 @@
 			this.txtCourseDept.Location = new System.Drawing.Point(173, 304);
 			this.txtCourseDept.Name = "txtCourseDept";
 			this.txtCourseDept.Size = new System.Drawing.Size(217, 31);
-			this.txtCourseDept.TabIndex = 3;
+			this.txtCourseDept.TabIndex = 5;
 			// 
 			// label4
 			// 
@@ -137,7 +139,7 @@
 			this.txtEmail.Location = new System.Drawing.Point(173, 359);
 			this.txtEmail.Name = "txtEmail";
 			this.txtEmail.Size = new System.Drawing.Size(217, 31);
-			this.txtEmail.TabIndex = 4;
+			this.txtEmail.TabIndex = 6;
 			// 
 			// label5
 			// 
@@ -164,16 +166,16 @@
 			this.btnAddUser.Location = new System.Drawing.Point(520, 69);
 			this.btnAddUser.Name = "btnAddUser";
 			this.btnAddUser.Size = new System.Drawing.Size(116, 73);
-			this.btnAddUser.TabIndex = 13;
+			this.btnAddUser.TabIndex = 8;
 			this.btnAddUser.Text = "Add User";
 			this.btnAddUser.UseVisualStyleBackColor = true;
 			this.btnAddUser.Click += new System.EventHandler(this.btnAddUser_Click);
 			// 
 			// btnBack
 			// 
-			this.btnBack.Location = new System.Drawing.Point(591, 375);
+			this.btnBack.Location = new System.Drawing.Point(691, 379);
 			this.btnBack.Name = "btnBack";
-			this.btnBack.Size = new System.Drawing.Size(90, 36);
+			this.btnBack.Size = new System.Drawing.Size(97, 55);
 			this.btnBack.TabIndex = 14;
 			this.btnBack.Text = "Back";
 			this.btnBack.UseVisualStyleBackColor = true;
@@ -184,7 +186,7 @@
 			this.startDatePicker.Location = new System.Drawing.Point(173, 414);
 			this.startDatePicker.Name = "startDatePicker";
 			this.startDatePicker.Size = new System.Drawing.Size(217, 20);
-			this.startDatePicker.TabIndex = 5;
+			this.startDatePicker.TabIndex = 7;
 			// 
 			// label7
 			// 
@@ -212,7 +214,7 @@
 			this.txtScanID.Location = new System.Drawing.Point(173, 111);
 			this.txtScanID.Name = "txtScanID";
 			this.txtScanID.Size = new System.Drawing.Size(217, 31);
-			this.txtScanID.TabIndex = 16;
+			this.txtScanID.TabIndex = 1;
 			// 
 			// dropUserType
 			// 
@@ -225,13 +227,35 @@
 			this.dropUserType.Location = new System.Drawing.Point(173, 65);
 			this.dropUserType.Name = "dropUserType";
 			this.dropUserType.Size = new System.Drawing.Size(217, 33);
-			this.dropUserType.TabIndex = 19;
+			this.dropUserType.TabIndex = 0;
+			// 
+			// btnStudentEmail
+			// 
+			this.btnStudentEmail.Location = new System.Drawing.Point(396, 358);
+			this.btnStudentEmail.Name = "btnStudentEmail";
+			this.btnStudentEmail.Size = new System.Drawing.Size(76, 31);
+			this.btnStudentEmail.TabIndex = 20;
+			this.btnStudentEmail.Text = "Student Mail";
+			this.btnStudentEmail.UseVisualStyleBackColor = true;
+			this.btnStudentEmail.Click += new System.EventHandler(this.btnStudentEmail_Click);
+			// 
+			// btnStaffEmail
+			// 
+			this.btnStaffEmail.Location = new System.Drawing.Point(478, 358);
+			this.btnStaffEmail.Name = "btnStaffEmail";
+			this.btnStaffEmail.Size = new System.Drawing.Size(76, 31);
+			this.btnStaffEmail.TabIndex = 21;
+			this.btnStaffEmail.Text = "Staff Mail";
+			this.btnStaffEmail.UseVisualStyleBackColor = true;
+			this.btnStaffEmail.Click += new System.EventHandler(this.btnStaffEmail_Click);
 			// 
 			// AddUser
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(800, 450);
+			this.Controls.Add(this.btnStaffEmail);
+			this.Controls.Add(this.btnStudentEmail);
 			this.Controls.Add(this.dropUserType);
 			this.Controls.Add(this.label7);
 			this.Controls.Add(this.label8);
@@ -254,6 +278,7 @@
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
 			this.Name = "AddUser";
 			this.Text = "AddUser";
+			this.Load += new System.EventHandler(this.AddUser_Load);
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -280,5 +305,7 @@
 		private System.Windows.Forms.Label label8;
 		private System.Windows.Forms.TextBox txtScanID;
 		private System.Windows.Forms.ComboBox dropUserType;
+		private System.Windows.Forms.Button btnStudentEmail;
+		private System.Windows.Forms.Button btnStaffEmail;
 	}
 }

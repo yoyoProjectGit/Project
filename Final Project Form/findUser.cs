@@ -100,5 +100,12 @@ namespace Final_Project_Form
             //studentGridView.Columns.Add(button);
             connection.Close();
         }
-    }
+
+		private void btnScanID_Click(object sender, EventArgs e)
+		{
+			DataView dv = dt.DefaultView;
+			dv.RowFilter = string.Format("ScannableNum LIKE '%" + txtScanID.Text + "%'");
+			studentGridView.DataSource = dv.ToTable();
+		}
+	}
 }

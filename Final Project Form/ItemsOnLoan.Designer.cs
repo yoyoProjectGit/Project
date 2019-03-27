@@ -54,7 +54,7 @@
 			this.btnBack.Location = new System.Drawing.Point(1151, 656);
 			this.btnBack.Name = "btnBack";
 			this.btnBack.Size = new System.Drawing.Size(91, 89);
-			this.btnBack.TabIndex = 6;
+			this.btnBack.TabIndex = 9;
 			this.btnBack.Text = "Back";
 			this.btnBack.UseVisualStyleBackColor = true;
 			this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
@@ -64,7 +64,7 @@
 			this.btnRefresh.Location = new System.Drawing.Point(1151, 23);
 			this.btnRefresh.Name = "btnRefresh";
 			this.btnRefresh.Size = new System.Drawing.Size(103, 92);
-			this.btnRefresh.TabIndex = 5;
+			this.btnRefresh.TabIndex = 8;
 			this.btnRefresh.Text = "Refresh";
 			this.btnRefresh.UseVisualStyleBackColor = true;
 			this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
@@ -75,7 +75,7 @@
 			this.btnSearchBarcode.Location = new System.Drawing.Point(512, 105);
 			this.btnSearchBarcode.Name = "btnSearchBarcode";
 			this.btnSearchBarcode.Size = new System.Drawing.Size(106, 31);
-			this.btnSearchBarcode.TabIndex = 4;
+			this.btnSearchBarcode.TabIndex = 5;
 			this.btnSearchBarcode.Text = "Search";
 			this.btnSearchBarcode.UseVisualStyleBackColor = true;
 			this.btnSearchBarcode.Click += new System.EventHandler(this.btnSearchBarcode_Click);
@@ -86,7 +86,7 @@
 			this.btnSearchName.Location = new System.Drawing.Point(512, 68);
 			this.btnSearchName.Name = "btnSearchName";
 			this.btnSearchName.Size = new System.Drawing.Size(106, 31);
-			this.btnSearchName.TabIndex = 3;
+			this.btnSearchName.TabIndex = 4;
 			this.btnSearchName.Text = "Search";
 			this.btnSearchName.UseVisualStyleBackColor = true;
 			this.btnSearchName.Click += new System.EventHandler(this.btnSearchName_Click);
@@ -174,7 +174,7 @@
 			this.btnShuId.Location = new System.Drawing.Point(512, 142);
 			this.btnShuId.Name = "btnShuId";
 			this.btnShuId.Size = new System.Drawing.Size(106, 31);
-			this.btnShuId.TabIndex = 70;
+			this.btnShuId.TabIndex = 6;
 			this.btnShuId.Text = "Search";
 			this.btnShuId.UseVisualStyleBackColor = true;
 			this.btnShuId.Click += new System.EventHandler(this.btnShuId_Click);
@@ -185,7 +185,7 @@
 			this.btnResourceType.Location = new System.Drawing.Point(512, 179);
 			this.btnResourceType.Name = "btnResourceType";
 			this.btnResourceType.Size = new System.Drawing.Size(106, 31);
-			this.btnResourceType.TabIndex = 73;
+			this.btnResourceType.TabIndex = 7;
 			this.btnResourceType.Text = "Search";
 			this.btnResourceType.UseVisualStyleBackColor = true;
 			this.btnResourceType.Click += new System.EventHandler(this.btnResourceType_Click);
@@ -196,7 +196,7 @@
 			this.txtResourceType.Location = new System.Drawing.Point(198, 179);
 			this.txtResourceType.Name = "txtResourceType";
 			this.txtResourceType.Size = new System.Drawing.Size(217, 31);
-			this.txtResourceType.TabIndex = 71;
+			this.txtResourceType.TabIndex = 3;
 			// 
 			// label4
 			// 
