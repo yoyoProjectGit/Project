@@ -18,8 +18,11 @@ namespace Final_Project_Form
         string resName;
         string id;
         int resInt;
-        DataTable dt = new DataTable("Inventory");
-        public ReturnUserItem(string id, string firstname, string surname, string emailaddress)
+		string uType;
+		string scanNo;
+		int quantity = 0;
+		DataTable dt = new DataTable("Inventory");
+        public ReturnUserItem(string id, string firstname, string surname, string emailaddress, string utype, string scanno)
         {
             InitializeComponent();
             txtCurrentId.Text = id;
@@ -30,6 +33,8 @@ namespace Final_Project_Form
             txtCurrentName2.Text = firstname;
             txtCurrentSurname2.Text = surname;
             txtCurrentEmail2.Text = emailaddress;
+			uType = utype;
+			scanNo = scanno;
         }
         private void btnBack_Click(object sender, EventArgs e)
         {
@@ -192,8 +197,9 @@ namespace Final_Project_Form
                     pickedItemsGridView.Rows[n].Cells[13].Value = item.Cells[14].Value.ToString();
                     pickedItemsGridView.Rows[n].Cells[14].Value = item.Cells[15].Value.ToString();
                     pickedItemsGridView.Rows[n].Cells[15].Value = item.Cells[16].Value.ToString();
-                    pickedItemsGridView.Rows[n].Cells[16].Value = item.Cells[17].Value.ToString();
-                }
+					pickedItemsGridView.Rows[n].Cells[16].Value = item.Cells[17].Value.ToString();
+					pickedItemsGridView.Rows[n].Cells[17].Value = item.Cells[18].Value.ToString();
+				}
             }
             tabControl1.SelectedTab = tabPage2;
         }
@@ -203,23 +209,19 @@ namespace Final_Project_Form
             foreach (DataGridViewRow row in pickedItemsGridView.Rows)
             {
             addToLoanHistory(row);
-            removeFromCurrentLoans(row);
+			removeFromActiveLoans(row);
             addToResources(row);
                 AutoClosingMessageBox.Show("The item: " + resName +
                 " Has been successfully returned", "Loan Item ", 5000);
             }
-
             this.Close();
         }
         private void addToLoanHistory(DataGridViewRow row)
         { 
             try
             {
-
-                loanNo = row.Cells["LoanNumber"].Value.ToString();
                 resName = row.Cells["ResourceName"].Value.ToString();
                 id = row.Cells["ResourceID"].Value.ToString();
-                int quantity = 0;
                 Int32.TryParse(row.Cells["Quantity"].Value.ToString(), out quantity);
                 resInt = Convert.ToInt32(id);
                 string connectionString = myGlobals.connString;
@@ -227,12 +229,13 @@ namespace Final_Project_Form
                 DateTime returnDate = DateTime.Now;
                 TextInfo textInfo = new CultureInfo("en-US", false).TextInfo;
                 connection.Open();
-                string addToHistoryCommand = "insert into LoanHistory(ResourceID,ResourceType,ResourceName,DateLoaned," +
-                "LoanDuration,Department,BorrowerName,BorrowerID,BorrowerSurname,BorrowerEmail,LoanedBy,LoanNumber,ReturnDate,Quantity,Notes) " +
-                            "values(@ResourceID,@ResourceType,@ResourceName,@DateLoaned,@LoanDuration,@Department,@BorrowerName," +
-                            "@BorrowerID,@BorrowerSurname,@BorrowerEmail,@LoanedBy,@LoanNumber,@ReturnDate,@Quantity,@Notes)";
+                string addToHistoryCommand = "insert into LoanHistory(LoanID,ResourceID,ResourceType,ResourceName,DateLoaned," +
+				"LoanDuration,Department,BorrowerName,BorrowerID,Notes,LoanedBy,ReturnDate,Quantity,ScannableNum,UserType) " +
+							"values(@LoanID,@ResourceID,@ResourceType,@ResourceName,@DateLoaned,@LoanDuration,@Department,@BorrowerName," +
+							"@BorrowerID,@Notes,@LoanedBy,@ReturnDate,@Quantity,@ScannableNum,@UserType)";
                 SqlCommand addCommand = new SqlCommand(addToHistoryCommand, connection);
-                addCommand.Parameters.AddWithValue("@ResourceID", row.Cells["ResourceID"].Value.ToString());
+				addCommand.Parameters.AddWithValue("@LoanID", row.Cells["LoanID"].Value.ToString());
+				addCommand.Parameters.AddWithValue("@ResourceID", row.Cells["ResourceID"].Value.ToString());
                 addCommand.Parameters.AddWithValue("@ResourceType", row.Cells["ResourceType"].Value.ToString());
                 addCommand.Parameters.AddWithValue("@ResourceName", row.Cells["ResourceName"].Value.ToString());
                 addCommand.Parameters.AddWithValue("@DateLoaned", Convert.ToDateTime(row.Cells["DateLoaned"].Value.ToString()));
@@ -241,13 +244,13 @@ namespace Final_Project_Form
                 addCommand.Parameters.AddWithValue("@BorrowerName", row.Cells["BorrowerName"].Value.ToString());
                 addCommand.Parameters.AddWithValue("@BorrowerID", row.Cells["BorrowerID"].Value.ToString());
                 addCommand.Parameters.AddWithValue("@BorrowerSurname", row.Cells["BorrowerSurname"].Value.ToString());
-                addCommand.Parameters.AddWithValue("@BorrowerEmail", row.Cells["BorrowerEmail"].Value.ToString());
                 addCommand.Parameters.AddWithValue("@LoanedBy", row.Cells["LoanedBy"].Value.ToString());
-                addCommand.Parameters.AddWithValue("@LoanNumber", row.Cells["LoanNumber"].Value.ToString());
                 addCommand.Parameters.AddWithValue("@ReturnDate", returnDate);
                 addCommand.Parameters.AddWithValue("@Quantity", quantity);
                 addCommand.Parameters.AddWithValue("@Notes", row.Cells["Notes"].Value.ToString());
-                addCommand.ExecuteNonQuery();
+				addCommand.Parameters.AddWithValue("@ScannableNum", scanNo);
+				addCommand.Parameters.AddWithValue("@UserType", uType);
+				addCommand.ExecuteNonQuery();
                 connection.Close();
             }
             catch(Exception ex)
@@ -255,37 +258,34 @@ namespace Final_Project_Form
                 MessageBox.Show(ex.Message);
             }
         }
-        private void removeFromCurrentLoans(DataGridViewRow row)
+		private void removeFromActiveLoans(DataGridViewRow row)
+		{
+			try
+			{
+				string connectionString = myGlobals.connString;
+				SqlConnection connection = new SqlConnection(connectionString);
+				connection.Open();
+				SqlCommand remove = new SqlCommand("DELETE FROM Loans WHERE LoanID=@LoanID", connection);
+				remove.Parameters.AddWithValue("@LoanID", Convert.ToInt32(row.Cells["LoanID"].Value.ToString()));
+				remove.ExecuteNonQuery();
+				connection.Close();
+			}
+			catch (Exception ex)
+			{
+				MessageBox.Show("ERROR: " + ex.Message);
+			}
+		}
+		private void addToResources(DataGridViewRow row)
         {
-            try
+			try
             {
                 string connectionString = myGlobals.connString;
                 SqlConnection connection = new SqlConnection(connectionString);
                 connection.Open();
-                string removeResourceCommand = "DELETE FROM Loans WHERE LoanNumber=@LoanNumber";
-                SqlCommand addCommand = new SqlCommand(removeResourceCommand, connection);
-                addCommand.Parameters.AddWithValue("@LoanNumber", loanNo);
-                addCommand.ExecuteNonQuery();
-                connection.Close();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
-        private void addToResources(DataGridViewRow row)
-        {
-            int quantity = 0;
-            Int32.TryParse(row.Cells["Quantity"].Value.ToString(), out quantity);
-            try
-            {
-                string connectionString = myGlobals.connString;
-                SqlConnection connection = new SqlConnection(connectionString);
-                connection.Open();
-                string removeResourceCommand = "UPDATE resourcesTable SET InStock=Instock+@InStock WHERE ResourceID=@ResourceID";
+                string removeResourceCommand = "UPDATE resourcesTable SET InStock=Instock+@Quantity WHERE ResourceID=@ResourceID";
                 SqlCommand addCommand = new SqlCommand(removeResourceCommand, connection);
                 addCommand.Parameters.AddWithValue("@ResourceID", resInt);
-                addCommand.Parameters.AddWithValue("@InStock", quantity);
+                addCommand.Parameters.AddWithValue("@Quantity", quantity);
                 addCommand.ExecuteNonQuery();
                 connection.Close();
             }

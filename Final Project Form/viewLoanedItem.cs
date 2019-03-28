@@ -91,9 +91,9 @@ namespace Final_Project_Form
         {
             string connectionString = myGlobals.connString;
             SqlConnection connection = new SqlConnection(connectionString);
-            connection.Open();
+			connection.Open();
             SqlCommand loadHistory = new SqlCommand("SELECT LoanID,LoanedBy,DateLoaned,ReturnDate,LoanDuration,BorrowerName," +
-                "BorrowerID,BorrowerEmail FROM LoanHistory WHERE ResourceID=@resourceID", connection);
+				"BorrowerID,Quantity,UserType FROM LoanHistory WHERE ResourceID=@resourceID", connection);
             loadHistory.Parameters.AddWithValue("@resourceID", resourceID);
             SqlDataAdapter adapter = new SqlDataAdapter(loadHistory);
             adapter.Fill(dt);

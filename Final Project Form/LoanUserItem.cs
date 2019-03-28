@@ -259,6 +259,7 @@ namespace Final_Project_Form
 					if (reader.HasRows)
 					{
 						MessageBox.Show("Reminder: This user currently has another item on loan.");
+						return;
 					}
 					else
 					{

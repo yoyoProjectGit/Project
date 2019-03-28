@@ -62,7 +62,7 @@ namespace Final_Project_Form
             SqlDataAdapter adapter = new SqlDataAdapter(command);
 			adapter.Fill(dt);
             LoanedItemsGridView.DataSource = dt;
-            SqlCommand command2 = new SqlCommand("SELECT ResourceType, ResourceName, DateLoaned, ReturnDate, BorrowerName, LoanedBy" +
+            SqlCommand command2 = new SqlCommand("SELECT ResourceType, ResourceName, DateLoaned, ReturnDate, BorrowerName, LoanedBy, Quantity" +
                 " FROM LoanHistory WHERE BorrowerID=@ShuId", connection);
             command2.Parameters.AddWithValue("@ShuId", txtShuId.Text);
             SqlDataAdapter adapter2 = new SqlDataAdapter(command2);

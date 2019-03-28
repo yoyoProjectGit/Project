@@ -68,18 +68,20 @@
 			this.ResourceID = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.ResourceType = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.ResourceName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.SerialNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.LoanedBy = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.DateLoaned = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.LoanDuration = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.DueDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.Quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.LoanNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.Department = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.BorrowerName = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.BorrowerID = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.BorrowerSurname = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.BorrowerEmail = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.Notes = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.ScannableNum = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.UserType = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.tabPage1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.inventoryGridView)).BeginInit();
 			this.tabPage2.SuspendLayout();
@@ -140,9 +142,9 @@
 			this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.label9.Location = new System.Drawing.Point(994, 216);
 			this.label9.Name = "label9";
-			this.label9.Size = new System.Drawing.Size(66, 24);
+			this.label9.Size = new System.Drawing.Size(71, 24);
 			this.label9.TabIndex = 64;
-			this.label9.Text = "Shu ID";
+			this.label9.Text = "Shu ID:";
 			// 
 			// label10
 			// 
@@ -150,9 +152,9 @@
 			this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.label10.Location = new System.Drawing.Point(994, 177);
 			this.label10.Name = "label10";
-			this.label10.Size = new System.Drawing.Size(57, 24);
+			this.label10.Size = new System.Drawing.Size(62, 24);
 			this.label10.TabIndex = 63;
-			this.label10.Text = "Email";
+			this.label10.Text = "Email:";
 			// 
 			// label11
 			// 
@@ -160,9 +162,9 @@
 			this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.label11.Location = new System.Drawing.Point(994, 134);
 			this.label11.Name = "label11";
-			this.label11.Size = new System.Drawing.Size(87, 24);
+			this.label11.Size = new System.Drawing.Size(92, 24);
 			this.label11.TabIndex = 62;
-			this.label11.Text = "Surname";
+			this.label11.Text = "Surname:";
 			// 
 			// label12
 			// 
@@ -170,9 +172,9 @@
 			this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.label12.Location = new System.Drawing.Point(994, 86);
 			this.label12.Name = "label12";
-			this.label12.Size = new System.Drawing.Size(101, 24);
+			this.label12.Size = new System.Drawing.Size(106, 24);
 			this.label12.TabIndex = 61;
-			this.label12.Text = "First Name";
+			this.label12.Text = "First Name:";
 			// 
 			// txtCurrentName2
 			// 
@@ -273,9 +275,9 @@
 			this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.label7.Location = new System.Drawing.Point(1014, 216);
 			this.label7.Name = "label7";
-			this.label7.Size = new System.Drawing.Size(66, 24);
+			this.label7.Size = new System.Drawing.Size(71, 24);
 			this.label7.TabIndex = 54;
-			this.label7.Text = "Shu ID";
+			this.label7.Text = "Shu ID:";
 			// 
 			// label6
 			// 
@@ -283,9 +285,9 @@
 			this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.label6.Location = new System.Drawing.Point(1014, 177);
 			this.label6.Name = "label6";
-			this.label6.Size = new System.Drawing.Size(57, 24);
+			this.label6.Size = new System.Drawing.Size(62, 24);
 			this.label6.TabIndex = 53;
-			this.label6.Text = "Email";
+			this.label6.Text = "Email:";
 			// 
 			// label5
 			// 
@@ -293,9 +295,9 @@
 			this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.label5.Location = new System.Drawing.Point(1014, 134);
 			this.label5.Name = "label5";
-			this.label5.Size = new System.Drawing.Size(87, 24);
+			this.label5.Size = new System.Drawing.Size(92, 24);
 			this.label5.TabIndex = 52;
-			this.label5.Text = "Surname";
+			this.label5.Text = "Surname:";
 			// 
 			// label4
 			// 
@@ -303,9 +305,9 @@
 			this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.label4.Location = new System.Drawing.Point(1014, 86);
 			this.label4.Name = "label4";
-			this.label4.Size = new System.Drawing.Size(101, 24);
+			this.label4.Size = new System.Drawing.Size(106, 24);
 			this.label4.TabIndex = 51;
-			this.label4.Text = "First Name";
+			this.label4.Text = "First Name:";
 			// 
 			// txtCurrentName
 			// 
@@ -464,18 +466,20 @@
             this.ResourceID,
             this.ResourceType,
             this.ResourceName,
+            this.SerialNumber,
             this.LoanedBy,
             this.DateLoaned,
             this.LoanDuration,
             this.DueDate,
             this.Quantity,
-            this.LoanNumber,
             this.Department,
             this.BorrowerName,
             this.BorrowerID,
             this.BorrowerSurname,
             this.BorrowerEmail,
-            this.Notes});
+            this.Notes,
+            this.ScannableNum,
+            this.UserType});
 			this.pickedItemsGridView.Location = new System.Drawing.Point(38, 279);
 			this.pickedItemsGridView.Name = "pickedItemsGridView";
 			this.pickedItemsGridView.ReadOnly = true;
@@ -517,6 +521,12 @@
 			this.ResourceName.Name = "ResourceName";
 			this.ResourceName.ReadOnly = true;
 			// 
+			// SerialNumber
+			// 
+			this.SerialNumber.HeaderText = "SerialNumber";
+			this.SerialNumber.Name = "SerialNumber";
+			this.SerialNumber.ReadOnly = true;
+			// 
 			// LoanedBy
 			// 
 			this.LoanedBy.HeaderText = "LoanedBy";
@@ -546,12 +556,6 @@
 			this.Quantity.HeaderText = "Quantity";
 			this.Quantity.Name = "Quantity";
 			this.Quantity.ReadOnly = true;
-			// 
-			// LoanNumber
-			// 
-			this.LoanNumber.HeaderText = "LoanNumber";
-			this.LoanNumber.Name = "LoanNumber";
-			this.LoanNumber.ReadOnly = true;
 			// 
 			// Department
 			// 
@@ -588,6 +592,18 @@
 			this.Notes.HeaderText = "Notes";
 			this.Notes.Name = "Notes";
 			this.Notes.ReadOnly = true;
+			// 
+			// ScannableNum
+			// 
+			this.ScannableNum.HeaderText = "ScannableNum";
+			this.ScannableNum.Name = "ScannableNum";
+			this.ScannableNum.ReadOnly = true;
+			// 
+			// UserType
+			// 
+			this.UserType.HeaderText = "UserType";
+			this.UserType.Name = "UserType";
+			this.UserType.ReadOnly = true;
 			// 
 			// ReturnUserItem
 			// 
@@ -651,17 +667,19 @@
 		private System.Windows.Forms.DataGridViewTextBoxColumn ResourceID;
 		private System.Windows.Forms.DataGridViewTextBoxColumn ResourceType;
 		private System.Windows.Forms.DataGridViewTextBoxColumn ResourceName;
+		private System.Windows.Forms.DataGridViewTextBoxColumn SerialNumber;
 		private System.Windows.Forms.DataGridViewTextBoxColumn LoanedBy;
 		private System.Windows.Forms.DataGridViewTextBoxColumn DateLoaned;
 		private System.Windows.Forms.DataGridViewTextBoxColumn LoanDuration;
 		private System.Windows.Forms.DataGridViewTextBoxColumn DueDate;
 		private System.Windows.Forms.DataGridViewTextBoxColumn Quantity;
-		private System.Windows.Forms.DataGridViewTextBoxColumn LoanNumber;
 		private System.Windows.Forms.DataGridViewTextBoxColumn Department;
 		private System.Windows.Forms.DataGridViewTextBoxColumn BorrowerName;
 		private System.Windows.Forms.DataGridViewTextBoxColumn BorrowerID;
 		private System.Windows.Forms.DataGridViewTextBoxColumn BorrowerSurname;
 		private System.Windows.Forms.DataGridViewTextBoxColumn BorrowerEmail;
 		private System.Windows.Forms.DataGridViewTextBoxColumn Notes;
+		private System.Windows.Forms.DataGridViewTextBoxColumn ScannableNum;
+		private System.Windows.Forms.DataGridViewTextBoxColumn UserType;
 	}
 }

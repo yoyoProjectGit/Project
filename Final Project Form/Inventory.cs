@@ -55,7 +55,7 @@ namespace Final_Project_Form
 				}
 				lblTotalItems.Text = "Total Individual Items In Table: " + totalInStock;
 				int count = inventoryGridView.Rows.Count;
-				lblTotalRows.Text = "Total Rows In Table: " + count;
+				lblTotalRows.Text = "Total Resources: " + count;
             }
             catch (Exception ex)
             {
@@ -107,7 +107,7 @@ namespace Final_Project_Form
 			}
 			lblTotalItems.Text = "Total Individual Items In Table: " + totalInStock;
 			int count = inventoryGridView.Rows.Count;
-			lblTotalRows.Text = "Total Rows In Table: " + count;
+			lblTotalRows.Text = "Total Resources: " + count;
 		}
 		private void btnSearchBarcode_Click(object sender, EventArgs e)
 		{
@@ -121,7 +121,7 @@ namespace Final_Project_Form
 			}
 			lblTotalItems.Text = "Total Individual Items In Table: " + totalInStock;
 			int count = inventoryGridView.Rows.Count;
-			lblTotalRows.Text = "Total Rows In Table: " + count;
+			lblTotalRows.Text = "Total Resources: " + count;
 		}
 
 		private void btnSearchName_Click(object sender, EventArgs e)
@@ -136,7 +136,7 @@ namespace Final_Project_Form
 			}
 			lblTotalItems.Text = "Total Individual Items In Table: " + totalInStock;
 			int count = inventoryGridView.Rows.Count;
-			lblTotalRows.Text = "Total Rows In Table: " + count;
+			lblTotalRows.Text = "Total Resources: " + count;
 		}
 
 	}

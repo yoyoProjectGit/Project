@@ -387,10 +387,12 @@
 			// 
 			this.itemHistoryGridView.AllowUserToAddRows = false;
 			this.itemHistoryGridView.AllowUserToDeleteRows = false;
+			this.itemHistoryGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
 			this.itemHistoryGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 			this.itemHistoryGridView.Location = new System.Drawing.Point(7, 88);
 			this.itemHistoryGridView.Name = "itemHistoryGridView";
 			this.itemHistoryGridView.ReadOnly = true;
+			this.itemHistoryGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
 			this.itemHistoryGridView.Size = new System.Drawing.Size(779, 321);
 			this.itemHistoryGridView.TabIndex = 30;
 			// 
@@ -436,6 +438,7 @@
 			this.LoanedItemsGridView.Location = new System.Drawing.Point(22, 54);
 			this.LoanedItemsGridView.Name = "LoanedItemsGridView";
 			this.LoanedItemsGridView.ReadOnly = true;
+			this.LoanedItemsGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
 			this.LoanedItemsGridView.Size = new System.Drawing.Size(749, 336);
 			this.LoanedItemsGridView.TabIndex = 1;
 			// 
