@@ -327,7 +327,6 @@
 			this.inventoryGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
 			this.inventoryGridView.Size = new System.Drawing.Size(1093, 353);
 			this.inventoryGridView.TabIndex = 39;
-			this.inventoryGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.inventoryGridView_CellContentClick);
 			this.inventoryGridView.MouseClick += new System.Windows.Forms.MouseEventHandler(this.inventoryGridView_MouseClick);
 			// 
 			// tabPage2

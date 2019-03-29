@@ -59,11 +59,7 @@
 			this.label1 = new System.Windows.Forms.Label();
 			this.inventoryGridView = new System.Windows.Forms.DataGridView();
 			this.tabPage2 = new System.Windows.Forms.TabPage();
-			this.label14 = new System.Windows.Forms.Label();
-			this.txtExtend = new System.Windows.Forms.TextBox();
-			this.btnExtendLoan = new System.Windows.Forms.Button();
 			this.pickedItemsGridView = new System.Windows.Forms.DataGridView();
-			this.tabControl1 = new System.Windows.Forms.TabControl();
 			this.LoanID = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.ResourceID = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.ResourceType = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -82,6 +78,7 @@
 			this.Notes = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.ScannableNum = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.UserType = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.tabControl1 = new System.Windows.Forms.TabControl();
 			this.tabPage1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.inventoryGridView)).BeginInit();
 			this.tabPage2.SuspendLayout();
@@ -402,9 +399,6 @@
 			// 
 			// tabPage2
 			// 
-			this.tabPage2.Controls.Add(this.label14);
-			this.tabPage2.Controls.Add(this.txtExtend);
-			this.tabPage2.Controls.Add(this.btnExtendLoan);
 			this.tabPage2.Controls.Add(this.btnGoBack);
 			this.tabPage2.Controls.Add(this.btnReturnItems);
 			this.tabPage2.Controls.Add(this.txtShuId2);
@@ -425,36 +419,6 @@
 			this.tabPage2.TabIndex = 1;
 			this.tabPage2.Text = "Chosen Items";
 			this.tabPage2.UseVisualStyleBackColor = true;
-			// 
-			// label14
-			// 
-			this.label14.AutoSize = true;
-			this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label14.Location = new System.Drawing.Point(1201, 413);
-			this.label14.Name = "label14";
-			this.label14.Size = new System.Drawing.Size(61, 25);
-			this.label14.TabIndex = 72;
-			this.label14.Text = "Days";
-			// 
-			// txtExtend
-			// 
-			this.txtExtend.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.txtExtend.Location = new System.Drawing.Point(1206, 451);
-			this.txtExtend.Name = "txtExtend";
-			this.txtExtend.Size = new System.Drawing.Size(100, 31);
-			this.txtExtend.TabIndex = 71;
-			this.txtExtend.TextChanged += new System.EventHandler(this.txtExtend_TextChanged);
-			this.txtExtend.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtExtend_KeyPress);
-			// 
-			// btnExtendLoan
-			// 
-			this.btnExtendLoan.Location = new System.Drawing.Point(1330, 433);
-			this.btnExtendLoan.Name = "btnExtendLoan";
-			this.btnExtendLoan.Size = new System.Drawing.Size(121, 73);
-			this.btnExtendLoan.TabIndex = 70;
-			this.btnExtendLoan.Text = "Extend Loan";
-			this.btnExtendLoan.UseVisualStyleBackColor = true;
-			this.btnExtendLoan.Click += new System.EventHandler(this.btnExtendLoan_Click);
 			// 
 			// pickedItemsGridView
 			// 
@@ -486,16 +450,6 @@
 			this.pickedItemsGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
 			this.pickedItemsGridView.Size = new System.Drawing.Size(1043, 300);
 			this.pickedItemsGridView.TabIndex = 0;
-			// 
-			// tabControl1
-			// 
-			this.tabControl1.Controls.Add(this.tabPage1);
-			this.tabControl1.Controls.Add(this.tabPage2);
-			this.tabControl1.Location = new System.Drawing.Point(6, 6);
-			this.tabControl1.Name = "tabControl1";
-			this.tabControl1.SelectedIndex = 0;
-			this.tabControl1.Size = new System.Drawing.Size(1587, 745);
-			this.tabControl1.TabIndex = 1;
 			// 
 			// LoanID
 			// 
@@ -605,6 +559,16 @@
 			this.UserType.Name = "UserType";
 			this.UserType.ReadOnly = true;
 			// 
+			// tabControl1
+			// 
+			this.tabControl1.Controls.Add(this.tabPage1);
+			this.tabControl1.Controls.Add(this.tabPage2);
+			this.tabControl1.Location = new System.Drawing.Point(6, 6);
+			this.tabControl1.Name = "tabControl1";
+			this.tabControl1.SelectedIndex = 0;
+			this.tabControl1.Size = new System.Drawing.Size(1587, 745);
+			this.tabControl1.TabIndex = 1;
+			// 
 			// ReturnUserItem
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -659,9 +623,6 @@
         private System.Windows.Forms.DataGridView inventoryGridView;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.TabControl tabControl1;
-        private System.Windows.Forms.Button btnExtendLoan;
-        private System.Windows.Forms.TextBox txtExtend;
-        private System.Windows.Forms.Label label14;
         private System.Windows.Forms.DataGridView pickedItemsGridView;
 		private System.Windows.Forms.DataGridViewTextBoxColumn LoanID;
 		private System.Windows.Forms.DataGridViewTextBoxColumn ResourceID;

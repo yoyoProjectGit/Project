@@ -14,24 +14,11 @@ namespace Final_Project_Form
 	public partial class FindUserToReturnItem : Form
 	{
 		DateTime returnDate;
-		string LoanID;
-		string resourceID;
-		string resourceType;
-		string resourceName;
-		int quantity;
-		string DateLoaned;
-		string LoanDuration;
-		string Department;
-		string BorrowerName;
-		string BorrowerID;
-		string BorrowerSurname;
-		string BorrowerEmail;
-		string Notes;
-		string LoanedBy;
-		string scannableNum;
-		int stock;
-		string serialNumber;
-		string userType;
+		string LoanID, resourceID, resourceType, resourceName, DateLoaned,
+			LoanDuration, Department, BorrowerName, BorrowerID,
+			BorrowerSurname, BorrowerEmail, Notes, LoanedBy, scannableNum,
+			serialNumber, userType;
+		int stock, quantity;
 		DataTable dt = new DataTable("Loans");
 		public FindUserToReturnItem(string serialnumber)
 		{
@@ -66,7 +53,7 @@ namespace Final_Project_Form
 			SqlConnection connection = new SqlConnection(connectionString);
 			connection.Open();
 			SqlCommand command = new SqlCommand("SELECT ResourceName,SerialNumber,Quantity,LoanedBy," +
-				"BorrowerID,BorrowerName,UserType,BorrowerSurname,BorrowerID,BorrowerEmail,UserType,DateLoaned,DueDate,LoanDuration," +
+				"BorrowerID,BorrowerName,BorrowerSurname,BorrowerEmail,UserType,DateLoaned,DueDate,LoanDuration," +
 				"ScannableNum,ResourceType,LoanID,ResourceID,Notes,Department FROM Loans WHERE SerialNumber=@SerialNumber", connection);
 			command.Parameters.AddWithValue("@SerialNumber", serialNumber);
 			SqlDataAdapter adapter = new SqlDataAdapter(command);
@@ -88,7 +75,7 @@ namespace Final_Project_Form
 				SqlConnection connection = new SqlConnection(connectionString);
 				connection.Open();
 				SqlCommand command = new SqlCommand("SELECT ResourceName,SerialNumber,Quantity,LoanedBy," +
-					"BorrowerID,BorrowerName,UserType,BorrowerSurname,BorrowerID,BorrowerEmail,UserType,DateLoaned,DueDate,LoanDuration," +
+					"BorrowerID,BorrowerName,BorrowerSurname,BorrowerEmail,UserType,DateLoaned,DueDate,LoanDuration," +
 					"ScannableNum,ResourceType,LoanID,ResourceID,Notes,Department FROM Loans WHERE SerialNumber=@SerialNumber", connection);
 				command.Parameters.AddWithValue("@SerialNumber", serialNumber);
 				SqlDataAdapter adapter = new SqlDataAdapter(command);

@@ -60,6 +60,24 @@
 			this.tabPage3 = new System.Windows.Forms.TabPage();
 			this.btnClose2 = new System.Windows.Forms.Button();
 			this.loanHistory = new System.Windows.Forms.DataGridView();
+			this.tabPage4 = new System.Windows.Forms.TabPage();
+			this.label13 = new System.Windows.Forms.Label();
+			this.txtTotalDays = new System.Windows.Forms.TextBox();
+			this.btnExtendLoan = new System.Windows.Forms.Button();
+			this.label15 = new System.Windows.Forms.Label();
+			this.txtDueDate = new System.Windows.Forms.TextBox();
+			this.label16 = new System.Windows.Forms.Label();
+			this.label17 = new System.Windows.Forms.Label();
+			this.txtDateLoaned = new System.Windows.Forms.TextBox();
+			this.txtBorrowerName = new System.Windows.Forms.TextBox();
+			this.label19 = new System.Windows.Forms.Label();
+			this.txtSerialNo = new System.Windows.Forms.TextBox();
+			this.label21 = new System.Windows.Forms.Label();
+			this.label22 = new System.Windows.Forms.Label();
+			this.txtUserType = new System.Windows.Forms.TextBox();
+			this.txtResourceName = new System.Windows.Forms.TextBox();
+			this.label24 = new System.Windows.Forms.Label();
+			this.btnBackToLoan = new System.Windows.Forms.Button();
 			label9 = new System.Windows.Forms.Label();
 			label10 = new System.Windows.Forms.Label();
 			this.tabControl1.SuspendLayout();
@@ -68,6 +86,7 @@
 			((System.ComponentModel.ISupportInitialize)(this.LoanedItemsGridView)).BeginInit();
 			this.tabPage3.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.loanHistory)).BeginInit();
+			this.tabPage4.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// label9
@@ -95,6 +114,7 @@
 			this.tabControl1.Controls.Add(this.tabPage1);
 			this.tabControl1.Controls.Add(this.tabPage2);
 			this.tabControl1.Controls.Add(this.tabPage3);
+			this.tabControl1.Controls.Add(this.tabPage4);
 			this.tabControl1.Location = new System.Drawing.Point(0, 0);
 			this.tabControl1.Name = "tabControl1";
 			this.tabControl1.SelectedIndex = 0;
@@ -383,6 +403,7 @@
 			this.LoanedItemsGridView.ReadOnly = true;
 			this.LoanedItemsGridView.Size = new System.Drawing.Size(749, 355);
 			this.LoanedItemsGridView.TabIndex = 0;
+			this.LoanedItemsGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.LoanedItemsGridView_CellContentClick);
 			// 
 			// tabPage3
 			// 
@@ -411,12 +432,202 @@
 			// 
 			this.loanHistory.AllowUserToAddRows = false;
 			this.loanHistory.AllowUserToDeleteRows = false;
+			this.loanHistory.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
 			this.loanHistory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 			this.loanHistory.Location = new System.Drawing.Point(8, 61);
 			this.loanHistory.Name = "loanHistory";
 			this.loanHistory.ReadOnly = true;
 			this.loanHistory.Size = new System.Drawing.Size(749, 355);
 			this.loanHistory.TabIndex = 0;
+			// 
+			// tabPage4
+			// 
+			this.tabPage4.Controls.Add(this.label13);
+			this.tabPage4.Controls.Add(this.txtTotalDays);
+			this.tabPage4.Controls.Add(this.btnExtendLoan);
+			this.tabPage4.Controls.Add(this.label15);
+			this.tabPage4.Controls.Add(this.txtDueDate);
+			this.tabPage4.Controls.Add(this.label16);
+			this.tabPage4.Controls.Add(this.label17);
+			this.tabPage4.Controls.Add(this.txtDateLoaned);
+			this.tabPage4.Controls.Add(this.txtBorrowerName);
+			this.tabPage4.Controls.Add(this.label19);
+			this.tabPage4.Controls.Add(this.txtSerialNo);
+			this.tabPage4.Controls.Add(this.label21);
+			this.tabPage4.Controls.Add(this.label22);
+			this.tabPage4.Controls.Add(this.txtUserType);
+			this.tabPage4.Controls.Add(this.txtResourceName);
+			this.tabPage4.Controls.Add(this.label24);
+			this.tabPage4.Controls.Add(this.btnBackToLoan);
+			this.tabPage4.Location = new System.Drawing.Point(4, 22);
+			this.tabPage4.Name = "tabPage4";
+			this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
+			this.tabPage4.Size = new System.Drawing.Size(764, 424);
+			this.tabPage4.TabIndex = 3;
+			this.tabPage4.Text = "Extend Loan";
+			this.tabPage4.UseVisualStyleBackColor = true;
+			// 
+			// label13
+			// 
+			this.label13.AutoSize = true;
+			this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label13.Location = new System.Drawing.Point(493, 184);
+			this.label13.Name = "label13";
+			this.label13.Size = new System.Drawing.Size(98, 37);
+			this.label13.TabIndex = 61;
+			this.label13.Text = "Days:";
+			// 
+			// txtTotalDays
+			// 
+			this.txtTotalDays.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.txtTotalDays.Location = new System.Drawing.Point(597, 190);
+			this.txtTotalDays.Name = "txtTotalDays";
+			this.txtTotalDays.Size = new System.Drawing.Size(44, 31);
+			this.txtTotalDays.TabIndex = 60;
+			// 
+			// btnExtendLoan
+			// 
+			this.btnExtendLoan.Location = new System.Drawing.Point(648, 348);
+			this.btnExtendLoan.Name = "btnExtendLoan";
+			this.btnExtendLoan.Size = new System.Drawing.Size(99, 52);
+			this.btnExtendLoan.TabIndex = 59;
+			this.btnExtendLoan.Text = "Extend";
+			this.btnExtendLoan.UseVisualStyleBackColor = true;
+			this.btnExtendLoan.Click += new System.EventHandler(this.btnExtendLoan_Click);
+			// 
+			// label15
+			// 
+			this.label15.AutoSize = true;
+			this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label15.Location = new System.Drawing.Point(27, 348);
+			this.label15.Name = "label15";
+			this.label15.Size = new System.Drawing.Size(93, 24);
+			this.label15.TabIndex = 58;
+			this.label15.Text = "Due Date:";
+			// 
+			// txtDueDate
+			// 
+			this.txtDueDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.txtDueDate.Location = new System.Drawing.Point(194, 341);
+			this.txtDueDate.Name = "txtDueDate";
+			this.txtDueDate.ReadOnly = true;
+			this.txtDueDate.Size = new System.Drawing.Size(217, 31);
+			this.txtDueDate.TabIndex = 57;
+			// 
+			// label16
+			// 
+			this.label16.AutoSize = true;
+			this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label16.Location = new System.Drawing.Point(27, 296);
+			this.label16.Name = "label16";
+			this.label16.Size = new System.Drawing.Size(122, 24);
+			this.label16.TabIndex = 56;
+			this.label16.Text = "Date Loaned:";
+			// 
+			// label17
+			// 
+			this.label17.AutoSize = true;
+			this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label17.Location = new System.Drawing.Point(27, 243);
+			this.label17.Name = "label17";
+			this.label17.Size = new System.Drawing.Size(148, 24);
+			this.label17.TabIndex = 55;
+			this.label17.Text = "Borrower Name:";
+			// 
+			// txtDateLoaned
+			// 
+			this.txtDateLoaned.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.txtDateLoaned.Location = new System.Drawing.Point(194, 292);
+			this.txtDateLoaned.Name = "txtDateLoaned";
+			this.txtDateLoaned.ReadOnly = true;
+			this.txtDateLoaned.Size = new System.Drawing.Size(217, 31);
+			this.txtDateLoaned.TabIndex = 54;
+			// 
+			// txtBorrowerName
+			// 
+			this.txtBorrowerName.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.txtBorrowerName.Location = new System.Drawing.Point(194, 243);
+			this.txtBorrowerName.Name = "txtBorrowerName";
+			this.txtBorrowerName.ReadOnly = true;
+			this.txtBorrowerName.Size = new System.Drawing.Size(217, 31);
+			this.txtBorrowerName.TabIndex = 53;
+			// 
+			// label19
+			// 
+			this.label19.AutoSize = true;
+			this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label19.Location = new System.Drawing.Point(27, 148);
+			this.label19.Name = "label19";
+			this.label19.Size = new System.Drawing.Size(92, 24);
+			this.label19.TabIndex = 51;
+			this.label19.Text = "Serial No:";
+			// 
+			// txtSerialNo
+			// 
+			this.txtSerialNo.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.txtSerialNo.Location = new System.Drawing.Point(194, 141);
+			this.txtSerialNo.Name = "txtSerialNo";
+			this.txtSerialNo.ReadOnly = true;
+			this.txtSerialNo.Size = new System.Drawing.Size(217, 31);
+			this.txtSerialNo.TabIndex = 50;
+			// 
+			// label21
+			// 
+			this.label21.AutoSize = true;
+			this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label21.Location = new System.Drawing.Point(27, 197);
+			this.label21.Name = "label21";
+			this.label21.Size = new System.Drawing.Size(102, 24);
+			this.label21.TabIndex = 48;
+			this.label21.Text = "User Type:";
+			// 
+			// label22
+			// 
+			this.label22.AutoSize = true;
+			this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label22.Location = new System.Drawing.Point(27, 93);
+			this.label22.Name = "label22";
+			this.label22.Size = new System.Drawing.Size(153, 24);
+			this.label22.TabIndex = 47;
+			this.label22.Text = "Resource Name:";
+			// 
+			// txtUserType
+			// 
+			this.txtUserType.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.txtUserType.Location = new System.Drawing.Point(194, 193);
+			this.txtUserType.Name = "txtUserType";
+			this.txtUserType.ReadOnly = true;
+			this.txtUserType.Size = new System.Drawing.Size(217, 31);
+			this.txtUserType.TabIndex = 45;
+			// 
+			// txtResourceName
+			// 
+			this.txtResourceName.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.txtResourceName.Location = new System.Drawing.Point(194, 93);
+			this.txtResourceName.Name = "txtResourceName";
+			this.txtResourceName.ReadOnly = true;
+			this.txtResourceName.Size = new System.Drawing.Size(217, 31);
+			this.txtResourceName.TabIndex = 44;
+			// 
+			// label24
+			// 
+			this.label24.AutoSize = true;
+			this.label24.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label24.Location = new System.Drawing.Point(24, 19);
+			this.label24.Name = "label24";
+			this.label24.Size = new System.Drawing.Size(351, 37);
+			this.label24.TabIndex = 41;
+			this.label24.Text = "Item Chosen To Extend";
+			// 
+			// btnBackToLoan
+			// 
+			this.btnBackToLoan.Location = new System.Drawing.Point(648, 17);
+			this.btnBackToLoan.Name = "btnBackToLoan";
+			this.btnBackToLoan.Size = new System.Drawing.Size(87, 39);
+			this.btnBackToLoan.TabIndex = 3;
+			this.btnBackToLoan.Text = "Back";
+			this.btnBackToLoan.UseVisualStyleBackColor = true;
+			this.btnBackToLoan.Click += new System.EventHandler(this.btnBackToLoan_Click);
 			// 
 			// viewStudentInfo
 			// 
@@ -436,6 +647,8 @@
 			this.tabPage3.ResumeLayout(false);
 			this.tabPage3.PerformLayout();
 			((System.ComponentModel.ISupportInitialize)(this.loanHistory)).EndInit();
+			this.tabPage4.ResumeLayout(false);
+			this.tabPage4.PerformLayout();
 			this.ResumeLayout(false);
 
         }
@@ -472,5 +685,23 @@
 		private System.Windows.Forms.Label label12;
 		private System.Windows.Forms.TextBox txtScanID;
 		private System.Windows.Forms.ComboBox dropUserType;
+		private System.Windows.Forms.TabPage tabPage4;
+		private System.Windows.Forms.Button btnBackToLoan;
+		private System.Windows.Forms.Label label13;
+		private System.Windows.Forms.TextBox txtTotalDays;
+		private System.Windows.Forms.Button btnExtendLoan;
+		private System.Windows.Forms.Label label15;
+		private System.Windows.Forms.TextBox txtDueDate;
+		private System.Windows.Forms.Label label16;
+		private System.Windows.Forms.Label label17;
+		private System.Windows.Forms.TextBox txtDateLoaned;
+		private System.Windows.Forms.TextBox txtBorrowerName;
+		private System.Windows.Forms.Label label19;
+		private System.Windows.Forms.TextBox txtSerialNo;
+		private System.Windows.Forms.Label label21;
+		private System.Windows.Forms.Label label22;
+		private System.Windows.Forms.TextBox txtUserType;
+		private System.Windows.Forms.TextBox txtResourceName;
+		private System.Windows.Forms.Label label24;
 	}
 }

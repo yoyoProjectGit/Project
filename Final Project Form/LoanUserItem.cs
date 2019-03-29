@@ -84,21 +84,6 @@ namespace Final_Project_Form
             }
             return dgv_copy;
         }
-        private void inventoryGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            //DataGridViewRow row = this.inventoryGridView.Rows[e.RowIndex];
-            //dt.ImportRow(row);
-
-            //pickedItemsGridView.Rows.Add(this.inventoryGridView.Rows[e.RowIndex].Clone());
-            //foreach (DataGridViewRow r in inventoryGridView.Rows[e.RowIndex])
-            //{
-            //    int index = pickedItemsGridView.Rows.Add(r.Clone() as DataGridViewRow);
-            //    foreach (DataGridViewCell o in r.Cells)
-            //    {
-            //        pickedItemsGridView.Rows[index].Cells[o.ColumnIndex].Value = o.Value;
-            //    }
-            //}
-        }
 
         private void btnRefresh_Click(object sender, EventArgs e)
         {
