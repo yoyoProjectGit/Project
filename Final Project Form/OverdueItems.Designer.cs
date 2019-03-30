@@ -50,10 +50,10 @@
 			this.overdueItemsGridView.AllowUserToDeleteRows = false;
 			this.overdueItemsGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
 			this.overdueItemsGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-			this.overdueItemsGridView.Location = new System.Drawing.Point(12, 127);
+			this.overdueItemsGridView.Location = new System.Drawing.Point(12, 88);
 			this.overdueItemsGridView.Name = "overdueItemsGridView";
 			this.overdueItemsGridView.ReadOnly = true;
-			this.overdueItemsGridView.Size = new System.Drawing.Size(838, 333);
+			this.overdueItemsGridView.Size = new System.Drawing.Size(838, 372);
 			this.overdueItemsGridView.TabIndex = 1;
 			this.overdueItemsGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.overdueItemsGridView_CellContentClick);
 			// 

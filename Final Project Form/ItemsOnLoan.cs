@@ -50,7 +50,7 @@ namespace Final_Project_Form
 				{
 					totalItems += Convert.ToInt32(row.Cells["Quantity"].Value.ToString());
 				}
-				lblTotalItems.Text = "Total Individual Items On Loan: " + totalItems;
+				lblTotalItems.Text = "Total individual items on loan: " + totalItems;
 				int count = loanedItemsGridView.Rows.Count;
 				lblTotalRows.Text = "Total Loans: " + count;
 			}
@@ -81,7 +81,7 @@ namespace Final_Project_Form
 			{
 				totalItems += Convert.ToInt32(row.Cells["Quantity"].Value.ToString());
 			}
-			lblTotalItems.Text = "Total Individual Items On Loan: " + totalItems;
+			lblTotalItems.Text = "Total individual items on loan: " + totalItems;
 			int count = loanedItemsGridView.Rows.Count;
 			lblTotalRows.Text = "Total Loans: " + count;
 		}
@@ -95,7 +95,7 @@ namespace Final_Project_Form
 			{
 				totalItems += Convert.ToInt32(row.Cells["Quantity"].Value.ToString());
 			}
-			lblTotalItems.Text = "Total Individual Items On Loan: " + totalItems;
+			lblTotalItems.Text = "Total individual items on loan: " + totalItems;
 			int count = loanedItemsGridView.Rows.Count;
 			lblTotalRows.Text = "Total Loans: " + count;
 		}
@@ -109,7 +109,7 @@ namespace Final_Project_Form
 			{
 				totalItems += Convert.ToInt32(row.Cells["Quantity"].Value.ToString());
 			}
-			lblTotalItems.Text = "Total Individual Items On Loan: " + totalItems;
+			lblTotalItems.Text = "Total individual items on loan: " + totalItems;
 			int count = loanedItemsGridView.Rows.Count;
 			lblTotalRows.Text = "Total Loans: " + count;
 		}
@@ -124,7 +124,7 @@ namespace Final_Project_Form
 			{
 				totalItems += Convert.ToInt32(row.Cells["Quantity"].Value.ToString());
 			}
-			lblTotalItems.Text = "Total Individual Items On Loan: " + totalItems;
+			lblTotalItems.Text = "Total individual items on loan: " + totalItems;
 			int count = loanedItemsGridView.Rows.Count;
 			lblTotalRows.Text = "Total Loans: " + count;
 		}
@@ -150,7 +150,7 @@ namespace Final_Project_Form
 				{
 					totalItems += Convert.ToInt32(row.Cells["Quantity"].Value.ToString());
 				}
-				lblTotalItems.Text = "Total Individual Items On Loan: " + totalItems;
+				lblTotalItems.Text = "Total individual items on loan: " + totalItems;
 				int count = loanedItemsGridView.Rows.Count;
 				lblTotalRows.Text = "Total Loans: " + count;
 			}

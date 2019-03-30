@@ -72,6 +72,8 @@
 			this.txtQuantity.Name = "txtQuantity";
 			this.txtQuantity.Size = new System.Drawing.Size(217, 31);
 			this.txtQuantity.TabIndex = 2;
+			this.txtQuantity.TextChanged += new System.EventHandler(this.txtQuantity_TextChanged);
+			this.txtQuantity.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtQuantity_KeyPress);
 			// 
 			// txtItemID
 			// 

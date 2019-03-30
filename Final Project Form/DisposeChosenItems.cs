@@ -71,6 +71,23 @@ namespace Final_Project_Form
 			this.Close();
 		}
 
+		private void txtQuantity_TextChanged(object sender, EventArgs e)
+		{
+			if (System.Text.RegularExpressions.Regex.IsMatch(txtQuantity.Text, "  ^ [0-9]"))
+			{
+				txtQuantity.Text = "";
+			}
+		}
+
+		private void txtQuantity_KeyPress(object sender, KeyPressEventArgs e)
+		{
+			char ch = e.KeyChar;
+			if (!Char.IsDigit(ch) && ch != 8)
+			{
+				e.Handled = true;
+			}
+		}
+
 		private void RemoveFromResources()
         {
             try

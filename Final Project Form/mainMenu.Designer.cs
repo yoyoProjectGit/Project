@@ -42,11 +42,15 @@
 			this.btnReturnItem = new System.Windows.Forms.Button();
 			this.btnDisposeItem = new System.Windows.Forms.Button();
 			this.btnViewDisposedItems = new System.Windows.Forms.Button();
+			this.btnExtendLoan = new System.Windows.Forms.Button();
+			this.lblLoginName = new System.Windows.Forms.Label();
+			this.lblDepartment2 = new System.Windows.Forms.Label();
+			this.btnLoanHistory = new System.Windows.Forms.Button();
 			this.SuspendLayout();
 			// 
 			// btnAddUser
 			// 
-			this.btnAddUser.Location = new System.Drawing.Point(12, 13);
+			this.btnAddUser.Location = new System.Drawing.Point(10, 98);
 			this.btnAddUser.Name = "btnAddUser";
 			this.btnAddUser.Size = new System.Drawing.Size(118, 95);
 			this.btnAddUser.TabIndex = 0;
@@ -56,7 +60,7 @@
 			// 
 			// btnSearchPerson
 			// 
-			this.btnSearchPerson.Location = new System.Drawing.Point(12, 215);
+			this.btnSearchPerson.Location = new System.Drawing.Point(10, 401);
 			this.btnSearchPerson.Name = "btnSearchPerson";
 			this.btnSearchPerson.Size = new System.Drawing.Size(118, 95);
 			this.btnSearchPerson.TabIndex = 1;
@@ -66,7 +70,7 @@
 			// 
 			// btnViewInventory
 			// 
-			this.btnViewInventory.Location = new System.Drawing.Point(136, 114);
+			this.btnViewInventory.Location = new System.Drawing.Point(143, 300);
 			this.btnViewInventory.Name = "btnViewInventory";
 			this.btnViewInventory.Size = new System.Drawing.Size(118, 95);
 			this.btnViewInventory.TabIndex = 2;
@@ -76,7 +80,7 @@
 			// 
 			// btnAddResource
 			// 
-			this.btnAddResource.Location = new System.Drawing.Point(136, 13);
+			this.btnAddResource.Location = new System.Drawing.Point(143, 98);
 			this.btnAddResource.Name = "btnAddResource";
 			this.btnAddResource.Size = new System.Drawing.Size(118, 95);
 			this.btnAddResource.TabIndex = 4;
@@ -86,7 +90,7 @@
 			// 
 			// btnOverdueItems
 			// 
-			this.btnOverdueItems.Location = new System.Drawing.Point(136, 417);
+			this.btnOverdueItems.Location = new System.Drawing.Point(143, 502);
 			this.btnOverdueItems.Name = "btnOverdueItems";
 			this.btnOverdueItems.Size = new System.Drawing.Size(118, 95);
 			this.btnOverdueItems.TabIndex = 5;
@@ -96,7 +100,7 @@
 			// 
 			// btnEmails
 			// 
-			this.btnEmails.Location = new System.Drawing.Point(136, 316);
+			this.btnEmails.Location = new System.Drawing.Point(143, 401);
 			this.btnEmails.Name = "btnEmails";
 			this.btnEmails.Size = new System.Drawing.Size(118, 95);
 			this.btnEmails.TabIndex = 6;
@@ -106,7 +110,7 @@
 			// 
 			// btnItemsOnLoan
 			// 
-			this.btnItemsOnLoan.Location = new System.Drawing.Point(136, 215);
+			this.btnItemsOnLoan.Location = new System.Drawing.Point(10, 502);
 			this.btnItemsOnLoan.Name = "btnItemsOnLoan";
 			this.btnItemsOnLoan.Size = new System.Drawing.Size(118, 95);
 			this.btnItemsOnLoan.TabIndex = 7;
@@ -116,7 +120,7 @@
 			// 
 			// btnLogOut
 			// 
-			this.btnLogOut.Location = new System.Drawing.Point(136, 518);
+			this.btnLogOut.Location = new System.Drawing.Point(143, 707);
 			this.btnLogOut.Name = "btnLogOut";
 			this.btnLogOut.Size = new System.Drawing.Size(118, 95);
 			this.btnLogOut.TabIndex = 8;
@@ -126,7 +130,7 @@
 			// 
 			// btnLoanItem
 			// 
-			this.btnLoanItem.Location = new System.Drawing.Point(12, 114);
+			this.btnLoanItem.Location = new System.Drawing.Point(10, 199);
 			this.btnLoanItem.Name = "btnLoanItem";
 			this.btnLoanItem.Size = new System.Drawing.Size(118, 95);
 			this.btnLoanItem.TabIndex = 9;
@@ -155,7 +159,7 @@
 			// 
 			// btnReturnItem
 			// 
-			this.btnReturnItem.Location = new System.Drawing.Point(12, 316);
+			this.btnReturnItem.Location = new System.Drawing.Point(143, 199);
 			this.btnReturnItem.Name = "btnReturnItem";
 			this.btnReturnItem.Size = new System.Drawing.Size(118, 95);
 			this.btnReturnItem.TabIndex = 12;
@@ -165,7 +169,7 @@
 			// 
 			// btnDisposeItem
 			// 
-			this.btnDisposeItem.Location = new System.Drawing.Point(12, 417);
+			this.btnDisposeItem.Location = new System.Drawing.Point(12, 707);
 			this.btnDisposeItem.Name = "btnDisposeItem";
 			this.btnDisposeItem.Size = new System.Drawing.Size(118, 95);
 			this.btnDisposeItem.TabIndex = 13;
@@ -175,7 +179,7 @@
 			// 
 			// btnViewDisposedItems
 			// 
-			this.btnViewDisposedItems.Location = new System.Drawing.Point(12, 518);
+			this.btnViewDisposedItems.Location = new System.Drawing.Point(143, 606);
 			this.btnViewDisposedItems.Name = "btnViewDisposedItems";
 			this.btnViewDisposedItems.Size = new System.Drawing.Size(118, 95);
 			this.btnViewDisposedItems.TabIndex = 14;
@@ -183,11 +187,55 @@
 			this.btnViewDisposedItems.UseVisualStyleBackColor = true;
 			this.btnViewDisposedItems.Click += new System.EventHandler(this.btnViewDisposedItems_Click);
 			// 
+			// btnExtendLoan
+			// 
+			this.btnExtendLoan.Location = new System.Drawing.Point(10, 300);
+			this.btnExtendLoan.Name = "btnExtendLoan";
+			this.btnExtendLoan.Size = new System.Drawing.Size(118, 95);
+			this.btnExtendLoan.TabIndex = 15;
+			this.btnExtendLoan.Text = "Extend Loan";
+			this.btnExtendLoan.UseVisualStyleBackColor = true;
+			this.btnExtendLoan.Click += new System.EventHandler(this.btnExtendLoan_Click);
+			// 
+			// lblLoginName
+			// 
+			this.lblLoginName.AutoSize = true;
+			this.lblLoginName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.lblLoginName.Location = new System.Drawing.Point(6, 19);
+			this.lblLoginName.Name = "lblLoginName";
+			this.lblLoginName.Size = new System.Drawing.Size(51, 20);
+			this.lblLoginName.TabIndex = 16;
+			this.lblLoginName.Text = "label1";
+			// 
+			// lblDepartment2
+			// 
+			this.lblDepartment2.AutoSize = true;
+			this.lblDepartment2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.lblDepartment2.Location = new System.Drawing.Point(6, 56);
+			this.lblDepartment2.Name = "lblDepartment2";
+			this.lblDepartment2.Size = new System.Drawing.Size(51, 20);
+			this.lblDepartment2.TabIndex = 17;
+			this.lblDepartment2.Text = "label2";
+			// 
+			// btnLoanHistory
+			// 
+			this.btnLoanHistory.Location = new System.Drawing.Point(12, 606);
+			this.btnLoanHistory.Name = "btnLoanHistory";
+			this.btnLoanHistory.Size = new System.Drawing.Size(118, 95);
+			this.btnLoanHistory.TabIndex = 18;
+			this.btnLoanHistory.Text = "View Loan History";
+			this.btnLoanHistory.UseVisualStyleBackColor = true;
+			this.btnLoanHistory.Click += new System.EventHandler(this.button1_Click);
+			// 
 			// mainMenu
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(264, 623);
+			this.ClientSize = new System.Drawing.Size(273, 808);
+			this.Controls.Add(this.btnLoanHistory);
+			this.Controls.Add(this.lblDepartment2);
+			this.Controls.Add(this.lblLoginName);
+			this.Controls.Add(this.btnExtendLoan);
 			this.Controls.Add(this.btnViewDisposedItems);
 			this.Controls.Add(this.btnDisposeItem);
 			this.Controls.Add(this.btnReturnItem);
@@ -227,5 +275,9 @@
         private System.Windows.Forms.Button btnReturnItem;
         private System.Windows.Forms.Button btnDisposeItem;
         private System.Windows.Forms.Button btnViewDisposedItems;
-    }
+		private System.Windows.Forms.Button btnExtendLoan;
+		private System.Windows.Forms.Label lblLoginName;
+		private System.Windows.Forms.Label lblDepartment2;
+		private System.Windows.Forms.Button btnLoanHistory;
+	}
 }

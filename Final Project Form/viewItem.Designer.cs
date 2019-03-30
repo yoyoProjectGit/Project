@@ -163,6 +163,8 @@
 			this.txtPurchasePrice.ReadOnly = true;
 			this.txtPurchasePrice.Size = new System.Drawing.Size(217, 31);
 			this.txtPurchasePrice.TabIndex = 37;
+			this.txtPurchasePrice.TextChanged += new System.EventHandler(this.txtPurchasePrice_TextChanged);
+			this.txtPurchasePrice.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPurchasePrice_KeyPress);
 			// 
 			// label11
 			// 
@@ -261,6 +263,8 @@
 			this.txtSerialNo.ReadOnly = true;
 			this.txtSerialNo.Size = new System.Drawing.Size(217, 31);
 			this.txtSerialNo.TabIndex = 24;
+			this.txtSerialNo.TextChanged += new System.EventHandler(this.txtSerialNo_TextChanged);
+			this.txtSerialNo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSerialNo_KeyPress);
 			// 
 			// label4
 			// 
@@ -310,6 +314,8 @@
 			this.txtMaxLoanPeriod.ReadOnly = true;
 			this.txtMaxLoanPeriod.Size = new System.Drawing.Size(217, 31);
 			this.txtMaxLoanPeriod.TabIndex = 18;
+			this.txtMaxLoanPeriod.TextChanged += new System.EventHandler(this.txtMaxLoanPeriod_TextChanged);
+			this.txtMaxLoanPeriod.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMaxLoanPeriod_KeyPress);
 			// 
 			// txtResourceName
 			// 

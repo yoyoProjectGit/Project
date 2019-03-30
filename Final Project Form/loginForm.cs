@@ -21,8 +21,7 @@ namespace Final_Project_Form
         private void btnLogin_Click(object sender, EventArgs e)
         {
             try
-            {
-
+			{ 
             string connectionString = myGlobals.connString;
             SqlConnection connection = new SqlConnection(connectionString);
             connection.Open();
@@ -55,6 +54,7 @@ namespace Final_Project_Form
             else
             {
                 AutoClosingMessageBox.Show("Invalid Username Or Password", "Logging Failed", 1000);
+				connection.Close();
             }
             }
             catch (Exception ex)

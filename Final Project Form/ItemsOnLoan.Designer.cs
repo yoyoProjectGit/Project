@@ -38,14 +38,14 @@
 			this.label2 = new System.Windows.Forms.Label();
 			this.label1 = new System.Windows.Forms.Label();
 			this.loanedItemsGridView = new System.Windows.Forms.DataGridView();
-			this.label3 = new System.Windows.Forms.Label();
-			this.txtShuID = new System.Windows.Forms.TextBox();
-			this.btnShuId = new System.Windows.Forms.Button();
 			this.btnResourceType = new System.Windows.Forms.Button();
 			this.txtResourceType = new System.Windows.Forms.TextBox();
 			this.label4 = new System.Windows.Forms.Label();
 			this.lblTotalRows = new System.Windows.Forms.Label();
 			this.lblTotalItems = new System.Windows.Forms.Label();
+			this.label3 = new System.Windows.Forms.Label();
+			this.btnShuId = new System.Windows.Forms.Button();
+			this.txtShuID = new System.Windows.Forms.TextBox();
 			((System.ComponentModel.ISupportInitialize)(this.loanedItemsGridView)).BeginInit();
 			this.SuspendLayout();
 			// 
@@ -150,35 +150,6 @@
 			this.loanedItemsGridView.TabIndex = 59;
 			this.loanedItemsGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.loanedItemsGridView_CellContentClick);
 			// 
-			// label3
-			// 
-			this.label3.AutoSize = true;
-			this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label3.Location = new System.Drawing.Point(22, 143);
-			this.label3.Name = "label3";
-			this.label3.Size = new System.Drawing.Size(76, 24);
-			this.label3.TabIndex = 69;
-			this.label3.Text = "SHU ID:";
-			// 
-			// txtShuID
-			// 
-			this.txtShuID.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.txtShuID.Location = new System.Drawing.Point(198, 142);
-			this.txtShuID.Name = "txtShuID";
-			this.txtShuID.Size = new System.Drawing.Size(217, 31);
-			this.txtShuID.TabIndex = 2;
-			// 
-			// btnShuId
-			// 
-			this.btnShuId.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.btnShuId.Location = new System.Drawing.Point(512, 142);
-			this.btnShuId.Name = "btnShuId";
-			this.btnShuId.Size = new System.Drawing.Size(106, 31);
-			this.btnShuId.TabIndex = 6;
-			this.btnShuId.Text = "Search";
-			this.btnShuId.UseVisualStyleBackColor = true;
-			this.btnShuId.Click += new System.EventHandler(this.btnShuId_Click);
-			// 
 			// btnResourceType
 			// 
 			this.btnResourceType.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -226,6 +197,35 @@
 			this.lblTotalItems.Size = new System.Drawing.Size(0, 24);
 			this.lblTotalItems.TabIndex = 74;
 			// 
+			// label3
+			// 
+			this.label3.AutoSize = true;
+			this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label3.Location = new System.Drawing.Point(22, 143);
+			this.label3.Name = "label3";
+			this.label3.Size = new System.Drawing.Size(76, 24);
+			this.label3.TabIndex = 69;
+			this.label3.Text = "SHU ID:";
+			// 
+			// btnShuId
+			// 
+			this.btnShuId.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.btnShuId.Location = new System.Drawing.Point(512, 142);
+			this.btnShuId.Name = "btnShuId";
+			this.btnShuId.Size = new System.Drawing.Size(106, 31);
+			this.btnShuId.TabIndex = 6;
+			this.btnShuId.Text = "Search";
+			this.btnShuId.UseVisualStyleBackColor = true;
+			this.btnShuId.Click += new System.EventHandler(this.btnShuId_Click);
+			// 
+			// txtShuID
+			// 
+			this.txtShuID.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.txtShuID.Location = new System.Drawing.Point(198, 142);
+			this.txtShuID.Name = "txtShuID";
+			this.txtShuID.Size = new System.Drawing.Size(217, 31);
+			this.txtShuID.TabIndex = 2;
+			// 
 			// ItemsOnLoan
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -271,13 +271,13 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView loanedItemsGridView;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox txtShuID;
-		private System.Windows.Forms.Button btnShuId;
 		private System.Windows.Forms.Button btnResourceType;
 		private System.Windows.Forms.TextBox txtResourceType;
 		private System.Windows.Forms.Label label4;
 		private System.Windows.Forms.Label lblTotalRows;
 		private System.Windows.Forms.Label lblTotalItems;
+		private System.Windows.Forms.Label label3;
+		private System.Windows.Forms.Button btnShuId;
+		private System.Windows.Forms.TextBox txtShuID;
 	}
 }

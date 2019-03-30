@@ -192,9 +192,9 @@ namespace Final_Project_Form
         {
             foreach (DataGridViewRow row in pickedItemsGridView.Rows)
             {
-            addToLoanHistory(row);
-			removeFromActiveLoans(row);
-            addToResources(row);
+				addToLoanHistory(row);
+				removeFromActiveLoans(row);
+				addToResources(row);
                 AutoClosingMessageBox.Show("The item: " + resName +
                 " Has been successfully returned", "Loan Item ", 5000);
             }

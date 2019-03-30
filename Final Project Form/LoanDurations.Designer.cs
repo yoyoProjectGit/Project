@@ -36,7 +36,7 @@
 			this.label2 = new System.Windows.Forms.Label();
 			this.txtLoanPeriod = new System.Windows.Forms.TextBox();
 			this.txtResourceName = new System.Windows.Forms.TextBox();
-			this.btnUpdate = new System.Windows.Forms.Button();
+			this.btnLoan = new System.Windows.Forms.Button();
 			this.label1 = new System.Windows.Forms.Label();
 			this.label7 = new System.Windows.Forms.Label();
 			this.txtResourceType = new System.Windows.Forms.TextBox();
@@ -134,16 +134,16 @@
 			this.txtResourceName.Size = new System.Drawing.Size(217, 31);
 			this.txtResourceName.TabIndex = 44;
 			// 
-			// btnUpdate
+			// btnLoan
 			// 
-			this.btnUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.btnUpdate.Location = new System.Drawing.Point(809, 523);
-			this.btnUpdate.Name = "btnUpdate";
-			this.btnUpdate.Size = new System.Drawing.Size(111, 61);
-			this.btnUpdate.TabIndex = 4;
-			this.btnUpdate.Text = "Loan";
-			this.btnUpdate.UseVisualStyleBackColor = true;
-			this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
+			this.btnLoan.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.btnLoan.Location = new System.Drawing.Point(809, 523);
+			this.btnLoan.Name = "btnLoan";
+			this.btnLoan.Size = new System.Drawing.Size(111, 61);
+			this.btnLoan.TabIndex = 4;
+			this.btnLoan.Text = "Loan";
+			this.btnLoan.UseVisualStyleBackColor = true;
+			this.btnLoan.Click += new System.EventHandler(this.btnUpdate_Click);
 			// 
 			// label1
 			// 
@@ -284,6 +284,8 @@
 			this.txtQuantity.Name = "txtQuantity";
 			this.txtQuantity.Size = new System.Drawing.Size(217, 31);
 			this.txtQuantity.TabIndex = 2;
+			this.txtQuantity.TextChanged += new System.EventHandler(this.txtQuantity_TextChanged);
+			this.txtQuantity.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtQuantity_KeyPress);
 			// 
 			// label12
 			// 
@@ -323,7 +325,7 @@
 			this.Controls.Add(this.label2);
 			this.Controls.Add(this.txtLoanPeriod);
 			this.Controls.Add(this.txtResourceName);
-			this.Controls.Add(this.btnUpdate);
+			this.Controls.Add(this.btnLoan);
 			this.Controls.Add(this.label1);
 			this.Name = "LoanDurations";
 			this.Text = "LoanDurations";
@@ -341,7 +343,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtLoanPeriod;
         private System.Windows.Forms.TextBox txtResourceName;
-        private System.Windows.Forms.Button btnUpdate;
+        private System.Windows.Forms.Button btnLoan;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox txtResourceType;

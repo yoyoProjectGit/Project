@@ -56,10 +56,16 @@
 			this.tabPage1 = new System.Windows.Forms.TabPage();
 			this.txtDepartment = new System.Windows.Forms.TextBox();
 			this.tabControl1 = new System.Windows.Forms.TabControl();
+			this.tabPage3 = new System.Windows.Forms.TabPage();
+			this.btnBack2 = new System.Windows.Forms.Button();
+			this.label13 = new System.Windows.Forms.Label();
+			this.LoanedItemsGridView = new System.Windows.Forms.DataGridView();
 			this.tabPage2.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.itemHistoryGridView)).BeginInit();
 			this.tabPage1.SuspendLayout();
 			this.tabControl1.SuspendLayout();
+			this.tabPage3.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.LoanedItemsGridView)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// tabPage2
@@ -357,11 +363,57 @@
 			// 
 			this.tabControl1.Controls.Add(this.tabPage1);
 			this.tabControl1.Controls.Add(this.tabPage2);
+			this.tabControl1.Controls.Add(this.tabPage3);
 			this.tabControl1.Location = new System.Drawing.Point(0, 0);
 			this.tabControl1.Name = "tabControl1";
 			this.tabControl1.SelectedIndex = 0;
 			this.tabControl1.Size = new System.Drawing.Size(801, 450);
 			this.tabControl1.TabIndex = 2;
+			// 
+			// tabPage3
+			// 
+			this.tabPage3.Controls.Add(this.btnBack2);
+			this.tabPage3.Controls.Add(this.label13);
+			this.tabPage3.Controls.Add(this.LoanedItemsGridView);
+			this.tabPage3.Location = new System.Drawing.Point(4, 22);
+			this.tabPage3.Name = "tabPage3";
+			this.tabPage3.Size = new System.Drawing.Size(793, 424);
+			this.tabPage3.TabIndex = 2;
+			this.tabPage3.Text = "View Current Loaner";
+			this.tabPage3.UseVisualStyleBackColor = true;
+			// 
+			// btnBack2
+			// 
+			this.btnBack2.Location = new System.Drawing.Point(653, 21);
+			this.btnBack2.Name = "btnBack2";
+			this.btnBack2.Size = new System.Drawing.Size(90, 36);
+			this.btnBack2.TabIndex = 36;
+			this.btnBack2.Text = "Back";
+			this.btnBack2.UseVisualStyleBackColor = true;
+			this.btnBack2.Click += new System.EventHandler(this.btnBack2_Click);
+			// 
+			// label13
+			// 
+			this.label13.AutoSize = true;
+			this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label13.Location = new System.Drawing.Point(20, 32);
+			this.label13.Name = "label13";
+			this.label13.Size = new System.Drawing.Size(162, 25);
+			this.label13.TabIndex = 35;
+			this.label13.Text = "Current Loaner:";
+			// 
+			// LoanedItemsGridView
+			// 
+			this.LoanedItemsGridView.AllowUserToAddRows = false;
+			this.LoanedItemsGridView.AllowUserToDeleteRows = false;
+			this.LoanedItemsGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+			this.LoanedItemsGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+			this.LoanedItemsGridView.Location = new System.Drawing.Point(23, 67);
+			this.LoanedItemsGridView.Name = "LoanedItemsGridView";
+			this.LoanedItemsGridView.ReadOnly = true;
+			this.LoanedItemsGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+			this.LoanedItemsGridView.Size = new System.Drawing.Size(749, 336);
+			this.LoanedItemsGridView.TabIndex = 34;
 			// 
 			// viewLoanedItem
 			// 
@@ -378,6 +430,9 @@
 			this.tabPage1.ResumeLayout(false);
 			this.tabPage1.PerformLayout();
 			this.tabControl1.ResumeLayout(false);
+			this.tabPage3.ResumeLayout(false);
+			this.tabPage3.PerformLayout();
+			((System.ComponentModel.ISupportInitialize)(this.LoanedItemsGridView)).EndInit();
 			this.ResumeLayout(false);
 
         }
@@ -412,5 +467,9 @@
         private System.Windows.Forms.DataGridView itemHistoryGridView;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Button btnGoBack;
-    }
+		private System.Windows.Forms.TabPage tabPage3;
+		private System.Windows.Forms.Button btnBack2;
+		private System.Windows.Forms.Label label13;
+		private System.Windows.Forms.DataGridView LoanedItemsGridView;
+	}
 }

@@ -137,6 +137,8 @@
 			this.txtQuantity.Name = "txtQuantity";
 			this.txtQuantity.Size = new System.Drawing.Size(58, 31);
 			this.txtQuantity.TabIndex = 2;
+			this.txtQuantity.TextChanged += new System.EventHandler(this.txtQuantity_TextChanged);
+			this.txtQuantity.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtQuantity_KeyPress);
 			// 
 			// txtLoanPeriod
 			// 
@@ -145,6 +147,8 @@
 			this.txtLoanPeriod.Name = "txtLoanPeriod";
 			this.txtLoanPeriod.Size = new System.Drawing.Size(217, 31);
 			this.txtLoanPeriod.TabIndex = 3;
+			this.txtLoanPeriod.TextChanged += new System.EventHandler(this.txtLoanPeriod_TextChanged);
+			this.txtLoanPeriod.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtLoanPeriod_KeyPress);
 			// 
 			// txtSerialNo
 			// 
@@ -153,6 +157,8 @@
 			this.txtSerialNo.Name = "txtSerialNo";
 			this.txtSerialNo.Size = new System.Drawing.Size(217, 31);
 			this.txtSerialNo.TabIndex = 7;
+			this.txtSerialNo.TextChanged += new System.EventHandler(this.txtSerialNo_TextChanged);
+			this.txtSerialNo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSerialNo_KeyPress);
 			// 
 			// txtNotes
 			// 
@@ -229,6 +235,8 @@
 			this.txtPurchasePrice.Name = "txtPurchasePrice";
 			this.txtPurchasePrice.Size = new System.Drawing.Size(217, 31);
 			this.txtPurchasePrice.TabIndex = 6;
+			this.txtPurchasePrice.TextChanged += new System.EventHandler(this.txtPurchasePrice_TextChanged);
+			this.txtPurchasePrice.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPurchasePrice_KeyPress);
 			// 
 			// departmentsList
 			// 

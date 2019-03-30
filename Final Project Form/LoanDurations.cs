@@ -56,11 +56,7 @@ namespace Final_Project_Form
             else
             {
                 int loanPeriod = Convert.ToInt32(this.txtLoanPeriod.Text);
-                if (loanPeriod > maxLoanPeriod)
-                {
-                    MessageBox.Show("The maximum loan period for this item is: " + maxLoanPeriod + " days");
-                }
-                else if (loanPeriod == 0 )
+                if (loanPeriod == 0 )
                 {
                     MessageBox.Show("You cannot loan an item for 0 days!");
                 }
@@ -68,7 +64,28 @@ namespace Final_Project_Form
                 {
                     MessageBox.Show("There is only " + amountinstock + " " + txtResourceName.Text + " in stock.");
                 }
-                else
+				else if (loanPeriod > maxLoanPeriod)
+				{
+					if (userType == "Student")
+					{
+						MessageBox.Show("The maximum loan period for " + txtResourceName.Text + " is: " + maxLoanPeriod + " days");
+					}
+					if (userType == "Staff")
+					{
+						DialogResult dialogResult = MessageBox.Show("The maximum loan period for " + txtResourceName.Text +
+								" is: " + maxLoanPeriod + " days", "Are you sure you want to " +
+								"loan this item for " + loanPeriod + " Days?", MessageBoxButtons.YesNo);
+						if (dialogResult == DialogResult.Yes)
+						{
+							LoanUserItem();
+						}
+						else if (dialogResult == DialogResult.No)
+						{
+							return;
+						}
+					}
+				}
+				else
                 {
                     LoanUserItem();
                 }
@@ -184,6 +201,23 @@ namespace Final_Project_Form
             {
                 MessageBox.Show(ex.Message);
             }
+		}
+
+		private void txtQuantity_KeyPress(object sender, KeyPressEventArgs e)
+		{
+			char ch = e.KeyChar;
+			if (!Char.IsDigit(ch) && ch != 8)
+			{
+				e.Handled = true;
+			}
+		}
+		private void txtQuantity_TextChanged(object sender, EventArgs e)
+		{
+			
+			if (System.Text.RegularExpressions.Regex.IsMatch(txtQuantity.Text, "  ^ [0-9]"))
+			{
+				txtQuantity.Text = "";
+			}
 		}
 	}
 }

@@ -140,6 +140,12 @@
     <Compile Include="LoanDurations.Designer.cs">
       <DependentUpon>LoanDurations.cs</DependentUpon>
     </Compile>
+    <Compile Include="LoanHistory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoanHistory.Designer.cs">
+      <DependentUpon>LoanHistory.cs</DependentUpon>
+    </Compile>
     <Compile Include="LoanUserItem.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -249,6 +255,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="LoanDurations.resx">
       <DependentUpon>LoanDurations.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoanHistory.resx">
+      <DependentUpon>LoanHistory.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LoanUserItem.resx">
       <DependentUpon>LoanUserItem.cs</DependentUpon>

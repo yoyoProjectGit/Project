@@ -58,6 +58,8 @@
 			this.txtSerialNo.Name = "txtSerialNo";
 			this.txtSerialNo.Size = new System.Drawing.Size(169, 31);
 			this.txtSerialNo.TabIndex = 0;
+			this.txtSerialNo.TextChanged += new System.EventHandler(this.txtSerialNo_TextChanged);
+			this.txtSerialNo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSerialNo_KeyPress);
 			// 
 			// label3
 			// 

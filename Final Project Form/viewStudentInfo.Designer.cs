@@ -484,6 +484,8 @@
 			this.txtTotalDays.Name = "txtTotalDays";
 			this.txtTotalDays.Size = new System.Drawing.Size(44, 31);
 			this.txtTotalDays.TabIndex = 60;
+			this.txtTotalDays.TextChanged += new System.EventHandler(this.txtTotalDays_TextChanged);
+			this.txtTotalDays.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTotalDays_KeyPress);
 			// 
 			// btnExtendLoan
 			// 

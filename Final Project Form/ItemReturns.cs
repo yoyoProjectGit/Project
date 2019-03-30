@@ -207,5 +207,22 @@ namespace Final_Project_Form
 				MessageBox.Show("ERROR: " + ex.Message);
 			}
 		}
+
+		private void txtSerialNo_TextChanged(object sender, EventArgs e)
+		{
+			if (System.Text.RegularExpressions.Regex.IsMatch(txtSerialNo.Text, "  ^ [0-9]"))
+			{
+				txtSerialNo.Text = "";
+			}
+		}
+
+		private void txtSerialNo_KeyPress(object sender, KeyPressEventArgs e)
+		{
+			char ch = e.KeyChar;
+			if (!Char.IsDigit(ch) && ch != 8)
+			{
+				e.Handled = true;
+			}
+		}
 	}
 }

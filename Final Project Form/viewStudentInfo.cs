@@ -24,6 +24,22 @@ namespace Final_Project_Form
 		{
 			tabControl1.SelectedTab = tabPage2;
 		}
+		private void txtTotalDays_TextChanged(object sender, EventArgs e)
+		{
+		
+			if (System.Text.RegularExpressions.Regex.IsMatch(txtTotalDays.Text, "  ^ [0-9]"))
+			{
+				txtTotalDays.Text = "";
+			}
+		}
+		private void txtTotalDays_KeyPress(object sender, KeyPressEventArgs e)
+		{
+			char ch = e.KeyChar;
+			if (!Char.IsDigit(ch) && ch != 8)
+			{
+				e.Handled = true;
+			}
+		}
 
 		DataTable dt2 = new DataTable("User History");
 		string maxprd;

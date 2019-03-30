@@ -116,5 +116,73 @@ namespace Final_Project_Form
 
             connection.Close();
         }
-    }
+
+		private void txtQuantity_TextChanged(object sender, EventArgs e)
+		{
+			if (System.Text.RegularExpressions.Regex.IsMatch(txtQuantity.Text, "  ^ [0-9]"))
+			{
+				txtQuantity.Text = "";
+			}
+		}
+
+		private void txtLoanPeriod_TextChanged(object sender, EventArgs e)
+		{
+			if (System.Text.RegularExpressions.Regex.IsMatch(txtLoanPeriod.Text, "  ^ [0-9]"))
+			{
+				txtLoanPeriod.Text = "";
+			}
+		}
+
+		private void txtSerialNo_TextChanged(object sender, EventArgs e)
+		{
+			if (System.Text.RegularExpressions.Regex.IsMatch(txtSerialNo.Text, "  ^ [0-9]"))
+			{
+				txtSerialNo.Text = "";
+			}
+		}
+
+		private void txtPurchasePrice_TextChanged(object sender, EventArgs e)
+		{
+			if (System.Text.RegularExpressions.Regex.IsMatch(txtPurchasePrice.Text, "  ^ [0-9]"))
+			{
+				txtPurchasePrice.Text = "";
+			}
+		}
+
+		private void txtLoanPeriod_KeyPress(object sender, KeyPressEventArgs e)
+		{
+			char ch = e.KeyChar;
+			if (!Char.IsDigit(ch) && ch != 8)
+			{
+				e.Handled = true;
+			}
+		}
+
+		private void txtQuantity_KeyPress(object sender, KeyPressEventArgs e)
+		{
+			char ch = e.KeyChar;
+			if (!Char.IsDigit(ch) && ch != 8)
+			{
+				e.Handled = true;
+			}
+		}
+
+		private void txtSerialNo_KeyPress(object sender, KeyPressEventArgs e)
+		{
+			char ch = e.KeyChar;
+			if (!Char.IsDigit(ch) && ch != 8)
+			{
+				e.Handled = true;
+			}
+		}
+
+		private void txtPurchasePrice_KeyPress(object sender, KeyPressEventArgs e)
+		{
+			char ch = e.KeyChar;
+			if (!Char.IsDigit(ch) && ch != 8)
+			{
+				e.Handled = true;
+			}
+		}
+	}
 }

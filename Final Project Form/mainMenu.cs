@@ -213,8 +213,8 @@ namespace Final_Project_Form
 
         private void mainMenu_Load(object sender, EventArgs e)
         {
-            lblName.Text = ("Welcome " +currentUser.UserName);
-            lblDepartment.Text = ("Department: " + currentUser.Department);
+            lblLoginName.Text = ("Welcome " +currentUser.UserName);
+            lblDepartment2.Text = ("Department: " + currentUser.Department);
         }
 
         private void btnReturnItem_Click(object sender, EventArgs e)
@@ -273,5 +273,43 @@ namespace Final_Project_Form
                 viewDisposedItems.Show();
             }
         }
-    }
+
+		private void btnExtendLoan_Click(object sender, EventArgs e)
+		{
+			bool isOpen = false;
+			foreach (Form f in Application.OpenForms)
+			{
+				if (f.Text == "Find User")
+				{
+					isOpen = true;
+					f.BringToFront();
+					break;
+				}
+			}
+			if (isOpen == false)
+			{
+				findUser findUser = new findUser();
+				findUser.Show();
+			}
+		}
+
+		private void button1_Click(object sender, EventArgs e)
+		{
+			bool isOpen = false;
+			foreach (Form f in Application.OpenForms)
+			{
+				if (f.Text == "LoanHistory")
+				{
+					isOpen = true;
+					f.BringToFront();
+					break;
+				}
+			}
+			if (isOpen == false)
+			{
+				LoanHistory loanHist = new LoanHistory();
+				loanHist.Show();
+			}
+		}
+	}
 }

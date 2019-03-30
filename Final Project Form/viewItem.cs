@@ -47,8 +47,57 @@ namespace Final_Project_Form
         {
             tabControl1.SelectedTab = tabPage1;
         }
+		private void txtMaxLoanPeriod_TextChanged(object sender, EventArgs e)
+		{
+			if (System.Text.RegularExpressions.Regex.IsMatch(txtMaxLoanPeriod.Text, "  ^ [0-9]"))
+			{
+				txtMaxLoanPeriod.Text = "";
+			}
+		}
 
-        decimal purchasePrice;
+		private void txtSerialNo_TextChanged(object sender, EventArgs e)
+		{
+			if (System.Text.RegularExpressions.Regex.IsMatch(txtSerialNo.Text, "  ^ [0-9]"))
+			{
+				txtSerialNo.Text = "";
+			}
+		}
+
+		private void txtPurchasePrice_TextChanged(object sender, EventArgs e)
+		{
+			if (System.Text.RegularExpressions.Regex.IsMatch(txtPurchasePrice.Text, "  ^ [0-9]"))
+			{
+				txtPurchasePrice.Text = "";
+			}
+		}
+
+		private void txtMaxLoanPeriod_KeyPress(object sender, KeyPressEventArgs e)
+		{
+			char ch = e.KeyChar;
+			if (!Char.IsDigit(ch) && ch != 8)
+			{
+				e.Handled = true;
+			}
+		}
+		private void txtSerialNo_KeyPress(object sender, KeyPressEventArgs e)
+		{
+			char ch = e.KeyChar;
+			if (!Char.IsDigit(ch) && ch != 8)
+			{
+				e.Handled = true;
+			}
+		}
+
+		private void txtPurchasePrice_KeyPress(object sender, KeyPressEventArgs e)
+		{
+			char ch = e.KeyChar;
+			if (!Char.IsDigit(ch) && ch != 8)
+			{
+				e.Handled = true;
+			}
+		}
+
+		decimal purchasePrice;
         TextInfo textInfo = new CultureInfo("en-US", false).TextInfo;
         private void btnUpdate_Click(object sender, EventArgs e)
         {

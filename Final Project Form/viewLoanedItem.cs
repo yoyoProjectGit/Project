@@ -14,7 +14,8 @@ namespace Final_Project_Form
     public partial class viewLoanedItem : Form
     {
         DataTable dt = new DataTable("Loaned Items History");
-        int resourceID;
+		DataTable dt2 = new DataTable("Item Loaner");
+		int resourceID;
         string resourceType;
         string resourceName;
         int maxLoanPeriod;
@@ -41,6 +42,7 @@ namespace Final_Project_Form
             getData();
             fillData();
             loadItemHistory();
+
         }
         private void getData()
         {
@@ -98,12 +100,23 @@ namespace Final_Project_Form
             SqlDataAdapter adapter = new SqlDataAdapter(loadHistory);
             adapter.Fill(dt);
             itemHistoryGridView.DataSource = dt;
-            connection.Close();
+			SqlCommand loadCurrentLoaner = new SqlCommand("SELECT BorrowerName,UserType,BorrowerID,DateLoaned,DueDate,LoanedBy,Quantity" +
+			" FROM Loans WHERE ResourceID=@resourceID", connection);
+			loadCurrentLoaner.Parameters.AddWithValue("@resourceID", resourceID);
+			SqlDataAdapter adapter2 = new SqlDataAdapter(loadCurrentLoaner);
+			adapter2.Fill(dt2);
+			LoanedItemsGridView.DataSource = dt2;
+			connection.Close();
         }
 
         private void btnGoBack_Click(object sender, EventArgs e)
         {
             tabControl1.SelectedTab = tabPage1;
         }
-    }
+
+		private void btnBack2_Click(object sender, EventArgs e)
+		{
+			tabControl1.SelectedTab = tabPage2;
+		}
+	}
 }
