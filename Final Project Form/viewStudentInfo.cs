@@ -91,6 +91,7 @@ namespace Final_Project_Form
 						if (loanPeriod > Convert.ToInt32(maxprd))
 						{
 							MessageBox.Show("The maximum loan period for " + txtResourceName.Text + " is: " + maxprd + " days");
+							return;
 						}
 						else
 						{
