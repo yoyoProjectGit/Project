@@ -14,23 +14,12 @@ namespace Final_Project_Form
 	public partial class ItemReturns : Form
 	{
 		DateTime returnDate = DateTime.Now;
-		string LoanID;
-		string resourceID;
-		string resourceType;
-		string resourceName;
-		int quantity;
-		string DateLoaned;
-		string LoanDuration;
-		string Department;
 		string BorrowerName;
 		string BorrowerID;
 		string BorrowerSurname;
 		string BorrowerEmail;
-		string Notes;
-		string LoanedBy;
 		string scannableNum;
 		string usertype;
-		int stock;
 		public ItemReturns()
 		{
 			InitializeComponent();

@@ -14,7 +14,6 @@ namespace Final_Project_Form
 {
     public partial class ReturnUserItem : Form
     {
-        string loanNo;
         string resName;
         string id;
         int resInt;
