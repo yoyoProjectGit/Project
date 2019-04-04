@@ -41,6 +41,8 @@
 			this.txtResourceName = new System.Windows.Forms.TextBox();
 			this.label2 = new System.Windows.Forms.Label();
 			this.btnRefresh = new System.Windows.Forms.Button();
+			this.lblTotalRows = new System.Windows.Forms.Label();
+			this.lblTotalItems = new System.Windows.Forms.Label();
 			((System.ComponentModel.ISupportInitialize)(this.loanHistoryGridView)).BeginInit();
 			this.SuspendLayout();
 			// 
@@ -49,7 +51,7 @@
 			this.loanHistoryGridView.AllowUserToAddRows = false;
 			this.loanHistoryGridView.AllowUserToDeleteRows = false;
 			this.loanHistoryGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-			this.loanHistoryGridView.Location = new System.Drawing.Point(12, 242);
+			this.loanHistoryGridView.Location = new System.Drawing.Point(12, 215);
 			this.loanHistoryGridView.Name = "loanHistoryGridView";
 			this.loanHistoryGridView.ReadOnly = true;
 			this.loanHistoryGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -165,19 +167,39 @@
 			// 
 			// btnRefresh
 			// 
-			this.btnRefresh.Location = new System.Drawing.Point(799, 84);
+			this.btnRefresh.Location = new System.Drawing.Point(832, 97);
 			this.btnRefresh.Name = "btnRefresh";
 			this.btnRefresh.Size = new System.Drawing.Size(103, 92);
 			this.btnRefresh.TabIndex = 85;
-			this.btnRefresh.Text = "Refresh";
+			this.btnRefresh.Text = "item";
 			this.btnRefresh.UseVisualStyleBackColor = true;
 			this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
+			// 
+			// lblTotalRows
+			// 
+			this.lblTotalRows.AutoSize = true;
+			this.lblTotalRows.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.lblTotalRows.Location = new System.Drawing.Point(656, 68);
+			this.lblTotalRows.Name = "lblTotalRows";
+			this.lblTotalRows.Size = new System.Drawing.Size(0, 24);
+			this.lblTotalRows.TabIndex = 87;
+			// 
+			// lblTotalItems
+			// 
+			this.lblTotalItems.AutoSize = true;
+			this.lblTotalItems.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.lblTotalItems.Location = new System.Drawing.Point(656, 43);
+			this.lblTotalItems.Name = "lblTotalItems";
+			this.lblTotalItems.Size = new System.Drawing.Size(0, 24);
+			this.lblTotalItems.TabIndex = 86;
 			// 
 			// LoanHistory
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(1150, 700);
+			this.Controls.Add(this.lblTotalRows);
+			this.Controls.Add(this.lblTotalItems);
 			this.Controls.Add(this.btnRefresh);
 			this.Controls.Add(this.btnResourceType);
 			this.Controls.Add(this.txtResourceType);
@@ -215,5 +237,7 @@
 		private System.Windows.Forms.TextBox txtResourceName;
 		private System.Windows.Forms.Label label2;
 		private System.Windows.Forms.Button btnRefresh;
+		private System.Windows.Forms.Label lblTotalRows;
+		private System.Windows.Forms.Label lblTotalItems;
 	}
 }

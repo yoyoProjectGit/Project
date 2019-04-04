@@ -86,48 +86,30 @@ namespace Final_Project_Form
 				int loanPeriod = Convert.ToInt32(this.txtTotalDays.Text);
 				try
 				{
-					if (txtUserType.Text == "Student")
+					if (loanPeriod > Convert.ToInt32(maxprd))
 					{
-						if (loanPeriod > Convert.ToInt32(maxprd))
+						DialogResult dialogResult = MessageBox.Show("The maximum loan period for " + txtResourceName.Text +
+							" is: " + maxprd + " days", "Are you sure you want to loan this item for "+ txtTotalDays.Text+" Days?",
+							MessageBoxButtons.YesNo);
+						if (dialogResult == DialogResult.Yes)
 						{
-							MessageBox.Show("The maximum loan period for " + txtResourceName.Text + " is: " + maxprd + " days");
+							extendLoan();
+							addExtendToHistory();
+							AutoClosingMessageBox.Show("The item: " + txtResourceName.Text +
+							" Has been successfully Extended For: " + txtTotalDays.Text + " Days.", "Loan Item ", 5000);
+						}
+						else if (dialogResult == DialogResult.No)
+						{
 							return;
 						}
-						else
-						{
-							extendLoan();
-							addExtendToHistory();
-							AutoClosingMessageBox.Show("The item: " + txtResourceName.Text +
-							" Has been successfully Extended For: " + txtTotalDays.Text + " Days.", "Loan Item ", 5000);
-						}
 					}
-					else if (txtUserType.Text == "Staff")
+					else
 					{
-						if (loanPeriod > Convert.ToInt32(maxprd))
-						{
-							DialogResult dialogResult = MessageBox.Show("The maximum loan period for " + txtResourceName.Text +
-								" is: " + maxprd + " days", "Are you sure you want to loan this item for "+ txtTotalDays.Text+" Days?",
-								MessageBoxButtons.YesNo);
-							if (dialogResult == DialogResult.Yes)
-							{
-								extendLoan();
-								addExtendToHistory();
-								AutoClosingMessageBox.Show("The item: " + txtResourceName.Text +
-								" Has been successfully Extended For: " + txtTotalDays.Text + " Days.", "Loan Item ", 5000);
-							}
-							else if (dialogResult == DialogResult.No)
-							{
-								return;
-							}
+						extendLoan();
+						addExtendToHistory();
+						AutoClosingMessageBox.Show("The item: " + txtResourceName.Text +
+						" Has been successfully Extended For: " + txtTotalDays.Text + " Days.", "Loan Item ", 5000);
 						}
-						else
-						{
-							extendLoan();
-							addExtendToHistory();
-							AutoClosingMessageBox.Show("The item: " + txtResourceName.Text +
-							" Has been successfully Extended For: " + txtTotalDays.Text + " Days.", "Loan Item ", 5000);
-						}
-					}
 				}
 				catch (Exception ex)
 				{

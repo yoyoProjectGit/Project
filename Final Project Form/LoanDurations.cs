@@ -48,7 +48,6 @@ namespace Final_Project_Form
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            
             if (txtLoanPeriod.Text == "" || txtLoanedBy.Text == "")
             {
                 MessageBox.Show("Loan Duration, Loaned By and Quantity are required!");
@@ -66,23 +65,16 @@ namespace Final_Project_Form
                 }
 				else if (loanPeriod > maxLoanPeriod)
 				{
-					if (userType == "Student")
+					DialogResult dialogResult = MessageBox.Show("The maximum loan period for " + txtResourceName.Text +
+							" is: " + maxLoanPeriod + " days", "Are you sure you want to " +
+							"loan this item for " + loanPeriod + " Days?", MessageBoxButtons.YesNo);
+					if (dialogResult == DialogResult.Yes)
 					{
-						MessageBox.Show("The maximum loan period for " + txtResourceName.Text + " is: " + maxLoanPeriod + " days");
+						LoanUserItem();
 					}
-					if (userType == "Staff")
+					else if (dialogResult == DialogResult.No)
 					{
-						DialogResult dialogResult = MessageBox.Show("The maximum loan period for " + txtResourceName.Text +
-								" is: " + maxLoanPeriod + " days", "Are you sure you want to " +
-								"loan this item for " + loanPeriod + " Days?", MessageBoxButtons.YesNo);
-						if (dialogResult == DialogResult.Yes)
-						{
-							LoanUserItem();
-						}
-						else if (dialogResult == DialogResult.No)
-						{
-							return;
-						}
+						return;
 					}
 				}
 				else

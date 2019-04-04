@@ -128,7 +128,7 @@
 			// txtResourceName
 			// 
 			this.txtResourceName.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.txtResourceName.Location = new System.Drawing.Point(197, 150);
+			this.txtResourceName.Location = new System.Drawing.Point(197, 146);
 			this.txtResourceName.Name = "txtResourceName";
 			this.txtResourceName.ReadOnly = true;
 			this.txtResourceName.Size = new System.Drawing.Size(217, 31);
@@ -226,7 +226,7 @@
 			// txtSurname
 			// 
 			this.txtSurname.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.txtSurname.Location = new System.Drawing.Point(655, 185);
+			this.txtSurname.Location = new System.Drawing.Point(655, 181);
 			this.txtSurname.Name = "txtSurname";
 			this.txtSurname.ReadOnly = true;
 			this.txtSurname.Size = new System.Drawing.Size(292, 31);
