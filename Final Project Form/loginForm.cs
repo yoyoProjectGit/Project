@@ -53,7 +53,7 @@ namespace Final_Project_Form
             }
             else
             {
-                AutoClosingMessageBox.Show("Invalid Username Or Password", "Logging Failed", 1000);
+                AutoClosingMessageBox.Show("Invalid Username Or Password", "Login Failed", 1000);
 				connection.Close();
             }
             }

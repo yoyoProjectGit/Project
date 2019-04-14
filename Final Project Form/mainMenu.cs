@@ -311,5 +311,24 @@ namespace Final_Project_Form
 				loanHist.Show();
 			}
 		}
+
+		private void btnAdmin_Click(object sender, EventArgs e)
+		{
+			bool isOpen = false;
+			foreach (Form f in Application.OpenForms)
+			{
+				if (f.Text == "adminLogin")
+				{
+					isOpen = true;
+					f.BringToFront();
+					break;
+				}
+			}
+			if (isOpen == false)
+			{
+				adminLogin login = new adminLogin();
+				login.Show();
+			}
+		}
 	}
 }

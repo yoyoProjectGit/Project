@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+			this.components = new System.ComponentModel.Container();
 			System.Windows.Forms.Label label9;
 			System.Windows.Forms.Label label10;
 			this.tabControl1 = new System.Windows.Forms.TabControl();
@@ -61,6 +62,7 @@
 			this.btnClose2 = new System.Windows.Forms.Button();
 			this.loanHistory = new System.Windows.Forms.DataGridView();
 			this.tabPage4 = new System.Windows.Forms.TabPage();
+			this.label14 = new System.Windows.Forms.Label();
 			this.label13 = new System.Windows.Forms.Label();
 			this.txtTotalDays = new System.Windows.Forms.TextBox();
 			this.btnExtendLoan = new System.Windows.Forms.Button();
@@ -78,7 +80,7 @@
 			this.txtResourceName = new System.Windows.Forms.TextBox();
 			this.label24 = new System.Windows.Forms.Label();
 			this.btnBackToLoan = new System.Windows.Forms.Button();
-			this.label14 = new System.Windows.Forms.Label();
+			this.imageList1 = new System.Windows.Forms.ImageList(this.components);
 			label9 = new System.Windows.Forms.Label();
 			label10 = new System.Windows.Forms.Label();
 			this.tabControl1.SuspendLayout();
@@ -469,6 +471,16 @@
 			this.tabPage4.Text = "Extend Loan";
 			this.tabPage4.UseVisualStyleBackColor = true;
 			// 
+			// label14
+			// 
+			this.label14.AutoSize = true;
+			this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label14.Location = new System.Drawing.Point(432, 243);
+			this.label14.Name = "label14";
+			this.label14.Size = new System.Drawing.Size(315, 24);
+			this.label14.TabIndex = 62;
+			this.label14.Text = "Days are extended from todays date!";
+			// 
 			// label13
 			// 
 			this.label13.AutoSize = true;
@@ -633,15 +645,11 @@
 			this.btnBackToLoan.UseVisualStyleBackColor = true;
 			this.btnBackToLoan.Click += new System.EventHandler(this.btnBackToLoan_Click);
 			// 
-			// label14
+			// imageList1
 			// 
-			this.label14.AutoSize = true;
-			this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label14.Location = new System.Drawing.Point(432, 243);
-			this.label14.Name = "label14";
-			this.label14.Size = new System.Drawing.Size(315, 24);
-			this.label14.TabIndex = 62;
-			this.label14.Text = "Days are extended from todays date!";
+			this.imageList1.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit;
+			this.imageList1.ImageSize = new System.Drawing.Size(16, 16);
+			this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
 			// 
 			// viewStudentInfo
 			// 
@@ -718,5 +726,6 @@
 		private System.Windows.Forms.TextBox txtResourceName;
 		private System.Windows.Forms.Label label24;
 		private System.Windows.Forms.Label label14;
+		private System.Windows.Forms.ImageList imageList1;
 	}
 }

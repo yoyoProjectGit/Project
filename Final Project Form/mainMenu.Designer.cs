@@ -46,6 +46,7 @@
 			this.lblLoginName = new System.Windows.Forms.Label();
 			this.lblDepartment2 = new System.Windows.Forms.Label();
 			this.btnLoanHistory = new System.Windows.Forms.Button();
+			this.btnAdmin = new System.Windows.Forms.Button();
 			this.SuspendLayout();
 			// 
 			// btnAddUser
@@ -120,9 +121,9 @@
 			// 
 			// btnLogOut
 			// 
-			this.btnLogOut.Location = new System.Drawing.Point(143, 707);
+			this.btnLogOut.Location = new System.Drawing.Point(143, 756);
 			this.btnLogOut.Name = "btnLogOut";
-			this.btnLogOut.Size = new System.Drawing.Size(118, 95);
+			this.btnLogOut.Size = new System.Drawing.Size(118, 46);
 			this.btnLogOut.TabIndex = 8;
 			this.btnLogOut.Text = "Log Out";
 			this.btnLogOut.UseVisualStyleBackColor = true;
@@ -227,11 +228,22 @@
 			this.btnLoanHistory.UseVisualStyleBackColor = true;
 			this.btnLoanHistory.Click += new System.EventHandler(this.button1_Click);
 			// 
+			// btnAdmin
+			// 
+			this.btnAdmin.Location = new System.Drawing.Point(143, 707);
+			this.btnAdmin.Name = "btnAdmin";
+			this.btnAdmin.Size = new System.Drawing.Size(118, 46);
+			this.btnAdmin.TabIndex = 19;
+			this.btnAdmin.Text = "Admin";
+			this.btnAdmin.UseVisualStyleBackColor = true;
+			this.btnAdmin.Click += new System.EventHandler(this.btnAdmin_Click);
+			// 
 			// mainMenu
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(273, 808);
+			this.Controls.Add(this.btnAdmin);
 			this.Controls.Add(this.btnLoanHistory);
 			this.Controls.Add(this.lblDepartment2);
 			this.Controls.Add(this.lblLoginName);
@@ -279,5 +291,6 @@
 		private System.Windows.Forms.Label lblLoginName;
 		private System.Windows.Forms.Label lblDepartment2;
 		private System.Windows.Forms.Button btnLoanHistory;
+		private System.Windows.Forms.Button btnAdmin;
 	}
 }
