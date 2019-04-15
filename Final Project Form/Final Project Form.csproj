@@ -81,6 +81,12 @@
     <Compile Include="Admin Page.Designer.cs">
       <DependentUpon>Admin Page.cs</DependentUpon>
     </Compile>
+    <Compile Include="AdminEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminEdit.Designer.cs">
+      <DependentUpon>AdminEdit.cs</DependentUpon>
+    </Compile>
     <Compile Include="adminLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -211,6 +217,12 @@
     <Compile Include="StaffAccounts.Designer.cs">
       <DependentUpon>StaffAccounts.cs</DependentUpon>
     </Compile>
+    <Compile Include="StaffMembers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StaffMembers.Designer.cs">
+      <DependentUpon>StaffMembers.cs</DependentUpon>
+    </Compile>
     <Compile Include="ViewDisposedItems.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -241,6 +253,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Admin Page.resx">
       <DependentUpon>Admin Page.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminEdit.resx">
+      <DependentUpon>AdminEdit.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="adminLogin.resx">
       <DependentUpon>adminLogin.cs</DependentUpon>
@@ -316,6 +331,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="StaffAccounts.resx">
       <DependentUpon>StaffAccounts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StaffMembers.resx">
+      <DependentUpon>StaffMembers.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ViewDisposedItems.resx">
       <DependentUpon>ViewDisposedItems.cs</DependentUpon>

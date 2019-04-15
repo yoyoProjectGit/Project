@@ -36,7 +36,7 @@ namespace Final_Project_Form
 				{
 					AutoClosingMessageBox.Show("Login Successful", "Logging In", 1000);
 					Admin_Page adminPage = new Admin_Page();
-					this.Hide();
+					this.Close();
 					adminPage.Show();
 					connection.Close();
 				}
@@ -61,6 +61,11 @@ namespace Final_Project_Form
 		private void btnQuit_Click(object sender, EventArgs e)
 		{
 			this.Close();
+		}
+
+		private void adminLogin_Load(object sender, EventArgs e)
+		{
+			this.AcceptButton = btnLogin;
 		}
 	}
 }

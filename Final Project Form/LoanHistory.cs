@@ -39,7 +39,7 @@ namespace Final_Project_Form
 				}
 				lblTotalItems.Text = "Total Individual Items In Table: " + totalInStock;
 				int count = loanHistoryGridView.Rows.Count;
-				lblTotalRows.Text = "Total Resources: " + count;
+				lblTotalRows.Text = "Total Loans: " + count;
 			}
 			catch(Exception ex)
 			{
@@ -64,7 +64,7 @@ namespace Final_Project_Form
 			}
 			lblTotalItems.Text = "Total Individual Items In Table: " + totalInStock;
 			int count = loanHistoryGridView.Rows.Count;
-			lblTotalRows.Text = "Total Resources: " + count;
+			lblTotalRows.Text = "Total Loans: " + count;
 		}
 		private void btnShuId_Click(object sender, EventArgs e)
 		{
@@ -78,7 +78,7 @@ namespace Final_Project_Form
 			}
 			lblTotalItems.Text = "Total Individual Items In Table: " + totalInStock;
 			int count = loanHistoryGridView.Rows.Count;
-			lblTotalRows.Text = "Total Resources: " + count;
+			lblTotalRows.Text = "Total Loans: " + count;
 		}
 
 		private void btnResourceType_Click(object sender, EventArgs e)
@@ -93,7 +93,7 @@ namespace Final_Project_Form
 			}
 			lblTotalItems.Text = "Total Individual Items In Table: " + totalInStock;
 			int count = loanHistoryGridView.Rows.Count;
-			lblTotalRows.Text = "Total Resources: " + count;
+			lblTotalRows.Text = "Total Loans: " + count;
 		}
 
 		private void btnRefresh_Click(object sender, EventArgs e)
@@ -117,7 +117,7 @@ namespace Final_Project_Form
 				}
 				lblTotalItems.Text = "Total Individual Items In Table: " + totalInStock;
 				int count = loanHistoryGridView.Rows.Count;
-				lblTotalRows.Text = "Total Resources: " + count;
+				lblTotalRows.Text = "Total Loans: " + count;
 			}
 			catch (Exception ex)
 			{

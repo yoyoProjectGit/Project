@@ -108,6 +108,7 @@
 			this.Controls.Add(this.btnLogin);
 			this.Name = "adminLogin";
 			this.Text = "adminLogin";
+			this.Load += new System.EventHandler(this.adminLogin_Load);
 			this.ResumeLayout(false);
 			this.PerformLayout();
 

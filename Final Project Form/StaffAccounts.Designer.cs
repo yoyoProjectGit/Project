@@ -34,6 +34,7 @@
 			this.btnClose = new System.Windows.Forms.Button();
 			this.staffGridView = new System.Windows.Forms.DataGridView();
 			this.tabPage2 = new System.Windows.Forms.TabPage();
+			this.departmentsList = new System.Windows.Forms.ComboBox();
 			this.btnUpdate = new System.Windows.Forms.Button();
 			this.checkBoxShowPass = new System.Windows.Forms.CheckBox();
 			this.btnEdit = new System.Windows.Forms.Button();
@@ -46,7 +47,6 @@
 			this.txtUserName = new System.Windows.Forms.TextBox();
 			this.label24 = new System.Windows.Forms.Label();
 			this.btnBackToLoan = new System.Windows.Forms.Button();
-			this.departmentsList = new System.Windows.Forms.ComboBox();
 			label9 = new System.Windows.Forms.Label();
 			this.tabControl1.SuspendLayout();
 			this.tabPage1.SuspendLayout();
@@ -62,7 +62,7 @@
 			label9.Name = "label9";
 			label9.Size = new System.Drawing.Size(151, 25);
 			label9.TabIndex = 2;
-			label9.Text = "Staff Members";
+			label9.Text = "Staff Accounts";
 			// 
 			// tabControl1
 			// 
@@ -134,6 +134,16 @@
 			this.tabPage2.Text = "Edit Member";
 			this.tabPage2.UseVisualStyleBackColor = true;
 			// 
+			// departmentsList
+			// 
+			this.departmentsList.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+			this.departmentsList.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.departmentsList.FormattingEnabled = true;
+			this.departmentsList.Location = new System.Drawing.Point(191, 240);
+			this.departmentsList.Name = "departmentsList";
+			this.departmentsList.Size = new System.Drawing.Size(217, 33);
+			this.departmentsList.TabIndex = 77;
+			// 
 			// btnUpdate
 			// 
 			this.btnUpdate.Location = new System.Drawing.Point(429, 236);
@@ -171,9 +181,9 @@
 			this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.label17.Location = new System.Drawing.Point(24, 244);
 			this.label17.Name = "label17";
-			this.label17.Size = new System.Drawing.Size(107, 24);
+			this.label17.Size = new System.Drawing.Size(112, 24);
 			this.label17.TabIndex = 73;
-			this.label17.Text = "Department";
+			this.label17.Text = "Department:";
 			// 
 			// label19
 			// 
@@ -181,9 +191,9 @@
 			this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.label19.Location = new System.Drawing.Point(24, 149);
 			this.label19.Name = "label19";
-			this.label19.Size = new System.Drawing.Size(92, 24);
+			this.label19.Size = new System.Drawing.Size(97, 24);
 			this.label19.TabIndex = 70;
-			this.label19.Text = "Password";
+			this.label19.Text = "Password:";
 			// 
 			// txtPassword
 			// 
@@ -200,9 +210,9 @@
 			this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.label21.Location = new System.Drawing.Point(24, 198);
 			this.label21.Name = "label21";
-			this.label21.Size = new System.Drawing.Size(61, 24);
+			this.label21.Size = new System.Drawing.Size(66, 24);
 			this.label21.TabIndex = 68;
-			this.label21.Text = "Name";
+			this.label21.Text = "Name:";
 			// 
 			// label22
 			// 
@@ -210,9 +220,9 @@
 			this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.label22.Location = new System.Drawing.Point(19, 98);
 			this.label22.Name = "label22";
-			this.label22.Size = new System.Drawing.Size(105, 24);
+			this.label22.Size = new System.Drawing.Size(110, 24);
 			this.label22.TabIndex = 67;
-			this.label22.Text = "User Name";
+			this.label22.Text = "User Name:";
 			// 
 			// txtName
 			// 
@@ -238,9 +248,10 @@
 			this.label24.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.label24.Location = new System.Drawing.Point(21, 20);
 			this.label24.Name = "label24";
-			this.label24.Size = new System.Drawing.Size(208, 37);
+			this.label24.Size = new System.Drawing.Size(209, 37);
 			this.label24.TabIndex = 64;
-			this.label24.Text = "Staff Member";
+			this.label24.Text = "Staff Account";
+			this.label24.TextAlign = System.Drawing.ContentAlignment.TopCenter;
 			// 
 			// btnBackToLoan
 			// 
@@ -251,16 +262,6 @@
 			this.btnBackToLoan.Text = "Back";
 			this.btnBackToLoan.UseVisualStyleBackColor = true;
 			this.btnBackToLoan.Click += new System.EventHandler(this.btnBackToLoan_Click);
-			// 
-			// departmentsList
-			// 
-			this.departmentsList.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-			this.departmentsList.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.departmentsList.FormattingEnabled = true;
-			this.departmentsList.Location = new System.Drawing.Point(191, 240);
-			this.departmentsList.Name = "departmentsList";
-			this.departmentsList.Size = new System.Drawing.Size(217, 33);
-			this.departmentsList.TabIndex = 77;
 			// 
 			// StaffAccounts
 			// 

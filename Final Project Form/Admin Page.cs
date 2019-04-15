@@ -24,7 +24,21 @@ namespace Final_Project_Form
 
 		private void btnStaffMembers_Click(object sender, EventArgs e)
 		{
-
+			bool isOpen = false;
+			foreach (Form f in Application.OpenForms)
+			{
+				if (f.Text == "StaffMembers")
+				{
+					isOpen = true;
+					f.BringToFront();
+					break;
+				}
+			}
+			if (isOpen == false)
+			{
+				StaffMembers staffmem = new StaffMembers();
+				staffmem.Show();
+			}
 		}
 
 		private void btnStaffAccounts_Click(object sender, EventArgs e)
@@ -43,6 +57,25 @@ namespace Final_Project_Form
 			{
 				StaffAccounts staffacc = new StaffAccounts();
 				staffacc.Show();
+			}
+		}
+
+		private void btnAdminAccount_Click(object sender, EventArgs e)
+		{
+			bool isOpen = false;
+			foreach (Form f in Application.OpenForms)
+			{
+				if (f.Text == "AdminEdit")
+				{
+					isOpen = true;
+					f.BringToFront();
+					break;
+				}
+			}
+			if (isOpen == false)
+			{
+				AdminEdit adminedit = new AdminEdit();
+				adminedit.Show();
 			}
 		}
 	}
