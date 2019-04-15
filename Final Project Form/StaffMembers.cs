@@ -84,6 +84,7 @@ namespace Final_Project_Form
 				remCommand.Parameters.AddWithValue("@ShuId", txtShuId.Text);
 				remCommand.ExecuteNonQuery();
 				connection.Close();
+				AutoClosingMessageBox.Show("The Staff Member: " + txtFirstName.Text + " Has been successfully removed", "Remove User ", 3000);
 				this.Close();
 			}
 			catch(Exception ex)
@@ -101,18 +102,16 @@ namespace Final_Project_Form
 				SqlCommand command = new SqlCommand("SELECT * FROM Loans WHERE BorrowerID=@BorrowerID", connection);
 				command.Parameters.AddWithValue("@BorrowerID", txtShuId.Text);
 				SqlDataReader reader = command.ExecuteReader();
-				while (reader.Read())
+				if (reader.HasRows)
 				{
-					if (reader.HasRows)
-					{
-						MessageBox.Show("This user currently has another item on loan.");
-						return;
-					}
-					else
-					{
-						deleteUser();
-					}
+					MessageBox.Show("This user currently has another item on loan.");
+					return;
 				}
+				else
+				{
+					deleteUser();
+				}
+				
 				connection.Close();
 			}
 			catch (Exception ex)

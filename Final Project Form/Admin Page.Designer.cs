@@ -83,6 +83,7 @@
 			this.btnAddStaffAccount.TabIndex = 4;
 			this.btnAddStaffAccount.Text = "Add Staff Account";
 			this.btnAddStaffAccount.UseVisualStyleBackColor = true;
+			this.btnAddStaffAccount.Click += new System.EventHandler(this.btnAddStaffAccount_Click);
 			// 
 			// Admin_Page
 			// 

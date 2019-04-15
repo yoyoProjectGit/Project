@@ -59,12 +59,11 @@ namespace Final_Project_Form
 
 		private void staffGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
 		{
-			if (e.ColumnIndex == 5 || e.ColumnIndex == 0)
+			if (e.ColumnIndex == 4 || e.ColumnIndex == 0)
 			{
 				DataGridViewRow row = this.staffGridView.Rows[e.RowIndex];
 				txtUserName.Text = row.Cells["username"].Value.ToString();
 				txtPassword.Text = row.Cells["password"].Value.ToString();
-				txtName.Text = row.Cells["name"].Value.ToString();
 				txtPassword.UseSystemPasswordChar = true;
 				checkBoxShowPass.Checked = false;
 				departmentsList.SelectedIndex = departmentsList.FindString(row.Cells["department"].Value.ToString());
@@ -77,7 +76,6 @@ namespace Final_Project_Form
 		{
 			txtUserName.ReadOnly = false;
 			txtPassword.ReadOnly = false;
-			txtName.ReadOnly = false;
 		}
 
 		private void checkBoxShowPass_CheckedChanged(object sender, EventArgs e)
@@ -101,14 +99,13 @@ namespace Final_Project_Form
 				SqlConnection connection = new SqlConnection(connectionString);
 				connection.Open();
 				string updateUser = "UPDATE userLogins SET username=@Username, password=@Password " +
-					", name=@Name, department=@Department WHERE uid=@Uid";
+					",  department=@Department WHERE uid=@Uid";
 				SqlCommand command = new SqlCommand(updateUser, connection);
 				
 				command.Parameters.AddWithValue("@Password", txtPassword.Text);
 				command.Parameters.AddWithValue("@Username", txtUserName.Text);
 				command.Parameters.AddWithValue("@uid", userID);
 				command.Parameters.AddWithValue("@Department", selectedDepartment);
-				command.Parameters.AddWithValue("@Name", txtName.Text);
 				command.ExecuteNonQuery();
 				MessageBox.Show("The staff account  " + txtUserName.Text + " has been successfully updated.");
 				connection.Close();

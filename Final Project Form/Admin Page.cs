@@ -78,5 +78,25 @@ namespace Final_Project_Form
 				adminedit.Show();
 			}
 		}
+
+		private void btnAddStaffAccount_Click(object sender, EventArgs e)
+		{
+			bool isOpen = false;
+			foreach (Form f in Application.OpenForms)
+			{
+				if (f.Text == "AddStaffAccount")
+				{
+					isOpen = true;
+					f.BringToFront();
+					break;
+				}
+			}
+			if (isOpen == false)
+			{
+				AddStaffAccount addstaff = new AddStaffAccount();
+				addstaff.Show();
+			}
+
+		}
 	}
 }

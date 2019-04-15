@@ -41,9 +41,7 @@
 			this.label17 = new System.Windows.Forms.Label();
 			this.label19 = new System.Windows.Forms.Label();
 			this.txtPassword = new System.Windows.Forms.TextBox();
-			this.label21 = new System.Windows.Forms.Label();
 			this.label22 = new System.Windows.Forms.Label();
-			this.txtName = new System.Windows.Forms.TextBox();
 			this.txtUserName = new System.Windows.Forms.TextBox();
 			this.label24 = new System.Windows.Forms.Label();
 			this.btnBackToLoan = new System.Windows.Forms.Button();
@@ -120,9 +118,7 @@
 			this.tabPage2.Controls.Add(this.label17);
 			this.tabPage2.Controls.Add(this.label19);
 			this.tabPage2.Controls.Add(this.txtPassword);
-			this.tabPage2.Controls.Add(this.label21);
 			this.tabPage2.Controls.Add(this.label22);
-			this.tabPage2.Controls.Add(this.txtName);
 			this.tabPage2.Controls.Add(this.txtUserName);
 			this.tabPage2.Controls.Add(this.label24);
 			this.tabPage2.Controls.Add(this.btnBackToLoan);
@@ -139,14 +135,14 @@
 			this.departmentsList.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
 			this.departmentsList.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.departmentsList.FormattingEnabled = true;
-			this.departmentsList.Location = new System.Drawing.Point(191, 240);
+			this.departmentsList.Location = new System.Drawing.Point(191, 209);
 			this.departmentsList.Name = "departmentsList";
 			this.departmentsList.Size = new System.Drawing.Size(217, 33);
 			this.departmentsList.TabIndex = 77;
 			// 
 			// btnUpdate
 			// 
-			this.btnUpdate.Location = new System.Drawing.Point(429, 236);
+			this.btnUpdate.Location = new System.Drawing.Point(429, 205);
 			this.btnUpdate.Name = "btnUpdate";
 			this.btnUpdate.Size = new System.Drawing.Size(87, 39);
 			this.btnUpdate.TabIndex = 76;
@@ -157,7 +153,7 @@
 			// checkBoxShowPass
 			// 
 			this.checkBoxShowPass.AutoSize = true;
-			this.checkBoxShowPass.Location = new System.Drawing.Point(414, 149);
+			this.checkBoxShowPass.Location = new System.Drawing.Point(414, 165);
 			this.checkBoxShowPass.Name = "checkBoxShowPass";
 			this.checkBoxShowPass.Size = new System.Drawing.Size(102, 17);
 			this.checkBoxShowPass.TabIndex = 75;
@@ -179,7 +175,7 @@
 			// 
 			this.label17.AutoSize = true;
 			this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label17.Location = new System.Drawing.Point(24, 244);
+			this.label17.Location = new System.Drawing.Point(24, 213);
 			this.label17.Name = "label17";
 			this.label17.Size = new System.Drawing.Size(112, 24);
 			this.label17.TabIndex = 73;
@@ -189,7 +185,7 @@
 			// 
 			this.label19.AutoSize = true;
 			this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label19.Location = new System.Drawing.Point(24, 149);
+			this.label19.Location = new System.Drawing.Point(24, 165);
 			this.label19.Name = "label19";
 			this.label19.Size = new System.Drawing.Size(97, 24);
 			this.label19.TabIndex = 70;
@@ -198,45 +194,26 @@
 			// txtPassword
 			// 
 			this.txtPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.txtPassword.Location = new System.Drawing.Point(191, 142);
+			this.txtPassword.Location = new System.Drawing.Point(191, 158);
 			this.txtPassword.Name = "txtPassword";
 			this.txtPassword.ReadOnly = true;
 			this.txtPassword.Size = new System.Drawing.Size(217, 31);
 			this.txtPassword.TabIndex = 69;
 			// 
-			// label21
-			// 
-			this.label21.AutoSize = true;
-			this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label21.Location = new System.Drawing.Point(24, 198);
-			this.label21.Name = "label21";
-			this.label21.Size = new System.Drawing.Size(66, 24);
-			this.label21.TabIndex = 68;
-			this.label21.Text = "Name:";
-			// 
 			// label22
 			// 
 			this.label22.AutoSize = true;
 			this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label22.Location = new System.Drawing.Point(19, 98);
+			this.label22.Location = new System.Drawing.Point(19, 114);
 			this.label22.Name = "label22";
 			this.label22.Size = new System.Drawing.Size(110, 24);
 			this.label22.TabIndex = 67;
 			this.label22.Text = "User Name:";
 			// 
-			// txtName
-			// 
-			this.txtName.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.txtName.Location = new System.Drawing.Point(191, 194);
-			this.txtName.Name = "txtName";
-			this.txtName.ReadOnly = true;
-			this.txtName.Size = new System.Drawing.Size(217, 31);
-			this.txtName.TabIndex = 66;
-			// 
 			// txtUserName
 			// 
 			this.txtUserName.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.txtUserName.Location = new System.Drawing.Point(191, 94);
+			this.txtUserName.Location = new System.Drawing.Point(191, 110);
 			this.txtUserName.Name = "txtUserName";
 			this.txtUserName.ReadOnly = true;
 			this.txtUserName.Size = new System.Drawing.Size(217, 31);
@@ -291,9 +268,7 @@
 		private System.Windows.Forms.Label label17;
 		private System.Windows.Forms.Label label19;
 		private System.Windows.Forms.TextBox txtPassword;
-		private System.Windows.Forms.Label label21;
 		private System.Windows.Forms.Label label22;
-		private System.Windows.Forms.TextBox txtName;
 		private System.Windows.Forms.TextBox txtUserName;
 		private System.Windows.Forms.Label label24;
 		private System.Windows.Forms.Button btnBackToLoan;

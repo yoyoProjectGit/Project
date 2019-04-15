@@ -35,15 +35,14 @@ namespace Final_Project_Form
             if (table.Rows.Count > 0)
             {
                     AutoClosingMessageBox.Show("Login Successful", "Logging In", 1000);
-                    SqlCommand getUser = new SqlCommand("select name, department,uid from userLogins where username=@username", connection);
+                    SqlCommand getUser = new SqlCommand("select department,uid from userLogins where username=@username", connection);
                     getUser.Parameters.AddWithValue("@username", txtUser.Text);
                     using (var reader = getUser.ExecuteReader())
                     {
                         while (reader.Read())
-                        {
-                            currentUser.UserName = reader[0].ToString();
-                            currentUser.Department = reader[1].ToString();
-                            currentUser.UserID = reader[2].ToString();
+                        {  
+                            currentUser.Department = reader[0].ToString();
+                            currentUser.UserID = reader[1].ToString();
                         }
                     }
                     mainMenu mainMenu = new mainMenu();
