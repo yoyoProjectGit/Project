@@ -28,6 +28,7 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
+			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminEdit));
 			this.btnUpdate = new System.Windows.Forms.Button();
 			this.checkBoxShowPass = new System.Windows.Forms.CheckBox();
 			this.btnEdit = new System.Windows.Forms.Button();
@@ -142,7 +143,12 @@
 			this.Controls.Add(this.txtUserName);
 			this.Controls.Add(this.label24);
 			this.Controls.Add(this.btnClose);
+			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+			this.MaximizeBox = false;
+			this.MinimizeBox = false;
 			this.Name = "AdminEdit";
+			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "AdminEdit";
 			this.Load += new System.EventHandler(this.AdminEdit_Load);
 			this.ResumeLayout(false);

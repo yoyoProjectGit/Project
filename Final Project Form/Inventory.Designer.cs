@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Inventory));
 			this.btnRefresh = new System.Windows.Forms.Button();
 			this.btnBack = new System.Windows.Forms.Button();
 			this.btnSearchBarcode = new System.Windows.Forms.Button();
@@ -180,7 +181,11 @@
 			this.Controls.Add(this.label2);
 			this.Controls.Add(this.label1);
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+			this.MaximizeBox = false;
+			this.MinimizeBox = false;
 			this.Name = "Inventory";
+			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "Inventory";
 			this.Load += new System.EventHandler(this.Inventory_Load);
 			((System.ComponentModel.ISupportInitialize)(this.inventoryGridView)).EndInit();

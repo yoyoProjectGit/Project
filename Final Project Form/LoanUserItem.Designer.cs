@@ -28,8 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
+			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoanUserItem));
 			this.tabControl1 = new System.Windows.Forms.TabControl();
 			this.tabPage1 = new System.Windows.Forms.TabPage();
+			this.txtScanID = new System.Windows.Forms.TextBox();
+			this.txtUserType = new System.Windows.Forms.TextBox();
+			this.label14 = new System.Windows.Forms.Label();
+			this.label15 = new System.Windows.Forms.Label();
 			this.btnLoanItems = new System.Windows.Forms.Button();
 			this.txtCurrentId = new System.Windows.Forms.TextBox();
 			this.txtCurrentEmail = new System.Windows.Forms.TextBox();
@@ -51,6 +56,10 @@
 			this.label1 = new System.Windows.Forms.Label();
 			this.inventoryGridView = new System.Windows.Forms.DataGridView();
 			this.tabPage2 = new System.Windows.Forms.TabPage();
+			this.txtScanID2 = new System.Windows.Forms.TextBox();
+			this.txtUserType2 = new System.Windows.Forms.TextBox();
+			this.label16 = new System.Windows.Forms.Label();
+			this.label17 = new System.Windows.Forms.Label();
 			this.btnGoBack = new System.Windows.Forms.Button();
 			this.btnConfirmItems = new System.Windows.Forms.Button();
 			this.txtShuId2 = new System.Windows.Forms.TextBox();
@@ -64,14 +73,6 @@
 			this.label13 = new System.Windows.Forms.Label();
 			this.label8 = new System.Windows.Forms.Label();
 			this.pickedItemsGridView = new System.Windows.Forms.DataGridView();
-			this.txtScanID = new System.Windows.Forms.TextBox();
-			this.txtUserType = new System.Windows.Forms.TextBox();
-			this.label14 = new System.Windows.Forms.Label();
-			this.label15 = new System.Windows.Forms.Label();
-			this.txtScanID2 = new System.Windows.Forms.TextBox();
-			this.txtUserType2 = new System.Windows.Forms.TextBox();
-			this.label16 = new System.Windows.Forms.Label();
-			this.label17 = new System.Windows.Forms.Label();
 			this.ResourceID = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.ResourceType = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.ResourceName = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -130,6 +131,44 @@
 			this.tabPage1.TabIndex = 0;
 			this.tabPage1.Text = "Choose Item";
 			this.tabPage1.UseVisualStyleBackColor = true;
+			// 
+			// txtScanID
+			// 
+			this.txtScanID.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.txtScanID.Location = new System.Drawing.Point(1100, 236);
+			this.txtScanID.Name = "txtScanID";
+			this.txtScanID.ReadOnly = true;
+			this.txtScanID.Size = new System.Drawing.Size(312, 31);
+			this.txtScanID.TabIndex = 62;
+			// 
+			// txtUserType
+			// 
+			this.txtUserType.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.txtUserType.Location = new System.Drawing.Point(1100, 193);
+			this.txtUserType.Name = "txtUserType";
+			this.txtUserType.ReadOnly = true;
+			this.txtUserType.Size = new System.Drawing.Size(312, 31);
+			this.txtUserType.TabIndex = 61;
+			// 
+			// label14
+			// 
+			this.label14.AutoSize = true;
+			this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label14.Location = new System.Drawing.Point(964, 240);
+			this.label14.Name = "label14";
+			this.label14.Size = new System.Drawing.Size(80, 24);
+			this.label14.TabIndex = 60;
+			this.label14.Text = "Scan ID:";
+			// 
+			// label15
+			// 
+			this.label15.AutoSize = true;
+			this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label15.Location = new System.Drawing.Point(964, 197);
+			this.label15.Name = "label15";
+			this.label15.Size = new System.Drawing.Size(102, 24);
+			this.label15.TabIndex = 59;
+			this.label15.Text = "User Type:";
 			// 
 			// btnLoanItems
 			// 
@@ -356,6 +395,44 @@
 			this.tabPage2.Text = "Chosen Items";
 			this.tabPage2.UseVisualStyleBackColor = true;
 			// 
+			// txtScanID2
+			// 
+			this.txtScanID2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.txtScanID2.Location = new System.Drawing.Point(1099, 235);
+			this.txtScanID2.Name = "txtScanID2";
+			this.txtScanID2.ReadOnly = true;
+			this.txtScanID2.Size = new System.Drawing.Size(312, 31);
+			this.txtScanID2.TabIndex = 73;
+			// 
+			// txtUserType2
+			// 
+			this.txtUserType2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.txtUserType2.Location = new System.Drawing.Point(1099, 192);
+			this.txtUserType2.Name = "txtUserType2";
+			this.txtUserType2.ReadOnly = true;
+			this.txtUserType2.Size = new System.Drawing.Size(312, 31);
+			this.txtUserType2.TabIndex = 72;
+			// 
+			// label16
+			// 
+			this.label16.AutoSize = true;
+			this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label16.Location = new System.Drawing.Point(963, 239);
+			this.label16.Name = "label16";
+			this.label16.Size = new System.Drawing.Size(80, 24);
+			this.label16.TabIndex = 71;
+			this.label16.Text = "Scan ID:";
+			// 
+			// label17
+			// 
+			this.label17.AutoSize = true;
+			this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label17.Location = new System.Drawing.Point(963, 196);
+			this.label17.Name = "label17";
+			this.label17.Size = new System.Drawing.Size(102, 24);
+			this.label17.TabIndex = 70;
+			this.label17.Text = "User Type:";
+			// 
 			// btnGoBack
 			// 
 			this.btnGoBack.Location = new System.Drawing.Point(725, 617);
@@ -494,82 +571,6 @@
 			this.pickedItemsGridView.Size = new System.Drawing.Size(1043, 300);
 			this.pickedItemsGridView.TabIndex = 0;
 			// 
-			// txtScanID
-			// 
-			this.txtScanID.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.txtScanID.Location = new System.Drawing.Point(1100, 236);
-			this.txtScanID.Name = "txtScanID";
-			this.txtScanID.ReadOnly = true;
-			this.txtScanID.Size = new System.Drawing.Size(312, 31);
-			this.txtScanID.TabIndex = 62;
-			// 
-			// txtUserType
-			// 
-			this.txtUserType.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.txtUserType.Location = new System.Drawing.Point(1100, 193);
-			this.txtUserType.Name = "txtUserType";
-			this.txtUserType.ReadOnly = true;
-			this.txtUserType.Size = new System.Drawing.Size(312, 31);
-			this.txtUserType.TabIndex = 61;
-			// 
-			// label14
-			// 
-			this.label14.AutoSize = true;
-			this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label14.Location = new System.Drawing.Point(964, 240);
-			this.label14.Name = "label14";
-			this.label14.Size = new System.Drawing.Size(80, 24);
-			this.label14.TabIndex = 60;
-			this.label14.Text = "Scan ID:";
-			// 
-			// label15
-			// 
-			this.label15.AutoSize = true;
-			this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label15.Location = new System.Drawing.Point(964, 197);
-			this.label15.Name = "label15";
-			this.label15.Size = new System.Drawing.Size(102, 24);
-			this.label15.TabIndex = 59;
-			this.label15.Text = "User Type:";
-			// 
-			// txtScanID2
-			// 
-			this.txtScanID2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.txtScanID2.Location = new System.Drawing.Point(1099, 235);
-			this.txtScanID2.Name = "txtScanID2";
-			this.txtScanID2.ReadOnly = true;
-			this.txtScanID2.Size = new System.Drawing.Size(312, 31);
-			this.txtScanID2.TabIndex = 73;
-			// 
-			// txtUserType2
-			// 
-			this.txtUserType2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.txtUserType2.Location = new System.Drawing.Point(1099, 192);
-			this.txtUserType2.Name = "txtUserType2";
-			this.txtUserType2.ReadOnly = true;
-			this.txtUserType2.Size = new System.Drawing.Size(312, 31);
-			this.txtUserType2.TabIndex = 72;
-			// 
-			// label16
-			// 
-			this.label16.AutoSize = true;
-			this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label16.Location = new System.Drawing.Point(963, 239);
-			this.label16.Name = "label16";
-			this.label16.Size = new System.Drawing.Size(80, 24);
-			this.label16.TabIndex = 71;
-			this.label16.Text = "Scan ID:";
-			// 
-			// label17
-			// 
-			this.label17.AutoSize = true;
-			this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label17.Location = new System.Drawing.Point(963, 196);
-			this.label17.Name = "label17";
-			this.label17.Size = new System.Drawing.Size(102, 24);
-			this.label17.TabIndex = 70;
-			this.label17.Text = "User Type:";
-			// 
 			// ResourceID
 			// 
 			this.ResourceID.HeaderText = "ResourceID";
@@ -624,7 +625,12 @@
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(1599, 757);
 			this.Controls.Add(this.tabControl1);
+			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+			this.MaximizeBox = false;
+			this.MinimizeBox = false;
 			this.Name = "LoanUserItem";
+			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "LoanUserItem";
 			this.Load += new System.EventHandler(this.LoanUserItem_Load);
 			this.tabControl1.ResumeLayout(false);

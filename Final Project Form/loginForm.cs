@@ -13,10 +13,10 @@ namespace Final_Project_Form
 {
     public partial class loginForm : Form
     {
-        public loginForm()
+		public loginForm()
         {
             InitializeComponent();
-        }
+		}
 
         private void btnLogin_Click(object sender, EventArgs e)
         {

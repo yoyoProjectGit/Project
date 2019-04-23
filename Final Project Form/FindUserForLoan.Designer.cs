@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FindUserForLoan));
 			this.studentGridView = new System.Windows.Forms.DataGridView();
 			this.btnRefresh = new System.Windows.Forms.Button();
 			this.btnBack = new System.Windows.Forms.Button();
@@ -53,6 +54,7 @@
 			this.studentGridView.Location = new System.Drawing.Point(31, 222);
 			this.studentGridView.Name = "studentGridView";
 			this.studentGridView.ReadOnly = true;
+			this.studentGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
 			this.studentGridView.Size = new System.Drawing.Size(844, 308);
 			this.studentGridView.TabIndex = 20;
 			this.studentGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.studentGridView_CellContentClick);
@@ -192,6 +194,10 @@
 			this.Controls.Add(this.label2);
 			this.Controls.Add(this.label1);
 			this.Controls.Add(this.studentGridView);
+			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+			this.MaximizeBox = false;
+			this.MinimizeBox = false;
 			this.Name = "FindUserForLoan";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "FindUserForLoan";

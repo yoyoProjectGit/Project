@@ -29,11 +29,13 @@
 		private void InitializeComponent()
 		{
 			System.Windows.Forms.Label label9;
+			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StaffAccounts));
 			this.tabControl1 = new System.Windows.Forms.TabControl();
 			this.tabPage1 = new System.Windows.Forms.TabPage();
 			this.btnClose = new System.Windows.Forms.Button();
 			this.staffGridView = new System.Windows.Forms.DataGridView();
 			this.tabPage2 = new System.Windows.Forms.TabPage();
+			this.btnDelete = new System.Windows.Forms.Button();
 			this.departmentsList = new System.Windows.Forms.ComboBox();
 			this.btnUpdate = new System.Windows.Forms.Button();
 			this.checkBoxShowPass = new System.Windows.Forms.CheckBox();
@@ -82,7 +84,7 @@
 			this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
 			this.tabPage1.Size = new System.Drawing.Size(539, 299);
 			this.tabPage1.TabIndex = 0;
-			this.tabPage1.Text = "Staff Members";
+			this.tabPage1.Text = "Staff Accounts";
 			this.tabPage1.UseVisualStyleBackColor = true;
 			// 
 			// btnClose
@@ -111,6 +113,7 @@
 			// 
 			// tabPage2
 			// 
+			this.tabPage2.Controls.Add(this.btnDelete);
 			this.tabPage2.Controls.Add(this.departmentsList);
 			this.tabPage2.Controls.Add(this.btnUpdate);
 			this.tabPage2.Controls.Add(this.checkBoxShowPass);
@@ -127,8 +130,18 @@
 			this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
 			this.tabPage2.Size = new System.Drawing.Size(539, 299);
 			this.tabPage2.TabIndex = 1;
-			this.tabPage2.Text = "Edit Member";
+			this.tabPage2.Text = "Edit Account";
 			this.tabPage2.UseVisualStyleBackColor = true;
+			// 
+			// btnDelete
+			// 
+			this.btnDelete.Location = new System.Drawing.Point(351, 18);
+			this.btnDelete.Name = "btnDelete";
+			this.btnDelete.Size = new System.Drawing.Size(87, 39);
+			this.btnDelete.TabIndex = 78;
+			this.btnDelete.Text = "Delete Account";
+			this.btnDelete.UseVisualStyleBackColor = true;
+			this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
 			// 
 			// departmentsList
 			// 
@@ -163,11 +176,11 @@
 			// 
 			// btnEdit
 			// 
-			this.btnEdit.Location = new System.Drawing.Point(336, 18);
+			this.btnEdit.Location = new System.Drawing.Point(255, 18);
 			this.btnEdit.Name = "btnEdit";
 			this.btnEdit.Size = new System.Drawing.Size(87, 39);
 			this.btnEdit.TabIndex = 74;
-			this.btnEdit.Text = "Edit Member";
+			this.btnEdit.Text = "Edit Account";
 			this.btnEdit.UseVisualStyleBackColor = true;
 			this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
 			// 
@@ -204,7 +217,7 @@
 			// 
 			this.label22.AutoSize = true;
 			this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label22.Location = new System.Drawing.Point(19, 114);
+			this.label22.Location = new System.Drawing.Point(24, 114);
 			this.label22.Name = "label22";
 			this.label22.Size = new System.Drawing.Size(110, 24);
 			this.label22.TabIndex = 67;
@@ -223,7 +236,7 @@
 			// 
 			this.label24.AutoSize = true;
 			this.label24.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label24.Location = new System.Drawing.Point(21, 20);
+			this.label24.Location = new System.Drawing.Point(24, 20);
 			this.label24.Name = "label24";
 			this.label24.Size = new System.Drawing.Size(209, 37);
 			this.label24.TabIndex = 64;
@@ -232,7 +245,7 @@
 			// 
 			// btnBackToLoan
 			// 
-			this.btnBackToLoan.Location = new System.Drawing.Point(429, 18);
+			this.btnBackToLoan.Location = new System.Drawing.Point(446, 18);
 			this.btnBackToLoan.Name = "btnBackToLoan";
 			this.btnBackToLoan.Size = new System.Drawing.Size(87, 39);
 			this.btnBackToLoan.TabIndex = 63;
@@ -246,7 +259,12 @@
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(546, 329);
 			this.Controls.Add(this.tabControl1);
+			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+			this.MaximizeBox = false;
+			this.MinimizeBox = false;
 			this.Name = "StaffAccounts";
+			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "StaffAccounts";
 			this.Load += new System.EventHandler(this.StaffAccounts_Load);
 			this.tabControl1.ResumeLayout(false);
@@ -277,5 +295,6 @@
 		private System.Windows.Forms.CheckBox checkBoxShowPass;
 		private System.Windows.Forms.Button btnUpdate;
 		private System.Windows.Forms.ComboBox departmentsList;
+		private System.Windows.Forms.Button btnDelete;
 	}
 }

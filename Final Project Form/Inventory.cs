@@ -33,7 +33,7 @@ namespace Final_Project_Form
                 SqlConnection connection = new SqlConnection(connectionString);
                 connection.Open();
                 SqlCommand command = new SqlCommand("SELECT ResourceID,ResourceType,ResourceName,MaxLoanPeriod,Department," +
-                    "SerialNumber,DateAdded,SupplierSource,PurchasePrice,Notes,InStock FROM resourcesTable WHERE Department=@Department", connection);
+                    "SerialNumber,DateAdded,SupplierSource,PurchasePrice,Notes,InStock,Total FROM resourcesTable WHERE Department=@Department", connection);
                 command.Parameters.AddWithValue("@Department", currentUser.Department);
                 SqlDataAdapter adapter = new SqlDataAdapter(command);
                 adapter.Fill(dt);
@@ -65,7 +65,7 @@ namespace Final_Project_Form
 
         private void inventoryGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.ColumnIndex == 11 || e.ColumnIndex == 0)
+            if (e.ColumnIndex == 12 || e.ColumnIndex == 0)
             {
                 DataGridViewRow row = this.inventoryGridView.Rows[e.RowIndex];
                 var item = new currentItem();

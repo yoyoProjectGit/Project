@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ReturnUserItem));
 			this.btnGoBack = new System.Windows.Forms.Button();
 			this.btnReturnItems = new System.Windows.Forms.Button();
 			this.txtShuId2 = new System.Windows.Forms.TextBox();
@@ -575,7 +576,12 @@
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(1599, 757);
 			this.Controls.Add(this.tabControl1);
+			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+			this.MaximizeBox = false;
+			this.MinimizeBox = false;
 			this.Name = "ReturnUserItem";
+			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "ReturnUserItem";
 			this.Load += new System.EventHandler(this.ReturnUserItem_Load);
 			this.tabPage1.ResumeLayout(false);

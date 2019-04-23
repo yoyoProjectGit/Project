@@ -28,6 +28,7 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
+			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FindUserToReturnItem));
 			this.btnScanID = new System.Windows.Forms.Button();
 			this.txtScanID = new System.Windows.Forms.TextBox();
 			this.label4 = new System.Windows.Forms.Label();
@@ -191,7 +192,12 @@
 			this.Controls.Add(this.label2);
 			this.Controls.Add(this.label1);
 			this.Controls.Add(this.loanedItemsGridView);
+			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+			this.MaximizeBox = false;
+			this.MinimizeBox = false;
 			this.Name = "FindUserToReturnItem";
+			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "FindUserToReturnItem";
 			this.Load += new System.EventHandler(this.FindUserToReturnItem_Load);
 			((System.ComponentModel.ISupportInitialize)(this.loanedItemsGridView)).EndInit();

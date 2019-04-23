@@ -28,6 +28,7 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
+			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoanHistory));
 			this.loanHistoryGridView = new System.Windows.Forms.DataGridView();
 			this.label1 = new System.Windows.Forms.Label();
 			this.btnClose = new System.Windows.Forms.Button();
@@ -171,7 +172,7 @@
 			this.btnRefresh.Name = "btnRefresh";
 			this.btnRefresh.Size = new System.Drawing.Size(103, 92);
 			this.btnRefresh.TabIndex = 85;
-			this.btnRefresh.Text = "item";
+			this.btnRefresh.Text = "Refresh";
 			this.btnRefresh.UseVisualStyleBackColor = true;
 			this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
 			// 
@@ -213,7 +214,12 @@
 			this.Controls.Add(this.btnClose);
 			this.Controls.Add(this.label1);
 			this.Controls.Add(this.loanHistoryGridView);
+			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+			this.MaximizeBox = false;
+			this.MinimizeBox = false;
 			this.Name = "LoanHistory";
+			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "LoanHistory";
 			this.Load += new System.EventHandler(this.LoanHistory_Load);
 			((System.ComponentModel.ISupportInitialize)(this.loanHistoryGridView)).EndInit();

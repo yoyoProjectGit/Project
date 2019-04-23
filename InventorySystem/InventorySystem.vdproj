@@ -15,6 +15,18 @@
     {
         "Entry"
         {
+        "MsmKey" = "8:_1EE74A28920E4E3795A530DA6139C30F"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_1F715572AEF84E8FA07F89E471BEEC97"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_2FD56F20650741A3A3F1308F62AF5679"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -23,6 +35,12 @@
         {
         "MsmKey" = "8:_3147DA37E7C0B2CACFE1E43532BF1071"
         "OwnerKey" = "8:_2FD56F20650741A3A3F1308F62AF5679"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_673C330BBE0142C18603391E0FA338D8"
+        "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -39,14 +57,26 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_AC09E3F6728548A5AB05241AC7D168FF"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_C84B3BA3D7954A5F980BE0AE7FBA2B26"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_D4A9F42EBF2414D887B234FCB3138F05"
         "OwnerKey" = "8:_2FD56F20650741A3A3F1308F62AF5679"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_9F7E247D1E4B06C70FEDF2F322027057"
+        "MsmKey" = "8:_FD1AB5FA838248D38C0C6DD34E645F8A"
+        "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -67,6 +97,12 @@
         "OwnerKey" = "8:_3147DA37E7C0B2CACFE1E43532BF1071"
         "MsmSig" = "8:_UNDEFINED"
         }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_9F7E247D1E4B06C70FEDF2F322027057"
+        "MsmSig" = "8:_UNDEFINED"
+        }
     }
     "Configurations"
     {
@@ -85,6 +121,22 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+                "Items"
+                {
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.6.1"
+                    {
+                    "Name" = "8:Microsoft .NET Framework 4.6.1 (x86 and x64)"
+                    "ProductCode" = "8:.NETFramework,Version=v4.6.1"
+                    }
+                }
+            }
         }
         "Release"
         {
@@ -101,6 +153,22 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+                "Items"
+                {
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.6.1"
+                    {
+                    "Name" = "8:Microsoft .NET Framework 4.6.1 (x86 and x64)"
+                    "ProductCode" = "8:.NETFramework,Version=v4.6.1"
+                    }
+                }
+            }
         }
     }
     "Deployable"
@@ -130,6 +198,46 @@
         }
         "File"
         {
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_1EE74A28920E4E3795A530DA6139C30F"
+            {
+            "SourcePath" = "8:..\\Final Project Form\\DatabaseJobs\\CleanBackups.sql"
+            "TargetName" = "8:CleanBackups.sql"
+            "Tag" = "8:"
+            "Folder" = "8:_D792A512EDA84574A1D27FCC85E95504"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_1F715572AEF84E8FA07F89E471BEEC97"
+            {
+            "SourcePath" = "8:..\\Final Project Form\\DatabaseJobs\\BackupPlan.sql"
+            "TargetName" = "8:BackupPlan.sql"
+            "Tag" = "8:"
+            "Folder" = "8:_D792A512EDA84574A1D27FCC85E95504"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_3147DA37E7C0B2CACFE1E43532BF1071"
             {
             "AssemblyRegister" = "3:1"
@@ -159,6 +267,26 @@
             "Register" = "3:1"
             "Exclude" = "11:FALSE"
             "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_673C330BBE0142C18603391E0FA338D8"
+            {
+            "SourcePath" = "8:..\\Final Project Form\\DatabaseJobs\\EmailOverDueItems.sql"
+            "TargetName" = "8:EmailOverDueItems.sql"
+            "Tag" = "8:"
+            "Folder" = "8:_D792A512EDA84574A1D27FCC85E95504"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_9F7E247D1E4B06C70FEDF2F322027057"
@@ -192,6 +320,46 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_AC09E3F6728548A5AB05241AC7D168FF"
+            {
+            "SourcePath" = "8:..\\Final Project Form\\DatabaseJobs\\GDPR Remove Accounts.sql"
+            "TargetName" = "8:GDPR Remove Accounts.sql"
+            "Tag" = "8:"
+            "Folder" = "8:_D792A512EDA84574A1D27FCC85E95504"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_C84B3BA3D7954A5F980BE0AE7FBA2B26"
+            {
+            "SourcePath" = "8:..\\Final Project Form\\DatabaseJobs\\EmailLeavers.sql"
+            "TargetName" = "8:EmailLeavers.sql"
+            "Tag" = "8:"
+            "Folder" = "8:_D792A512EDA84574A1D27FCC85E95504"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_D4A9F42EBF2414D887B234FCB3138F05"
             {
             "AssemblyRegister" = "3:1"
@@ -221,6 +389,26 @@
             "Register" = "3:1"
             "Exclude" = "11:FALSE"
             "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_FD1AB5FA838248D38C0C6DD34E645F8A"
+            {
+            "SourcePath" = "8:D:\\Downloads\\icon\\add-to-cart\\notebook.ico"
+            "TargetName" = "8:notebook.ico"
+            "Tag" = "8:"
+            "Folder" = "8:_EEA380FA35D04A6A8394055D2D8DB025"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
         }
@@ -253,7 +441,7 @@
             }
             "{3C67513D-01DD-4637-8A68-80971EB9504F}:_94F8312437A74878BBBEB3F6ACBF0B84"
             {
-            "DefaultLocation" = "8:[ProgramFilesFolder][Manufacturer]\\[ProductName]"
+            "DefaultLocation" = "8:[ProgramFilesFolder]\\[ProductName]"
             "Name" = "8:#1925"
             "AlwaysCreate" = "11:FALSE"
             "Condition" = "8:"
@@ -270,6 +458,30 @@
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Property" = "8:DesktopFolder"
+                "Folders"
+                {
+                }
+            }
+            "{994432C3-9487-495D-8656-3E829A8DBDDE}:_D792A512EDA84574A1D27FCC85E95504"
+            {
+            "DefaultLocation" = "8:[TARGETDIR]\\databaseJobs"
+            "Name" = "8:databaseJobs"
+            "AlwaysCreate" = "11:FALSE"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Property" = "8:NEWPROPERTY2"
+                "Folders"
+                {
+                }
+            }
+            "{994432C3-9487-495D-8656-3E829A8DBDDE}:_EEA380FA35D04A6A8394055D2D8DB025"
+            {
+            "DefaultLocation" = "8:[TARGETDIR]\\images"
+            "Name" = "8:images"
+            "AlwaysCreate" = "11:FALSE"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Property" = "8:NEWPROPERTY1"
                 "Folders"
                 {
                 }
@@ -291,7 +503,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:InventorySystem"
         "ProductCode" = "8:{6252332D-B01A-4861-A346-85794D4C6882}"
-        "PackageCode" = "8:{1A5D9CA9-FCC0-487E-BC4E-5A4D2C8210BF}"
+        "PackageCode" = "8:{6BE70844-1FF5-48AC-97F5-B223BE97B735}"
         "UpgradeCode" = "8:{13458722-9013-4A02-9451-5AD9FFEC2436}"
         "AspNetVersion" = "8:2.0.50727.0"
         "RestartWWWService" = "11:FALSE"
@@ -413,7 +625,7 @@
         {
             "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_67FB1356549947CA83F1C072E84C6567"
             {
-            "Name" = "8:Final Project Form (Active)"
+            "Name" = "8:InventorySystem"
             "Arguments" = "8:"
             "Description" = "8:"
             "ShowCmd" = "3:1"
@@ -422,12 +634,12 @@
             "Target" = "8:_2FD56F20650741A3A3F1308F62AF5679"
             "Folder" = "8:_C9AE3477F274432EB95DE37699A710BE"
             "WorkingFolder" = "8:_94F8312437A74878BBBEB3F6ACBF0B84"
-            "Icon" = "8:"
+            "Icon" = "8:_FD1AB5FA838248D38C0C6DD34E645F8A"
             "Feature" = "8:"
             }
             "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_BCAE460B73254FD9BDC05076F2F5B764"
             {
-            "Name" = "8:Final Project Form (Active)"
+            "Name" = "8:InventorySystem"
             "Arguments" = "8:"
             "Description" = "8:"
             "ShowCmd" = "3:1"
@@ -436,7 +648,7 @@
             "Target" = "8:_2FD56F20650741A3A3F1308F62AF5679"
             "Folder" = "8:_217AB449AFDA4B00B47D97965CFEDBBA"
             "WorkingFolder" = "8:_94F8312437A74878BBBEB3F6ACBF0B84"
-            "Icon" = "8:"
+            "Icon" = "8:_FD1AB5FA838248D38C0C6DD34E645F8A"
             "Feature" = "8:"
             }
         }

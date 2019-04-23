@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(OverdueItems));
 			this.btnBack = new System.Windows.Forms.Button();
 			this.overdueItemsGridView = new System.Windows.Forms.DataGridView();
 			this.label1 = new System.Windows.Forms.Label();
@@ -76,7 +77,11 @@
 			this.Controls.Add(this.overdueItemsGridView);
 			this.Controls.Add(this.btnBack);
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+			this.MaximizeBox = false;
+			this.MinimizeBox = false;
 			this.Name = "OverdueItems";
+			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "OverdueItems";
 			this.Load += new System.EventHandler(this.OverdueItems_Load);
 			((System.ComponentModel.ISupportInitialize)(this.overdueItemsGridView)).EndInit();

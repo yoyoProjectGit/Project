@@ -91,9 +91,9 @@ namespace Final_Project_Form
 			{
 				MessageBox.Show("Please enter a username.");
 			}
-			else if (txtPassword.Text == "")
+			else if (txtPassword.Text == "" || txtPassword.TextLength < 6)
 			{
-				MessageBox.Show("Please enter a password.");
+				MessageBox.Show("Please enter a password longer than 6 characters.");
 			}
 			else
 			{

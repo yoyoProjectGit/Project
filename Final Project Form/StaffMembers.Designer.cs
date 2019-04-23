@@ -28,8 +28,10 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
+			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StaffMembers));
 			this.tabControl1 = new System.Windows.Forms.TabControl();
 			this.tabPage1 = new System.Windows.Forms.TabPage();
+			this.btnClose2 = new System.Windows.Forms.Button();
 			this.label1 = new System.Windows.Forms.Label();
 			this.staffMemberGridView = new System.Windows.Forms.DataGridView();
 			this.tabPage2 = new System.Windows.Forms.TabPage();
@@ -54,7 +56,6 @@
 			this.txtShuId = new System.Windows.Forms.TextBox();
 			this.btnDelete = new System.Windows.Forms.Button();
 			this.label9 = new System.Windows.Forms.Label();
-			this.btnClose2 = new System.Windows.Forms.Button();
 			this.tabControl1.SuspendLayout();
 			this.tabPage1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.staffMemberGridView)).BeginInit();
@@ -83,6 +84,16 @@
 			this.tabPage1.TabIndex = 0;
 			this.tabPage1.Text = "Staff Members";
 			this.tabPage1.UseVisualStyleBackColor = true;
+			// 
+			// btnClose2
+			// 
+			this.btnClose2.Location = new System.Drawing.Point(669, 16);
+			this.btnClose2.Name = "btnClose2";
+			this.btnClose2.Size = new System.Drawing.Size(90, 36);
+			this.btnClose2.TabIndex = 52;
+			this.btnClose2.Text = "Close";
+			this.btnClose2.UseVisualStyleBackColor = true;
+			this.btnClose2.Click += new System.EventHandler(this.btnClose2_Click);
 			// 
 			// label1
 			// 
@@ -341,23 +352,18 @@
 			this.label9.TabIndex = 37;
 			this.label9.Text = "Personal Info";
 			// 
-			// btnClose2
-			// 
-			this.btnClose2.Location = new System.Drawing.Point(669, 16);
-			this.btnClose2.Name = "btnClose2";
-			this.btnClose2.Size = new System.Drawing.Size(90, 36);
-			this.btnClose2.TabIndex = 52;
-			this.btnClose2.Text = "Close";
-			this.btnClose2.UseVisualStyleBackColor = true;
-			this.btnClose2.Click += new System.EventHandler(this.btnClose2_Click);
-			// 
 			// StaffMembers
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(800, 450);
 			this.Controls.Add(this.tabControl1);
+			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+			this.MaximizeBox = false;
+			this.MinimizeBox = false;
 			this.Name = "StaffMembers";
+			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "StaffMembers";
 			this.Load += new System.EventHandler(this.StaffMembers_Load);
 			this.tabControl1.ResumeLayout(false);

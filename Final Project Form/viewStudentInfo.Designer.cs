@@ -31,6 +31,7 @@
 			this.components = new System.ComponentModel.Container();
 			System.Windows.Forms.Label label9;
 			System.Windows.Forms.Label label10;
+			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(viewStudentInfo));
 			this.tabControl1 = new System.Windows.Forms.TabControl();
 			this.tabPage1 = new System.Windows.Forms.TabPage();
 			this.dropUserType = new System.Windows.Forms.ComboBox();
@@ -657,7 +658,12 @@
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(773, 450);
 			this.Controls.Add(this.tabControl1);
+			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+			this.MaximizeBox = false;
+			this.MinimizeBox = false;
 			this.Name = "viewStudentInfo";
+			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "viewStudentInfo";
 			this.Load += new System.EventHandler(this.viewStudentInfo_Load);
 			this.tabControl1.ResumeLayout(false);

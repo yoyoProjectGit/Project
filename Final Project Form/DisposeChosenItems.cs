@@ -52,13 +52,15 @@ namespace Final_Project_Form
             }
             else if (Convert.ToInt32(txtQuantity.Text).Equals(Total))
             {
-                RemoveFromResources();
+				MessageBox.Show("Removed from resource");
+				RemoveFromResources();
                 AddToDisposedResources();
                 AutoClosingMessageBox.Show("The item: " + txtResourceName.Text + " x" + txtQuantity.Text + " Has been successfully disposed", "Dispose Item ", 5000);
                 this.Close();
             }
             else if(Convert.ToInt32(txtQuantity.Text) < Total)
             {
+				MessageBox.Show("Removed from quantity");
                 RemoveFromResourceQuantity();
                 AddToDisposedResources();
                 AutoClosingMessageBox.Show("The item: " + txtResourceName.Text + " x" + txtQuantity.Text + " Has been successfully disposed", "Dispose Item ", 5000);

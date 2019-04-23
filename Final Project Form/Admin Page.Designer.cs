@@ -28,6 +28,7 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
+			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Admin_Page));
 			this.btnStaffAccounts = new System.Windows.Forms.Button();
 			this.btnAdminAccount = new System.Windows.Forms.Button();
 			this.btnStaffMembers = new System.Windows.Forms.Button();
@@ -47,7 +48,7 @@
 			// 
 			// btnAdminAccount
 			// 
-			this.btnAdminAccount.Location = new System.Drawing.Point(121, 12);
+			this.btnAdminAccount.Location = new System.Drawing.Point(124, 12);
 			this.btnAdminAccount.Name = "btnAdminAccount";
 			this.btnAdminAccount.Size = new System.Drawing.Size(103, 61);
 			this.btnAdminAccount.TabIndex = 1;
@@ -67,7 +68,7 @@
 			// 
 			// btnClose
 			// 
-			this.btnClose.Location = new System.Drawing.Point(60, 155);
+			this.btnClose.Location = new System.Drawing.Point(77, 152);
 			this.btnClose.Name = "btnClose";
 			this.btnClose.Size = new System.Drawing.Size(83, 51);
 			this.btnClose.TabIndex = 3;
@@ -77,7 +78,7 @@
 			// 
 			// btnAddStaffAccount
 			// 
-			this.btnAddStaffAccount.Location = new System.Drawing.Point(121, 79);
+			this.btnAddStaffAccount.Location = new System.Drawing.Point(124, 79);
 			this.btnAddStaffAccount.Name = "btnAddStaffAccount";
 			this.btnAddStaffAccount.Size = new System.Drawing.Size(103, 61);
 			this.btnAddStaffAccount.TabIndex = 4;
@@ -89,13 +90,18 @@
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(233, 218);
+			this.ClientSize = new System.Drawing.Size(237, 218);
 			this.Controls.Add(this.btnAddStaffAccount);
 			this.Controls.Add(this.btnClose);
 			this.Controls.Add(this.btnStaffMembers);
 			this.Controls.Add(this.btnAdminAccount);
 			this.Controls.Add(this.btnStaffAccounts);
+			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+			this.MaximizeBox = false;
+			this.MinimizeBox = false;
 			this.Name = "Admin_Page";
+			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "Admin_Page";
 			this.ResumeLayout(false);
 

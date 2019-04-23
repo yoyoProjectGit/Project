@@ -330,5 +330,10 @@ namespace Final_Project_Form
 				login.Show();
 			}
 		}
+
+		private void mainMenu_FormClosing(object sender, FormClosingEventArgs e)
+		{
+			System.Windows.Forms.Application.Exit();
+		}
 	}
 }

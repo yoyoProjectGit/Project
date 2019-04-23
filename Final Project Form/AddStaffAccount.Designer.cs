@@ -28,6 +28,7 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
+			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddStaffAccount));
 			this.label1 = new System.Windows.Forms.Label();
 			this.departmentsList = new System.Windows.Forms.ComboBox();
 			this.label7 = new System.Windows.Forms.Label();
@@ -152,7 +153,12 @@
 			this.Controls.Add(this.label9);
 			this.Controls.Add(this.txtPassword);
 			this.Controls.Add(this.label1);
+			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+			this.MaximizeBox = false;
+			this.MinimizeBox = false;
 			this.Name = "AddStaffAccount";
+			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "AddStaffAccount";
 			this.Load += new System.EventHandler(this.AddStaffAccount_Load);
 			this.ResumeLayout(false);

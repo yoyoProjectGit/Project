@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(mainMenu));
 			this.btnAddUser = new System.Windows.Forms.Button();
 			this.btnSearchPerson = new System.Windows.Forms.Button();
 			this.btnViewInventory = new System.Windows.Forms.Button();
@@ -51,91 +52,109 @@
 			// 
 			// btnAddUser
 			// 
-			this.btnAddUser.Location = new System.Drawing.Point(10, 98);
+			this.btnAddUser.Image = ((System.Drawing.Image)(resources.GetObject("btnAddUser.Image")));
+			this.btnAddUser.Location = new System.Drawing.Point(15, 86);
 			this.btnAddUser.Name = "btnAddUser";
-			this.btnAddUser.Size = new System.Drawing.Size(118, 95);
+			this.btnAddUser.Size = new System.Drawing.Size(110, 49);
 			this.btnAddUser.TabIndex = 0;
 			this.btnAddUser.Text = "Add Borrower";
+			this.btnAddUser.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
 			this.btnAddUser.UseVisualStyleBackColor = true;
 			this.btnAddUser.Click += new System.EventHandler(this.btnAddUser_Click);
 			// 
 			// btnSearchPerson
 			// 
-			this.btnSearchPerson.Location = new System.Drawing.Point(10, 401);
+			this.btnSearchPerson.Image = ((System.Drawing.Image)(resources.GetObject("btnSearchPerson.Image")));
+			this.btnSearchPerson.Location = new System.Drawing.Point(15, 380);
 			this.btnSearchPerson.Name = "btnSearchPerson";
-			this.btnSearchPerson.Size = new System.Drawing.Size(118, 95);
+			this.btnSearchPerson.Size = new System.Drawing.Size(110, 49);
 			this.btnSearchPerson.TabIndex = 1;
 			this.btnSearchPerson.Text = "Find Borrower";
+			this.btnSearchPerson.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
 			this.btnSearchPerson.UseVisualStyleBackColor = true;
 			this.btnSearchPerson.Click += new System.EventHandler(this.btnSearchPerson_Click);
 			// 
 			// btnViewInventory
 			// 
-			this.btnViewInventory.Location = new System.Drawing.Point(143, 300);
+			this.btnViewInventory.Image = ((System.Drawing.Image)(resources.GetObject("btnViewInventory.Image")));
+			this.btnViewInventory.Location = new System.Drawing.Point(148, 282);
 			this.btnViewInventory.Name = "btnViewInventory";
-			this.btnViewInventory.Size = new System.Drawing.Size(118, 95);
+			this.btnViewInventory.Size = new System.Drawing.Size(110, 49);
 			this.btnViewInventory.TabIndex = 2;
 			this.btnViewInventory.Text = "View Inventory";
+			this.btnViewInventory.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
 			this.btnViewInventory.UseVisualStyleBackColor = true;
 			this.btnViewInventory.Click += new System.EventHandler(this.btnViewInventory_Click);
 			// 
 			// btnAddResource
 			// 
-			this.btnAddResource.Location = new System.Drawing.Point(143, 98);
+			this.btnAddResource.Image = ((System.Drawing.Image)(resources.GetObject("btnAddResource.Image")));
+			this.btnAddResource.Location = new System.Drawing.Point(148, 86);
 			this.btnAddResource.Name = "btnAddResource";
-			this.btnAddResource.Size = new System.Drawing.Size(118, 95);
+			this.btnAddResource.Size = new System.Drawing.Size(110, 49);
 			this.btnAddResource.TabIndex = 4;
-			this.btnAddResource.Text = "Add New Resource";
+			this.btnAddResource.Text = "Add Resource";
+			this.btnAddResource.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
 			this.btnAddResource.UseVisualStyleBackColor = true;
 			this.btnAddResource.Click += new System.EventHandler(this.btnAddResource_Click);
 			// 
 			// btnOverdueItems
 			// 
-			this.btnOverdueItems.Location = new System.Drawing.Point(143, 502);
+			this.btnOverdueItems.Image = ((System.Drawing.Image)(resources.GetObject("btnOverdueItems.Image")));
+			this.btnOverdueItems.Location = new System.Drawing.Point(148, 478);
 			this.btnOverdueItems.Name = "btnOverdueItems";
-			this.btnOverdueItems.Size = new System.Drawing.Size(118, 95);
+			this.btnOverdueItems.Size = new System.Drawing.Size(110, 49);
 			this.btnOverdueItems.TabIndex = 5;
 			this.btnOverdueItems.Text = "View Overdue Items";
+			this.btnOverdueItems.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
 			this.btnOverdueItems.UseVisualStyleBackColor = true;
 			this.btnOverdueItems.Click += new System.EventHandler(this.btnOverdueItems_Click);
 			// 
 			// btnEmails
 			// 
-			this.btnEmails.Location = new System.Drawing.Point(143, 401);
+			this.btnEmails.Image = ((System.Drawing.Image)(resources.GetObject("btnEmails.Image")));
+			this.btnEmails.Location = new System.Drawing.Point(148, 380);
 			this.btnEmails.Name = "btnEmails";
-			this.btnEmails.Size = new System.Drawing.Size(118, 95);
+			this.btnEmails.Size = new System.Drawing.Size(110, 49);
 			this.btnEmails.TabIndex = 6;
 			this.btnEmails.Text = "Email Handler";
+			this.btnEmails.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
 			this.btnEmails.UseVisualStyleBackColor = true;
 			this.btnEmails.Click += new System.EventHandler(this.btnEmails_Click);
 			// 
 			// btnItemsOnLoan
 			// 
-			this.btnItemsOnLoan.Location = new System.Drawing.Point(10, 502);
+			this.btnItemsOnLoan.Image = ((System.Drawing.Image)(resources.GetObject("btnItemsOnLoan.Image")));
+			this.btnItemsOnLoan.Location = new System.Drawing.Point(15, 478);
 			this.btnItemsOnLoan.Name = "btnItemsOnLoan";
-			this.btnItemsOnLoan.Size = new System.Drawing.Size(118, 95);
+			this.btnItemsOnLoan.Size = new System.Drawing.Size(110, 49);
 			this.btnItemsOnLoan.TabIndex = 7;
 			this.btnItemsOnLoan.Text = "View Items On Loan";
+			this.btnItemsOnLoan.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
 			this.btnItemsOnLoan.UseVisualStyleBackColor = true;
 			this.btnItemsOnLoan.Click += new System.EventHandler(this.btnItemsOnLoan_Click);
 			// 
 			// btnLogOut
 			// 
-			this.btnLogOut.Location = new System.Drawing.Point(143, 756);
+			this.btnLogOut.Image = ((System.Drawing.Image)(resources.GetObject("btnLogOut.Image")));
+			this.btnLogOut.Location = new System.Drawing.Point(148, 747);
 			this.btnLogOut.Name = "btnLogOut";
-			this.btnLogOut.Size = new System.Drawing.Size(118, 46);
+			this.btnLogOut.Size = new System.Drawing.Size(110, 49);
 			this.btnLogOut.TabIndex = 8;
 			this.btnLogOut.Text = "Log Out";
+			this.btnLogOut.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
 			this.btnLogOut.UseVisualStyleBackColor = true;
 			this.btnLogOut.Click += new System.EventHandler(this.btnLogOut_Click);
 			// 
 			// btnLoanItem
 			// 
-			this.btnLoanItem.Location = new System.Drawing.Point(10, 199);
+			this.btnLoanItem.Image = ((System.Drawing.Image)(resources.GetObject("btnLoanItem.Image")));
+			this.btnLoanItem.Location = new System.Drawing.Point(15, 184);
 			this.btnLoanItem.Name = "btnLoanItem";
-			this.btnLoanItem.Size = new System.Drawing.Size(118, 95);
+			this.btnLoanItem.Size = new System.Drawing.Size(110, 49);
 			this.btnLoanItem.TabIndex = 9;
 			this.btnLoanItem.Text = "Loan Item";
+			this.btnLoanItem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
 			this.btnLoanItem.UseVisualStyleBackColor = true;
 			this.btnLoanItem.Click += new System.EventHandler(this.btnLoanItem_Click);
 			// 
@@ -160,41 +179,49 @@
 			// 
 			// btnReturnItem
 			// 
-			this.btnReturnItem.Location = new System.Drawing.Point(143, 199);
+			this.btnReturnItem.Image = ((System.Drawing.Image)(resources.GetObject("btnReturnItem.Image")));
+			this.btnReturnItem.Location = new System.Drawing.Point(148, 184);
 			this.btnReturnItem.Name = "btnReturnItem";
-			this.btnReturnItem.Size = new System.Drawing.Size(118, 95);
+			this.btnReturnItem.Size = new System.Drawing.Size(110, 49);
 			this.btnReturnItem.TabIndex = 12;
 			this.btnReturnItem.Text = "Return Item";
+			this.btnReturnItem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
 			this.btnReturnItem.UseVisualStyleBackColor = true;
 			this.btnReturnItem.Click += new System.EventHandler(this.btnReturnItem_Click);
 			// 
 			// btnDisposeItem
 			// 
-			this.btnDisposeItem.Location = new System.Drawing.Point(12, 707);
+			this.btnDisposeItem.Image = ((System.Drawing.Image)(resources.GetObject("btnDisposeItem.Image")));
+			this.btnDisposeItem.Location = new System.Drawing.Point(17, 674);
 			this.btnDisposeItem.Name = "btnDisposeItem";
-			this.btnDisposeItem.Size = new System.Drawing.Size(118, 95);
+			this.btnDisposeItem.Size = new System.Drawing.Size(110, 49);
 			this.btnDisposeItem.TabIndex = 13;
 			this.btnDisposeItem.Text = "Dispose Of Item";
+			this.btnDisposeItem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
 			this.btnDisposeItem.UseVisualStyleBackColor = true;
 			this.btnDisposeItem.Click += new System.EventHandler(this.btnDisposeItem_Click);
 			// 
 			// btnViewDisposedItems
 			// 
-			this.btnViewDisposedItems.Location = new System.Drawing.Point(143, 606);
+			this.btnViewDisposedItems.Image = ((System.Drawing.Image)(resources.GetObject("btnViewDisposedItems.Image")));
+			this.btnViewDisposedItems.Location = new System.Drawing.Point(148, 576);
 			this.btnViewDisposedItems.Name = "btnViewDisposedItems";
-			this.btnViewDisposedItems.Size = new System.Drawing.Size(118, 95);
+			this.btnViewDisposedItems.Size = new System.Drawing.Size(110, 49);
 			this.btnViewDisposedItems.TabIndex = 14;
 			this.btnViewDisposedItems.Text = "View Disposed Items";
+			this.btnViewDisposedItems.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
 			this.btnViewDisposedItems.UseVisualStyleBackColor = true;
 			this.btnViewDisposedItems.Click += new System.EventHandler(this.btnViewDisposedItems_Click);
 			// 
 			// btnExtendLoan
 			// 
-			this.btnExtendLoan.Location = new System.Drawing.Point(10, 300);
+			this.btnExtendLoan.Image = ((System.Drawing.Image)(resources.GetObject("btnExtendLoan.Image")));
+			this.btnExtendLoan.Location = new System.Drawing.Point(15, 282);
 			this.btnExtendLoan.Name = "btnExtendLoan";
-			this.btnExtendLoan.Size = new System.Drawing.Size(118, 95);
+			this.btnExtendLoan.Size = new System.Drawing.Size(110, 49);
 			this.btnExtendLoan.TabIndex = 15;
 			this.btnExtendLoan.Text = "Extend Loan";
+			this.btnExtendLoan.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
 			this.btnExtendLoan.UseVisualStyleBackColor = true;
 			this.btnExtendLoan.Click += new System.EventHandler(this.btnExtendLoan_Click);
 			// 
@@ -220,21 +247,25 @@
 			// 
 			// btnLoanHistory
 			// 
-			this.btnLoanHistory.Location = new System.Drawing.Point(12, 606);
+			this.btnLoanHistory.Image = ((System.Drawing.Image)(resources.GetObject("btnLoanHistory.Image")));
+			this.btnLoanHistory.Location = new System.Drawing.Point(17, 576);
 			this.btnLoanHistory.Name = "btnLoanHistory";
-			this.btnLoanHistory.Size = new System.Drawing.Size(118, 95);
+			this.btnLoanHistory.Size = new System.Drawing.Size(110, 49);
 			this.btnLoanHistory.TabIndex = 18;
 			this.btnLoanHistory.Text = "View Loan History";
+			this.btnLoanHistory.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
 			this.btnLoanHistory.UseVisualStyleBackColor = true;
 			this.btnLoanHistory.Click += new System.EventHandler(this.button1_Click);
 			// 
 			// btnAdmin
 			// 
-			this.btnAdmin.Location = new System.Drawing.Point(143, 707);
+			this.btnAdmin.Image = ((System.Drawing.Image)(resources.GetObject("btnAdmin.Image")));
+			this.btnAdmin.Location = new System.Drawing.Point(148, 674);
 			this.btnAdmin.Name = "btnAdmin";
-			this.btnAdmin.Size = new System.Drawing.Size(118, 46);
+			this.btnAdmin.Size = new System.Drawing.Size(110, 49);
 			this.btnAdmin.TabIndex = 19;
 			this.btnAdmin.Text = "Admin";
+			this.btnAdmin.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
 			this.btnAdmin.UseVisualStyleBackColor = true;
 			this.btnAdmin.Click += new System.EventHandler(this.btnAdmin_Click);
 			// 
@@ -263,8 +294,12 @@
 			this.Controls.Add(this.btnSearchPerson);
 			this.Controls.Add(this.btnAddUser);
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+			this.MaximizeBox = false;
 			this.Name = "mainMenu";
+			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "Menu";
+			this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.mainMenu_FormClosing);
 			this.Load += new System.EventHandler(this.mainMenu_Load);
 			this.ResumeLayout(false);
 			this.PerformLayout();

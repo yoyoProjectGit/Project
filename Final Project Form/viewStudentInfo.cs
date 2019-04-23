@@ -81,6 +81,12 @@ namespace Final_Project_Form
 			{
 				MessageBox.Show("Please enter how many days you want to extend this item by.");
 			}
+			if (txtResourceName.Text == "")
+			{
+				MessageBox.Show("You have not selected an item to extend!");
+				tabControl1.SelectedTab = tabPage2;
+			}
+
 			else
 			{
 				int loanPeriod = Convert.ToInt32(this.txtTotalDays.Text);

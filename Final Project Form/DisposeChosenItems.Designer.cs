@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DisposeChosenItems));
 			this.btnBack = new System.Windows.Forms.Button();
 			this.txtResourceType = new System.Windows.Forms.TextBox();
 			this.txtQuantity = new System.Windows.Forms.TextBox();
@@ -221,7 +222,12 @@
 			this.Controls.Add(this.txtQuantity);
 			this.Controls.Add(this.txtResourceType);
 			this.Controls.Add(this.btnBack);
+			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+			this.MaximizeBox = false;
+			this.MinimizeBox = false;
 			this.Name = "DisposeChosenItems";
+			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "DisposeChosenItems";
 			this.ResumeLayout(false);
 			this.PerformLayout();

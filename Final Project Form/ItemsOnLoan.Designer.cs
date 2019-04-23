@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ItemsOnLoan));
 			this.btnBack = new System.Windows.Forms.Button();
 			this.btnRefresh = new System.Windows.Forms.Button();
 			this.btnSearchBarcode = new System.Windows.Forms.Button();
@@ -250,7 +251,11 @@
 			this.Controls.Add(this.loanedItemsGridView);
 			this.Controls.Add(this.btnBack);
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+			this.MaximizeBox = false;
+			this.MinimizeBox = false;
 			this.Name = "ItemsOnLoan";
+			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "ItemsOnLoan";
 			this.Load += new System.EventHandler(this.ItemsOnLoan_Load);
 			((System.ComponentModel.ISupportInitialize)(this.loanedItemsGridView)).EndInit();

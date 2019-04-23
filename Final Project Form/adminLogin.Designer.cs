@@ -28,6 +28,7 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
+			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(adminLogin));
 			this.btnQuit = new System.Windows.Forms.Button();
 			this.btnClear = new System.Windows.Forms.Button();
 			this.label1 = new System.Windows.Forms.Label();
@@ -49,7 +50,7 @@
 			// btnClear
 			// 
 			this.btnClear.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.btnClear.Location = new System.Drawing.Point(147, 182);
+			this.btnClear.Location = new System.Drawing.Point(147, 197);
 			this.btnClear.Name = "btnClear";
 			this.btnClear.Size = new System.Drawing.Size(155, 50);
 			this.btnClear.TabIndex = 10;
@@ -87,7 +88,8 @@
 			// btnLogin
 			// 
 			this.btnLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.btnLogin.Location = new System.Drawing.Point(147, 126);
+			this.btnLogin.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+			this.btnLogin.Location = new System.Drawing.Point(147, 141);
 			this.btnLogin.Name = "btnLogin";
 			this.btnLogin.Size = new System.Drawing.Size(155, 50);
 			this.btnLogin.TabIndex = 6;
@@ -106,7 +108,12 @@
 			this.Controls.Add(this.txtPass);
 			this.Controls.Add(this.txtUser);
 			this.Controls.Add(this.btnLogin);
+			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+			this.MaximizeBox = false;
+			this.MinimizeBox = false;
 			this.Name = "adminLogin";
+			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "adminLogin";
 			this.Load += new System.EventHandler(this.adminLogin_Load);
 			this.ResumeLayout(false);

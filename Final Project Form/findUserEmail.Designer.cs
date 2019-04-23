@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(findUserEmail));
 			this.btnBack = new System.Windows.Forms.Button();
 			this.studentGridView = new System.Windows.Forms.DataGridView();
 			this.btnSearchSurname = new System.Windows.Forms.Button();
@@ -145,7 +146,12 @@
 			this.Controls.Add(this.label3);
 			this.Controls.Add(this.label2);
 			this.Controls.Add(this.label1);
+			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+			this.MaximizeBox = false;
+			this.MinimizeBox = false;
 			this.Name = "findUserEmail";
+			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "findUserEmail";
 			this.Load += new System.EventHandler(this.findUserEmail_Load);
 			((System.ComponentModel.ISupportInitialize)(this.studentGridView)).EndInit();
