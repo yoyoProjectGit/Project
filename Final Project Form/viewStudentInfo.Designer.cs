@@ -82,6 +82,7 @@
 			this.label24 = new System.Windows.Forms.Label();
 			this.btnBackToLoan = new System.Windows.Forms.Button();
 			this.imageList1 = new System.Windows.Forms.ImageList(this.components);
+			this.btnDelete = new System.Windows.Forms.Button();
 			label9 = new System.Windows.Forms.Label();
 			label10 = new System.Windows.Forms.Label();
 			this.tabControl1.SuspendLayout();
@@ -128,6 +129,7 @@
 			// tabPage1
 			// 
 			this.tabPage1.BackColor = System.Drawing.Color.Transparent;
+			this.tabPage1.Controls.Add(this.btnDelete);
 			this.tabPage1.Controls.Add(this.dropUserType);
 			this.tabPage1.Controls.Add(this.label11);
 			this.tabPage1.Controls.Add(this.label12);
@@ -355,7 +357,7 @@
 			// btnEdit
 			// 
 			this.btnEdit.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.btnEdit.Location = new System.Drawing.Point(489, 27);
+			this.btnEdit.Location = new System.Drawing.Point(453, 27);
 			this.btnEdit.Name = "btnEdit";
 			this.btnEdit.Size = new System.Drawing.Size(91, 33);
 			this.btnEdit.TabIndex = 1;
@@ -652,6 +654,17 @@
 			this.imageList1.ImageSize = new System.Drawing.Size(16, 16);
 			this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
 			// 
+			// btnDelete
+			// 
+			this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.btnDelete.Location = new System.Drawing.Point(550, 27);
+			this.btnDelete.Name = "btnDelete";
+			this.btnDelete.Size = new System.Drawing.Size(91, 33);
+			this.btnDelete.TabIndex = 37;
+			this.btnDelete.Text = "Delete";
+			this.btnDelete.UseVisualStyleBackColor = true;
+			this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+			// 
 			// viewStudentInfo
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -733,5 +746,6 @@
 		private System.Windows.Forms.Label label24;
 		private System.Windows.Forms.Label label14;
 		private System.Windows.Forms.ImageList imageList1;
+		private System.Windows.Forms.Button btnDelete;
 	}
 }

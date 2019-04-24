@@ -50,7 +50,7 @@
 			// btnClear
 			// 
 			this.btnClear.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.btnClear.Location = new System.Drawing.Point(147, 197);
+			this.btnClear.Location = new System.Drawing.Point(159, 196);
 			this.btnClear.Name = "btnClear";
 			this.btnClear.Size = new System.Drawing.Size(155, 50);
 			this.btnClear.TabIndex = 10;
@@ -62,7 +62,7 @@
 			// 
 			this.label1.AutoSize = true;
 			this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label1.Location = new System.Drawing.Point(174, 9);
+			this.label1.Location = new System.Drawing.Point(192, 9);
 			this.label1.Name = "label1";
 			this.label1.Size = new System.Drawing.Size(89, 31);
 			this.label1.TabIndex = 9;
@@ -71,7 +71,7 @@
 			// txtPass
 			// 
 			this.txtPass.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.txtPass.Location = new System.Drawing.Point(105, 89);
+			this.txtPass.Location = new System.Drawing.Point(119, 93);
 			this.txtPass.Name = "txtPass";
 			this.txtPass.PasswordChar = '*';
 			this.txtPass.Size = new System.Drawing.Size(235, 31);
@@ -80,7 +80,7 @@
 			// txtUser
 			// 
 			this.txtUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.txtUser.Location = new System.Drawing.Point(105, 52);
+			this.txtUser.Location = new System.Drawing.Point(119, 51);
 			this.txtUser.Name = "txtUser";
 			this.txtUser.Size = new System.Drawing.Size(235, 31);
 			this.txtUser.TabIndex = 7;
@@ -89,7 +89,7 @@
 			// 
 			this.btnLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.btnLogin.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-			this.btnLogin.Location = new System.Drawing.Point(147, 141);
+			this.btnLogin.Location = new System.Drawing.Point(159, 135);
 			this.btnLogin.Name = "btnLogin";
 			this.btnLogin.Size = new System.Drawing.Size(155, 50);
 			this.btnLogin.TabIndex = 6;

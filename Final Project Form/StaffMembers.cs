@@ -104,7 +104,7 @@ namespace Final_Project_Form
 				SqlDataReader reader = command.ExecuteReader();
 				if (reader.HasRows)
 				{
-					MessageBox.Show("This user currently has another item on loan.");
+					MessageBox.Show("This user currently has an item on loan.");
 					return;
 				}
 				else

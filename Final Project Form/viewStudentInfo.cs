@@ -41,6 +41,20 @@ namespace Final_Project_Form
 			}
 		}
 
+		private void btnDelete_Click(object sender, EventArgs e)
+		{
+			DialogResult dialogResult = MessageBox.Show("You are about to delete the student " + txtFirstName.Text +
+							".", " Are you sure you want to remove them?", MessageBoxButtons.YesNo);
+			if (dialogResult == DialogResult.Yes)
+			{
+				checkIfUserHasLoans();
+			}
+			else if (dialogResult == DialogResult.No)
+			{
+				return;
+			}
+		}
+
 		DataTable dt2 = new DataTable("User History");
 		string maxprd;
 		int loanID;
@@ -193,6 +207,10 @@ namespace Final_Project_Form
             adapter2.Fill(dt2);
             loanHistory.DataSource = dt2;
             connection.Close();
+			if (this.dropUserType.GetItemText(this.dropUserType.SelectedItem) == "Staff")
+			{
+				btnDelete.Visible = false;
+			}
 		}
         private void btnEdit_Click(object sender, EventArgs e)
         {
@@ -325,6 +343,53 @@ namespace Final_Project_Form
 				addCommand.Parameters.AddWithValue("@UserType", userType);
 				addCommand.ExecuteNonQuery();
 				connection.Close();
+			}
+			catch (Exception ex)
+			{
+				MessageBox.Show(ex.Message);
+			}
+		}
+		private void checkIfUserHasLoans()
+		{
+			try
+			{
+				string connectionString = myGlobals.connString;
+				SqlConnection connection = new SqlConnection(connectionString);
+				connection.Open();
+				SqlCommand command = new SqlCommand("SELECT * FROM Loans WHERE BorrowerID=@BorrowerID", connection);
+				command.Parameters.AddWithValue("@BorrowerID", txtShuId.Text);
+				SqlDataReader reader = command.ExecuteReader();
+				if (reader.HasRows)
+				{
+					MessageBox.Show("This user currently has an item on loan.");
+					return;
+				}
+				else
+				{
+					deleteUser();
+				}
+
+				connection.Close();
+			}
+			catch (Exception ex)
+			{
+				MessageBox.Show(ex.Message);
+			}
+		}
+		private void deleteUser()
+		{
+			try
+			{
+				string connectionString = myGlobals.connString;
+				SqlConnection connection = new SqlConnection(connectionString);
+				connection.Open();
+				string removeQuantityCommand = "DELETE FROM students WHERE ShuId=@ShuId";
+				SqlCommand remCommand = new SqlCommand(removeQuantityCommand, connection);
+				remCommand.Parameters.AddWithValue("@ShuId", txtShuId.Text);
+				remCommand.ExecuteNonQuery();
+				connection.Close();
+				AutoClosingMessageBox.Show("The Student: " + txtFirstName.Text + " Has been successfully removed", "Remove User ", 3000);
+				this.Close();
 			}
 			catch (Exception ex)
 			{
