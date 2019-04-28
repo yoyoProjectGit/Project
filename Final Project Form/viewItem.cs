@@ -155,7 +155,7 @@ namespace Final_Project_Form
 
         } 
         public viewItem(string type, string name, int loanprd, string dept, 
-            long serialNo, string dateAdd, string orderNo, decimal price, string notes, int ID)
+            long serialNo, string dateAdd, string orderNo, decimal price, string notes, int ID, string addedBy)
         {
             InitializeComponent();
             string connectionString = myGlobals.connString;
@@ -175,7 +175,7 @@ namespace Final_Project_Form
             resourceType = type;
             txtResourceName.Text = name;
             resourceName = name;
-            txtAddedBy.Text = currentUser.UserName;
+            txtAddedBy.Text = addedBy;
             departmentsList.SelectedIndex = departmentsList.FindString(dept);
             department = dept;
             txtNotes.Text = notes;

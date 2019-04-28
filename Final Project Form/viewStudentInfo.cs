@@ -63,27 +63,31 @@ namespace Final_Project_Form
 		{
 			if (e.ColumnIndex == 9 || e.ColumnIndex == 0)
 			{
-				DataGridViewRow row = this.LoanedItemsGridView.Rows[e.RowIndex];
-				txtResourceName.Text = row.Cells["ResourceName"].Value.ToString();
-				txtSerialNo.Text = row.Cells["SerialNumber"].Value.ToString();
-				txtDateLoaned.Text = row.Cells["DateLoaned"].Value.ToString();
-				txtDueDate.Text = row.Cells["DueDate"].Value.ToString();
-				txtBorrowerName.Text = row.Cells["BorrowerName"].Value.ToString();
-				txtUserType.Text = row.Cells["UserType"].Value.ToString();
-				loanID = Convert.ToInt32(row.Cells["LoanID"].Value);
-				getMaxLoanPrd();
-				txtTotalDays.Text = maxprd;
-				tabControl1.SelectedTab = tabPage4;
-				resourceID = row.Cells["ResourceID"].Value.ToString();
-				resourceType = row.Cells["ResourceType"].Value.ToString();
-				DateLoaned = row.Cells["DateLoaned"].Value.ToString();
-				LoanDuration = row.Cells["LoanDuration"].Value.ToString();
-				Department = row.Cells["Department"].Value.ToString();
-				BorrowerID = row.Cells["BorrowerID"].Value.ToString();
-				Notes = row.Cells["Notes"].Value.ToString();
-				LoanedBy = row.Cells["LoanedBy"].Value.ToString();
-				quantity = row.Cells["Quantity"].Value.ToString();
-				todaysDate = DateTime.Now;
+				int indexRow = e.RowIndex;
+				if (indexRow >= 0)
+				{
+					DataGridViewRow row = this.LoanedItemsGridView.Rows[e.RowIndex];
+					txtResourceName.Text = row.Cells["ResourceName"].Value.ToString();
+					txtSerialNo.Text = row.Cells["SerialNumber"].Value.ToString();
+					txtDateLoaned.Text = row.Cells["DateLoaned"].Value.ToString();
+					txtDueDate.Text = row.Cells["DueDate"].Value.ToString();
+					txtBorrowerName.Text = row.Cells["BorrowerName"].Value.ToString();
+					txtUserType.Text = row.Cells["UserType"].Value.ToString();
+					loanID = Convert.ToInt32(row.Cells["LoanID"].Value);
+					getMaxLoanPrd();
+					txtTotalDays.Text = maxprd;
+					tabControl1.SelectedTab = tabPage4;
+					resourceID = row.Cells["ResourceID"].Value.ToString();
+					resourceType = row.Cells["ResourceType"].Value.ToString();
+					DateLoaned = row.Cells["DateLoaned"].Value.ToString();
+					LoanDuration = row.Cells["LoanDuration"].Value.ToString();
+					Department = row.Cells["Department"].Value.ToString();
+					BorrowerID = row.Cells["BorrowerID"].Value.ToString();
+					Notes = row.Cells["Notes"].Value.ToString();
+					LoanedBy = row.Cells["LoanedBy"].Value.ToString();
+					quantity = row.Cells["Quantity"].Value.ToString();
+					todaysDate = DateTime.Now;
+				}
 			}
 		}
 

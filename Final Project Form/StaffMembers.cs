@@ -44,17 +44,21 @@ namespace Final_Project_Form
 		{
 			if (e.ColumnIndex == 9 || e.ColumnIndex == 0)
 			{
-				DataGridViewRow row = this.staffMemberGridView.Rows[e.RowIndex];
-				txtUserType.Text = "Staff";
-				txtScanID.Text = row.Cells["ScannableNum"].Value.ToString();
-				txtShuId.Text = row.Cells["ShuId"].Value.ToString();
-				txtFirstName.Text = row.Cells["FirstName"].Value.ToString();
-				txtSurname.Text = row.Cells["Surname"].Value.ToString();
-				txtCourseDept.Text = row.Cells["CourseDept"].Value.ToString();
-				txtEmail.Text = row.Cells["EmailAddress"].Value.ToString();
-				txtDateAdded.Text = row.Cells["DateAdded"].Value.ToString();
-				txtStartDate.Text = row.Cells["StartDate"].Value.ToString();
-				tabControl1.SelectedTab = tabPage2;
+				int indexRow = e.RowIndex;
+				if (indexRow >= 0)
+				{
+					DataGridViewRow row = this.staffMemberGridView.Rows[e.RowIndex];
+					txtUserType.Text = "Staff";
+					txtScanID.Text = row.Cells["ScannableNum"].Value.ToString();
+					txtShuId.Text = row.Cells["ShuId"].Value.ToString();
+					txtFirstName.Text = row.Cells["FirstName"].Value.ToString();
+					txtSurname.Text = row.Cells["Surname"].Value.ToString();
+					txtCourseDept.Text = row.Cells["CourseDept"].Value.ToString();
+					txtEmail.Text = row.Cells["EmailAddress"].Value.ToString();
+					txtDateAdded.Text = row.Cells["DateAdded"].Value.ToString();
+					txtStartDate.Text = row.Cells["StartDate"].Value.ToString();
+					tabControl1.SelectedTab = tabPage2;
+				}
 			}
 		}
 

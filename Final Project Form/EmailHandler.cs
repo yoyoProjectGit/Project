@@ -48,7 +48,14 @@ namespace Final_Project_Form
 
         private void btnSend_Click(object sender, EventArgs e)
         {
-            emailHandler();
+			if (txtBody.Text == "" || txtSubject.Text == "" || txtToWho.Text == "")
+			{
+				MessageBox.Show("Please fill in the missing fields.");
+			}
+			else
+			{
+				emailHandler();
+			}
         }
 
         private void btnFindEmail_Click(object sender, EventArgs e)

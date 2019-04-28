@@ -68,17 +68,21 @@ namespace Final_Project_Form
 		{
 			if (e.ColumnIndex == 4 || e.ColumnIndex == 0)
 			{
-				DataGridViewRow row = this.staffGridView.Rows[e.RowIndex];
-				txtUserName.Text = row.Cells["username"].Value.ToString();
-				txtPassword.Text = row.Cells["password"].Value.ToString();
-				userN = row.Cells["username"].Value.ToString();
-				passW = row.Cells["password"].Value.ToString();
-				txtPassword.UseSystemPasswordChar = true;
-				checkBoxShowPass.Checked = false;
-				departmentsList.SelectedIndex = departmentsList.FindString(row.Cells["department"].Value.ToString());
-				deptM = row.Cells["department"].Value.ToString();
-				userID = row.Cells["uid"].Value.ToString();
-				tabControl1.SelectedTab = tabPage2;
+				int indexRow = e.RowIndex;
+				if (indexRow >= 0)
+				{
+					DataGridViewRow row = this.staffGridView.Rows[e.RowIndex];
+					txtUserName.Text = row.Cells["username"].Value.ToString();
+					txtPassword.Text = row.Cells["password"].Value.ToString();
+					userN = row.Cells["username"].Value.ToString();
+					passW = row.Cells["password"].Value.ToString();
+					txtPassword.UseSystemPasswordChar = true;
+					checkBoxShowPass.Checked = false;
+					departmentsList.SelectedIndex = departmentsList.FindString(row.Cells["department"].Value.ToString());
+					deptM = row.Cells["department"].Value.ToString();
+					userID = row.Cells["uid"].Value.ToString();
+					tabControl1.SelectedTab = tabPage2;
+				}
 			}
 		}
 

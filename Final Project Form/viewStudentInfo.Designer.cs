@@ -34,6 +34,7 @@
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(viewStudentInfo));
 			this.tabControl1 = new System.Windows.Forms.TabControl();
 			this.tabPage1 = new System.Windows.Forms.TabPage();
+			this.btnDelete = new System.Windows.Forms.Button();
 			this.dropUserType = new System.Windows.Forms.ComboBox();
 			this.label11 = new System.Windows.Forms.Label();
 			this.label12 = new System.Windows.Forms.Label();
@@ -82,7 +83,6 @@
 			this.label24 = new System.Windows.Forms.Label();
 			this.btnBackToLoan = new System.Windows.Forms.Button();
 			this.imageList1 = new System.Windows.Forms.ImageList(this.components);
-			this.btnDelete = new System.Windows.Forms.Button();
 			label9 = new System.Windows.Forms.Label();
 			label10 = new System.Windows.Forms.Label();
 			this.tabControl1.SuspendLayout();
@@ -159,6 +159,17 @@
 			this.tabPage1.TabIndex = 0;
 			this.tabPage1.Text = "View Details";
 			this.tabPage1.UseVisualStyleBackColor = true;
+			// 
+			// btnDelete
+			// 
+			this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.btnDelete.Location = new System.Drawing.Point(550, 27);
+			this.btnDelete.Name = "btnDelete";
+			this.btnDelete.Size = new System.Drawing.Size(91, 33);
+			this.btnDelete.TabIndex = 37;
+			this.btnDelete.Text = "Delete";
+			this.btnDelete.UseVisualStyleBackColor = true;
+			this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
 			// 
 			// dropUserType
 			// 
@@ -480,9 +491,9 @@
 			this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.label14.Location = new System.Drawing.Point(432, 243);
 			this.label14.Name = "label14";
-			this.label14.Size = new System.Drawing.Size(315, 24);
+			this.label14.Size = new System.Drawing.Size(295, 24);
 			this.label14.TabIndex = 62;
-			this.label14.Text = "Days are extended from todays date!";
+			this.label14.Text = "Item is extended from todays date!";
 			// 
 			// label13
 			// 
@@ -653,17 +664,6 @@
 			this.imageList1.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit;
 			this.imageList1.ImageSize = new System.Drawing.Size(16, 16);
 			this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
-			// 
-			// btnDelete
-			// 
-			this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.btnDelete.Location = new System.Drawing.Point(550, 27);
-			this.btnDelete.Name = "btnDelete";
-			this.btnDelete.Size = new System.Drawing.Size(91, 33);
-			this.btnDelete.TabIndex = 37;
-			this.btnDelete.Text = "Delete";
-			this.btnDelete.UseVisualStyleBackColor = true;
-			this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
 			// 
 			// viewStudentInfo
 			// 

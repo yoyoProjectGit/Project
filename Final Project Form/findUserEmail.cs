@@ -66,12 +66,16 @@ namespace Final_Project_Form
         {
             if (e.ColumnIndex == 9 || e.ColumnIndex == 0)
             {
-				DataGridViewRow row = this.studentGridView.Rows[e.RowIndex];
-				var student = new currentBorrower();
-				student.EmailAddress = row.Cells["EmailAddress"].Value.ToString();
-				EmailHandler emailhandler = new EmailHandler(student.EmailAddress);
-                emailhandler.Show();
-                this.Close();
+				int indexRow = e.RowIndex;
+				if (indexRow >= 0)
+				{
+					DataGridViewRow row = this.studentGridView.Rows[e.RowIndex];
+					var student = new currentBorrower();
+					student.EmailAddress = row.Cells["EmailAddress"].Value.ToString();
+					EmailHandler emailhandler = new EmailHandler(student.EmailAddress);
+					emailhandler.Show();
+					this.Close();
+				}
             }
         }
 

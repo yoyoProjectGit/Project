@@ -135,6 +135,7 @@
 			// inventoryGridView
 			// 
 			this.inventoryGridView.AllowUserToAddRows = false;
+			this.inventoryGridView.AllowUserToDeleteRows = false;
 			this.inventoryGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
 			this.inventoryGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 			this.inventoryGridView.Location = new System.Drawing.Point(31, 222);

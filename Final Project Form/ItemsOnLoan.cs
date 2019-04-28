@@ -64,10 +64,14 @@ namespace Final_Project_Form
         {
             if (e.ColumnIndex == 0)
             {
-                DataGridViewRow row = this.loanedItemsGridView.Rows[e.RowIndex];
-                int resourceID = Convert.ToInt32(row.Cells["ResourceID"].Value.ToString());
-                viewLoanedItem viewInfo = new viewLoanedItem(resourceID);
-                viewInfo.Show();
+				int indexRow = e.RowIndex;
+				if (indexRow >= 0)
+				{
+					DataGridViewRow row = this.loanedItemsGridView.Rows[e.RowIndex];
+					int resourceID = Convert.ToInt32(row.Cells["ResourceID"].Value.ToString());
+					viewLoanedItem viewInfo = new viewLoanedItem(resourceID);
+					viewInfo.Show();
+				}
             }
         }
 

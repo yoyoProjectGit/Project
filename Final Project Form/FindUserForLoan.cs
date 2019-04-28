@@ -41,17 +41,22 @@ namespace Final_Project_Form
         {
             if (e.ColumnIndex == 9 || e.ColumnIndex == 0)
             {
-                DataGridViewRow row = this.studentGridView.Rows[e.RowIndex];
-                var borrower = new currentBorrower();
-				borrower.ShuId = row.Cells["ShuId"].Value.ToString();
-				borrower.FirstName = row.Cells["FirstName"].Value.ToString();
-				borrower.Surname = row.Cells["Surname"].Value.ToString();
-				borrower.EmailAddress = row.Cells["EmailAddress"].Value.ToString();
-				borrower.ScannableNum = row.Cells["ScannableNum"].Value.ToString();
-				borrower.UserType = row.Cells["UserType"].Value.ToString();
-				LoanUserItem loanItem = new LoanUserItem(borrower.ShuId, borrower.FirstName, borrower.Surname,
-					borrower.EmailAddress, borrower.ScannableNum, borrower.UserType);
-                loanItem.Show();
+				int indexRow = e.RowIndex;
+				if (indexRow >=0)
+				{
+					DataGridViewRow row = this.studentGridView.Rows[e.RowIndex];
+					var borrower = new currentBorrower();
+					borrower.ShuId = row.Cells["ShuId"].Value.ToString();
+					borrower.FirstName = row.Cells["FirstName"].Value.ToString();
+					borrower.Surname = row.Cells["Surname"].Value.ToString();
+					borrower.EmailAddress = row.Cells["EmailAddress"].Value.ToString();
+					borrower.ScannableNum = row.Cells["ScannableNum"].Value.ToString();
+					borrower.UserType = row.Cells["UserType"].Value.ToString();
+					LoanUserItem loanItem = new LoanUserItem(borrower.ShuId, borrower.FirstName, borrower.Surname,
+						borrower.EmailAddress, borrower.ScannableNum, borrower.UserType);
+					loanItem.Show();
+				}
+                
             }
         }
 

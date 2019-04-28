@@ -15,18 +15,6 @@
     {
         "Entry"
         {
-        "MsmKey" = "8:_1EE74A28920E4E3795A530DA6139C30F"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_1F715572AEF84E8FA07F89E471BEEC97"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_2FD56F20650741A3A3F1308F62AF5679"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -198,46 +186,6 @@
         }
         "File"
         {
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_1EE74A28920E4E3795A530DA6139C30F"
-            {
-            "SourcePath" = "8:..\\Final Project Form\\DatabaseJobs\\CleanBackups.sql"
-            "TargetName" = "8:CleanBackups.sql"
-            "Tag" = "8:"
-            "Folder" = "8:_D792A512EDA84574A1D27FCC85E95504"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_1F715572AEF84E8FA07F89E471BEEC97"
-            {
-            "SourcePath" = "8:..\\Final Project Form\\DatabaseJobs\\BackupPlan.sql"
-            "TargetName" = "8:BackupPlan.sql"
-            "Tag" = "8:"
-            "Folder" = "8:_D792A512EDA84574A1D27FCC85E95504"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_3147DA37E7C0B2CACFE1E43532BF1071"
             {
             "AssemblyRegister" = "3:1"
@@ -503,7 +451,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:InventorySystem"
         "ProductCode" = "8:{6252332D-B01A-4861-A346-85794D4C6882}"
-        "PackageCode" = "8:{6BE70844-1FF5-48AC-97F5-B223BE97B735}"
+        "PackageCode" = "8:{7F4A7C0B-F478-44D2-B94C-3DAC64524C66}"
         "UpgradeCode" = "8:{13458722-9013-4A02-9451-5AD9FFEC2436}"
         "AspNetVersion" = "8:2.0.50727.0"
         "RestartWWWService" = "11:FALSE"

@@ -94,41 +94,45 @@ namespace Final_Project_Form
 
 			if (e.ColumnIndex == 0)
 			{
-				DataGridViewRow row = this.loanedItemsGridView.Rows[e.RowIndex];
-				returnDate = DateTime.Now;
-				resourceID = row.Cells["ResourceID"].Value.ToString();
-				LoanID = row.Cells["LoanID"].Value.ToString();
-				resourceType = row.Cells["resourceType"].Value.ToString();
-				resourceName = row.Cells["resourceName"].Value.ToString();
-				LoanedBy = row.Cells["LoanedBy"].Value.ToString();
-				BorrowerID = row.Cells["BorrowerID"].Value.ToString();
-				BorrowerName = row.Cells["BorrowerName"].Value.ToString();
-				BorrowerSurname = row.Cells["BorrowerSurname"].Value.ToString();
-				BorrowerEmail = row.Cells["BorrowerEmail"].Value.ToString();
-				Notes = row.Cells["Notes"].Value.ToString();
-				DateLoaned = row.Cells["DateLoaned"].Value.ToString();
-				LoanDuration = row.Cells["LoanDuration"].Value.ToString();
-				Department = row.Cells["Department"].Value.ToString();
-				quantity = Convert.ToInt32(row.Cells["Quantity"].Value.ToString());
-				scannableNum = row.Cells["ScannableNum"].Value.ToString();
-				userType = row.Cells["UserType"].Value.ToString();
-				DialogResult dialogResult = MessageBox.Show("You are returning a total of: " + quantity + " " + resourceName +
-					"'s Borrowed by: " + BorrowerName + " " + BorrowerID, "Are you sure?", MessageBoxButtons.YesNo);
-				if (dialogResult == DialogResult.Yes)
+				int indexRow = e.RowIndex;
+				if (indexRow >= 0)
 				{
-					try
+					DataGridViewRow row = this.loanedItemsGridView.Rows[e.RowIndex];
+					returnDate = DateTime.Now;
+					resourceID = row.Cells["ResourceID"].Value.ToString();
+					LoanID = row.Cells["LoanID"].Value.ToString();
+					resourceType = row.Cells["resourceType"].Value.ToString();
+					resourceName = row.Cells["resourceName"].Value.ToString();
+					LoanedBy = row.Cells["LoanedBy"].Value.ToString();
+					BorrowerID = row.Cells["BorrowerID"].Value.ToString();
+					BorrowerName = row.Cells["BorrowerName"].Value.ToString();
+					BorrowerSurname = row.Cells["BorrowerSurname"].Value.ToString();
+					BorrowerEmail = row.Cells["BorrowerEmail"].Value.ToString();
+					Notes = row.Cells["Notes"].Value.ToString();
+					DateLoaned = row.Cells["DateLoaned"].Value.ToString();
+					LoanDuration = row.Cells["LoanDuration"].Value.ToString();
+					Department = row.Cells["Department"].Value.ToString();
+					quantity = Convert.ToInt32(row.Cells["Quantity"].Value.ToString());
+					scannableNum = row.Cells["ScannableNum"].Value.ToString();
+					userType = row.Cells["UserType"].Value.ToString();
+					DialogResult dialogResult = MessageBox.Show("You are returning a total of: " + quantity + " " + resourceName +
+						"'s Borrowed by: " + BorrowerName + " " + BorrowerID, "Are you sure?", MessageBoxButtons.YesNo);
+					if (dialogResult == DialogResult.Yes)
 					{
-						addToLoanHistory();
+						try
+						{
+							addToLoanHistory();
+						}
+						catch (Exception ex)
+						{
+							MessageBox.Show(ex.Message);
+						}
+
 					}
-					catch(Exception ex)
+					else if (dialogResult == DialogResult.No)
 					{
-						MessageBox.Show(ex.Message);
+						return;
 					}
-					
-				}
-				else if (dialogResult == DialogResult.No)
-				{
-					return;
 				}
 			}
 		}

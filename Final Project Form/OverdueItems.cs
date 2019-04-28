@@ -48,11 +48,15 @@ namespace Final_Project_Form
 		{
 			if (e.ColumnIndex == 9 || e.ColumnIndex == 0)
 			{
-				DataGridViewRow row = this.overdueItemsGridView.Rows[e.RowIndex];
-				var borrower = new currentBorrower();
-				borrower.EmailAddress = row.Cells["BorrowerEmail"].Value.ToString();
-				EmailHandler emailBorrower = new EmailHandler(borrower.EmailAddress);
-				emailBorrower.Show();
+				int indexRow = e.RowIndex;
+				if (indexRow >= 0)
+				{
+					DataGridViewRow row = this.overdueItemsGridView.Rows[e.RowIndex];
+					var borrower = new currentBorrower();
+					borrower.EmailAddress = row.Cells["BorrowerEmail"].Value.ToString();
+					EmailHandler emailBorrower = new EmailHandler(borrower.EmailAddress);
+					emailBorrower.Show();
+				}
 			}
 		}
 	}

@@ -63,7 +63,7 @@ namespace Final_Project_Form
 							BorrowerEmail = getLoanInfo["BorrowerEmail"].ToString();
 							BorrowerName = getLoanInfo["BorrowerName"].ToString();
 							usertype = getLoanInfo["UserType"].ToString();
-							scannableNum = txtScanID.Text;
+							scannableNum = getLoanInfo["ScannableNum"].ToString();
 						}
 						connection.Close();
 					}

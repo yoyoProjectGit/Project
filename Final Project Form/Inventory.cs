@@ -33,7 +33,7 @@ namespace Final_Project_Form
                 SqlConnection connection = new SqlConnection(connectionString);
                 connection.Open();
                 SqlCommand command = new SqlCommand("SELECT ResourceID,ResourceType,ResourceName,MaxLoanPeriod,Department," +
-                    "SerialNumber,DateAdded,SupplierSource,PurchasePrice,Notes,InStock,Total FROM resourcesTable WHERE Department=@Department", connection);
+                    "SerialNumber,DateAdded,SupplierSource,PurchasePrice,Notes,InStock,Total,AddedBy FROM resourcesTable WHERE Department=@Department", connection);
                 command.Parameters.AddWithValue("@Department", currentUser.Department);
                 SqlDataAdapter adapter = new SqlDataAdapter(command);
                 adapter.Fill(dt);
@@ -48,7 +48,8 @@ namespace Final_Project_Form
                 inventoryGridView.Columns[4].Visible = false;
                 inventoryGridView.Columns[7].Visible = false;
                 inventoryGridView.Columns[8].Visible = false;
-                connection.Close();
+				inventoryGridView.Columns[12].Visible = false;
+				connection.Close();
 				foreach(DataGridViewRow row in inventoryGridView.Rows)
 				{
 					totalInStock +=Convert.ToInt32(row.Cells["InStock"].Value.ToString());
@@ -65,24 +66,29 @@ namespace Final_Project_Form
 
         private void inventoryGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.ColumnIndex == 12 || e.ColumnIndex == 0)
+            if (e.ColumnIndex == 13 || e.ColumnIndex == 0)
             {
-                DataGridViewRow row = this.inventoryGridView.Rows[e.RowIndex];
-                var item = new currentItem();
-                item.ResourceType = row.Cells["ResourceType"].Value.ToString();
-                item.ResourceName = row.Cells["ResourceName"].Value.ToString();
-                item.MaxLoanPeriod = (int)row.Cells["MaxLoanPeriod"].Value;
-                item.Department = row.Cells["Department"].Value.ToString();
-                item.SerialNumber = (long)row.Cells["SerialNumber"].Value;
-                item.DateAdded = row.Cells["DateAdded"].Value.ToString();
-                item.SupplierSource = row.Cells["SupplierSource"].Value.ToString();
-                item.PurchasePrice = (decimal)row.Cells["PurchasePrice"].Value;
-                item.Notes = row.Cells["Notes"].Value.ToString();
-                item.ItemID = (int)row.Cells["ResourceID"].Value;
-                viewItem viewInfo = new viewItem(item.ResourceType, item.ResourceName, item.MaxLoanPeriod,
-                    item.Department, item.SerialNumber, item.DateAdded, item.SupplierSource,
-                    item.PurchasePrice, item.Notes, item.ItemID);
-                viewInfo.Show();
+				int indexRow = e.RowIndex;
+				if (indexRow >= 0)
+				{
+					DataGridViewRow row = this.inventoryGridView.Rows[e.RowIndex];
+					var item = new currentItem();
+					item.ResourceType = row.Cells["ResourceType"].Value.ToString();
+					item.ResourceName = row.Cells["ResourceName"].Value.ToString();
+					item.MaxLoanPeriod = (int)row.Cells["MaxLoanPeriod"].Value;
+					item.Department = row.Cells["Department"].Value.ToString();
+					item.SerialNumber = (long)row.Cells["SerialNumber"].Value;
+					item.DateAdded = row.Cells["DateAdded"].Value.ToString();
+					item.SupplierSource = row.Cells["SupplierSource"].Value.ToString();
+					item.PurchasePrice = (decimal)row.Cells["PurchasePrice"].Value;
+					item.Notes = row.Cells["Notes"].Value.ToString();
+					item.ItemID = (int)row.Cells["ResourceID"].Value;
+					item.AddedBy = row.Cells["AddedBy"].Value.ToString();
+					viewItem viewInfo = new viewItem(item.ResourceType, item.ResourceName, item.MaxLoanPeriod,
+						item.Department, item.SerialNumber, item.DateAdded, item.SupplierSource,
+						item.PurchasePrice, item.Notes, item.ItemID,item.AddedBy);
+					viewInfo.Show();
+				}
             }
         }
 
@@ -94,10 +100,10 @@ namespace Final_Project_Form
             string connectionString = myGlobals.connString;
             SqlConnection connection = new SqlConnection(connectionString);
             connection.Open();
-            SqlCommand command = new SqlCommand("SELECT ResourceID,ResourceType,ResourceName,MaxLoanPeriod,Department," +
-                   "SerialNumber,DateAdded,SupplierSource,PurchasePrice,Notes,InStock FROM resourcesTable WHERE Department=@Department", connection);
-            command.Parameters.AddWithValue("@Department", currentUser.Department);
-            SqlDataAdapter adapter = new SqlDataAdapter(command);
+			SqlCommand command = new SqlCommand("SELECT ResourceID,ResourceType,ResourceName,MaxLoanPeriod,Department," +
+				"SerialNumber,DateAdded,SupplierSource,PurchasePrice,Notes,InStock,Total,AddedBy FROM resourcesTable WHERE Department=@Department", connection);
+			command.Parameters.AddWithValue("@Department", currentUser.Department);
+			SqlDataAdapter adapter = new SqlDataAdapter(command);
             adapter.Fill(dt);
             inventoryGridView.DataSource = dt;
             connection.Close();
