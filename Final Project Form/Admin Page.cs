@@ -22,12 +22,12 @@ namespace Final_Project_Form
 			this.Close();
 		}
 
-		private void btnStaffMembers_Click(object sender, EventArgs e)
+		private void btnStaffMembers_Click(object sender, EventArgs e) //opens new form
 		{
 			bool isOpen = false;
 			foreach (Form f in Application.OpenForms)
 			{
-				if (f.Text == "StaffMembers")
+				if (f.Text == "StaffMembers") //checks if form is already open and opens if it is
 				{
 					isOpen = true;
 					f.BringToFront();
@@ -41,7 +41,7 @@ namespace Final_Project_Form
 			}
 		}
 
-		private void btnStaffAccounts_Click(object sender, EventArgs e)
+		private void btnStaffAccounts_Click(object sender, EventArgs e) //opens new form
 		{
 			bool isOpen = false;
 			foreach (Form f in Application.OpenForms)
@@ -60,7 +60,7 @@ namespace Final_Project_Form
 			}
 		}
 
-		private void btnAdminAccount_Click(object sender, EventArgs e)
+		private void btnAdminAccount_Click(object sender, EventArgs e) //opens new form
 		{
 			bool isOpen = false;
 			foreach (Form f in Application.OpenForms)
@@ -79,7 +79,7 @@ namespace Final_Project_Form
 			}
 		}
 
-		private void btnAddStaffAccount_Click(object sender, EventArgs e)
+		private void btnAddStaffAccount_Click(object sender, EventArgs e) //opens new form
 		{
 			bool isOpen = false;
 			foreach (Form f in Application.OpenForms)

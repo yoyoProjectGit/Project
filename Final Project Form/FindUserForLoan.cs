@@ -13,31 +13,31 @@ namespace Final_Project_Form
 {
     public partial class FindUserForLoan : Form
     {
-        DataTable dt = new DataTable("Students");
+        DataTable dt = new DataTable("Students"); //datatable object
         public FindUserForLoan()
         {
             InitializeComponent();
         }
 
-        private void btnBack_Click(object sender, EventArgs e)
+        private void btnBack_Click(object sender, EventArgs e) //close form
         {
             this.Close();
         }
-
-        private void btnSearchShu_Click(object sender, EventArgs e)
-        {
+		 
+        private void btnSearchShu_Click(object sender, EventArgs e) //filter datagridview
+		{
             DataView dv = dt.DefaultView;
             dv.RowFilter = string.Format("ShuId LIKE '%" + txtShuId.Text + "%'");
             studentGridView.DataSource = dv.ToTable();
         }
-        private void btnSearchSurname_Click(object sender, EventArgs e)
-        {
+        private void btnSearchSurname_Click(object sender, EventArgs e) //filter datagridview
+		{
             DataView dv = dt.DefaultView;
             dv.RowFilter = string.Format("surname LIKE '%" + txtSurname.Text + "%'");
             studentGridView.DataSource = dv.ToTable();
         }
 
-        private void studentGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void studentGridView_CellContentClick(object sender, DataGridViewCellEventArgs e) //send row clicked information to another form
         {
             if (e.ColumnIndex == 9 || e.ColumnIndex == 0)
             {
@@ -60,7 +60,7 @@ namespace Final_Project_Form
             }
         }
 
-        private void btnRefresh_Click(object sender, EventArgs e)
+        private void btnRefresh_Click(object sender, EventArgs e) //refresh datagridview incase update is made
         {
             dt.Clear();
             dt.DefaultView.RowFilter = string.Empty;
@@ -75,8 +75,8 @@ namespace Final_Project_Form
             connection.Close();
         }
 
-        private void FindUserForLoan_Load(object sender, EventArgs e)
-        {
+        private void FindUserForLoan_Load(object sender, EventArgs e) //fill datagridview with information from database
+		{
             try
             {
                 string connectionString = myGlobals.connString;
@@ -99,7 +99,7 @@ namespace Final_Project_Form
             }
         }
 
-		private void btnScanID_Click(object sender, EventArgs e)
+		private void btnScanID_Click(object sender, EventArgs e) //filter datagridview
 		{
 			DataView dv = dt.DefaultView;
 			dv.RowFilter = string.Format("ScannableNum LIKE '%" + txtScanID.Text + "%'");

@@ -24,7 +24,7 @@ namespace Final_Project_Form
             this.Close();
         }
 
-        private void btnAddResource_Click(object sender, EventArgs e)
+        private void btnAddResource_Click(object sender, EventArgs e) //buttonclick check if boxes contain data
         {
             int caseNo = default;
             int parsedValue;
@@ -62,7 +62,7 @@ namespace Final_Project_Form
                     break;
             }
            
-           try
+           try //insert data into database
            {
                DateTime dateTime = DateTime.Now;
                
@@ -100,7 +100,7 @@ namespace Final_Project_Form
            }
         }
 
-        private void Add_Resource_Load(object sender, EventArgs e)
+        private void Add_Resource_Load(object sender, EventArgs e) //form load fill departments combobox
         {
             string connectionString = myGlobals.connString;
             SqlConnection connection = new SqlConnection(connectionString);
@@ -117,7 +117,7 @@ namespace Final_Project_Form
             connection.Close();
         }
 
-		private void txtQuantity_TextChanged(object sender, EventArgs e)
+		private void txtQuantity_TextChanged(object sender, EventArgs e) //only ints into textbox
 		{
 			if (System.Text.RegularExpressions.Regex.IsMatch(txtQuantity.Text, "  ^ [0-9]"))
 			{
@@ -125,7 +125,7 @@ namespace Final_Project_Form
 			}
 		}
 
-		private void txtLoanPeriod_TextChanged(object sender, EventArgs e)
+		private void txtLoanPeriod_TextChanged(object sender, EventArgs e) //only ints into textbox
 		{
 			if (System.Text.RegularExpressions.Regex.IsMatch(txtLoanPeriod.Text, "  ^ [0-9]"))
 			{
@@ -133,7 +133,7 @@ namespace Final_Project_Form
 			}
 		}
 
-		private void txtSerialNo_TextChanged(object sender, EventArgs e)
+		private void txtSerialNo_TextChanged(object sender, EventArgs e) //only ints into textbox
 		{
 			if (System.Text.RegularExpressions.Regex.IsMatch(txtSerialNo.Text, "  ^ [0-9]"))
 			{
@@ -141,7 +141,7 @@ namespace Final_Project_Form
 			}
 		}
 
-		private void txtPurchasePrice_TextChanged(object sender, EventArgs e)
+		private void txtPurchasePrice_TextChanged(object sender, EventArgs e) //only ints into textbox
 		{
 			if (System.Text.RegularExpressions.Regex.IsMatch(txtPurchasePrice.Text, "  ^ [0-9]"))
 			{
@@ -149,7 +149,7 @@ namespace Final_Project_Form
 			}
 		}
 
-		private void txtLoanPeriod_KeyPress(object sender, KeyPressEventArgs e)
+		private void txtLoanPeriod_KeyPress(object sender, KeyPressEventArgs e) //only ints into textbox
 		{
 			char ch = e.KeyChar;
 			if (!Char.IsDigit(ch) && ch != 8)
@@ -158,7 +158,7 @@ namespace Final_Project_Form
 			}
 		}
 
-		private void txtQuantity_KeyPress(object sender, KeyPressEventArgs e)
+		private void txtQuantity_KeyPress(object sender, KeyPressEventArgs e) //only ints into textbox
 		{
 			char ch = e.KeyChar;
 			if (!Char.IsDigit(ch) && ch != 8)
@@ -167,7 +167,7 @@ namespace Final_Project_Form
 			}
 		}
 
-		private void txtSerialNo_KeyPress(object sender, KeyPressEventArgs e)
+		private void txtSerialNo_KeyPress(object sender, KeyPressEventArgs e) //only ints into textbox
 		{
 			char ch = e.KeyChar;
 			if (!Char.IsDigit(ch) && ch != 8)
@@ -176,7 +176,7 @@ namespace Final_Project_Form
 			}
 		}
 
-		private void txtPurchasePrice_KeyPress(object sender, KeyPressEventArgs e)
+		private void txtPurchasePrice_KeyPress(object sender, KeyPressEventArgs e) //only ints into textbox
 		{
 			char ch = e.KeyChar;
 			if (!Char.IsDigit(ch) && ch != 8)

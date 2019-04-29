@@ -18,7 +18,7 @@ namespace Final_Project_Form
 			InitializeComponent();
 		}
 
-		private void btnLogin_Click(object sender, EventArgs e)
+		private void btnLogin_Click(object sender, EventArgs e) //login button click
 		{
 			try
 			{
@@ -26,13 +26,13 @@ namespace Final_Project_Form
 				SqlConnection connection = new SqlConnection(connectionString);
 				connection.Open();
 				AutoClosingMessageBox.Show("Attempting To Log In", "Logging In", 1000);
-				SqlCommand command = new SqlCommand("select username,password from adminAccounts where username=@username and password=@password", connection);
+				SqlCommand command = new SqlCommand("select username,password from adminAccounts where username=@username and password=@password", connection); 
 				command.Parameters.AddWithValue("@username", txtUser.Text);
 				command.Parameters.AddWithValue("@password", txtPass.Text);
-				SqlDataAdapter adapter = new SqlDataAdapter(command);
+				SqlDataAdapter adapter = new SqlDataAdapter(command); //checks if there exists a username,password identical to whats in the textboxes
 				DataTable table = new DataTable();
 				adapter.Fill(table);
-				if (table.Rows.Count > 0)
+				if (table.Rows.Count > 0) //if there contains a row with that information, then the information is correct
 				{
 					AutoClosingMessageBox.Show("Login Successful", "Logging In", 1000);
 					Admin_Page adminPage = new Admin_Page();
@@ -40,7 +40,7 @@ namespace Final_Project_Form
 					adminPage.Show();
 					connection.Close();
 				}
-				else
+				else //there was no existing rows with the matching credentions, incorrect credentials
 				{
 					AutoClosingMessageBox.Show("Invalid Username Or Password", "Login Failed", 1000);
 					connection.Close();
@@ -52,18 +52,18 @@ namespace Final_Project_Form
 			}
 		}
 
-		private void btnClear_Click(object sender, EventArgs e)
+		private void btnClear_Click(object sender, EventArgs e) //clears textboxes
 		{
 			txtUser.Text = "";
 			txtPass.Text = "";
 		}
 
-		private void btnQuit_Click(object sender, EventArgs e)
+		private void btnQuit_Click(object sender, EventArgs e) //closing form
 		{
 			this.Close();
 		}
 
-		private void adminLogin_Load(object sender, EventArgs e)
+		private void adminLogin_Load(object sender, EventArgs e) //sets return button to be able to login on keypress
 		{
 			this.AcceptButton = btnLogin;
 		}

@@ -23,7 +23,7 @@ namespace Final_Project_Form
 			this.Close();
 		}
 
-		private void AddStaffAccount_Load(object sender, EventArgs e)
+		private void AddStaffAccount_Load(object sender, EventArgs e) //fill combobox on form load
 		{
 			string connectionString = myGlobals.connString;
 			SqlConnection connection = new SqlConnection(connectionString);
@@ -38,7 +38,7 @@ namespace Final_Project_Form
 			connection.Close();
 			txtPassword.UseSystemPasswordChar = true;
 		}
-		private void checkUserNameExists()
+		private void checkUserNameExists() //check if username exists before updating
 		{
 			string connectionString = myGlobals.connString;
 			SqlConnection connection = new SqlConnection(connectionString);
@@ -56,7 +56,7 @@ namespace Final_Project_Form
 				addStaffAccount();
 			}
 		}
-		private void addStaffAccount()
+		private void addStaffAccount() //adds staff account to the database
 		{
 			try
 			{ 
@@ -81,7 +81,7 @@ namespace Final_Project_Form
 			}
 		}
 
-		private void btnAddUser_Click(object sender, EventArgs e)
+		private void btnAddUser_Click(object sender, EventArgs e) //checks if textboxes hold correct information
 		{
 			if (departmentsList.SelectedItem == null)
 			{
@@ -102,7 +102,7 @@ namespace Final_Project_Form
 
 		}
 
-		private void checkBoxShowPass_CheckedChanged(object sender, EventArgs e)
+		private void checkBoxShowPass_CheckedChanged(object sender, EventArgs e) //hide and unhide password
 		{
 			if (checkBoxShowPass.Checked)
 			{

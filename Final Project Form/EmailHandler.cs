@@ -23,7 +23,7 @@ namespace Final_Project_Form
 			emailAddress = email;
         }
 
-        private void emailHandler()
+        private void emailHandler() //set up connection with gmail servers and credentials, and sending
         {
             try
             {
@@ -41,12 +41,12 @@ namespace Final_Project_Form
             }
         }
 
-        private void btnBack_Click(object sender, EventArgs e)
+        private void btnBack_Click(object sender, EventArgs e) //close form
         {
             this.Close();
         }
 
-        private void btnSend_Click(object sender, EventArgs e)
+        private void btnSend_Click(object sender, EventArgs e) //check if all textboxes are filled.
         {
 			if (txtBody.Text == "" || txtSubject.Text == "" || txtToWho.Text == "")
 			{

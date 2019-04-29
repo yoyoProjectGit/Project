@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Final_Project_Form
 {
-    public class currentItem
+    public class currentItem //current item class
     {
         private string resourceType;
         private string resourceName;

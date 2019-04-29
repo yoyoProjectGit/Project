@@ -19,35 +19,35 @@ namespace Final_Project_Form
 			BorrowerSurname, BorrowerEmail, Notes, LoanedBy, scannableNum,
 			serialNumber, userType;
 		int stock, quantity;
-		DataTable dt = new DataTable("Loans");
+		DataTable dt = new DataTable("Loans"); //datatable object
 		public FindUserToReturnItem(string serialnumber)
 		{
 			InitializeComponent();
 			serialNumber = serialnumber;
 		}
-		private void btnSearchShu_Click(object sender, EventArgs e)
+		private void btnSearchShu_Click(object sender, EventArgs e) //filter datagridview
 		{
 			DataView dv = dt.DefaultView;
 			dv.RowFilter = string.Format("BorrowerID LIKE '%" + txtShuId.Text + "%'");
 			loanedItemsGridView.DataSource = dv.ToTable();
 		}
-		private void btnSearchSurname_Click(object sender, EventArgs e)
-		{
+		private void btnSearchSurname_Click(object sender, EventArgs e) //filter datagridview
+		{ 
 			DataView dv = dt.DefaultView;
-			dv.RowFilter = string.Format("BorrowerSurname LIKE '%" + txtSurname.Text + "%'");
+			dv.RowFilter = string.Format("BorrowerSurname LIKE '%" + txtSurname.Text + "%'"); 
 			loanedItemsGridView.DataSource = dv.ToTable();
 		}
-		private void btnScanID_Click(object sender, EventArgs e)
+		private void btnScanID_Click(object sender, EventArgs e) //filter datagridview
 		{
 			DataView dv = dt.DefaultView;
 			dv.RowFilter = string.Format("ScannableNum LIKE '%" + txtScanID.Text + "%'");
 			loanedItemsGridView.DataSource = dv.ToTable();
 		}
-		private void btnBack_Click(object sender, EventArgs e)
+		private void btnBack_Click(object sender, EventArgs e) //close form
 		{
 			this.Close();
 		}
-		private void btnRefresh_Click(object sender, EventArgs e)
+		private void btnRefresh_Click(object sender, EventArgs e) //refresh datagridview information
 		{
 			string connectionString = myGlobals.connString;
 			SqlConnection connection = new SqlConnection(connectionString);
@@ -62,7 +62,7 @@ namespace Final_Project_Form
 			connection.Close();
 		}
 
-		private void FindUserToReturnItem_Load(object sender, EventArgs e)
+		private void FindUserToReturnItem_Load(object sender, EventArgs e) //fill datagridview with data from database
 		{
 			try
 			{
@@ -89,7 +89,7 @@ namespace Final_Project_Form
 			}
 		}
 
-		private void loanedItemsGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+		private void loanedItemsGridView_CellContentClick(object sender, DataGridViewCellEventArgs e) //if button is clicked return item
 		{
 
 			if (e.ColumnIndex == 0)
@@ -136,7 +136,7 @@ namespace Final_Project_Form
 				}
 			}
 		}
-		private void addToLoanHistory()
+		private void addToLoanHistory() //adds loan to history
 		{
 			try
 			{
@@ -173,7 +173,7 @@ namespace Final_Project_Form
 			}
 			makeResourceLoanable();
 		}
-		private void makeResourceLoanable()
+		private void makeResourceLoanable() //adds resource back to inventory
 		{
 			getTotalStock();
 			int id = Convert.ToInt32(resourceID);
@@ -195,7 +195,7 @@ namespace Final_Project_Form
 				MessageBox.Show(ex.Message);
 			}
 		}
-		private void removeFromActiveLoans()
+		private void removeFromActiveLoans() //removes item from current loans
 		{
 			try
 			{
@@ -213,7 +213,7 @@ namespace Final_Project_Form
 				MessageBox.Show("ERROR: " + ex.Message);
 			}
 		}
-		private void getTotalStock()
+		private void getTotalStock() //gets stock of item
 		{
 			string connectionString = myGlobals.connString;
 			SqlConnection connection = new SqlConnection(connectionString);

@@ -14,17 +14,17 @@ namespace Final_Project_Form
     public partial class Inventory : Form
     {
 		int totalInStock = 0;
-        DataTable dt = new DataTable("Inventory");
+        DataTable dt = new DataTable("Inventory"); //datatable object
         public Inventory()
         {
             InitializeComponent();
         }
 
-        private void btnBack_Click(object sender, EventArgs e)
+        private void btnBack_Click(object sender, EventArgs e) //close form
         {
             this.Close();
         }
-        private void Inventory_Load(object sender, EventArgs e)
+        private void Inventory_Load(object sender, EventArgs e) //fill inventory with data from database
         {
             try
             {
@@ -64,7 +64,7 @@ namespace Final_Project_Form
             }
         }
 
-        private void inventoryGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void inventoryGridView_CellContentClick(object sender, DataGridViewCellEventArgs e) //when item is pressed in inventory table, open item information 
         {
             if (e.ColumnIndex == 13 || e.ColumnIndex == 0)
             {

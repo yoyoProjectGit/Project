@@ -20,7 +20,7 @@ namespace Final_Project_Form
 			InitializeComponent();
 		}
 
-		private void checkBoxShowPass_CheckedChanged(object sender, EventArgs e)
+		private void checkBoxShowPass_CheckedChanged(object sender, EventArgs e) //changing password characters to be visible
 		{
 			if (checkBoxShowPass.Checked)
 			{
@@ -32,18 +32,18 @@ namespace Final_Project_Form
 			}
 		}
 
-		private void btnEdit_Click(object sender, EventArgs e)
+		private void btnEdit_Click(object sender, EventArgs e) //makes textboxes editable
 		{
 			txtUserName.ReadOnly = false;
 			txtPassword.ReadOnly = false;
 		}
 
-		private void btnBackToLoan_Click(object sender, EventArgs e)
+		private void btnBackToLoan_Click(object sender, EventArgs e) //closes form
 		{
 			this.Close();
 		}
 
-		private void btnUpdate_Click(object sender, EventArgs e)
+		private void btnUpdate_Click(object sender, EventArgs e) //updates information in the database
 		{
 			if (txtPassword.Text == password && txtUserName.Text == username)
 			{
@@ -73,7 +73,7 @@ namespace Final_Project_Form
 			}
 		}
 
-		private void AdminEdit_Load(object sender, EventArgs e)
+		private void AdminEdit_Load(object sender, EventArgs e) //fills information on form load load
 		{
 			string connectionString = myGlobals.connString;
 			SqlConnection connection = new SqlConnection(connectionString);

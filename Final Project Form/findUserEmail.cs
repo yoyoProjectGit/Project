@@ -13,25 +13,25 @@ namespace Final_Project_Form
     public partial class findUserEmail : Form
     {
         public string ReturnEmail { get; set; }
-        DataTable dt = new DataTable("Students");
+        DataTable dt = new DataTable("Students"); //datatable object
         public findUserEmail()
         {
             InitializeComponent();
         }
 
-        private void btnBack_Click(object sender, EventArgs e)
+        private void btnBack_Click(object sender, EventArgs e) //close form 
         {
             this.Close();
         }
 
-        private void btnSearchShu_Click(object sender, EventArgs e)
+        private void btnSearchShu_Click(object sender, EventArgs e) //filter datagridview
         {
             DataView dv = dt.DefaultView;
             dv.RowFilter = string.Format("ShuId LIKE '%" + txtShuId.Text + "%'");
             studentGridView.DataSource = dv.ToTable();
         }
 
-        private void findUserEmail_Load(object sender, EventArgs e)
+        private void findUserEmail_Load(object sender, EventArgs e) //fill datagridview on form load
         {
             try
             {
@@ -55,14 +55,14 @@ namespace Final_Project_Form
             }
         }
 
-        private void btnSearchSurname_Click(object sender, EventArgs e)
-        {
+        private void btnSearchSurname_Click(object sender, EventArgs e) //filter datagridview
+		{
             DataView dv = dt.DefaultView;
             dv.RowFilter = string.Format("surname LIKE '%" + txtSurname.Text + "%'");
             studentGridView.DataSource = dv.ToTable();
         }
 
-        private void studentGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void studentGridView_CellContentClick(object sender, DataGridViewCellEventArgs e) //grabs email of row clicked and fills emailhandler form email box
         {
             if (e.ColumnIndex == 9 || e.ColumnIndex == 0)
             {

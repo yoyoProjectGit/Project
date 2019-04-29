@@ -24,7 +24,7 @@ namespace Final_Project_Form
             this.Close();
         }
 
-        private void btnAddUser_Click(object sender, EventArgs e)
+        private void btnAddUser_Click(object sender, EventArgs e) //checks if data inserted into the textboxes are correct
         {
             System.Text.RegularExpressions.Regex email = new System.Text.RegularExpressions.Regex(@"^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$");
 
@@ -46,7 +46,7 @@ namespace Final_Project_Form
                     return;
                 }
             }
-            try
+            try //inserting into the database
             {
                 DateTime dateTime = DateTime.Now;
                 TextInfo textInfo = new CultureInfo("en-US", false).TextInfo;
@@ -87,7 +87,7 @@ namespace Final_Project_Form
             }
         }
 
-		private void AddUser_Load(object sender, EventArgs e)
+		private void AddUser_Load(object sender, EventArgs e) //filling email box
 		{
 			txtEmail.Text = "@my.shu.ac.uk";
 		}

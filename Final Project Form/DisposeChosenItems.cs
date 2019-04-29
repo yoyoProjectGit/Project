@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace Final_Project_Form
 {
-    public partial class DisposeChosenItems : Form
+    public partial class DisposeChosenItems : Form //form that removes items from database.
     {
         int instock = 0;
         int Total = 0;
@@ -21,7 +21,7 @@ namespace Final_Project_Form
         long serialNo;
         string addedBy,  dateAdded,  orderNo,  Notes;
         public DisposeChosenItems(string type, string name, int loanprd, int quantity, string dept, int ID, int total, string addedby,
-            long serialno, string dateadded, string orderno, decimal purchaseprice, string notes)
+            long serialno, string dateadded, string orderno, decimal purchaseprice, string notes) //receiving and saving information from previous form through currentitem class
         {
             InitializeComponent();
             txtDepartment.Text = dept;
@@ -40,7 +40,7 @@ namespace Final_Project_Form
             resourceID = ID;
         }
 
-        private void btnDispose_Click(object sender, EventArgs e)
+        private void btnDispose_Click(object sender, EventArgs e) //checks if textboxes are filled
         {
             if (txtMethodOfDisposal.Text == "" || txtQuantity.Text == "") 
             {
@@ -50,7 +50,7 @@ namespace Final_Project_Form
             {
                 MessageBox.Show("There is only " + instock + " of these in stock!");
             }
-            else if (Convert.ToInt32(txtQuantity.Text).Equals(Total))
+            else if (Convert.ToInt32(txtQuantity.Text).Equals(Total)) //checks if there is enough stock in the database to remove the chosen items
             {
 				RemoveFromResources();
                 AddToDisposedResources();
@@ -66,12 +66,12 @@ namespace Final_Project_Form
             }
         }
 
-		private void btnBack_Click(object sender, EventArgs e)
+		private void btnBack_Click(object sender, EventArgs e) //closes form
 		{
 			this.Close();
 		}
 
-		private void txtQuantity_TextChanged(object sender, EventArgs e)
+		private void txtQuantity_TextChanged(object sender, EventArgs e) //makes sure only integer is entered
 		{
 			if (System.Text.RegularExpressions.Regex.IsMatch(txtQuantity.Text, "  ^ [0-9]"))
 			{
@@ -79,7 +79,7 @@ namespace Final_Project_Form
 			}
 		}
 
-		private void txtQuantity_KeyPress(object sender, KeyPressEventArgs e)
+		private void txtQuantity_KeyPress(object sender, KeyPressEventArgs e) //makes sure only integer is entered
 		{
 			char ch = e.KeyChar;
 			if (!Char.IsDigit(ch) && ch != 8)
@@ -88,7 +88,7 @@ namespace Final_Project_Form
 			}
 		}
 
-		private void RemoveFromResources()
+		private void RemoveFromResources() //removes entire row from database
         {
             try
             { 
@@ -106,8 +106,8 @@ namespace Final_Project_Form
                 MessageBox.Show("ERROR " + ex.Message);
             }
         }
-        private void RemoveFromResourceQuantity()
-        {
+        private void RemoveFromResourceQuantity() //removes item from total quantity in stock
+		{
             try
             {
                 int quantity = Convert.ToInt32(txtQuantity.Text);

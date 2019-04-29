@@ -353,6 +353,7 @@
     <EmbeddedResource Include="viewStudentInfo.resx">
       <DependentUpon>viewStudentInfo.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="DatabaseJobs\ProjectDB.bak" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -379,7 +380,6 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="DatabaseJobs\" />
     <Folder Include="Images\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

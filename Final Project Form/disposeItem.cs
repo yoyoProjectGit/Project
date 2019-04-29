@@ -13,31 +13,31 @@ namespace Final_Project_Form
 {
     public partial class DisposeItem : Form
     {
-        DataTable dt = new DataTable("Inventory");
+        DataTable dt = new DataTable("Inventory"); //creating instance of datatable
         public DisposeItem()
         {
             InitializeComponent();
         }
-        private void btnSearchName_Click(object sender, EventArgs e)
+        private void btnSearchName_Click(object sender, EventArgs e) //search filtering using new dataview to fill datagridview
         {
             DataView dv = dt.DefaultView;
             dv.RowFilter = string.Format("CONVERT([ResourceName], System.String) LIKE '%" + txtResourceName.Text + "%'");
             inventoryGridView.DataSource = dv.ToTable();
         }
-        private void btnSearchBarcode_Click(object sender, EventArgs e)
-        {
+        private void btnSearchBarcode_Click(object sender, EventArgs e) //search filtering using new dataview to fill datagridview
+		{
             DataView dv = dt.DefaultView;
             dv.RowFilter = string.Format("CONVERT([SerialNumber], System.String) LIKE '%" + txtSerialNumber.Text + "%'");
             inventoryGridView.DataSource = dv.ToTable();
         }
 
-        private void btnOrderNo_Click(object sender, EventArgs e)
-        {
+        private void btnOrderNo_Click(object sender, EventArgs e) //search filtering using new dataview to fill datagridview
+		{
             DataView dv = dt.DefaultView;
             dv.RowFilter = string.Format("CONVERT([SupplierSource], System.String) LIKE '%" + txtSupplierSource.Text + "%'");
             inventoryGridView.DataSource = dv.ToTable();
         }
-        private void btnRefresh_Click(object sender, EventArgs e)
+        private void btnRefresh_Click(object sender, EventArgs e) //refreshes datagridview
         {
             dt.Clear();
             dt.DefaultView.RowFilter = string.Empty;
@@ -54,12 +54,12 @@ namespace Final_Project_Form
             connection.Close();
         }
 
-        private void btnBack_Click(object sender, EventArgs e)
+        private void btnBack_Click(object sender, EventArgs e) //closes form
         {
             this.Close();
         }
 
-        private void DisposeItem_Load(object sender, EventArgs e)
+        private void DisposeItem_Load(object sender, EventArgs e) //fills the datagridview with available items to dispose
         {
             try
             {
@@ -86,7 +86,7 @@ namespace Final_Project_Form
             }
         }
 
-        private void inventoryGridView_MouseClick(object sender, MouseEventArgs e)
+        private void inventoryGridView_MouseClick(object sender, MouseEventArgs e) //finds which tickboxes are pressed in the datagridview.
         {
             if (inventoryGridView.SelectedRows[0].Cells[0].Value == null)
             {
@@ -103,7 +103,7 @@ namespace Final_Project_Form
             }
         }
 
-        private void btnDispose_Click(object sender, EventArgs e)
+        private void btnDispose_Click(object sender, EventArgs e) //sending the selected rows to another datagridview on the next tab
         {
             pickedItemsGridView.Rows.Clear();
             foreach (DataGridViewRow item in inventoryGridView.Rows)
@@ -133,12 +133,12 @@ namespace Final_Project_Form
             tabControl1.SelectedTab = tabPage2;
         }
 
-        private void btnGoBack_Click(object sender, EventArgs e)
+        private void btnGoBack_Click(object sender, EventArgs e) //switches tabs
         {
             tabControl1.SelectedTab = tabPage1;
         }
 
-        private void btnConfirmItems_Click(object sender, EventArgs e)
+        private void btnConfirmItems_Click(object sender, EventArgs e) //for each item chosen, creates a new item and sends to disposeselecteditem form
         {
             foreach (DataGridViewRow row in pickedItemsGridView.Rows)
             {   //string maxprd = row.Cells["MaxLoanPeriod"].Value.ToString();
