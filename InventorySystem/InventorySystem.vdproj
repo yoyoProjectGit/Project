@@ -51,6 +51,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_C0437E27EFA2485C87474A818597BE29"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_C84B3BA3D7954A5F980BE0AE7FBA2B26"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -272,6 +278,26 @@
             {
             "SourcePath" = "8:..\\Final Project Form\\DatabaseJobs\\GDPR Remove Accounts.sql"
             "TargetName" = "8:GDPR Remove Accounts.sql"
+            "Tag" = "8:"
+            "Folder" = "8:_D792A512EDA84574A1D27FCC85E95504"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_C0437E27EFA2485C87474A818597BE29"
+            {
+            "SourcePath" = "8:C:\\SQLBackups\\ProjectDB.bak"
+            "TargetName" = "8:ProjectDB.bak"
             "Tag" = "8:"
             "Folder" = "8:_D792A512EDA84574A1D27FCC85E95504"
             "Condition" = "8:"
